@@ -1,6 +1,6 @@
 # Final Project
 
-##Using Backend
+## Using Backend
 You don't have to do the whole thing each time you start modifying `backend/`, just Steps 3, 6-8
 1. Make sure pip is pointing to python 3 (At least 3.7)
 ```
