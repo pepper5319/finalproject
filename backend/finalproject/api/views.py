@@ -12,5 +12,5 @@ class GetRecipesView(generics.ListCreateAPIView):
 
     def get_queryset(self):
         user = self.request.user
-        recipes = Recpie.objects.all()
-        return ownedLists
+        recipes = Recipe.objects.all()
+        return recipes
