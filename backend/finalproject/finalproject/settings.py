@@ -133,3 +133,6 @@ if 'Pantry' in os.environ:
             'PORT': os.environ['RDS_PORT'],
         }
     }
+
+# Setting our custom user model
+AUTH_USER_MODEL = 'api.PUser'
