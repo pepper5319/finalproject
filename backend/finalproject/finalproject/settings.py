@@ -39,11 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
-    'rest_auth',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'rest_auth.registration',
     'api',
 ]
 
@@ -136,4 +131,7 @@ STATIC_URL = '/static/'
             'HOST': 'pantry.cfzuumxbilpn.us-east-2.rds.amazonaws.com',
             'PORT': '3306',
         }
-    
+    }
+
+# Setting our custom user model
+AUTH_USER_MODEL = 'api.PUser'
