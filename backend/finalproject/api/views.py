@@ -8,6 +8,7 @@ from serializers import PItemSerializer, RecipeSerializer
 # Create your views here.
 
 
+# Url name == 'recipe-list'
 class GetRecipesView(generics.ListCreateAPIView):
     serializer_class = RecipeSerializer
     permission_classes = (permissions.IsAuthenticated)
@@ -18,6 +19,7 @@ class GetRecipesView(generics.ListCreateAPIView):
         return recipes
 
 
+# Url name == 'recipe-detail'
 class RecipeDetailView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = RecipeSerializer
     permission_classes = (permissions.IsAuthenticated)
@@ -28,6 +30,7 @@ class RecipeDetailView(generics.RetrieveUpdateDestroyAPIView):
         return recipes
 
 
+# Url name == 'pItem-list'
 class GetPItemsView(generics.ListCreateAPIView):
     serializer_class = PItemSerializer
     permission_classes = (permissions.IsAuthenticated)
@@ -38,6 +41,7 @@ class GetPItemsView(generics.ListCreateAPIView):
         return pItems
 
 
+# Url name == 'pItem-detail'
 class PItemDetailView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = PItemSerializer
     permission_classes = (permissions.IsAuthenticated)
