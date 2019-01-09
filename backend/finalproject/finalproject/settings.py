@@ -131,10 +131,10 @@ if 'Pantry' in os.environ:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': os.environ['pantry'],
-            'USER': os.environ['admin'],
-            'PASSWORD': os.environ['password'],
-            'HOST': os.environ['pantry.cfzuumxbilpn.us-east-2.rds.amazonaws.com'],
-            'PORT': os.environ['3306'],
+            'NAME': 'pantry',
+            'USER': 'admin',
+            'PASSWORD': 'password',
+            'HOST': 'pantry.cfzuumxbilpn.us-east-2.rds.amazonaws.com',
+            'PORT': '3306',
         }
     }
