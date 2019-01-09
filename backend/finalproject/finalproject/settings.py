@@ -127,7 +127,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-if 'Pantry' in os.environ:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
@@ -137,4 +136,4 @@ if 'Pantry' in os.environ:
             'HOST': 'pantry.cfzuumxbilpn.us-east-2.rds.amazonaws.com',
             'PORT': '3306',
         }
-    }
+    
