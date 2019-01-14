@@ -5,7 +5,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import *
 from .permissions import *
-from serializers import PItemSerializer, RecipeSerializer
+from .serializers import PItemSerializer, RecipeSerializer
 # Create your views here.
 
 
@@ -38,7 +38,7 @@ class GetPItemsView(generics.ListCreateAPIView):
 
     def get_queryset(self):
         curUser = self.request.user
-        pItems = PItem.objects.filter(PItem.user = curUser)
+        pItems = PItem.objects.filter(user = curUser)
         return pItems
 
 
@@ -49,5 +49,5 @@ class PItemDetailView(generics.RetrieveUpdateDestroyAPIView):
 
     def get_queryset(self):
         curUser = self.request.user
-        pItems = PItem.objects.filter(PItem.user = curUser)
+        pItems = PItem.objects.filter(user = curUser)
         return pItems
