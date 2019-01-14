@@ -15,12 +15,10 @@ const Button = (props) => {
 
 const styles = StyleSheet.create({
     buttonbody:{
-        backgroundColor: '#00aeef',
-        width: '100%',
-        padding: 20,
-        alignItems: 'center',
-        justifyContent: 'center',
+        backgroundColor: '#000000',
+        width: '20%',
         borderRadius: 8,
+        bottom: 0
     },
     buttontext:{
         color: 'white',

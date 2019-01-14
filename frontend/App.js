@@ -6,9 +6,17 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Button onPress={() => console.log('button pressed!')}> 
-          camera
-        </Button>
+        <View style={[styles.buttoncontainer, styles.titlebar]}>
+          <Button onPress={() => console.log('button pressed!')}> 
+            menu
+          </Button>
+          <Text> Home Screen </Text>
+          <Button onPress={() => console.log('button pressed!')}> 
+            camera
+          </Button>
+        </View>
+        <View style={[styles.buttoncontainer, styles.restofscreen]}>
+        </View>
       </View>
     );
   }
@@ -17,9 +25,25 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    flexDirection: 'column'
+  },
+  buttoncontainer:{
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 20,
   },
+  titlebar:{
+    backgroundColor: '#09BD09',
+    flexDirection: 'row',
+    justifyContent: 'space-around'
+  },
+  restofscreen:{
+    flex: 6,
+    backgroundColor: '#fff'
+  },
+  titletext:{
+    color: 'white',
+    fontSize: 18,
+    fontWeight: '600',
+  }
 });
