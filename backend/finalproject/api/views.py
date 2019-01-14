@@ -12,7 +12,7 @@ from .serializers import PItemSerializer, RecipeSerializer
 # Url name == 'recipe-list'
 class GetRecipesView(generics.ListCreateAPIView):
     serializer_class = RecipeSerializer
-    permission_classes = (permissions.IsAuthenticated)
+    permission_classes = (permissions.IsAuthenticated,)
 
     def get_queryset(self):
         user = self.request.user
@@ -23,7 +23,7 @@ class GetRecipesView(generics.ListCreateAPIView):
 # Url name == 'recipe-detail'
 class RecipeDetailView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = RecipeSerializer
-    permission_classes = (permissions.IsAuthenticated)
+    permission_classes = (permissions.IsAuthenticated,)
 
     def get_queryset(self):
         user = self.request.user
@@ -34,7 +34,7 @@ class RecipeDetailView(generics.RetrieveUpdateDestroyAPIView):
 # Url name == 'pItem-list'
 class GetPItemsView(generics.ListCreateAPIView):
     serializer_class = PItemSerializer
-    permission_classes = (permissions.IsAuthenticated, IsPItemAllowed)
+    permission_classes = (permissions.IsAuthenticated, IsPItemAllowed,)
 
     def get_queryset(self):
         curUser = self.request.user
@@ -45,7 +45,7 @@ class GetPItemsView(generics.ListCreateAPIView):
 # Url name == 'pItem-detail'
 class PItemDetailView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = PItemSerializer
-    permission_classes = (permissions.IsAuthenticated, IsPItemAllowed)
+    permission_classes = (permissions.IsAuthenticated, IsPItemAllowed,)
 
     def get_queryset(self):
         curUser = self.request.user
