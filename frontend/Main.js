@@ -31,20 +31,6 @@ class Main extends React.Component {
         <View style={[styles.buttoncontainer, styles.restofscreen]}>
         </View>
       </View>
-
-      <View style={styles.container}>
-        <View style={[styles.buttoncontainer, styles.titlebar]}>
-          <Button onPress={() => console.log('button pressed!')}>
-            menu
-          </Button>
-          <Text> Home Screen </Text>
-          <Button onPress={() => console.log('button pressed!')}>
-            camera
-          </Button>
-        </View>
-        <View style={[styles.buttoncontainer, styles.restofscreen]}>
-        </View>
-      </View>
     );
   }
 }
