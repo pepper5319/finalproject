@@ -4,6 +4,7 @@ from rest_framework import generics, permissions
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import *
+from .permissions import *
 from serializers import PItemSerializer, RecipeSerializer
 # Create your views here.
 
@@ -33,7 +34,7 @@ class RecipeDetailView(generics.RetrieveUpdateDestroyAPIView):
 # Url name == 'pItem-list'
 class GetPItemsView(generics.ListCreateAPIView):
     serializer_class = PItemSerializer
-    permission_classes = (permissions.IsAuthenticated)
+    permission_classes = (permissions.IsAuthenticated, IsPItemAllowed)
 
     def get_queryset(self):
         curUser = self.request.user
@@ -44,7 +45,7 @@ class GetPItemsView(generics.ListCreateAPIView):
 # Url name == 'pItem-detail'
 class PItemDetailView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = PItemSerializer
-    permission_classes = (permissions.IsAuthenticated)
+    permission_classes = (permissions.IsAuthenticated, IsPItemAllowed)
 
     def get_queryset(self):
         curUser = self.request.user
