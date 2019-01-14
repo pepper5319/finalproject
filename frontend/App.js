@@ -6,7 +6,9 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Button />
+        <Button onPress={() => console.log('button pressed!')}> 
+          camera
+        </Button>
       </View>
     );
   }
@@ -18,5 +20,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 20,
   },
 });
