@@ -8,10 +8,6 @@ import {subtractNumber} from "./redux/actions/mathActions";
 import store from "./redux/store";
 //#endregion
 
-//#region Import Components
-
-//#endregion
-
 export default class App extends React.Component {
   constructor() {
     super();

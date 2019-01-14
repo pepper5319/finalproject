@@ -13,6 +13,7 @@
     "react-dom": "^16.7.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
     "register-service-worker": "^1.5.2"
+    "react-native-navbar": "^2.1.0"
   },
   "devDependencies": {
     "babel-preset-expo": "^5.0.0",
