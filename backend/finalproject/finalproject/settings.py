@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import api
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -70,6 +71,10 @@ TEMPLATES = [
     },
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',),
+}
+
 WSGI_APPLICATION = 'finalproject.wsgi.application'
 
 
@@ -122,16 +127,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'pantry',
-            'USER': 'admin',
-            'PASSWORD': 'password',
-            'HOST': 'pantry.cfzuumxbilpn.us-east-2.rds.amazonaws.com',
-            'PORT': '3306',
-        }
-    }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'pantry',
+#         'USER': 'admin',
+#         'PASSWORD': 'password',
+#         'HOST': 'pantry.cfzuumxbilpn.us-east-2.rds.amazonaws.com',
+#         'PORT': '3306',
+#     }
+# }
 
 # Setting our custom user model
 AUTH_USER_MODEL = 'api.PUser'
