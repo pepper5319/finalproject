@@ -24,3 +24,5 @@ class PItem(models.Model):
     user = models.ForeignKey(PUser,
                              related_name='lists',
                              on_delete=models.CASCADE)
+    def __str__(self):
+        return "{0} - {1}".format(self.name, self.user.username)
