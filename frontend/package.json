@@ -1,19 +1,17 @@
 {
-  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "eject": "expo eject"
+    "start": "react-native start",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios"
   },
   "dependencies": {
-    "expo": "^31.0.2",
     "react": "^16.7.0",
     "react-dnd": "^7.0.2",
     "react-dom": "^16.7.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
-    "register-service-worker": "^1.5.2",
-    "react-native-navbar": "^2.1.0"
+    "react-native-image-picker": "^0.28.0",
+    "react-native-navbar": "^2.1.0",
+    "register-service-worker": "^1.5.2"
   },
   "devDependencies": {
     "babel-preset-expo": "^5.0.0",

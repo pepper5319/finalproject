@@ -1,0 +1,35 @@
+dependencies: \
+  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/Libraries/Text/Text/RCTTextShadowView.m \
+  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/Libraries/Text/Text/RCTTextShadowView.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTShadowView.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTComponent.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLayout.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTRootView.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/Libraries/Text/BaseText/RCTBaseTextShadowView.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/Libraries/Text/RCTTextAttributes.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTTextDecorationLineType.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/Libraries/Text/RCTTextTransform.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTShadowView+Layout.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUIManager.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTViewManager.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTConvert.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAnimationType.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBorderStyle.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTPointerEvents.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTEventDispatcher.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/UIView+React.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/Libraries/Text/Text/NSTextStorage+FontScaling.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/Libraries/Text/Text/RCTTextView.h

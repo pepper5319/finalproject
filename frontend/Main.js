@@ -1,12 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { connect } from 'react-redux';
+import  {connect}  from 'react-redux';
 //#region Import Actions and Reducers
 import {addNumber} from "./redux/actions/mathActions"
 import {subtractNumber} from "./redux/actions/mathActions"
 import { Provider } from 'react-redux';
 import { Button } from './componets/buttons';
-
+import ImagePicker from 'react-native-image-picker';
 //#endregion
 
 //#region Import Components
@@ -15,6 +15,22 @@ import { Button } from './componets/buttons';
 class Main extends React.Component {
   constructor() {
     super();
+  };
+
+  state = {
+    things: 'https://cdn.pixabay.com/photo/2017/05/21/15/14/balloon-2331488_960_720.jpg'
+  };
+
+  PhotoPic = () =>{
+    const options = {
+      noData: true
+    };
+    ImagePicker.showImagePicker(options, response => {
+      console.log("response", response)
+      if (response.uri) {
+        this.setState({ things: response.uri });
+      }
+    });
   };
 
   getStudents = _ => {
@@ -33,7 +49,7 @@ class Main extends React.Component {
             menu
           </Button>
           <Text> Home Screen </Text>
-          <Button onPress={() => console.log('button pressed!')}>
+          <Button onPress={this.PhotoPic}>
             camera
           </Button>
         </View>
