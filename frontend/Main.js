@@ -16,11 +16,20 @@ class Main extends React.Component {
   constructor() {
     super();
   };
+
+  getStudents = _ => {
+      fetch('http://localhost:8000/api/Recipes')
+      .then(console.log('button pressed!'))
+      .then(response => response.json())
+    //  .then(response => this.setState({students: response.data}))
+      .catch(err => console.error(err))
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <View style={[styles.buttoncontainer, styles.titlebar]}>
-          <Button onPress={() => console.log('button pressed!')}>
+          <Button onPress={() => this.getStudents()}>
             menu
           </Button>
           <Text> Home Screen </Text>
