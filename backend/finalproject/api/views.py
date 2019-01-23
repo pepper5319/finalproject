@@ -19,6 +19,14 @@ class GetRecipesView(generics.ListCreateAPIView):
         recipes = Recipe.objects.all()
         return recipes
 
+    def get_stored_recipies(self):
+        recipes = Recipe.objects.all()
+        for recipe in recipes:
+            ingredients = recipe.ingredients.split(',')
+
+
+        return recipes
+
 
 # Url name == 'recipe-detail'
 class RecipeDetailView(generics.RetrieveUpdateDestroyAPIView):
