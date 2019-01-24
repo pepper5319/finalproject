@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTMultipartDataTask.m \
-  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTMultipartDataTask.h \
-  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTMultipartStreamReader.h
+  /Users/pepper5319/Desktop/Random\ Code\ Snippets/testCamera/testCamera/node_modules/react-native/React/Base/RCTMultipartDataTask.m \
+  /Users/pepper5319/Desktop/Random\ Code\ Snippets/testCamera/testCamera/node_modules/react-native/React/Base/RCTMultipartDataTask.h \
+  /Users/pepper5319/Desktop/Random\ Code\ Snippets/testCamera/testCamera/node_modules/react-native/React/Base/RCTMultipartStreamReader.h

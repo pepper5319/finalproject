@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/ReactCommon/privatedata/PrivateDataBase.cpp \
-  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/ReactCommon/privatedata/PrivateDataBase.h
+  /Users/pepper5319/Desktop/Random\ Code\ Snippets/testCamera/testCamera/node_modules/react-native/ReactCommon/privatedata/PrivateDataBase.cpp \
+  /Users/pepper5319/Desktop/Random\ Code\ Snippets/testCamera/testCamera/node_modules/react-native/ReactCommon/privatedata/PrivateDataBase.h

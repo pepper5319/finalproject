@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTSubtractionAnimatedNode.m \
-  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTSubtractionAnimatedNode.h \
-  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTValueAnimatedNode.h \
-  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTAnimatedNode.h
+  /Users/pepper5319/Desktop/Random\ Code\ Snippets/testCamera/testCamera/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTSubtractionAnimatedNode.m \
+  /Users/pepper5319/Desktop/Random\ Code\ Snippets/testCamera/testCamera/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTSubtractionAnimatedNode.h \
+  /Users/pepper5319/Desktop/Random\ Code\ Snippets/testCamera/testCamera/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTValueAnimatedNode.h \
+  /Users/pepper5319/Desktop/Random\ Code\ Snippets/testCamera/testCamera/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTAnimatedNode.h
