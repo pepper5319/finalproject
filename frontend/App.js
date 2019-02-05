@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
-import { Button } from './componets/buttons';
 import { picFound } from './actions/picActions.js';
 import ImagePicker from 'react-native-image-picker';
 import { connect } from 'react-redux';
-import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage} from 'react-native-material-cards';
 import ActionBar from 'react-native-action-bar';
+import { Button, Card, Title, Paragraph } from 'react-native-paper';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -45,7 +44,6 @@ class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        
           <ActionBar
             containerStyle={styles.bar}
             backgroundColor={'#000'}
@@ -63,24 +61,16 @@ class App extends Component<Props> {
             ]}
           />
           <Card>
-            <CardImage
-              source={{uri: 'http://placehold.it/480x270'}}
-              title="Above all i am"
-            />
-            <CardAction
-              separator={true}
-              inColumn={false}>
-              <CardButton
-                onPress={() => console.log()}
-                title="Push"
-                color="blue"
-              />
-              <CardButton
-                onPress={() => console.log()}
-                title="later"
-                color="blue"
-              />
-            </CardAction>
+            <Card.Content>
+              <Title>Card title</Title>
+            </Card.Content>
+            <Card.Cover source={{uri: 'http://placehold.it/480x270'}}/>
+            <Card.Actions>
+              <Button>
+                onPress={()=> console.log()}
+                ok
+              </Button>
+            </Card.Actions>
           </Card>
       </View>
     );
@@ -90,15 +80,6 @@ class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff'
-  },
-  buttoncontainer:{
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  restofscreen:{
-    flex: 6,
     backgroundColor: '#fff'
   },
 });

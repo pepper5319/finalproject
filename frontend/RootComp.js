@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import {Provider} from 'react-redux';
 import  App  from './App';
 import store from './store';
+import { Provider as PaperProvider } from 'react-native-paper';
 
 export default class RootComp extends React.Component {
   constructor() {
@@ -11,7 +12,9 @@ export default class RootComp extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <App />
+        <PaperProvider>
+          <App />
+        </PaperProvider>
       </Provider>
     );
   }
