@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from .models import *
 from .permissions import *
 from .serializers import PItemSerializer, RecipeSerializer
+import math
 # Create your views here.
 
 
@@ -18,6 +19,26 @@ class GetRecipesView(generics.ListCreateAPIView):
         user = self.request.user
         recipes = Recipe.objects.all()
         return recipes
+
+    def get_stored_recipies(self):
+        recipes = Recipe.objects.all()
+        pitems = PItem.objects.all()
+        matchingRecipes = []
+        for recipe in recipes:
+            similar = calc_similarities(recipe.ingredients, pitems)
+            if(similar > 0.6):
+                matchingRecipes.append(recipe)
+        return matchingRecipes
+
+    def calc_similarities(l1, l2):
+        sum = 0
+        for ing in l1:
+            for item in l2:
+                short = item if len(item) < len(ing) else ing
+                long = item if len(item) >= len(ing) else ing
+                if short in long:
+                    sum += 1
+        return sum/len(l1)
 
 
 # Url name == 'recipe-detail'
