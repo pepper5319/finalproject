@@ -4,6 +4,8 @@ import { Button } from './componets/buttons';
 import { picFound } from './actions/picActions.js';
 import ImagePicker from 'react-native-image-picker';
 import { connect } from 'react-redux';
+import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage} from 'react-native-material-cards';
+import ActionBar from 'react-native-action-bar';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -43,17 +45,43 @@ class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <View style={[styles.buttoncontainer, styles.titlebar]}>
-          <Button onPress={() => this.getStudents()}>
-            menu
-          </Button>
-          <Text> Home Screen </Text>
-          <Button onPress={this.PhotoPic}>
-            camera
-          </Button>
-        </View>
-        <View style={[styles.buttoncontainer, styles.restofscreen]}>
-        </View>
+        
+          <ActionBar
+            containerStyle={styles.bar}
+            backgroundColor={'#000'}
+            title={'Home Screen'}
+            leftIconName={'menu'}
+            leftbadge={''}
+            onLeftPress={() => this.getStudents()}
+            onTitlePress={() => console.log('Title!')}
+            rightIcons={[
+              {
+                name: 'plus',
+                badge: '1',
+                onPress: () => this.PhotoPic,
+              },
+            ]}
+          />
+          <Card>
+            <CardImage
+              source={{uri: 'http://placehold.it/480x270'}}
+              title="Above all i am"
+            />
+            <CardAction
+              separator={true}
+              inColumn={false}>
+              <CardButton
+                onPress={() => console.log()}
+                title="Push"
+                color="blue"
+              />
+              <CardButton
+                onPress={() => console.log()}
+                title="later"
+                color="blue"
+              />
+            </CardAction>
+          </Card>
       </View>
     );
   }
@@ -62,27 +90,17 @@ class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column'
+    backgroundColor: '#fff'
   },
   buttoncontainer:{
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  titlebar:{
-    backgroundColor: '#09BD09',
-    flexDirection: 'row',
-    justifyContent: 'space-around'
-  },
   restofscreen:{
     flex: 6,
     backgroundColor: '#fff'
   },
-  titletext:{
-    color: 'white',
-    fontSize: 18,
-    fontWeight: '600',
-  }
 });
 
 const mapStateToProps = state => ({

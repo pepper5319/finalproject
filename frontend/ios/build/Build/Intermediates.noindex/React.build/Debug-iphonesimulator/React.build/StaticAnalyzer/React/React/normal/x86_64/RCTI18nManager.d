@@ -1,6 +1,6 @@
 dependencies: \
-  /Users/pepper5319/Desktop/Random\ Code\ Snippets/testCamera/testCamera/node_modules/react-native/React/Modules/RCTI18nManager.m \
-  /Users/pepper5319/Desktop/Random\ Code\ Snippets/testCamera/testCamera/node_modules/react-native/React/Modules/RCTI18nManager.h \
-  /Users/pepper5319/Desktop/Random\ Code\ Snippets/testCamera/testCamera/node_modules/react-native/React/Base/RCTBridgeModule.h \
-  /Users/pepper5319/Desktop/Random\ Code\ Snippets/testCamera/testCamera/node_modules/react-native/React/Base/RCTDefines.h \
-  /Users/pepper5319/Desktop/Random\ Code\ Snippets/testCamera/testCamera/node_modules/react-native/React/Modules/RCTI18nUtil.h
+  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Modules/RCTI18nManager.m \
+  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Modules/RCTI18nManager.h \
+  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Modules/RCTI18nUtil.h
