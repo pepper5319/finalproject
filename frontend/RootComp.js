@@ -5,6 +5,7 @@ import  App  from './App';
 import store from './store';
 import { Provider as PaperProvider } from 'react-native-paper';
 
+
 export default class RootComp extends React.Component {
   constructor() {
     super();

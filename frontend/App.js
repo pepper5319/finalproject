@@ -4,7 +4,8 @@ import { picFound } from './actions/picActions.js';
 import ImagePicker from 'react-native-image-picker';
 import { connect } from 'react-redux';
 import ActionBar from 'react-native-action-bar';
-import { Button, Card, Title, Paragraph } from 'react-native-paper';
+import { Button, Card, Title, Appbar } from 'react-native-paper';
+
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -44,34 +45,23 @@ class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-          <ActionBar
-            containerStyle={styles.bar}
-            backgroundColor={'#000'}
-            title={'Home Screen'}
-            leftIconName={'menu'}
-            leftbadge={''}
-            onLeftPress={() => this.getStudents()}
-            onTitlePress={() => console.log('Title!')}
-            rightIcons={[
-              {
-                name: 'plus',
-                badge: '1',
-                onPress: () => this.PhotoPic,
-              },
-            ]}
-          />
-          <Card>
-            <Card.Content>
-              <Title>Card title</Title>
-            </Card.Content>
-            <Card.Cover source={{uri: 'http://placehold.it/480x270'}}/>
-            <Card.Actions>
-              <Button>
-                onPress={()=> console.log()}
-                ok
-              </Button>
-            </Card.Actions>
-          </Card>
+        <Appbar style={styles.bottom}>
+          <Appbar.Action icon="archive" onPress={() => console.log('Pressed archive')} />
+          <Appbar.Action icon="mail" onPress={() => console.log('Pressed mail')} />
+          <Appbar.Action icon="label" onPress={() => console.log('Pressed label')} />
+          <Appbar.Action icon="delete" onPress={() => console.log('Pressed delete')} />
+        </Appbar>
+        <Card elevation ={6}>
+          <Card.Content>
+            <Title>Card title</Title>
+          </Card.Content>
+          <Card.Cover source={{uri: 'http://placehold.it/480x270'}}/>
+          <Card.Actions>
+            <Button onPress={() => console.log('pressed')} color='#000'>
+              ok
+            </Button>
+          </Card.Actions>
+        </Card>
       </View>
     );
   }
@@ -80,8 +70,15 @@ class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
   },
+  barcontainer:{
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
+  },
+  
 });
 
 const mapStateToProps = state => ({
