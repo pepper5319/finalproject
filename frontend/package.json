@@ -14,9 +14,10 @@
     "react-native-action-bar": "^2.0.5",
     "react-native-collapsingtoolbar": "^1.0.3",
     "react-native-image-picker": "^0.28.0",
-    "react-native-material-cards": "^1.0.9",
     "react-native-paper": "^2.10.1",
     "react-native-vector-icons": "^6.2.0",
+    "react-navigation-drawer": "^1.1.0",
+    "react-native-material-cards": "^1.0.9",
     "react-redux": "^6.0.0",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0"

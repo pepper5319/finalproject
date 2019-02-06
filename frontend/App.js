@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, View, Text, Image} from 'react-native';
 import { picFound } from './actions/picActions.js';
 import ImagePicker from 'react-native-image-picker';
 import { connect } from 'react-redux';
+import SideBar from './navigation/DrawerStyle';
+import { Drawer } from 'native-base';
 import ActionBar from 'react-native-action-bar';
 import { Button, Card, Title, Appbar } from 'react-native-paper';
-
-
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
   android:
@@ -42,11 +42,25 @@ class App extends Component<Props> {
       .catch(err => console.error(err))
   }
 
+  closeDrawer = () => {
+    this.drawer._root.close()
+  };
+  openDrawer = () => {
+    this.drawer._root.open()
+  };
+
   render() {
     return (
-      <View style={styles.container}>
-        <Appbar style={styles.bottom}>
-          <Appbar.Action icon="archive" onPress={() => console.log('Pressed archive')} />
+      
+      <Drawer
+        ref={(ref) => { this.drawer = ref; }}
+        content={<SideBar navigator={this.navigator} />}
+        onClose={() => this.closeDrawer} 
+        openDrawerOffset={0.3}
+        panCloseMask={0.3}	>
+      <View>
+        <Appbar>
+          <Appbar.Action icon="archive" onPress={this.openDrawer} />
           <Appbar.Action icon="mail" onPress={() => console.log('Pressed mail')} />
           <Appbar.Action icon="label" onPress={() => console.log('Pressed label')} />
           <Appbar.Action icon="delete" onPress={() => console.log('Pressed delete')} />
@@ -63,14 +77,16 @@ class App extends Component<Props> {
           </Card.Actions>
         </Card>
       </View>
+      </Drawer>
     );
   }
 }
 
+//PantryScreen props={this.props.url}
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    top: 35
   },
   barcontainer:{
     position: 'absolute',

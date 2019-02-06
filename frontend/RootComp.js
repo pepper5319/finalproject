@@ -2,9 +2,9 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import {Provider} from 'react-redux';
 import  App  from './App';
-import store from './store';
 import { Provider as PaperProvider } from 'react-native-paper';
-
+import store from './store';
+import StatusBar from './statusBar';
 
 export default class RootComp extends React.Component {
   constructor() {
@@ -13,9 +13,11 @@ export default class RootComp extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <PaperProvider>
-          <App />
-        </PaperProvider>
+      <PaperProvider>
+      <StatusBar backgroundColor="#fff" />
+        <App />
+      </PaperProvider>
+
       </Provider>
     );
   }
