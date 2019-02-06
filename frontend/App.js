@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, View, Image} from 'react-native';
 import { Button } from './componets/buttons';
 import { picFound } from './actions/picActions.js';
 import ImagePicker from 'react-native-image-picker';
 import { connect } from 'react-redux';
-
+import SideBar from './navigation/DrawerStyle';
+import { Drawer } from 'native-base';
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
   android:
@@ -40,29 +41,41 @@ class App extends Component<Props> {
       .catch(err => console.error(err))
   }
 
+  closeDrawer = () => {
+    this.drawer._root.close()
+  };
+  openDrawer = () => {
+    this.drawer._root.open()
+  };
+
   render() {
     return (
+      
+      <Drawer
+        ref={(ref) => { this.drawer = ref; }}
+        content={<SideBar navigator={this.navigator} />}
+        onClose={() => this.closeDrawer} 
+        openDrawerOffset={0.3}
+        panCloseMask={0.3}	>
       <View style={styles.container}>
-        <View style={[styles.buttoncontainer, styles.titlebar]}>
-          <Button onPress={() => this.getStudents()}>
-            menu
-          </Button>
-          <Text> Home Screen </Text>
           <Button onPress={this.PhotoPic}>
             camera
           </Button>
-        </View>
-        <View style={[styles.buttoncontainer, styles.restofscreen]}>
-        </View>
+          <Button onPress={this.openDrawer}>
+            Test
+          </Button>
+
       </View>
+      </Drawer>
     );
   }
 }
 
+//PantryScreen props={this.props.url}
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column'
+    top: 35
   },
   buttoncontainer:{
     flex: 1,
