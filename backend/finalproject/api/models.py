@@ -15,6 +15,7 @@ class Recipe(models.Model):
     ingredients = models.TextField()
 
 
+
 class PItem(models.Model):
     static_id = models.CharField(max_length=10)
     name = models.CharField(max_length=200)
@@ -24,3 +25,5 @@ class PItem(models.Model):
     user = models.ForeignKey(PUser,
                              related_name='lists',
                              on_delete=models.CASCADE)
+    def __str__(self):
+        return "{0} - {1}".format(self.name, self.user.username)

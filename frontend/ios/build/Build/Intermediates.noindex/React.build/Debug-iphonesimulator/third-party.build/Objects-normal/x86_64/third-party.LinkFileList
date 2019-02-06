@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/Conv.o
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/StringBase.o
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/raw_logging.o
@@ -14,3 +15,21 @@
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/logging.o
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/json.o
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/BitsFunctexcept.o
+=======
+/Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/Conv.o
+/Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/StringBase.o
+/Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/raw_logging.o
+/Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/signalhandler.o
+/Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/dynamic.o
+/Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/utilities.o
+/Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/MallocImpl.o
+/Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/Bits.o
+/Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/symbolize.o
+/Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/vlog_is_on.o
+/Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/Unicode.o
+/Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/demangle-e0fad1c615993b2725278e25a9c733efc67a869564183b68ceff63bc9453d1d1.o
+/Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/Demangle-e0fad1c615993b2725278e25a9c733ef9c993bc548238add55a807ad7bf8f7b6.o
+/Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/logging.o
+/Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/json.o
+/Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/BitsFunctexcept.o
+>>>>>>> origin/cardclean

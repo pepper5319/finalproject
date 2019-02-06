@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 import api
+import pymysql
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -82,7 +83,12 @@ TEMPLATES = [
 ]
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+       'rest_framework.authentication.TokenAuthentication',
+    ),
 }
 
 WSGI_APPLICATION = 'finalproject.wsgi.application'
@@ -137,16 +143,17 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'pantry',
-#         'USER': 'admin',
-#         'PASSWORD': 'password',
-#         'HOST': 'pantry.cfzuumxbilpn.us-east-2.rds.amazonaws.com',
-#         'PORT': '3306',
-#     }
-# }
+pymysql.install_as_MySQLdb()
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'pantrytest',
+        'USER': 'administrator',
+        'PASSWORD': 'parkerkohl3',
+        'HOST': 'pantrytest.c5i9sxs5cb7n.us-east-1.rds.amazonaws.com',
+        'PORT': '3306',
+    }
+}
 
 # Setting our custom user model
 AUTH_USER_MODEL = 'api.PUser'
