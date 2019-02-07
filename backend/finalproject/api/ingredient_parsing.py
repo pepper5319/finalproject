@@ -63,39 +63,53 @@
 #
 #     return None
 
+# def compare_string(str, saved):
+#     curr = ''
+#     i = j = index = 0
+#     while j < len(str):
+#         print(curr)
+#         if curr == saved:
+#             return curr
+#         elif i >= len(saved) or index >= len(str):
+#             # paranoia check required ?
+#             return None
+#         elif str[index] == saved[i]:
+#             if len(curr) >= 2:
+#                 if curr[-2] == ' ' and curr [-1] == saved[i]:
+#                     index += 1
+#                     i += 1
+#                     continue
+#             if index + 1 < len(str):
+#                 if i + 1 < len(saved):
+#                     if str[index + 1] == ' ' and saved[i + 1] == ' ':
+#                         curr += str[index]
+#                         curr += str[index + 1]
+#                         curr += str[index + 2]
+#                         index += 2
+#                         i += 2
+#                         continue
+#                 else:
+#                     i = 0
+#                     j += 1
+#                     index = j
+#                     continue
+#             curr += saved[i]
+#             index += 1
+#             i += 1
+#         else:
+#             i = 0
+#             j += 1
+#             index = j
+#             curr = ''
+#     return(None)
+
 def compare_string(str, saved):
-    curr = ''
-    i = j = index = 0
-    while j < len(str):
-        print(curr)
-        if curr == saved:
-            return curr
-        elif i >= len(saved) or index >= len(str):
-            # paranoia check required ?
-            return None
-        elif str[index] == saved[i]:
-            if len(curr) >= 2:
-                if curr[-2] == ' ' and curr [-1] == saved[i]:
-                    index += 1
-                    i += 1
-                    continue
-            if index + 1 < len(str):
-                if str[index + 1] == ' ':
-                    curr += str[index]
-                    curr += str[index + 1]
-                    curr += str[index + 2]
-                    index += 2
-                    i += 2
-                    continue
-            curr += saved[i]
-            index += 1
-            i += 1
-        else:
-            i = 0
-            j += 1
-            index = j
+    str_arr = str.split()
+    saved_arr = saved.split()
+
+
+    return(None)
 
 
 
 print(compare_string('fresh olive oil virgin', 'olive oil'))
-print('test' == 'test ')
