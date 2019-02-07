@@ -143,17 +143,17 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-pymysql.install_as_MySQLdb()
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'pantrytest',
-        'USER': 'administrator',
-        'PASSWORD': 'parkerkohl3',
-        'HOST': 'pantrytest.c5i9sxs5cb7n.us-east-1.rds.amazonaws.com',
-        'PORT': '3306',
-    }
-}
+# pymysql.install_as_MySQLdb()
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'pantrytest',
+#         'USER': 'administrator',
+#         'PASSWORD': 'parkerkohl3',
+#         'HOST': 'pantrytest.c5i9sxs5cb7n.us-east-1.rds.amazonaws.com',
+#         'PORT': '3306',
+#     }
+# }
 
 # Setting our custom user model
 AUTH_USER_MODEL = 'api.PUser'

@@ -33,13 +33,33 @@ class App extends Component<Props> {
     });
   };
 
-  getStudents = _ => {
+  getReceipt = _ => {
       fetch('http://localhost:8000/api/Recipes')
       .then(console.log('button pressed!'))
       .then(response => response.json())
     //  .then(response => this.setState({students: response.data}))
       .catch(err => console.error(err))
   }
+  registerUser = _ => {
+    var xhr = new XMLHttpRequest();
+    var url = "http://localhost:8000/api/rest-auth/registration/";
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+          var json = JSON.parse(xhr.responseText);
+          console.log(json.email + ", " + json.password);
+        }
+      };
+    var data = JSON.stringify({
+    "username": "sdfsf",
+    "email": "Tesjksdhfkjsdfhlskjfh@example.com",
+    "password1": "fkjsdfhsdf232232",
+    "password2": "fkjsdfhsdf232232"
+});
+    xhr.send(data);
+  }
+
 
   render() {
     return (
@@ -50,7 +70,7 @@ class App extends Component<Props> {
             title={'Home Screen'}
             leftIconName={'menu'}
             leftbadge={''}
-            onLeftPress={() => this.getStudents()}
+            onLeftPress={() => this.registerUser()}
             onTitlePress={() => console.log('Title!')}
             rightIcons={[
               {
