@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StatusBar, Platform } from 'react-native';
 
 export default function (props) {
-    const height = (Platform.OS === 'ios') ? 35 : 0;
+    const height = (Platform.OS === 'ios') ? 32 : 0;
     const { backgroundColor } = props;
 
     return (
