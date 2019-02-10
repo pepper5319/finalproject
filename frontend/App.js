@@ -3,6 +3,7 @@ import {Platform, StyleSheet, View, Text, Image} from 'react-native';
 import { picFound } from './actions/picActions.js';
 import { connect } from 'react-redux';
 import HomeScreen from './screens/homeScreen.js';
+import LoginScreen from './screens/loginScreen.js';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -20,7 +21,7 @@ class App extends Component<Props> {
   };
   render(){
     return(
-        <HomeScreen/>
+        <LoginScreen/>
     );
   }
 }

@@ -1,11 +1,9 @@
 import React from 'react';
-import {Platform, StyleSheet, View, Text, Image} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import SideBar from '../navigation/drawerStyle';
 import { Drawer } from 'native-base';
 import { Button, Card, Title, Appbar } from 'react-native-paper';
-import { connect } from 'react-redux';
-
 
 export default class HomeScreen extends React.Component {
 
