@@ -1,5 +1,6 @@
 dependencies: \
 <<<<<<< HEAD
+<<<<<<< HEAD
   /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/third-party/double-conversion-1.1.6/src/cached-powers.cc \
   /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/third-party/double-conversion-1.1.6/src/utils.h \
   /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/third-party/double-conversion-1.1.6/src/cached-powers.h \
@@ -10,3 +11,9 @@ dependencies: \
   /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/third-party/double-conversion-1.1.6/src/cached-powers.h \
   /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/third-party/double-conversion-1.1.6/src/diy-fp.h
 >>>>>>> origin/cardclean
+=======
+  /Users/jmarsh15/Desktop/Final-Project/frontend/node_modules/react-native/third-party/double-conversion-1.1.6/src/cached-powers.cc \
+  /Users/jmarsh15/Desktop/Final-Project/frontend/node_modules/react-native/third-party/double-conversion-1.1.6/src/utils.h \
+  /Users/jmarsh15/Desktop/Final-Project/frontend/node_modules/react-native/third-party/double-conversion-1.1.6/src/cached-powers.h \
+  /Users/jmarsh15/Desktop/Final-Project/frontend/node_modules/react-native/third-party/double-conversion-1.1.6/src/diy-fp.h
+>>>>>>> fapi
