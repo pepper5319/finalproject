@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View,AsyncStorage} from 'react-native';
 import { picFound } from './actions/picActions.js';
 import ImagePicker from 'react-native-image-picker';
 import { connect } from 'react-redux';
@@ -33,14 +33,14 @@ class App extends Component<Props> {
     });
   };
 
-  getReceipt = _ => {
+  postReceipt = _ => {
       fetch('http://localhost:8000/api/Recipes')
       .then(console.log('button pressed!'))
       .then(response => response.json())
     //  .then(response => this.setState({students: response.data}))
       .catch(err => console.error(err))
   }
-  registerUser = _ => {
+  registerUser = (First,Last,Email,Username,Password,DOB) => {
     var xhr = new XMLHttpRequest();
     var url = "http://localhost:8000/api/rest-auth/registration/";
     xhr.open("POST", url, true);
@@ -52,13 +52,78 @@ class App extends Component<Props> {
         }
       };
     var data = JSON.stringify({
+    "username": Username,
+    "email": Email,
+    "password1": Password,
+    "password2": Password
+    });
+    xhr.send(data);
+    saveToken()
+  }
+  loginUser = _ => {
+    var xhr = new XMLHttpRequest();
+    var url = "http://localhost:8000/api/rest-auth/login/";
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+          var json = JSON.parse(xhr.responseText);
+          console.log(json.email + ", " + json.password);
+        }
+      };
+    var data = JSON.stringify({
     "username": "sdfsf",
     "email": "Tesjksdhfkjsdfhlskjfh@example.com",
-    "password1": "fkjsdfhsdf232232",
-    "password2": "fkjsdfhsdf232232"
-});
+    "password": "fkjsdfhsdf232232",
+    });
     xhr.send(data);
+    saveToken();
   }
+
+  logoutUser = _ => {
+    var xhr = new XMLHttpRequest();
+    var url = "http://localhost:8000/api/rest-auth/logout/";
+    xhr.open("GET", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send();
+    deleteUserToken()
+  }
+  getUserToken = _ => (){
+    const userToken = async () => {
+      let userToken = '';
+        try {
+          userToken = await AsyncStorage.getItem('userToken') || 'none';
+          }
+            catch (error) {
+              // Error retrieving data
+              console.log(error.message);
+    }
+    return userToken;
+  }
+}
+
+  saveUserToken = _ => (){
+    const userToken = async userId => {
+      try {
+        await AsyncStorage.setItem('userToken', userToken);
+        } catch (error) {
+          // Error retrieving data
+          console.log(error.message);
+        }
+      };
+  }
+
+  deleteUserToken = _ => (){
+    const userToken = async () => {
+    try {
+      await AsyncStorage.removeItem('userToken');
+    } catch (error) {
+      // Error retrieving data
+      console.log(error.message);
+    }
+    }
+  }
+
 
 
   render() {
@@ -70,7 +135,7 @@ class App extends Component<Props> {
             title={'Home Screen'}
             leftIconName={'menu'}
             leftbadge={''}
-            onLeftPress={() => this.registerUser()}
+            onLeftPress={() => this.postReceipt()}
             onTitlePress={() => console.log('Title!')}
             rightIcons={[
               {
