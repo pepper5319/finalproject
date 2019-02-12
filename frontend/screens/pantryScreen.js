@@ -11,7 +11,7 @@ export default class PantryScreen extends React.Component {
             </View>
         );
     }
-} 
+}
 const styles = StyleSheet.create({
     container: {
         flex: 1,
