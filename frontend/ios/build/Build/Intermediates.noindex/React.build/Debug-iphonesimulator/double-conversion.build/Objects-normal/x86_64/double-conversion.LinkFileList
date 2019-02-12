@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/double-conversion.build/Objects-normal/x86_64/bignum-dtoa.o
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/double-conversion.build/Objects-normal/x86_64/bignum.o
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/double-conversion.build/Objects-normal/x86_64/cached-powers.o
@@ -17,3 +18,13 @@
 /Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/double-conversion.build/Objects-normal/x86_64/fixed-dtoa.o
 /Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/double-conversion.build/Objects-normal/x86_64/strtod.o
 >>>>>>> origin/cardclean
+=======
+/Users/jmarsh15/Desktop/Final-Project/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/double-conversion.build/Objects-normal/x86_64/bignum-dtoa.o
+/Users/jmarsh15/Desktop/Final-Project/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/double-conversion.build/Objects-normal/x86_64/bignum.o
+/Users/jmarsh15/Desktop/Final-Project/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/double-conversion.build/Objects-normal/x86_64/cached-powers.o
+/Users/jmarsh15/Desktop/Final-Project/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/double-conversion.build/Objects-normal/x86_64/diy-fp.o
+/Users/jmarsh15/Desktop/Final-Project/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/double-conversion.build/Objects-normal/x86_64/double-conversion.o
+/Users/jmarsh15/Desktop/Final-Project/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/double-conversion.build/Objects-normal/x86_64/fast-dtoa.o
+/Users/jmarsh15/Desktop/Final-Project/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/double-conversion.build/Objects-normal/x86_64/fixed-dtoa.o
+/Users/jmarsh15/Desktop/Final-Project/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/double-conversion.build/Objects-normal/x86_64/strtod.o
+>>>>>>> fapi

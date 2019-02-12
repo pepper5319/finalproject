@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, View, Text, Image} from 'react-native';
+import {Platform, StyleSheet, View, Text, Image,AsyncStorage} from 'react-native';
 import { picFound } from './actions/picActions.js';
 import { navAction } from './actions/navigationAction.js';
 

@@ -1,5 +1,6 @@
 dependencies: \
 <<<<<<< HEAD
+<<<<<<< HEAD
   /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/ReactCommon/jschelpers/JSCWrapper.cpp \
   /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/ReactCommon/jschelpers/JSCWrapper.h \
   /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/third-party/glog-0.3.5/src/glog/logging.h \
@@ -12,3 +13,10 @@ dependencies: \
   /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/third-party/glog-0.3.5/src/glog/log_severity.h \
   /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/third-party/glog-0.3.5/src/glog/vlog_is_on.h
 >>>>>>> origin/cardclean
+=======
+  /Users/jmarsh15/Desktop/Final-Project/frontend/node_modules/react-native/ReactCommon/jschelpers/JSCWrapper.cpp \
+  /Users/jmarsh15/Desktop/Final-Project/frontend/node_modules/react-native/ReactCommon/jschelpers/JSCWrapper.h \
+  /Users/jmarsh15/Desktop/Final-Project/frontend/node_modules/react-native/third-party/glog-0.3.5/src/glog/logging.h \
+  /Users/jmarsh15/Desktop/Final-Project/frontend/node_modules/react-native/third-party/glog-0.3.5/src/glog/log_severity.h \
+  /Users/jmarsh15/Desktop/Final-Project/frontend/node_modules/react-native/third-party/glog-0.3.5/src/glog/vlog_is_on.h
+>>>>>>> fapi

@@ -6,15 +6,82 @@ import { Drawer } from 'native-base';
 import { Button, Card, Title, Appbar } from 'react-native-paper';
 
 export default class HomeScreen extends React.Component {
-
-    PhotoPic = () =>{
-        const options = {
-          noData: true
+        PhotoPic = () =>{
+          const options = {
+            noData: true
+          };
+          ImagePicker.showImagePicker(options, response => {
+            if (response.uri) {
+              this.props.picFound(response.uri);
+              console.log("response", this.props.url);
+            }
+          });
         };
-        ImagePicker.showImagePicker(options, response => {
-          if (response.uri) {
-            this.props.picFound(response.uri);
-            console.log("response", this.props.url);
+
+        postReceipt = _ => {
+            fetch('http://localhost:8000/api/Recipes')
+            .then(console.log('button pressed!'))
+            .then(response => response.json())
+          //  .then(response => this.setState({students: response.data}))
+            .catch(err => console.error(err))
+        }
+        registerUser = (First,Last,Email,Username,Password,DOB) => {
+          var xhr = new XMLHttpRequest();
+          var url = "http://localhost:8000/api/rest-auth/registration/";
+          xhr.open("POST", url, true);
+          xhr.setRequestHeader("Content-Type", "application/json");
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var json = JSON.parse(xhr.responseText);
+                console.log(json.email + ", " + json.password);
+              }
+            };
+          var data = JSON.stringify({
+          "username": Username,
+          "email": Email,
+          "password1": Password,
+          "password2": Password
+          });
+          xhr.send(data);
+          saveToken()
+        }
+        loginUser = _ => {
+          var xhr = new XMLHttpRequest();
+          var url = "http://localhost:8000/api/rest-auth/login/";
+          xhr.open("POST", url, true);
+          xhr.setRequestHeader("Content-Type", "application/json");
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var json = JSON.parse(xhr.responseText);
+                console.log(json.email + ", " + json.password);
+              }
+            };
+          var data = JSON.stringify({
+          "username": "sdfsf",
+          "email": "Tesjksdhfkjsdfhlskjfh@example.com",
+          "password": "fkjsdfhsdf232232",
+          });
+          xhr.send(data);
+          saveToken();
+        }
+
+        logoutUser = _ => {
+          var xhr = new XMLHttpRequest();
+          var url = "http://localhost:8000/api/rest-auth/logout/";
+          xhr.open("GET", url, true);
+          xhr.setRequestHeader("Content-Type", "application/json");
+          xhr.send();
+          deleteUserToken()
+        }
+        getUserToken = _ => (){
+          const userToken = async () => {
+            let userToken = '';
+              try {
+                userToken = await AsyncStorage.getItem('userToken') || 'none';
+                }
+                  catch (error) {
+                    // Error retrieving data
+                    console.log(error.message);
           }
         });
       };
@@ -30,19 +97,42 @@ export default class HomeScreen extends React.Component {
         this.drawer._root.open()
       };
 
-      getStudents = _ => {
-          fetch('http://localhost:8000/api/Recipes')
-          .then(console.log('button pressed!'))
-          .then(response => response.json())
-        //  .then(response => this.setState({students: response.data}))
-          .catch(err => console.error(err))
-      }
+        saveUserToken = _ => (){
+          const userToken = async userId => {
+            try {
+              await AsyncStorage.setItem('userToken', userToken);
+              } catch (error) {
+                // Error retrieving data
+                console.log(error.message);
+              }
+            };
+        }
+
+        deleteUserToken = _ => (){
+          const userToken = async () => {
+          try {
+            await AsyncStorage.removeItem('userToken');
+          } catch (error) {
+            // Error retrieving data
+            console.log(error.message);
+          }
+          }
+        }
 
     render(){
         return(
-          
-      
-  
+            <Drawer
+                ref={(ref) => { this.drawer = ref; }}
+                content={<SideBar navigator={this.navigator} />}
+                onClose={() => this.closeDrawer}
+                openDrawerOffset={0.3}
+                panCloseMask={0.3}>
+            <View>
+                <Appbar style={styles.barcontainer}>
+                    <Appbar.Action icon="menu" onPress={() => console.log('Pressed archive')} />
+                    <Appbar.Content title="Home"/>
+                    <Appbar.Action icon="add-a-photo" onPress={() => console.log('Pressed archive')} />
+                </Appbar>
                 <Card elevation={6}>
                     <Card.Content>
                         <Title>Fuck Me</Title>
@@ -66,5 +156,5 @@ const styles = StyleSheet.create({
     barcontainer:{
       backgroundColor: '#000',
     },
-    
+
   });
