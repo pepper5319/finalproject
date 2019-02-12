@@ -10,6 +10,32 @@ import math
 # Create your views here.
 
 
+
+def updateMatches(user, recipes, thresh):
+    '''
+    user: PUser, object
+    recipes: Recipe, list
+    thresh: float
+    '''
+    matches = []
+    pItems = PItem.objects.filter(user=user)
+    for r in recipes:
+        sim = calc_similarities(r.ingredients.split(','), pItems)
+        if(sim > thresh):
+            matches.append(r.static_id)
+    user.matches = matches
+    user.save()
+
+def calc_similarities(l1, l2):
+    sum = 0
+    for ing in l1:
+        for item in l2:
+            short = item if len(item) < len(ing) else ing
+            long = item if len(item) >= len(ing) else ing
+            if short in long:
+                sum += 1
+    return sum/len(l1)
+
 # Url name == 'recipe-list'
 class GetRecipesView(generics.ListCreateAPIView):
     serializer_class = RecipeSerializer
@@ -29,17 +55,6 @@ class GetRecipesView(generics.ListCreateAPIView):
             if(similar > 0.6):
                 matchingRecipes.append(recipe)
         return matchingRecipes
-
-    def calc_similarities(l1, l2):
-        sum = 0
-        for ing in l1:
-            for item in l2:
-                short = item if len(item) < len(ing) else ing
-                long = item if len(item) >= len(ing) else ing
-                if short in long:
-                    sum += 1
-        return sum/len(l1)
-
 
 # Url name == 'recipe-detail'
 class RecipeDetailView(generics.RetrieveUpdateDestroyAPIView):
