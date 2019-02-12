@@ -208,6 +208,7 @@
 # with open('ingredients.txt', 'r', encoding='utf8') as file:
 #     tempstr = file.read()
 #     print(tempstr)
+
 import json
 
 term_list = []
@@ -223,5 +224,54 @@ for term in term_list:
         if prev is not None:
             dict[prev].append(word)
         prev = word
+
+test_str = "skinless chicken breast halves"
+test_split = test_str.split()
+
+# def search_dict(input_dict, search_term):
+#     ret_str = ''
+#     search_split = search_term.split()
+#     for index, val in enumerate(search_split):
+#         ret_str = ''
+#         if val is in input_dict.keys():
+#             ret_str += val
+#             for i in range(index, len(search_split)):
+#                 if search_split[i] in input_dict[val]:
+#                     ret_str += search_split[i]
+#                     return ret_str
+#
+#     return None
+
+# def search_dict(input_dict, search_term):
+#     '''Searches for ingredient from search_term in dictionary'''
+#     ret_str = ''
+#     search_split = search_term.split()
+#     str_index = 0
+#     while str_index < len(search_split):
+#         # if str_index >= len(search_split):
+#         #     return None
+#         ret_str = ''
+#         if search_split[str_index] in input_dict.keys():
+#             ret_str += search_split[str_index]
+#             next_index = str_index + 1
+#             if next_index >= len(search_split):
+#                 return ret_str
+#             if search_split[next_index] in input_dict[search_split[str_index]]:
+#                 ret_str += ' ' + search_split[next_index]
+#                 dict_index = next_index
+#                 next_index += 1
+#                 if next_index >= len(search_split):
+#                     return ret_str
+#                 if search_split[next_index] in input_dict[search_split[dict_index]]:
+#                     ret_str += ' ' + search_split[next_index]
+#
+#                 return ret_str
+#         else:
+#             str_index += 1
+#
+#     return None
+
+print(search_dict(input_dict=dict, search_term=test_str))
+
 with open('ingredients.json', 'w') as fp:
     json.dump(dict, fp, sort_keys=True)
