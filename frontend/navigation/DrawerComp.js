@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Drawer } from 'native-base';
-import SideBar from './DrawerStyle';
+import SideBar from './drawerStyle';
 import { Button } from '../componets/buttons';
 export default class DrawerComp extends Component {
   render() {
