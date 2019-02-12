@@ -1,8 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import ImagePicker from 'react-native-image-picker';
-import SideBar from '../navigation/drawerStyle';
-import { Drawer } from 'native-base';
 import { Button, Card, Title, Appbar } from 'react-native-paper';
 
 export default class HomeScreen extends React.Component {
@@ -18,7 +16,18 @@ export default class HomeScreen extends React.Component {
           }
         });
       };
-    
+
+      onChangeTag = (tag) => {
+        this.setState({ active: tag })
+        console.log('tag change')
+      }
+      closeDrawer = () => {
+        this.drawer._root.close()
+      };
+      openDrawer = () => {
+        this.drawer._root.open()
+      };
+
       getStudents = _ => {
           fetch('http://localhost:8000/api/Recipes')
           .then(console.log('button pressed!'))
@@ -29,18 +38,6 @@ export default class HomeScreen extends React.Component {
 
     render(){
         return(
-            <Drawer
-                ref={(ref) => { this.drawer = ref; }}
-                content={<SideBar navigator={this.navigator} />}
-                onClose={() => this.closeDrawer} 
-                openDrawerOffset={0.3}
-                panCloseMask={0.3}>
-            <View>
-                <Appbar style={styles.barcontainer}>
-                    <Appbar.Action icon="menu" onPress={() => console.log('Pressed archive')} />
-                    <Appbar.Content title="Home"/>
-                    <Appbar.Action icon="add-a-photo" onPress={() => console.log('Pressed archive')} />
-                </Appbar>
                 <Card elevation={6}>
                     <Card.Content>
                         <Title>Fuck Me</Title>
@@ -52,8 +49,6 @@ export default class HomeScreen extends React.Component {
                         </Button>
                     </Card.Actions>
                 </Card>
-            </View>
-            </Drawer>
         );
     }
 }
