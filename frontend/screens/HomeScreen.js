@@ -83,9 +83,19 @@ export default class HomeScreen extends React.Component {
                     // Error retrieving data
                     console.log(error.message);
           }
-          return userToken;
-        }
+        });
+      };
+
+      onChangeTag = (tag) => {
+        this.setState({ active: tag })
+        console.log('tag change')
       }
+      closeDrawer = () => {
+        this.drawer._root.close()
+      };
+      openDrawer = () => {
+        this.drawer._root.open()
+      };
 
         saveUserToken = _ => (){
           const userToken = async userId => {
@@ -134,8 +144,6 @@ export default class HomeScreen extends React.Component {
                         </Button>
                     </Card.Actions>
                 </Card>
-            </View>
-            </Drawer>
         );
     }
 }
