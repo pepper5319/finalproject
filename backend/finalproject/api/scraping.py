@@ -7,7 +7,6 @@ from bs4 import BeautifulSoup
 
 # Gets Recipe URLs and Image URLs
 def scrape_recipes(str_in):
-    str_in = 'chicken'
     data = requests.get(f'https://www.allrecipes.com/search/results/?wt={str_in}&sort=re')
     soup = BeautifulSoup(''.join(str(data.content)), features="html.parser")
     url_duplicate_check = []
