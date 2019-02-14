@@ -6,7 +6,8 @@ from rest_framework.response import Response
 from .models import *
 from .permissions import *
 from .serializers import PItemSerializer, RecipeSerializer, ReceiptSerializer
-import math
+import math, random, string
+from .user_updates import updateMatches
 # Create your views here.
 
 
@@ -75,6 +76,12 @@ class ReceiptsView(generics.ListCreateAPIView):
             file = self.request.data['file']
         except KeyError:
             raise KeyError('Request has no resource file attached')
-        reciept = Receipt.objects.create(image=file, static_id="fghjfgjghj", user=request.user)
+        x = ''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(10))
+        reciept = Receipt.objects.create(image=file, static_id=x, user=request.user)
         reciept.save()
+        recipes = Recipe.objects.all()
+        pitems = PItem.objects.filter(user=self.request.user)
+
+        updateMatches(self.request.user, recipes, 0.75, pitems)
+
         return Response('Created Receipt {}'.format(reciept.static_id))
