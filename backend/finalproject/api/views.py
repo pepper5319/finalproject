@@ -5,7 +5,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import *
 from .permissions import *
-from .serializers import PItemSerializer, RecipeSerializer
+from .serializers import PItemSerializer, RecipeSerializer, ReceiptSerializer
+import math
 # Create your views here.
 
 
@@ -19,6 +20,15 @@ class GetRecipesView(generics.ListCreateAPIView):
         recipes = Recipe.objects.all()
         return recipes
 
+    def get_stored_recipies(self):
+        recipes = Recipe.objects.all()
+        pitems = PItem.objects.all()
+        matchingRecipes = []
+        for recipe in recipes:
+            similar = calc_similarities(recipe.ingredients, pitems)
+            if(similar > 0.6):
+                matchingRecipes.append(recipe)
+        return matchingRecipes
 
 # Url name == 'recipe-detail'
 class RecipeDetailView(generics.RetrieveUpdateDestroyAPIView):
@@ -51,3 +61,20 @@ class PItemDetailView(generics.RetrieveUpdateDestroyAPIView):
         curUser = self.request.user
         pItems = PItem.objects.filter(user = curUser)
         return pItems
+
+class ReceiptsView(generics.ListCreateAPIView):
+    serializer_class = ReceiptSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def get_queryset(self):
+        recipes = Receipt.objects.all()
+        return recipes
+
+    def post(self, request):
+        try:
+            file = self.request.data['file']
+        except KeyError:
+            raise KeyError('Request has no resource file attached')
+        reciept = Receipt.objects.create(image=file, static_id="fghjfgjghj", user=request.user)
+        reciept.save()
+        return Response('Created Receipt {}'.format(reciept.static_id))

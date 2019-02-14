@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 import api
+import pymysql
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -142,13 +143,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# pymysql.install_as_MySQLdb()
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'pantry',
-#         'USER': 'admin',
-#         'PASSWORD': 'password',
-#         'HOST': 'pantry.cfzuumxbilpn.us-east-2.rds.amazonaws.com',
+#         'NAME': 'pantrytest',
+#         'USER': 'administrator',
+#         'PASSWORD': 'parkerkohl3',
+#         'HOST': 'pantrytest.c5i9sxs5cb7n.us-east-1.rds.amazonaws.com',
 #         'PORT': '3306',
 #     }
 # }
