@@ -1,36 +1,81 @@
-# import requests
-# from bs4 import BeautifulSoup
+import requests
+from bs4 import BeautifulSoup
 # data = requests.get("https://www.allrecipes.com/search/results/?wt=chicken&sort=re")
-# # data = requests.get("https://www.allrecipes.com/")
-# data = str(data.content).replace('\r\n', '').replace("\'", "'").replace('\n', '')
-#
-# soup = BeautifulSoup(''.join(data), features="html.parser")
-#
-# url_duplicate_check = []
-# id_image_url = []
-#
-# # Gets Recipe URLs and Image URLs
-# with open("results.html", "w") as file:
-#     results = soup.find(attrs={'id' : 'fixedGridSection'})
-#     file.write(str(results))
-#     if(results != None):
-#         soup2 = BeautifulSoup(''.join(str(results)), features="html.parser")
-#         for tag in soup2.findAll('ar-save-item'):
-#             if('/userphotos/' in tag['data-imageurl']):
-#                 id_image_url.append({tag['data-id'] : [str(tag['data-imageurl']).replace('\\','').replace("'",''),]})
-#         for tag in soup2.findAll('a'):
-#             if('/recipe/' in tag['href'] and tag['href'] not in url_duplicate_check):
-#                 url_duplicate_check.append(tag['href'])
-#                 for val in id_image_url:
-#                     # the inner loop should only run once
-#                     for key, value in val.items():
-#                         if key in tag['href']:
-#                             val[key].append(tag['href'])
-#
-#
-# with open("urls.txt", "w") as file:
-#     print(id_image_url)
-#
+
+# soup = BeautifulSoup(''.join(str(data.content)), features="html.parser")
+
+
+# Gets Recipe URLs and Image URLs
+def scrape_recipes(str_in):
+    str_in = 'chicken'
+    data = requests.get(f'https://www.allrecipes.com/search/results/?wt={str_in}&sort=re')
+    soup = BeautifulSoup(''.join(str(data.content)), features="html.parser")
+    url_duplicate_check = []
+    id_image_url = []
+    results = soup.body.find(attrs={'id' : 'fixedGridSection'})
+    if(results != None):
+        soup2 = BeautifulSoup(''.join(str(results)), features="html.parser")
+        for tag in soup2.findAll('ar-save-item')[:5]:
+            if('/userphotos/' in tag['data-imageurl']):
+                # temp = [tag['data-id']]
+                # temp.append(str(tag['data-imageurl']).replace('\\','').replace("'",''))
+                id_image_url.append([tag['data-id'], str(tag['data-imageurl']).replace('\\','').replace("'",''),])
+                # id_image_url.append({tag['data-id'] : [str(tag['data-imageurl']).replace('\\','').replace("'",''),]})
+        for tag in soup2.findAll('a'):
+            if('/recipe/' in tag['href'] and tag['href'] not in url_duplicate_check):
+                url_duplicate_check.append(tag['href'])
+                for val in id_image_url:
+                    if val[0] in tag['href']:
+                        val.append(tag['href'])
+                    # the inner loop should only run once
+                    # for key, value in val.items():
+                    #     if key in tag['href']:
+                    #         val[key].append(tag['href'])
+    return id_image_url
+
+def scrape_ingredients(recipe_list):
+    cooking_keywords = ['teaspoon', 'teaspoons', 'tablespoon', 'tablespoons', 'cup',
+                        'cups', 'pint', 'pints', 'ounce', 'ounces', 'pound',
+                        'pounds', 'dash', 'pinch', 'quart', 'quarts',
+                        'gallon', 'gallons', 'fresh']
+
+    cooking_keyword_abbrv = ['t', 'tsp', 'T', 'Tsbp', 'c', 'oz', 'pt', 'qt', 'gal',
+                             'lb', '#']
+    with open('ingredients3.txt', 'w') as file:
+        for val in recipe_list:
+            for str_term in val:
+                file.write(str(str_term) + ', ')
+            data = requests.get(val[-1])
+            soup = BeautifulSoup(''.join(str(data.content)), features="html.parser")
+            ingredient_list = []
+            results = soup.body.findAll(attrs={'itemprop' : 'recipeIngredient'})
+            for ingredient in results:
+                str_ingredient = str(ingredient.string)
+                str_ingredient = str_ingredient.replace(',', '')
+                arr = []
+                arr = str_ingredient.split()
+                final_ingredient = ''
+                for val in arr:
+                    if val.isalpha() == True:
+                        if val == 'or':
+                            break
+                        if str(val) not in cooking_keywords and str(val) not in cooking_keyword_abbrv:
+                            final_ingredient += val + ' '
+
+                ingredient_list.append(final_ingredient.strip().lower())
+
+            for str_ingredient in ingredient_list:
+                file.write(str(str_ingredient) + ', ')
+            file.write('\n')
+
+scrape_ingredients(scrape_recipes('chicken'))
+# with open("ingredients.txt") as file:
+#     for val in ingredient_list:
+#         file.write(val)
+
+
+# print(id_image_url)
+# with open("urls.txt", "a") as file:
 #     for val in id_image_url:
 #         for key, value in val.items():
 #             file.write(key + ',')
@@ -209,24 +254,24 @@
 #     tempstr = file.read()
 #     print(tempstr)
 
-import json
-
-term_list = []
-with open('ingredients.txt', 'r') as file:
-    term_list = file.read().split(',')
-dict = {}
-for term in term_list:
-    word_list = term.split()
-    prev = None
-    for word in word_list:
-        if word not in dict.keys():
-            dict[word] = []
-        if prev is not None:
-            dict[prev].append(word)
-        prev = word
-
-test_str = "skinless chicken breast halves"
-test_split = test_str.split()
+# import json
+#
+# term_list = []
+# with open('ingredients.txt', 'r') as file:
+#     term_list = file.read().split(',')
+# dict = {}
+# for term in term_list:
+#     word_list = term.split()
+#     prev = None
+#     for word in word_list:
+#         if word not in dict.keys():
+#             dict[word] = []
+#         if prev is not None:
+#             dict[prev].append(word)
+#         prev = word
+#
+# test_str = "skinless chicken breast halves"
+# test_split = test_str.split()
 
 # def search_dict(input_dict, search_term):
 #     ret_str = ''
@@ -270,8 +315,8 @@ test_split = test_str.split()
 #             str_index += 1
 #
 #     return None
-
-print(search_dict(input_dict=dict, search_term=test_str))
-
-with open('ingredients.json', 'w') as fp:
-    json.dump(dict, fp, sort_keys=True)
+#
+# print(search_dict(input_dict=dict, search_term=test_str))
+#
+# with open('ingredients.json', 'w') as fp:
+#     json.dump(dict, fp, sort_keys=True)
