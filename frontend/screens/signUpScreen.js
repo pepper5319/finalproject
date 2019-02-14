@@ -92,7 +92,10 @@ export default class SignUpScreen extends React.Component {
                         onChangeText={textYear => this.setState({ textYear })}
                     />
                 </View>
-                <Button style={styles.Buttontest} mode="contained" onPress={() => console.log('Pressed')}>
+                <Button style={styles.Buttontest} mode="contained" onPress={() => 
+                
+    this.props.changeTag2('home')
+}>
                     Create Account
                 </Button>
             </View>
