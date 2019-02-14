@@ -4,7 +4,7 @@ import { Plataform, Dimensions } from 'react-native'
 import { Drawer } from 'react-native-paper';
 import PantryScreen from '../screens/pantryScreen'
 import SettingScreen from '../screens/settingScreen'
-import { navAction } from '../actions/navigationAction.js';
+import { navAction } from '../actions/navigationAction';
 
 
 export default class DrawerStyle extends React.Component {
@@ -23,23 +23,23 @@ export default class DrawerStyle extends React.Component {
 
           <Drawer.Item
             label="Menu"
-            active={active === 'first'}
-            onPress={() => { this.setState({ active: 'first' });
-            this.props.changeTag('first')
+            active={active === 'home'}
+            onPress={() => { this.setState({ active: 'home' });
+            this.props.changeTag('home')
           }}
           />
           <Drawer.Item
             label="Pantry"
-            active={active === 'second'}
-            onPress={() => { this.setState({ active: 'second' });
-            this.props.changeTag('second')
+            active={active === 'pantry'}
+            onPress={() => { this.setState({ active: 'pantry' });
+            this.props.changeTag('pantry')
           }}
           />
           <Drawer.Item
-            label="Settings"
-            active={active === 'third'}
-            onPress={() => { this.setState({ active: 'third' });
-            this.props.changeTag('third')
+            label="Register"
+            active={active === 'signup'}
+            onPress={() => { this.setState({ active: 'signup' });
+            this.props.changeTag('signup')
           }}
           />
 
