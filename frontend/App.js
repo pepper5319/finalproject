@@ -2,8 +2,10 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, View, Text, Image,AsyncStorage} from 'react-native';
 import { picFound } from './actions/picActions.js';
 import { connect } from 'react-redux';
-import HomeScreen from './screens/homeScreen.js';
+//import HomeScreen from './screens/homeScreen.js';
 import SignUpScreen from './screens/signUpScreen.js';
+import LoginScreen from './screens/loginScreen.js';
+import LogoutScreen from './screens/logoutScreen.js';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',

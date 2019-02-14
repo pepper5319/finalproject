@@ -14,13 +14,29 @@ export default class SignUpScreen extends React.Component {
         textDay:'',
         textYear:'',
     };
+    registerUser = () => {
 
-    onFocus(){
-        this.setState({
-            borderColor:'black'
-        })
+      if (this.state.textpass === this.state.textpassC && this.state.textemail != '' && this.state.textuser != '' && this.state.textpass != '' && this.state.textpassC != '') {
+      var xhr = new XMLHttpRequest();
+      var url = "http://localhost:8000/api/rest-auth/registration/";
+      xhr.open("POST", url, true);
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            var json = JSON.parse(xhr.responseText);
+            console.log(json)
+            console.log(json.email + ", " + json.password);
+          }
+        };
+      var data = JSON.stringify({
+      "username": this.state.textuser,
+      "email": this.state.textemail,
+      "password1": this.state.textpass,
+      "password2": this.state.textpassC
+      });
+      xhr.send(data);
     }
-   
+  }
     render(){
         return(
             <View style={styles.Contain}>
@@ -92,7 +108,7 @@ export default class SignUpScreen extends React.Component {
                         onChangeText={textYear => this.setState({ textYear })}
                     />
                 </View>
-                <Button style={styles.Buttontest} mode="contained" onPress={() => console.log('Pressed')}>
+                <Button style={styles.Buttontest} mode="contained" onPress={this.registerUser}>
                     Create Account
                 </Button>
             </View>

@@ -22,57 +22,11 @@ export default class HomeScreen extends React.Component {
             fetch('http://localhost:8000/api/Recipes')
             .then(console.log('button pressed!'))
             .then(response => response.json())
-          //  .then(response => this.setState({students: response.data}))
+            .then(response => this.setState({students: response.data}))
             .catch(err => console.error(err))
         }
-        registerUser = (First,Last,Email,Username,Password,DOB) => {
-          var xhr = new XMLHttpRequest();
-          var url = "http://localhost:8000/api/rest-auth/registration/";
-          xhr.open("POST", url, true);
-          xhr.setRequestHeader("Content-Type", "application/json");
-          xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                var json = JSON.parse(xhr.responseText);
-                console.log(json.email + ", " + json.password);
-              }
-            };
-          var data = JSON.stringify({
-          "username": Username,
-          "email": Email,
-          "password1": Password,
-          "password2": Password
-          });
-          xhr.send(data);
-          saveToken()
-        }
-        loginUser = _ => {
-          var xhr = new XMLHttpRequest();
-          var url = "http://localhost:8000/api/rest-auth/login/";
-          xhr.open("POST", url, true);
-          xhr.setRequestHeader("Content-Type", "application/json");
-          xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                var json = JSON.parse(xhr.responseText);
-                console.log(json.email + ", " + json.password);
-              }
-            };
-          var data = JSON.stringify({
-          "username": "sdfsf",
-          "email": "Tesjksdhfkjsdfhlskjfh@example.com",
-          "password": "fkjsdfhsdf232232",
-          });
-          xhr.send(data);
-          saveToken();
-        }
 
-        logoutUser = _ => {
-          var xhr = new XMLHttpRequest();
-          var url = "http://localhost:8000/api/rest-auth/logout/";
-          xhr.open("GET", url, true);
-          xhr.setRequestHeader("Content-Type", "application/json");
-          xhr.send();
-          deleteUserToken()
-        }
+        
         getUserToken = _ => (){
           const userToken = async () => {
             let userToken = '';
