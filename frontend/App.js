@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import SignUpScreen from './screens/signUpScreen.js';
 import LoginScreen from './screens/loginScreen.js';
 import LogoutScreen from './screens/logoutScreen.js';
+import TestScreen from './screens/testScreen.js';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -23,7 +24,7 @@ class App extends Component<Props> {
   };
   render(){
     return(
-        <SignUpScreen/>
+        <TestScreen/>
     );
   }
 }
