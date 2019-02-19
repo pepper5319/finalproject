@@ -1,6 +1,6 @@
 import requests
 import json
-from ingredient_parsing import search_dict
+from ingredient_parsing import search_dict, plural_to_singular
 from bs4 import BeautifulSoup
 
 def scraper(str_in):
@@ -83,12 +83,12 @@ def scrape_ingredients(recipe_list_obj):
                 if val == 'or':
                     break
                 if str(val) not in cooking_keywords and str(val) not in cooking_keyword_abbrv:
-                    final_ingredient += val + ' '
+                    final_ingredient += plural_to_singular(val) + ' '
         final_ingredient = search_dict(input_dict=ingredient_dict, search_term=final_ingredient.strip().lower())
         if final_ingredient is not None:
-            if final_ingredient in dont_include_list:
+            if final_ingredient not in dont_include_list:
                 if final_ingredient not in ingredient_list:
-                    ingredient_list.append(final_ingredient)
+                    ingredient_list.append(final_ingredient.strip())
     recipe_list_obj.append(ingredient_list)
     return recipe_list_obj
 
