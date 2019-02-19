@@ -9,6 +9,7 @@ from .serializers import PItemSerializer, RecipeSerializer, ReceiptSerializer
 import math, random, string
 from .user_updates import updateMatches
 from .scraping import *
+from django.http import HttpResponse
 # Create your views here.
 
 
@@ -34,7 +35,7 @@ class GetRecipesView(generics.ListCreateAPIView):
 
 class GetNewRecipesView(generics.ListCreateAPIView):
     serializer_class = RecipeSerializer
-    permission_classes = (permissions.IsAuthenticated)
+    permission_classes = (permissions.IsAuthenticated,)
 
     def get_queryset(self):
         user = self.request.user
@@ -45,8 +46,11 @@ class GetNewRecipesView(generics.ListCreateAPIView):
         scrape_results = scraper(recipe)
 
         for r in scrape_results:
-            new_recipe = Recipe.objects.create(static_id=r[0], image_url=r[1], recipe_url=r[2], name=r[3], ingredients=r[4])
-            new_recipe.save()
+            try:
+                new_recipe = Recipe.objects.get(static_id=r[0])
+            except Recipe.DoesNotExist:
+                new_recipe = Recipe.objects.create(static_id=r[0], image_url=r[1], recipe_url=r[2], name=r[3], ingredients=r[4])
+                new_recipe.save()
 
         recipes = Recipe.objects.all()
         return recipes
