@@ -8,6 +8,7 @@ from .permissions import *
 from .serializers import PItemSerializer, RecipeSerializer, ReceiptSerializer
 import math, random, string
 from .user_updates import updateMatches
+from .scraping import *
 # Create your views here.
 
 
@@ -21,7 +22,7 @@ class GetRecipesView(generics.ListCreateAPIView):
         recipes = Recipe.objects.all()
         return recipes
 
-    def get_stored_recipies(self):
+    def get_stored_recipes(self):
         recipes = Recipe.objects.all()
         pitems = PItem.objects.all()
         matchingRecipes = []
@@ -30,6 +31,25 @@ class GetRecipesView(generics.ListCreateAPIView):
             if(similar > 0.6):
                 matchingRecipes.append(recipe)
         return matchingRecipes
+
+class GetNewRecipesView(generics.ListCreateAPIView):
+    serializer_class = RecipeSerializer
+    permission_classes = (permissions.IsAuthenticated)
+
+    def get_queryset(self):
+        user = self.request.user
+        try:
+            recipe = self.request.data['recipe']
+        except KeyError:
+            raise KeyError('Request has no recipe query attached')
+        scrape_results = scraper(recipe)
+
+        for r in scrape_results:
+            new_recipe = Recipe.objects.create(static_id=r[0], image_url=r[1], recipe_url=r[2], name=r[3], ingredients=r[4])
+            new_recipe.save()
+
+        recipes = Recipe.objects.all()
+        return recipes
 
 # Url name == 'recipe-detail'
 class RecipeDetailView(generics.RetrieveUpdateDestroyAPIView):
