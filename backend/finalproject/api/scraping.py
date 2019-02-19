@@ -1,7 +1,9 @@
 import requests
 import json
-from ingredient_parsing import search_dict, plural_to_singular
+from .ingredient_parsing import search_dict, plural_to_singular
 from bs4 import BeautifulSoup
+import os.path
+BASE = os.path.dirname(os.path.abspath(__file__))
 
 def scraper(str_in):
     '''
@@ -69,7 +71,7 @@ def scrape_ingredients(recipe_list_obj):
     results = soup.body.findAll(attrs={'itemprop' : 'recipeIngredient'})
     recipe_name = str(soup2.head.title.string).replace('Recipe - Allrecipes.com', '').replace('\\', '').strip()
     recipe_list_obj.append(recipe_name)
-    with open('ingredients.json') as file:
+    with open(os.path.join(BASE, 'ingredients.json')) as file:
         ingredient_dict = json.load(file)
 
     for ingredient in results:
@@ -133,7 +135,7 @@ def scrape_ingredients(recipe_list_obj):
             #     file.write(str(str_ingredient) + ', ')
             # file.write('\n')
 
-scraper('chicken')
+# scraper('chicken')
 
 # scrape_ingredients(scrape_recipes('chicken'))
 # with open("ingredients.txt") as file:
