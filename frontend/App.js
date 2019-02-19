@@ -1,38 +1,36 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, View, Text, Image,AsyncStorage} from 'react-native';
 import { picFound } from './actions/picActions.js';
+import { navAction } from './actions/navigationAction.js';
 import { connect } from 'react-redux';
 //import HomeScreen from './screens/homeScreen.js';
 import SignUpScreen from './screens/signUpScreen.js';
 import LoginScreen from './screens/loginScreen.js';
 import LogoutScreen from './screens/logoutScreen.js';
 import TestScreen from './screens/testScreen.js';
+import MainNavigation from './mainNavigation.js';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
 
 type Props = {};
-
 class App extends Component<Props> {
 
+  state = {
+    active: 'first'
+  };
   constructor() {
     super();
   };
-  render(){
-    return(
-        <TestScreen/>
+
+  render() {
+    return (
+    <MainNavigation/>
     );
+
   }
 }
 
 const mapStateToProps = state => ({
   url: state.pics.picURL,
+  tag: state.tags.activeTag
 });
 
-//#endregion
-
-export default connect(mapStateToProps, { picFound })(App);
+export default connect(mapStateToProps, { picFound, navAction })(App);
