@@ -1,12 +1,24 @@
 import requests
+import json
+from ingredient_parsing import search_dict
 from bs4 import BeautifulSoup
-# data = requests.get("https://www.allrecipes.com/search/results/?wt=chicken&sort=re")
 
-# soup = BeautifulSoup(''.join(str(data.content)), features="html.parser")
+def scraper(str_in):
+    '''
+    Scrapes recipes based on passed in string keyword
+    Returns a list of recipe list objects
+    '''
+    final_recipe_list = []
+    id_image_url = scrape_recipes(str_in=str_in)
+    for recipe_list in id_image_url:
+        recipe_list = scrape_ingredients(recipe_list)
+        final_recipe_list.append(recipe_list)
+    return final_recipe_list
 
-
-# Gets Recipe URLs and Image URLs
 def scrape_recipes(str_in):
+    '''
+    Gets Recipe URLs and Image URLs
+    '''
     data = requests.get(f'https://www.allrecipes.com/search/results/?wt={str_in}&sort=re')
     soup = BeautifulSoup(''.join(str(data.content)), features="html.parser")
     url_duplicate_check = []
@@ -32,7 +44,15 @@ def scrape_recipes(str_in):
                     #         val[key].append(tag['href'])
     return id_image_url
 
-def scrape_ingredients(recipe_list):
+def scrape_ingredients(recipe_list_obj):
+    '''Takes in a recipe list object in this format:
+    [static_id, image_url, recipe_url]
+
+    Returns a recipe list object in this format:
+    [static_id, image_url, recipe_url, recipe_name, ingredient_list]
+
+    ingredient_list is a list of ingredient strings
+    '''
     cooking_keywords = ['teaspoon', 'teaspoons', 'tablespoon', 'tablespoons', 'cup',
                         'cups', 'pint', 'pints', 'ounce', 'ounces', 'pound',
                         'pounds', 'dash', 'pinch', 'quart', 'quarts',
@@ -40,34 +60,82 @@ def scrape_ingredients(recipe_list):
 
     cooking_keyword_abbrv = ['t', 'tsp', 'T', 'Tsbp', 'c', 'oz', 'pt', 'qt', 'gal',
                              'lb', '#']
-    with open('ingredients3.txt', 'w') as file:
-        for val in recipe_list:
-            for str_term in val:
-                file.write(str(str_term) + ', ')
-            data = requests.get(val[-1])
-            soup = BeautifulSoup(''.join(str(data.content)), features="html.parser")
-            ingredient_list = []
-            results = soup.body.findAll(attrs={'itemprop' : 'recipeIngredient'})
-            for ingredient in results:
-                str_ingredient = str(ingredient.string)
-                str_ingredient = str_ingredient.replace(',', '')
-                arr = []
-                arr = str_ingredient.split()
-                final_ingredient = ''
-                for val in arr:
-                    if val.isalpha() == True:
-                        if val == 'or':
-                            break
-                        if str(val) not in cooking_keywords and str(val) not in cooking_keyword_abbrv:
-                            final_ingredient += val + ' '
+    dont_include_list = ['and', 'whole', 'condensed', 'hot', 'cold']
+    ingredient_list = []
+    ingredient_dict = {}
+    data = requests.get(recipe_list_obj[-1])
+    soup = BeautifulSoup(''.join(str(data.content)), features="html.parser")
+    soup2 = soup
+    results = soup.body.findAll(attrs={'itemprop' : 'recipeIngredient'})
+    recipe_name = str(soup2.head.title.string).replace('Recipe - Allrecipes.com', '').replace('\\', '').strip()
+    recipe_list_obj.append(recipe_name)
+    with open('ingredients.json') as file:
+        ingredient_dict = json.load(file)
 
-                ingredient_list.append(final_ingredient.strip().lower())
+    for ingredient in results:
+        str_ingredient = str(ingredient.string)
+        str_ingredient = str_ingredient.replace(',', '')
+        arr = []
+        arr = str_ingredient.split()
+        final_ingredient = ''
+        for val in arr:
+            if val.isalpha() == True:
+                if val == 'or':
+                    break
+                if str(val) not in cooking_keywords and str(val) not in cooking_keyword_abbrv:
+                    final_ingredient += val + ' '
+        final_ingredient = search_dict(input_dict=ingredient_dict, search_term=final_ingredient.strip().lower())
+        if final_ingredient is not None:
+            if final_ingredient in dont_include_list:
+                if final_ingredient not in ingredient_list:
+                    ingredient_list.append(final_ingredient)
+    recipe_list_obj.append(ingredient_list)
+    return recipe_list_obj
 
-            for str_ingredient in ingredient_list:
-                file.write(str(str_ingredient) + ', ')
-            file.write('\n')
+# def scrape_ingredients(recipe_list):
+#     cooking_keywords = ['teaspoon', 'teaspoons', 'tablespoon', 'tablespoons', 'cup',
+#                         'cups', 'pint', 'pints', 'ounce', 'ounces', 'pound',
+#                         'pounds', 'dash', 'pinch', 'quart', 'quarts',
+#                         'gallon', 'gallons', 'fresh']
+#
+#     cooking_keyword_abbrv = ['t', 'tsp', 'T', 'Tsbp', 'c', 'oz', 'pt', 'qt', 'gal',
+#                              'lb', '#']
+#     with open('recipe2.html', 'w') as file:
+#         # for val in recipe_list:
+#             # for str_term in val:
+#                 # file.write(str(str_term) + ', ')
+#             # data = requests.get(val[-1])
+#         data = requests.get("https://www.allrecipes.com/recipe/23874/catherines-spicy-chicken-soup/?clickId=right%20rail0&internalSource=rr_feed_recipe_sb&referringId=223042%20referringContentType%3Drecipe")
+#         file.write(str(data.content))
+#         soup = BeautifulSoup(''.join(str(data.content)), features="html.parser")
+#         ingredient_list = []
+#         results = soup.body.findAll(attrs={'itemprop' : 'recipeIngredient'})
+#         results2 = str(soup.head.title.string).replace('Recipe - Allrecipes.com', '').replace('\\', '').strip()
+#         print(str(results2))
+#         # with open('recipe.html', 'w') as file:
+#
+#         for ingredient in results:
+#             str_ingredient = str(ingredient.string)
+#             str_ingredient = str_ingredient.replace(',', '')
+#             arr = []
+#             arr = str_ingredient.split()
+#             final_ingredient = ''
+#             for val in arr:
+#                 if val.isalpha() == True:
+#                     if val == 'or':
+#                         break
+#                     if str(val) not in cooking_keywords and str(val) not in cooking_keyword_abbrv:
+#                         final_ingredient += val + ' '
+#
+#             ingredient_list.append(final_ingredient.strip().lower())
 
-scrape_ingredients(scrape_recipes('chicken'))
+            # for str_ingredient in ingredient_list:
+            #     file.write(str(str_ingredient) + ', ')
+            # file.write('\n')
+
+scraper('chicken')
+
+# scrape_ingredients(scrape_recipes('chicken'))
 # with open("ingredients.txt") as file:
 #     for val in ingredient_list:
 #         file.write(val)
