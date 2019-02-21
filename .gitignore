@@ -1,3 +1,4 @@
 backend/env/
 backend/env_windows/
 backend/finalproject/db.sqlite3
+backend/finalproject/api/test_files
