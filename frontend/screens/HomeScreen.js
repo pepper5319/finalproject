@@ -52,6 +52,7 @@ class HomeScreen extends React.Component {
           <CardComp imgUri={'http://placehold.it/480x270'} titleTxt={'Home Screen'}/>
       </View>
       </Drawer>
+
     );
   }
 }

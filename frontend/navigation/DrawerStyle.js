@@ -35,6 +35,13 @@ export default class DrawerStyle extends React.Component {
             this.props.changeTag('pantry')
           }}
           />
+           <Drawer.Item
+            label="Recipe"
+            active={active === 'recipe'}
+            onPress={() => { this.setState({ active: 'recipe' });
+            this.props.changeTag('recipe')
+          }}
+          />
           <Drawer.Item
             label="Register"
             active={active === 'signup'}

@@ -3,6 +3,7 @@ import { picFound } from './actions/picActions.js';
 import { navAction } from './actions/navigationAction.js';
 import { connect } from 'react-redux';
 import MainNavigation from './mainNavigation.js';
+console.disableYellowBox = true;
 
 type Props = {};
 class App extends Component<Props> {
@@ -21,7 +22,6 @@ class App extends Component<Props> {
     
   }
 }
-
 const mapStateToProps = state => ({
   url: state.pics.picURL,
   tag: state.tags.activeTag

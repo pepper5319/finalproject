@@ -53,9 +53,9 @@ class RecipeScreen extends React.Component {
                 </View>
                 <ScrollView>
                 <CardCompRecepie imgUri={'https://images.media-allrecipes.com/userphotos/560x315/430299.jpg'} titleTxt={'Quick Shrimp Scampi Pasta'} viewClick={this.props.changeTag5}/>
-                <CardCompRecepie imgUri={'https://images.media-allrecipes.com/userphotos/560x315/1035686.jpg'} titleTxt={'Surf and Turf for Two'}/>
-                <CardCompRecepie imgUri={'https://images.media-allrecipes.com/userphotos/560x315/1001596.jpg'} titleTxt={'Best Buttermilk Biscuits'}/>
-                <CardCompRecepie imgUri={'https://images.media-allrecipes.com/userphotos/600x600/397070.jpg'} titleTxt={'Meatball Nirvana'}/>
+                <CardCompRecepie imgUri={'https://images.media-allrecipes.com/userphotos/560x315/1035686.jpg'} titleTxt={'Surf and Turf for Two'} viewClick={this.props.changeTag5}/>
+                <CardCompRecepie imgUri={'https://images.media-allrecipes.com/userphotos/560x315/1001596.jpg'} titleTxt={'Best Buttermilk Biscuits'} viewClick={this.props.changeTag5}/>
+                <CardCompRecepie imgUri={'https://images.media-allrecipes.com/userphotos/600x600/397070.jpg'} titleTxt={'Meatball Nirvana'} viewClick={this.props.changeTag5}/>
                 </ScrollView>
             </Drawer>
         );
