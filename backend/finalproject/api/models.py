@@ -13,7 +13,7 @@ class PUser(AbstractUser):
 class Recipe(models.Model):
     static_id = models.CharField(max_length=10, primary_key=True)
     name = models.CharField(max_length=200)
-    description = models.CharField(max_length=200)
+    recipe_url = models.CharField(max_length=200)
     image_url = models.CharField(max_length=200)
     ingredients = models.TextField()
 

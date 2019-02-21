@@ -17,8 +17,8 @@ def calc_similarities(l1, l2):
     sum = 0
     for ing in l1:
         for item in l2:
-            short = item if len(item) < len(ing) else ing
-            long = item if len(item) >= len(ing) else ing
+            short = item.name.lower() if len(item.name) < len(ing) else ing.lower()
+            long = item.name.lower() if len(item.name) >= len(ing) else ing.lower()
             if short in long:
                 sum += 1
     return sum/len(l1)
