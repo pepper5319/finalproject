@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View, Text,AsyncStorage} from 'react-native';
 import { TextInput,Button } from 'react-native-paper';
 
 export default class SignUpScreen extends React.Component {
@@ -15,6 +15,13 @@ export default class SignUpScreen extends React.Component {
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             var json = JSON.parse(xhr.responseText);
+            _storeData = async () => {
+          try {
+            await AsyncStorage.setItem('Token', JSON.stringify(json));
+          } catch (error) {
+            // Error saving data
+          }
+        };
             console.log(json);
           }
         };
@@ -24,6 +31,7 @@ export default class SignUpScreen extends React.Component {
       });
       xhr.send(data);
     }
+
     render(){
         return(
             <View style={styles.Contain}>

@@ -22,7 +22,23 @@ class PantryScreen extends React.Component {
       }
     });
   };
-
+  getPItems = _ => {
+    var xhr = new XMLHttpRequest();
+    var url = "http://localhost:8000/api/pItems/";
+    xhr.open("GET", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.setRequestHeader('Authorization', 'Token ' + "5d337a8d11a03c854f6c8a46b894e42ebe460e29")
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+          var json = JSON.parse(xhr.responseText);
+          //this.state.pantry(json)
+          console.log(json);
+        }
+      };
+    var data = JSON.stringify({
+    });
+    xhr.send();
+  }
   onChangeTag = (tag) => {
     this.setState({ active: tag })
     console.log('tag change')
@@ -39,11 +55,11 @@ class PantryScreen extends React.Component {
     return (
       <Drawer
       ref={(ref) => { this.drawer = ref; }}
-      content={<SideBar 
+      content={<SideBar
         navigator={this.navigator}
         changeTag={this.onChangeTag.bind(this)}
         />}
-        onClose={() => this.closeDrawer} 
+        onClose={() => this.closeDrawer}
         onPress={() => this.closeDrawer}
         openDrawerOffset={0.3}
         panCloseMask={0.3}>

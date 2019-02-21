@@ -8,11 +8,28 @@ export default class SignUpScreen extends React.Component {
         textpass:''
     };
     logoutUser = _ => {
+      _retrieveData = async () => {
+        try {
+          const value = await AsyncStorage.getItem('Token');
+          if (value !== null) {
+          }
+        } catch (error) {
+        }
+      };
       var xhr = new XMLHttpRequest();
       var url = "http://localhost:8000/api/rest-auth/logout/";
       xhr.open("GET", url, true);
       xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.setRequestHeader('Authorization', 'Token ' + value)
       xhr.send();
+      _deleteData = async () => {
+        try {
+          const value = await AsyncStorage.removeItem('Token');
+          if (value !== null) {
+          }
+        } catch (error) {
+        }
+      };
     }
     render(){
         return(

@@ -9,56 +9,40 @@ import { navAction } from '../actions/navigationAction.js';
 import { connect } from 'react-redux';
 import NavbarComp from '../componets/navbarComp.js'
 import CardComp from '../componets/cardComp.js'
-class HomeScreen extends React.Component {
 
-export default class HomeScreen extends React.Component {
+class HomeScreen extends React.Component {
         PhotoPic = () =>{
           const options = {
             noData: true
           };
           ImagePicker.showImagePicker(options, response => {
             if (response.uri) {
+              postReceipt(response.uri)
               this.props.picFound(response.uri);
               console.log("response", this.props.url);
             }
           });
         };
 
-        postReceipt = _ => {
-            fetch('http://localhost:8000/api/Recipes')
-            .then(console.log('button pressed!'))
-            .then(response => response.json())
-            .then(response => this.setState({students: response.data}))
-            .catch(err => console.error(err))
+        postReceipt = (url) => {
+          var xhr = new XMLHttpRequest();
+          var url = "http://localhost:8000/api/receipt/";
+          xhr.open("GET", url, true);
+          xhr.setRequestHeader("Content-Type", "application/json");
+          xhr.setRequestHeader('Authorization', 'Token ' + this.state.userToken)
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var json = JSON.parse(xhr.responseText);
+                console.log(json);
+              }
+            };
+          var data = JSON.stringify({
+          //  'url' = url
+          });
+          xhr.send(data);
         }
 
 
-        getUserToken = _ => (){
-          const userToken = async () => {
-            let userToken = '';
-              try {
-                userToken = await AsyncStorage.getItem('userToken') || 'none';
-                }
-                  catch (error) {
-                    // Error retrieving data
-                    console.log(error.message);
-          }
-          return userToken;
-        }
-      }
-    });
-  };
-  PhotoPic = () => {
-    const options = {
-      noData: true
-    };
-    ImagePicker.showImagePicker(options, response => {
-      if (response.uri) {
-        this.props.picFound(response.uri);
-        console.log("response", this.props.url);
-      }
-    });
-  };
   onChangeTag = (tag) => {
     this.setState({ active: tag })
     console.log('tag change')

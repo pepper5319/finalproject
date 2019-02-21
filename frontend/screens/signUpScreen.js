@@ -24,6 +24,13 @@ export default class SignUpScreen extends React.Component {
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             var json = JSON.parse(xhr.responseText);
+              _storeData = async () => {
+                try {
+                  await AsyncStorage.setItem('Token', JSON.stringify(json));
+                } catch (error) {
+                  // Error saving data
+                }
+              };
             console.log(json)
             console.log(json.email + ", " + json.password);
           }
