@@ -11,4 +11,3 @@ if [ -z "${RCT_NO_LAUNCH_PACKAGER+xxx}" ] ; then
     open "$SRCROOT/../scripts/launchPackager.command" || echo "Can't start packager automatically"
   fi
 fi
-
