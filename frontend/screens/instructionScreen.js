@@ -52,21 +52,22 @@ class InstructionScreen extends React.Component {
                 <View>
                     <BasicBackNav button1={this.props.changeTag6} titleTxt={'Instruction'} />
                 </View>
+
                 <View style={styles.contain}>
                     <Image
                         style={styles.stretch}
-                        source={{ uri: 'https://images-gmi-pmc.edge-generalmills.com/95d68a7f-2ff6-4f4c-af2a-5e3c7d0e0d35.jpg' }} />
+                        source={{ uri: 'https://images.media-allrecipes.com/userphotos/300x300/4572704.jpg' }} />
                 <Text style={{fontWeight:'bold', fontSize: 22}}>Ingredients</Text>
 
                 {ingredients.map((ingredients) =>
                     <Text>{ingredients}</Text>
                 )}
-                <Text style={{fontWeight:'bold', fontSize: 22}}>Instructions</Text>
+                <Text style={{fontWeight:'bold', fontSize: 22}}>Instruction URL</Text>
                 <View style={styles.webView}>
                 <WebView
-        source={{uri: 'https://github.com/facebook/react-native'}}
+        source={{uri: 'https://www.allrecipes.com/recipe/223042/chicken-parmesan/'}}
         style={{marginTop: 20}}
-      />
+        />
                 </View>
 
                 </View>
@@ -74,9 +75,7 @@ class InstructionScreen extends React.Component {
         );
     }
 }
-const ingredients = ['16 ounces penne pasta', '3-4 large chicken breast',
-    '1/tsp of salt, pepper and garlic powder', '2 tbsp butter', '2 tbsp olive oil', '1/4 cup presto',
-    '1 and 1/4 cup heavy cream', '1/4 cup grated parmesan cheese'];
+const ingredients = ['chicken breast', 'salt', 'egg', 'bread crumb', 'parmesan cheese', 'flour', 'olive oil', 'tomato', 'mozzarella', 'basil', 'provolone cheese'];
 
 
 const styles = StyleSheet.create({
@@ -96,7 +95,7 @@ const styles = StyleSheet.create({
     },
     webView: {
         width: 350,
-        height: 200,
+        height: 300,
     }
 });
 

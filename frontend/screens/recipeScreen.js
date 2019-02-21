@@ -52,7 +52,7 @@ class RecipeScreen extends React.Component {
                     <NavbarComp button1={this.openDrawer} button2={this.PhotoPic} titleTxt={'Recipe'} />
                 </View>
                 <ScrollView>
-                <CardCompRecepie imgUri={'https://images.media-allrecipes.com/userphotos/560x315/430299.jpg'} titleTxt={'Quick Shrimp Scampi Pasta'} viewClick={this.props.changeTag5}/>
+                <CardCompRecepie imgUri={'https://images.media-allrecipes.com/userphotos/300x300/4572704.jpg'} titleTxt={'Quick Shrimp Scampi Pasta'} viewClick={this.props.changeTag5}/>
                 <CardCompRecepie imgUri={'https://images.media-allrecipes.com/userphotos/560x315/1035686.jpg'} titleTxt={'Surf and Turf for Two'} viewClick={this.props.changeTag5}/>
                 <CardCompRecepie imgUri={'https://images.media-allrecipes.com/userphotos/560x315/1001596.jpg'} titleTxt={'Best Buttermilk Biscuits'} viewClick={this.props.changeTag5}/>
                 <CardCompRecepie imgUri={'https://images.media-allrecipes.com/userphotos/600x600/397070.jpg'} titleTxt={'Meatball Nirvana'} viewClick={this.props.changeTag5}/>

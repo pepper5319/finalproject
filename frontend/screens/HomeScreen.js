@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, ScrollView } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import { Button, Card, Title, Appbar } from 'react-native-paper';
 import { Drawer } from 'native-base';
@@ -9,6 +9,8 @@ import { navAction } from '../actions/navigationAction.js';
 import { connect } from 'react-redux';
 import NavbarComp from '../componets/navbarComp.js'
 import CardComp from '../componets/cardComp.js'
+import CardCompRecepie from '../componets/cardCompRecepie.js';
+
 class HomeScreen extends React.Component {
 
   PhotoPic = () => {
@@ -49,8 +51,14 @@ class HomeScreen extends React.Component {
         panCloseMask={0.3}>
       <View>
           <NavbarComp  button1={this.openDrawer} button2={this.PhotoPic} titleTxt={'Home'}/>
-          <CardComp imgUri={'http://placehold.it/480x270'} titleTxt={'Home Screen'}/>
       </View>
+      <ScrollView>
+        <CardComp imgUri={'https://images.media-allrecipes.com/userphotos/560x315/430299.jpg'} titleTxt={'Quick Shrimp Scampi Pasta'} />
+        <CardComp imgUri={'https://images.media-allrecipes.com/userphotos/560x315/430299.jpg'} titleTxt={'Quick Shrimp Scampi Pasta'} />
+        <CardComp imgUri={'https://images.media-allrecipes.com/userphotos/560x315/430299.jpg'} titleTxt={'Quick Shrimp Scampi Pasta'} />
+
+      </ScrollView>
+          
       </Drawer>
 
     );
