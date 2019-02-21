@@ -36,7 +36,7 @@ export default class SignUpScreen extends React.Component {
     }
     render() {
         return (
-            <ImageBackground source={require('../backgroundImages/brooke-lark-230140-unsplash.jpg')} style={{ width: '100%', height: '100%' }}>
+            <ImageBackground source={require('../backgroundImages/food.jpg')} style={{ width: '100%', height: '100%' }}>
                 <View style={{padding: 16}}>
                     <TextInput
                         theme={{ colors: { primary: 'black' } }}

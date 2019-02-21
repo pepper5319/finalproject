@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import { TextInput,Button } from 'react-native-paper';
 
-export default class SignUpScreen extends React.Component {
+export default class LogoutScreen extends React.Component {
     state = {
         textuser:'',
         textpass:''
