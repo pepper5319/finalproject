@@ -6,8 +6,7 @@ import os.path
 BASE = os.path.dirname(os.path.abspath(__file__))
 
 def scraper(str_in):
-    '''
-    Scrapes recipes based on passed in string keyword
+    '''Scrapes recipes based on passed in string keyword
     Returns a list of recipe list objects
     '''
     final_recipe_list = []
@@ -18,8 +17,7 @@ def scraper(str_in):
     return final_recipe_list
 
 def scrape_recipes(str_in):
-    '''
-    Gets Recipe URLs and Image URLs
+    '''Gets Recipe URLs and Image URLs
     '''
     data = requests.get(f'https://www.allrecipes.com/search/results/?wt={str_in}&sort=re')
     soup = BeautifulSoup(''.join(str(data.content)), features="html.parser")
@@ -48,6 +46,7 @@ def scrape_ingredients(recipe_list_obj):
 
     ingredient_list is a list of ingredient strings
     '''
+
     cooking_keywords = ['teaspoon', 'teaspoons', 'tablespoon', 'tablespoons', 'cup',
                         'cups', 'pint', 'pints', 'ounce', 'ounces', 'pound',
                         'pounds', 'dash', 'pinch', 'quart', 'quarts',

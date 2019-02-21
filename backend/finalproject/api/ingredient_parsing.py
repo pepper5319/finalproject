@@ -27,9 +27,7 @@ def search_dict(input_dict, search_term):
     return None
 
 def plural_to_singular(input_string):
-    '''
-    Converts passed in string to singular form if the word is plural
-    '''
+    '''Converts passed in string to singular form if the word is plural'''
     str_in = list(input_string)
     if str_in[-1] == 's' and str_in[-2] != 's':
         if str_in[-2] == 'e':
