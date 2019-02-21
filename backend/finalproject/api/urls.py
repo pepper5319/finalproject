@@ -4,6 +4,8 @@ from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatters = [
     path('recipes/', views.GetRecipesView.as_view(), name='recipe-list'),
+    path('recipes/new-recipes/', views.GetNewRecipesView.as_view(), name='recipe-new'),
+    path('receipts/', views.ReceiptsView.as_view(), name='receipt-list'),
     path('recipes/<int:pk>', views.RecipeDetailView.as_view(),
          name='recipe-detail'),
     path('pItems/', views.GetPItemsView.as_view(),

@@ -5,8 +5,11 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import *
 from .permissions import *
-from .serializers import PItemSerializer, RecipeSerializer
-import math
+from .serializers import PItemSerializer, RecipeSerializer, ReceiptSerializer
+import math, random, string
+from .user_updates import updateMatches
+from .scraping import *
+from django.http import HttpResponse
 # Create your views here.
 
 
@@ -20,7 +23,7 @@ class GetRecipesView(generics.ListCreateAPIView):
         recipes = Recipe.objects.all()
         return recipes
 
-    def get_stored_recipies(self):
+    def get_stored_recipes(self):
         recipes = Recipe.objects.all()
         pitems = PItem.objects.all()
         matchingRecipes = []
@@ -30,16 +33,27 @@ class GetRecipesView(generics.ListCreateAPIView):
                 matchingRecipes.append(recipe)
         return matchingRecipes
 
-    def calc_similarities(l1, l2):
-        sum = 0
-        for ing in l1:
-            for item in l2:
-                short = item if len(item) < len(ing) else ing
-                long = item if len(item) >= len(ing) else ing
-                if short in long:
-                    sum += 1
-        return sum/len(l1)
+class GetNewRecipesView(generics.ListCreateAPIView):
+    serializer_class = RecipeSerializer
+    permission_classes = (permissions.IsAuthenticated,)
 
+    def get_queryset(self):
+        user = self.request.user
+        try:
+            recipe = self.request.data['recipe']
+        except KeyError:
+            raise KeyError('Request has no recipe query attached')
+        scrape_results = scraper(recipe)
+
+        for r in scrape_results:
+            try:
+                new_recipe = Recipe.objects.get(static_id=r[0])
+            except Recipe.DoesNotExist:
+                new_recipe = Recipe.objects.create(static_id=r[0], image_url=r[1], recipe_url=r[2], name=r[3], ingredients=r[4])
+                new_recipe.save()
+
+        recipes = Recipe.objects.all()
+        return recipes
 
 # Url name == 'recipe-detail'
 class RecipeDetailView(generics.RetrieveUpdateDestroyAPIView):
@@ -72,3 +86,26 @@ class PItemDetailView(generics.RetrieveUpdateDestroyAPIView):
         curUser = self.request.user
         pItems = PItem.objects.filter(user = curUser)
         return pItems
+
+class ReceiptsView(generics.ListCreateAPIView):
+    serializer_class = ReceiptSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def get_queryset(self):
+        recipes = Receipt.objects.all()
+        return recipes
+
+    def post(self, request):
+        try:
+            file = self.request.data['file']
+        except KeyError:
+            raise KeyError('Request has no resource file attached')
+        x = ''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(10))
+        reciept = Receipt.objects.create(image=file, static_id=x, user=request.user)
+        reciept.save()
+        recipes = Recipe.objects.all()
+        pitems = PItem.objects.filter(user=self.request.user)
+
+        updateMatches(self.request.user, recipes, 0.75, pitems)
+
+        return Response('Created Receipt {}'.format(reciept.static_id))
