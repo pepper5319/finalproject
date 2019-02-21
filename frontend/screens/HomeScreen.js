@@ -3,7 +3,7 @@ import { StyleSheet, View, ScrollView } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import { Button, Card, Title, Appbar } from 'react-native-paper';
 import { Drawer } from 'native-base';
-import SideBar from '../navigation/drawerStyle';
+import DrawerStyle from '../navigation/drawerStyle.js';
 import { picFound } from '../actions/picActions.js';
 import { navAction } from '../actions/navigationAction.js';
 import { connect } from 'react-redux';
@@ -12,7 +12,6 @@ import CardComp from '../componets/cardComp.js'
 import CardCompRecepie from '../componets/cardCompRecepie.js';
 
 class HomeScreen extends React.Component {
-
   PhotoPic = () => {
     const options = {
       noData: true
@@ -25,6 +24,14 @@ class HomeScreen extends React.Component {
     });
   };
 
+  postReceipt = _ => {
+    fetch('http://localhost:8000/api/Recipes')
+      .then(console.log('button pressed!'))
+      .then(response => response.json())
+      .then(response => this.setState({ students: response.data }))
+      .catch(err => console.error(err))
+  };
+  
   onChangeTag = (tag) => {
     this.setState({ active: tag })
     console.log('tag change')
@@ -40,12 +47,12 @@ class HomeScreen extends React.Component {
   render() {
     return (
       <Drawer
-      ref={(ref) => { this.drawer = ref; }}
-      content={<SideBar 
-        navigator={this.navigator}
-        changeTag={this.onChangeTag.bind(this)}
+        ref={(ref) => { this.drawer = ref; }}
+        content={<DrawerStyle
+          navigator={this.navigator}
+          changeTag={this.onChangeTag.bind(this)}
         />}
-        onClose={() => this.closeDrawer} 
+        onClose={() => this.closeDrawer}
         onPress={() => this.closeDrawer}
         openDrawerOffset={0.3}
         panCloseMask={0.3}>

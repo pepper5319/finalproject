@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import { Drawer } from 'native-base';
-import SideBar from '../navigation/drawerStyle';
+import DrawerStyle from '../navigation/drawerStyle';
 import { picFound } from '../actions/picActions.js';
 import { navAction } from '../actions/navigationAction.js';
 import { connect } from 'react-redux';
@@ -39,7 +39,7 @@ class PantryScreen extends React.Component {
     return (
       <Drawer
       ref={(ref) => { this.drawer = ref; }}
-      content={<SideBar 
+      content={<DrawerStyle 
         navigator={this.navigator}
         changeTag={this.onChangeTag.bind(this)}
         />}
