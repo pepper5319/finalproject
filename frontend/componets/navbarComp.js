@@ -16,7 +16,7 @@ export default class NavbarComp extends React.Component {
 
 const styles = StyleSheet.create({
     barcontainer: {
-      backgroundColor: '#000',
+      backgroundColor: 'rgb(255,0,0)',
     },
   
   });
