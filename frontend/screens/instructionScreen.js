@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ScrollView, Image, StyleSheet, Text, ListView, WebView } from 'react-native';
+import { View, ScrollView, Image, StyleSheet, Text, ListView, Button } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import { Drawer } from 'native-base';
 import SideBar from '../navigation/drawerStyle';
@@ -7,6 +7,7 @@ import { picFound } from '../actions/picActions.js';
 import { navAction } from '../actions/navigationAction.js';
 import { connect } from 'react-redux';
 import BasicBackNav from '../componets/basicBackNav';
+import WebViewComp from '../componets/webViewComp'
 
 class InstructionScreen extends React.Component {
 
@@ -50,7 +51,7 @@ class InstructionScreen extends React.Component {
                 openDrawerOffset={0.3}
                 panCloseMask={0.3}>
                 <View>
-                    <BasicBackNav button1={this.props.changeTag6} titleTxt={'Instruction'} />
+                    <BasicBackNav button1={this.props.changeTag6} backTo={'recipe'} titleTxt={'Instruction'} />
                 </View>
 
                 <View style={styles.contain}>
@@ -62,14 +63,7 @@ class InstructionScreen extends React.Component {
                 {ingredients.map((ingredients) =>
                     <Text>{ingredients}</Text>
                 )}
-                <Text style={{fontWeight:'bold', fontSize: 22}}>Instruction URL</Text>
-                <View style={styles.webView}>
-                <WebView
-        source={{uri: 'https://www.allrecipes.com/recipe/223042/chicken-parmesan/'}}
-        style={{marginTop: 20}}
-        />
-                </View>
-
+                <Button onPress={() => {this.props.changeTag6('web')}} title="Instruction URL" color="black" />
                 </View>
             </Drawer>
         );
@@ -96,7 +90,7 @@ const styles = StyleSheet.create({
     webView: {
         width: 350,
         height: 300,
-    }
+    },
 });
 
 const mapStateToProps = state => ({

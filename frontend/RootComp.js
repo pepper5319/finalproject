@@ -14,7 +14,7 @@ export default class RootComp extends React.Component {
     return (
       <Provider store={store}>
       <PaperProvider>
-      <StatusBar backgroundColor="#fff" />
+      <StatusBar backgroundColor="gray" />
         <App />
       </PaperProvider>
 

@@ -6,7 +6,7 @@ export default class BasicBackNav extends React.Component {
     render() {
         return(
             <Appbar style={styles.barcontainer}>
-            <Appbar.Action icon="chevron-left" onPress={() => {this.props.button1('recipe')}} />
+            <Appbar.Action icon="chevron-left" onPress={() => {this.props.button1(this.props.backTo)}} />
             <Appbar.Content title={this.props.titleTxt} />
             </Appbar>
         )
