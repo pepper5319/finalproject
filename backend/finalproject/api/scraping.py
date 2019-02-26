@@ -1,6 +1,6 @@
 import requests
 import json
-from .ingredient_parsing import search_dict, plural_to_singular
+from .ingredient_parsing import search_dict, plural_to_singular, handle_special_characters
 from bs4 import BeautifulSoup
 import os.path
 BASE = os.path.dirname(os.path.abspath(__file__))
@@ -58,11 +58,11 @@ def scrape_ingredients(recipe_list_obj):
     cooking_keywords = ['teaspoon', 'teaspoons', 'tablespoon', 'tablespoons', 'cup',
                         'cups', 'pint', 'pints', 'ounce', 'ounces', 'pound',
                         'pounds', 'dash', 'pinch', 'quart', 'quarts',
-                        'gallon', 'gallons', 'fresh', 'freshly', 'ground']
+                        'gallon', 'gallons', 'fresh', 'freshly', 'ground', 'delicious']
 
     cooking_keyword_abbrv = ['t', 'tsp', 'T', 'Tsbp', 'c', 'oz', 'pt', 'qt', 'gal',
                              'lb', '#']
-    dont_include_list = ['and', 'whole', 'condensed', 'hot', 'cold']
+    dont_include_list = ['and', 'whole', 'condensed', 'hot', 'cold', 'delicious']
     ingredient_list = []
     ingredient_dict = {}
     data = requests.get(recipe_list_obj[-1])
@@ -70,13 +70,13 @@ def scrape_ingredients(recipe_list_obj):
     soup2 = soup
     results = soup.body.findAll(attrs={'itemprop' : 'recipeIngredient'})
     recipe_name = str(soup2.head.title.string).replace('Recipe - Allrecipes.com', '').replace('\\', '').strip()
-    recipe_list_obj.append(recipe_name)
+    recipe_list_obj.append(handle_special_characters(recipe_name))
     with open(os.path.join(BASE, 'ingredients.json')) as file:
         ingredient_dict = json.load(file)
 
     for ingredient in results:
         str_ingredient = str(ingredient.string)
-        str_ingredient = str_ingredient.replace(',', '')
+        str_ingredient = handle_special_characters(str_ingredient.replace(',', ''))
         arr = []
         arr = str_ingredient.split()
         final_ingredient = ''
