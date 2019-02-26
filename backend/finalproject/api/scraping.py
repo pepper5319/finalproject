@@ -58,7 +58,8 @@ def scrape_ingredients(recipe_list_obj):
     cooking_keywords = ['teaspoon', 'teaspoons', 'tablespoon', 'tablespoons', 'cup',
                         'cups', 'pint', 'pints', 'ounce', 'ounces', 'pound',
                         'pounds', 'dash', 'pinch', 'quart', 'quarts',
-                        'gallon', 'gallons', 'fresh', 'freshly', 'ground', 'delicious']
+                        'gallon', 'gallons', 'fresh', 'freshly', 'ground', 'delicious',
+                        'crushed']
 
     cooking_keyword_abbrv = ['t', 'tsp', 'T', 'Tsbp', 'c', 'oz', 'pt', 'qt', 'gal',
                              'lb', '#']
