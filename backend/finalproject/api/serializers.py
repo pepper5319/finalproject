@@ -5,7 +5,7 @@ from api.models import PItem, Recipe, Receipt
 class RecipeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Recipe
-        fields = ('static_id', 'name', 'description', 'image_url',
+        fields = ('static_id', 'name', 'recipe_url', 'image_url',
                   'ingredients')
 
 
