@@ -1,4 +1,10 @@
 dependencies: \
+<<<<<<< HEAD
+  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Profiler/RCTProfile.m \
+  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Profiler/RCTProfile.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTDefines.h
+=======
   /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Profiler/RCTProfile.m \
   /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Profiler/RCTProfile.h \
   /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Base/RCTAssert.h \
@@ -29,3 +35,4 @@ dependencies: \
   /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Modules/RCTUIManager.h \
   /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Base/RCTRootView.h \
   /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Modules/RCTUIManagerUtils.h
+>>>>>>> origin/cardclean
