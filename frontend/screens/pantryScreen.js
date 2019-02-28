@@ -53,6 +53,7 @@ class PantryScreen extends React.Component {
         <PantryList titleTxt={'Frosted Flakes'} descripTxt={'They are great!!!'} imgUri={'https://target.scene7.com/is/image/Target/GUEST_b9491cf3-7323-43b3-ae9a-8edfa5dcae0d?wid=488&hei=488&fmt=pjpeg'}/>
         <PantryList titleTxt={'BootyO\'s'} descripTxt={'Feel the power of the booty!!!'} imgUri={'https://cdn11.bigcommerce.com/s-0kvv9/images/stencil/1280x1280/products/142346/198390/api0yadvp__30948.1474917330.jpg?c=2&imbypass=on'}/>
         <PantryList titleTxt={'Lucky Charms'} descripTxt={'Don\'t Take my charms'} imgUri={'https://target.scene7.com/is/image/Target/GUEST_cafaa775-b2de-40f4-b24d-210b5ae54379?wid=488&hei=488&fmt=pjpeg'}/>
+        
 
       </Drawer>
     );
