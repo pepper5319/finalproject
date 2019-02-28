@@ -6,7 +6,7 @@
 	<integer>9</integer>
 	<key>logs</key>
 	<dict>
-		<key>3F46D5EF-AC0E-4501-9ED1-7876427984A1</key>
+		<key>E858FC40-4644-4E93-A26C-970E32239274</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -15,9 +15,9 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>3F46D5EF-AC0E-4501-9ED1-7876427984A1.xcactivitylog</string>
+			<string>E858FC40-4644-4E93-A26C-970E32239274.xcactivitylog</string>
 			<key>highLevelStatus</key>
-			<string>S</string>
+			<string>E</string>
 			<key>schemeIdentifier-containerName</key>
 			<string>testCamera project</string>
 			<key>schemeIdentifier-schemeName</key>
@@ -27,13 +27,13 @@
 			<key>signature</key>
 			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>569991162.47519898</real>
+			<real>572853005.74690402</real>
 			<key>timeStoppedRecording</key>
-			<real>569991163.62638605</real>
+			<real>572853006.59740496</real>
 			<key>title</key>
 			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>3F46D5EF-AC0E-4501-9ED1-7876427984A1</string>
+			<string>E858FC40-4644-4E93-A26C-970E32239274</string>
 		</dict>
 	</dict>
 </dict>

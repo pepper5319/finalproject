@@ -25,3 +25,29 @@ def search_dict(input_dict, search_term):
             str_index += 1
 
     return None
+
+def plural_to_singular(input_string):
+    '''
+    Converts passed in string to singular form if the word is plural
+    '''
+    str_in = list(input_string)
+    if str_in[-1] == 's' and str_in[-2] != 's':
+        if str_in[-2] == 'e':
+            # if str_in[-3] == 'v':
+            #     str_in[-3] = 'f'
+            #     return "".join(str_in[:-1])
+            if str_in[-3] == 'i':
+                str_in[-3] = 'y'
+                return "".join(str_in[:-2])
+            if str_in[-3] == 'o':
+                return "".join(str_in[:-2])
+            if str_in[-3] == 'x' or str_in[-3] == 'z':
+                return "".join(str_in[:-2])
+            if len(str_in) > 4:
+                if str_in[-4] == 'c' and str_in[-3] == 'h':
+                    return "".join(str_in[:-2])
+                if str_in[-4] == 's' and str_in[-3] == 'h':
+                    return "".join(str_in[:-2])
+            return "".join(str_in[:-1])
+        return "".join(str_in[:-1])
+    return input_string
