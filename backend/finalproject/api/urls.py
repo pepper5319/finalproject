@@ -12,6 +12,8 @@ urlpatters = [
          name='pItem-list'),
     path('pItems/<int:pk>', views.PItemDetailView.as_view(),
          name='pItem-detail'),
+     path('pItems/add-items/', views.AddPItemsView.as_view(),
+          name='pItem-add'),
     path('rest-auth/', include('rest_auth.urls')),
     path('rest-auth/registration/', include('rest_auth.registration.urls'))
 ]
