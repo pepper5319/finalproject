@@ -8,7 +8,6 @@ import { navAction } from '../actions/navigationAction.js';
 import { connect } from 'react-redux';
 import BasicBackNav from '../componets/basicBackNav';
 import WebViewComp from '../componets/webViewComp'
-import InstructionComp from '../componets/instructionComp'
 class InstructionScreen extends React.Component {
 
 
