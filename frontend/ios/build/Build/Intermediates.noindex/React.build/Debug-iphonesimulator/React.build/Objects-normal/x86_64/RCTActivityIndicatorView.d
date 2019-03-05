@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Views/RCTActivityIndicatorView.m \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Views/RCTActivityIndicatorView.h
+  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Views/RCTActivityIndicatorView.m \
+  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Views/RCTActivityIndicatorView.h

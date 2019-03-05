@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Modules/RCTRedBoxExtraDataViewController.m \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Modules/RCTRedBoxExtraDataViewController.h
+  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Modules/RCTRedBoxExtraDataViewController.m \
+  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Modules/RCTRedBoxExtraDataViewController.h

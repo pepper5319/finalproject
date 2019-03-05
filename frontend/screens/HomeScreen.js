@@ -1,7 +1,6 @@
 import React from 'react';
-import { StyleSheet, View, ScrollView } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
-import { Button, Card, Title, Appbar } from 'react-native-paper';
 import { Drawer } from 'native-base';
 import DrawerStyle from '../navigation/drawerStyle.js';
 import { picFound } from '../actions/picActions.js';
