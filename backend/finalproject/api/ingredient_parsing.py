@@ -51,3 +51,34 @@ def plural_to_singular(input_string):
             return "".join(str_in[:-1])
         return "".join(str_in[:-1])
     return input_string
+
+def handle_special_characters(input_string):
+    '''
+    Removes special characters from the input_string and replaces them with normal characters if possible.
+    '''
+    input_string = input_string.replace('xc2xae','')
+    input_string = input_string.replace('xc2xa9','')
+    input_string = input_string.replace('xc2xe0','a')
+    input_string = input_string.replace('xc2xe1','a')
+    input_string = input_string.replace('xc2xe2','a')
+    input_string = input_string.replace('xc2xe3','a')
+    input_string = input_string.replace('xc2xe7','c')
+    input_string = input_string.replace('xc2xe8','e')
+    input_string = input_string.replace('xc2xe9','e')
+    input_string = input_string.replace('xc2xea','e')
+    input_string = input_string.replace('xc2xec','i')
+    input_string = input_string.replace('xc2xed','i')
+    input_string = input_string.replace('xc2xee','i')
+    input_string = input_string.replace('xc2xef','i')
+    input_string = input_string.replace('xc2xf0','o')
+    input_string = input_string.replace('xc2xf1','n')
+    input_string = input_string.replace('xc2xf2','o')
+    input_string = input_string.replace('xc2xf3','o')
+    input_string = input_string.replace('xc2xf4','o')
+    input_string = input_string.replace('xc2xf5','o')
+    input_string = input_string.replace('xc2xf6','o')
+    input_string = input_string.replace('xc2xf9','u')
+    input_string = input_string.replace('xc2xfa','u')
+    input_string = input_string.replace('xc2xfb','u')
+    input_string = input_string.replace('xc2xfc','u')
+    return input_string
