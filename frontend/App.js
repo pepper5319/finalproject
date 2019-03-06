@@ -8,6 +8,7 @@ import LoginScreen from './screens/loginScreen.js';
 import LogoutScreen from './screens/logoutScreen.js';
 import TestScreen from './screens/testScreen.js';
 import MainNavigation from './mainNavigation.js';
+console.disableYellowBox = true;
 
 
 type Props = {};
@@ -27,7 +28,6 @@ class App extends Component<Props> {
 
   }
 }
-
 const mapStateToProps = state => ({
   url: state.pics.picURL,
   tag: state.tags.activeTag
