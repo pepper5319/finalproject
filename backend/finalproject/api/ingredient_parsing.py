@@ -30,6 +30,9 @@ def plural_to_singular(input_string):
     '''
     Converts passed in string to singular form if the word is plural
     '''
+    edge_cases = ["molasses"]
+    if input_string in edge_cases:
+        return input_string
     str_in = list(input_string)
     if str_in[-1] == 's' and str_in[-2] != 's':
         if str_in[-2] == 'e':
