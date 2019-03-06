@@ -1,21 +1,22 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Provider } from 'react-redux';
+import Main from './Main';
+//#region Import Actions and Reducers
+import {addNumber} from "./redux/actions/mathActions";
+import {subtractNumber} from "./redux/actions/mathActions";
+import store from "./redux/store";
+//#endregion
 
 export default class App extends React.Component {
+  constructor() {
+    super();
+  };
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
+      <Provider store={store}>
+        <Main />
+      </Provider>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
