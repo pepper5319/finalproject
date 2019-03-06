@@ -63,7 +63,7 @@ def scrape_ingredients(recipe_list_obj):
 
     cooking_keyword_abbrv = ['t', 'tsp', 'T', 'Tsbp', 'c', 'oz', 'pt', 'qt', 'gal',
                              'lb', '#']
-    dont_include_list = ['and', 'whole', 'condensed', 'hot', 'cold', 'delicious', 'food', 'liquid']
+    dont_include_list = ['and', 'whole', 'condensed', 'hot', 'cold', 'delicious', 'food', 'liquid', 'italian']
     ingredient_list = []
     ingredient_dict = {}
     data = requests.get(recipe_list_obj[-1])
