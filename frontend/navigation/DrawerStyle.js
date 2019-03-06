@@ -12,11 +12,11 @@ export default class DrawerStyle extends React.Component {
       active: '',
     };
 
-    
+
     render() {
       const windowHeight = Dimensions.get("window").height
       const { active } = this.state;
-  
+
       return (
         <Drawer.Section title="MENU"
         style={{backgroundColor:'white', height: windowHeight}}>
@@ -62,4 +62,3 @@ export default class DrawerStyle extends React.Component {
       );
     }
 }
-
