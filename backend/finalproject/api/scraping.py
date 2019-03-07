@@ -63,7 +63,7 @@ def scrape_ingredients(recipe_list_obj):
 
     cooking_keyword_abbrv = ['t', 'tsp', 'T', 'Tsbp', 'c', 'oz', 'pt', 'qt', 'gal',
                              'lb', '#']
-    dont_include_list = ['and', 'whole', 'condensed', 'hot', 'cold', 'delicious', 'food', 'liquid', 'italian']
+    # dont_include_list = ['and', 'whole', 'condensed', 'hot', 'cold', 'delicious', 'food', 'liquid', 'italian']
     ingredient_list = []
     ingredient_dict = {}
     data = requests.get(recipe_list_obj[-1])
@@ -83,14 +83,12 @@ def scrape_ingredients(recipe_list_obj):
         final_ingredient = ''
         for val in arr:
             if val.isalpha() == True:
-                if val == 'or':
-                    break
                 if str(val) not in cooking_keywords and str(val) not in cooking_keyword_abbrv:
                     final_ingredient += plural_to_singular(val) + ' '
         final_ingredient = search_dict(input_dict=ingredient_dict, search_term=final_ingredient.strip().lower())
         if final_ingredient is not None:
-            if final_ingredient not in dont_include_list:
-                if final_ingredient not in ingredient_list:
-                    ingredient_list.append(final_ingredient.strip())
+            # if final_ingredient not in dont_include_list:
+            if final_ingredient not in ingredient_list:
+                ingredient_list.append(final_ingredient.strip())
     recipe_list_obj.append(ingredient_list)
     return recipe_list_obj

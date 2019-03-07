@@ -1,30 +1,73 @@
 def search_dict(input_dict, search_term):
     '''Searches for ingredient from search_term in dictionary'''
-    ret_str = ''
+    dont_include_list = ['and', 'whole', 'condensed', 'hot', 'cold', 'delicious', 'food', 'liquid', 'italian', 'chinese', 'dried']
+    str_list = []
+    build_str = ''
     search_split = search_term.split()
     str_index = 0
-    while str_index < len(search_split):
-        ret_str = ''
+    str_len = len(search_split)
+    while str_index < str_len:
+        build_str = ''
         if search_split[str_index] in input_dict.keys():
-            ret_str += search_split[str_index]
-            next_index = str_index + 1
-            if next_index >= len(search_split):
-                return ret_str.strip()
-            if search_split[next_index] in input_dict[search_split[str_index]]:
-                ret_str += ' ' + search_split[next_index]
-                dict_index = next_index
-                next_index += 1
-                if next_index >= len(search_split):
-                    return ret_str.strip()
-                if search_split[next_index] in input_dict[search_split[dict_index]]:
-                    ret_str += ' ' + search_split[next_index]
+            build_str += search_split[str_index]
+            str_key = str_index
+            str_val = str_key + 1
 
-                return ret_str.strip()
-            return ret_str.strip()
-        else:
-            str_index += 1
+            while (str_key < str_len):
+                if str_val < str_len:
+                    if search_split[str_val] in input_dict[search_split[str_key]]:
+                        build_str += ' ' + search_split[str_val]
+                        str_key += 1
+                        str_val += 1
+                    else:
+                        break
+                else:
+                    break
 
+            if build_str not in dont_include_list:
+                str_list.append(build_str.strip())
+        str_index += 1
+
+    index = 0
+    max_count = 0
+    for i in range(0, len(str_list)):
+        word_count = len(str_list[i].split())
+        if word_count > max_count:
+            max_count = word_count
+            index = i
+
+    if len(str_list) > 0:
+        if str_list[index] not in dont_include_list:
+            return str_list[index].strip()
     return None
+
+# def search_dict(input_dict, search_term):
+#     '''Searches for ingredient from search_term in dictionary'''
+#     ret_str = ''
+#     search_split = search_term.split()
+#     str_index = 0
+#     while str_index < len(search_split):
+#         ret_str = ''
+#         if search_split[str_index] in input_dict.keys():
+#             ret_str += search_split[str_index]
+#             next_index = str_index + 1
+#             if next_index >= len(search_split):
+#                 return ret_str.strip()
+#             if search_split[next_index] in input_dict[search_split[str_index]]:
+#                 ret_str += ' ' + search_split[next_index]
+#                 dict_index = next_index
+#                 next_index += 1
+#                 if next_index >= len(search_split):
+#                     return ret_str.strip()
+#                 if search_split[next_index] in input_dict[search_split[dict_index]]:
+#                     ret_str += ' ' + search_split[next_index]
+#
+#                 return ret_str.strip()
+#             return ret_str.strip()
+#         else:
+#             str_index += 1
+#
+#     return None
 
 def plural_to_singular(input_string):
     '''
