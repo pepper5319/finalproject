@@ -1,13 +1,13 @@
 import React from 'react';
-import { View, ScrollView, Image, StyleSheet, Text, ListView, Button } from 'react-native';
+import { View, ScrollView, Image, StyleSheet, Text, ListView, Button, TouchableOpacity } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import { Drawer } from 'native-base';
 import SideBar from '../navigation/drawerStyle';
 import { picFound } from '../actions/picActions.js';
 import { navAction } from '../actions/navigationAction.js';
 import { connect } from 'react-redux';
-import BasicBackNav from '../componets/basicBackNav';
-import WebViewComp from '../componets/webViewComp'
+import BasicBackNav from '../componets/basicBackNav.js';
+import InstructionComp from '../componets/instructionComp.js'
 class InstructionScreen extends React.Component {
 
 
@@ -53,43 +53,42 @@ class InstructionScreen extends React.Component {
                     <BasicBackNav button1={this.props.changeTag6} backTo={'recipe'} titleTxt={'Instruction'} />
                 </View>
 
-                <View style={styles.contain}>
-                    <Image
-                        style={styles.stretch}
-                        source={{ uri: 'https://images.media-allrecipes.com/userphotos/300x300/4572704.jpg' }} />
-                <Text style={{fontWeight:'bold', fontSize: 22}}>Ingredients</Text>
+              <InstructionComp ingredients={ingredient} webUrl={'https://images.media-allrecipes.com/userphotos/300x300/4572704.jpg'}/>
 
-                {ingredients.map((ingredients) =>
-                    <Text>{ingredients}</Text>
-                )}
-                <Button onPress={() => {this.props.changeTag6('web')}} title="Instruction URL" color="black" />
-                </View>
+              <TouchableOpacity
+          style={styles.webButton}
+          onPress={() => {this.props.changeTag6('web')}}
+          underlayColor='#000000'>
+          <Text style={styles.webBtnText}>Instruction URL</Text>
+        </TouchableOpacity>
             </Drawer>
         );
     }
 }
-const ingredients = ['chicken breast', 'salt', 'egg', 'bread crumb', 'parmesan cheese', 'flour', 'olive oil', 'tomato', 'mozzarella', 'basil', 'provolone cheese'];
+const ingredient = ['chicken breast', 'salt', 'egg', 'bread crumb', 'parmesan cheese', 'flour', 'olive oil', 'tomato', 'mozzarella', 'basil', 'provolone cheese', 'chicken breast', 'salt', 'egg', 'bread crumb', 'parmesan cheese', 'flour', 'olive oil', 'tomato', 'mozzarella', 'basil', 'provolone cheese'];
+const ingredient2 = ['pneumonoultramicroscopicsilicovolcanoconiosis','pneumonoultramicroscopicsilicovolcanoconiosis','pneumonoultramicroscopicsilicovolcanoconiosis','pneumonoultramicroscopicsilicovolcanoconiosis','pneumonoultramicroscopicsilicovolcanoconiosis','pneumonoultramicroscopicsilicovolcanoconiosis','pneumonoultramicroscopicsilicovolcanoconiosis','pneumonoultramicroscopicsilicovolcanoconiosis','pneumonoultramicroscopicsilicovolcanoconiosis','pneumonoultramicroscopicsilicovolcanoconiosis','pneumonoultramicroscopicsilicovolcanoconiosis','pneumonoultramicroscopicsilicovolcanoconiosis','pneumonoultramicroscopicsilicovolcanoconiosis',];
+const ingredient3 = ['Rosted White Chicken Things','Soft Baked Chiken Help','Man we are testing this','Dont have any new ideas','What is this thing','I have no idea what im doing','I cant believe you are doing this','The man the myth the legend'];
 
 
 const styles = StyleSheet.create({
-    stretch: {
-        width: 350,
-        height: 200,
-        borderRadius: 1,
-        borderWidth: 0.8,
-        borderColor: 'black',
-    },
-    contain: {
-        alignItems: 'center',
-        top: 12
-    },
-    ingredientView: {
-        top:10
-    },
-    webView: {
-        width: 350,
-        height: 300,
-    },
+    webButton:{
+        marginRight:40,
+        marginLeft:40,
+       marginTop:30,
+        paddingTop:10,
+        paddingBottom:10,
+        backgroundColor:'#000000',
+        borderRadius:10,
+        borderWidth: 1,
+        borderColor: '#fff'
+      },
+      webBtnText:{
+          color:'#fff',
+          textAlign:'center',
+          paddingLeft : 10,
+          paddingRight : 10,
+          fontSize: 22,
+      }
 });
 
 const mapStateToProps = state => ({
