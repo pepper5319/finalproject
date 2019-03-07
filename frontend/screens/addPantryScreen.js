@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, ScrollView, Image, StyleSheet, Text, ListView, Button } from 'react-native';
+import { View, ScrollView, Image, StyleSheet, Text, ListView } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import { Drawer } from 'native-base';
-import { TextInput, Card, IconButton, Title, Paragraph } from 'react-native-paper';
+import { TextInput, Card, IconButton, Title, Paragraph, Button } from 'react-native-paper';
 import SideBar from '../navigation/drawerStyle';
 import { navAction } from '../actions/navigationAction.js';
 import { connect } from 'react-redux';
@@ -26,14 +26,45 @@ class AddPantryScreen extends React.Component {
     state = {
       itemName: '',
       itemQty: '',
-      itemExp: ''
+      itemExp: '',
+      newItems: []
     }
 
     addItem = () => {
+      if(this.state.itemName !== ''){
+        var itemData = {};
+        itemData['itemID'] = this.state.newItems.length;
+        if(this.state.itemName !== ''){itemData['itemName'] = this.state.itemName}
+        if(this.state.itemQty !== ''){itemData['itemQty'] = this.state.itemQty}
+        if(this.state.itemExp !== ''){itemData['itemExp'] = this.state.itemExp}
+        var newData = this.state.newItems.concat([itemData]);
+        this.setState({
+          newItems: newData,
+          itemName: '',
+          itemQty: '',
+          itemExp: ''
+        });
+      }
+      console.log(this.state.newItems);
+    }
 
+    removeItem = (id) => {
+      
     }
 
     render() {
+
+        const items = this.state.newItems.map((item) => (
+          <Card style={{marginBottom: 10}}>
+              <Card.Content>
+                <Title>{item.itemName}</Title>
+                {item.itemQty !== undefined && <Paragraph>{item.itemQty} - Exp: {item.itemExp}</Paragraph> }
+              </Card.Content>
+              <Card.Actions style={{justifyContent:'flex-end'}}>
+                <IconButton icon='remove-circle' onPress={() => {}}/>
+              </Card.Actions>
+            </Card>
+        ));
 
         return (
             <Drawer
@@ -76,14 +107,10 @@ class AddPantryScreen extends React.Component {
                       onChangeText={itemExp => this.setState({ itemExp })}
                     />
                   </View>
+                  <Button onPress={() => this.addItem()}>Add Item</Button>
                 </View>
-                <ScrollView style={{}}>
-                  <Card>
-                  <Card.Content right={(props) => <IconButton icon='add'/>}>
-                    <Title>Card title</Title>
-                    <Paragraph>Card content</Paragraph>
-                  </Card.Content>
-                </Card>
+                <ScrollView style={{padding: 16}}>
+                  {items}
                 </ScrollView>
             </Drawer>
         );
