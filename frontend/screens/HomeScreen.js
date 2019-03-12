@@ -17,12 +17,13 @@ class HomeScreen extends React.Component {
       noData: true
     };
     ImagePicker.showImagePicker(options, response => {
+      console.log(process.env.API_URL)
       if (response.uri) {
         let photo = { uri: response.uri}
         let formdata = new FormData();
         formdata.append("file", {uri: photo.uri, name: 'image.jpg', type: 'multipart/form-data'})
         var xhr = new XMLHttpRequest();
-        var url = "http://localhost:8000/api/receipts/";
+        var url = "https://pantryplatter.herokuapp.com/api/receipts/";
         xhr.open("POST", url, true);
         xhr.setRequestHeader("Content-Type", "multipart/form-data");
         xhr.setRequestHeader('Authorization', 'Token ' + 	"39f3fa646bf550befee5852f088676282356e32c")
@@ -37,14 +38,6 @@ class HomeScreen extends React.Component {
         console.log("response", this.props.url);
       }
     });
-  };
-
-  postReceipt = _ => {
-    fetch('http://localhost:8000/api/Recipes')
-      .then(console.log('button pressed!'))
-      .then(response => response.json())
-      .then(response => this.setState({ students: response.data }))
-      .catch(err => console.error(err))
   };
 
   onChangeTag = (tag) => {

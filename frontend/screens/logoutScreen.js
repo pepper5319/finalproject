@@ -9,7 +9,7 @@ export default class LogoutScreen extends React.Component {
     };
     logoutUser = _ => {
       var xhr = new XMLHttpRequest();
-      var url = "http://localhost:8000/api/rest-auth/logout/";
+      var url = "https://pantryplatter.herokuapp.com/api/rest-auth/logout/";
       xhr.open("GET", url, true);
       xhr.setRequestHeader("Content-Type", "application/json");
       xhr.send();

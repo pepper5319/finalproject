@@ -6,7 +6,7 @@
 	<integer>9</integer>
 	<key>logs</key>
 	<dict>
-		<key>5DF1C509-5645-4D4F-97A8-873B0C13C7A8</key>
+		<key>6CAE15C5-80DA-49D6-A846-D3A8F38D4D4A</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>5DF1C509-5645-4D4F-97A8-873B0C13C7A8.xcactivitylog</string>
+			<string>6CAE15C5-80DA-49D6-A846-D3A8F38D4D4A.xcactivitylog</string>
 			<key>highLevelStatus</key>
 			<string>E</string>
 			<key>schemeIdentifier-containerName</key>
@@ -27,13 +27,42 @@
 			<key>signature</key>
 			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>573577326.44564402</real>
+			<real>574089758.06461</real>
 			<key>timeStoppedRecording</key>
-			<real>573577327.51548803</real>
+			<real>574089761.10862398</real>
 			<key>title</key>
 			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>5DF1C509-5645-4D4F-97A8-873B0C13C7A8</string>
+			<string>6CAE15C5-80DA-49D6-A846-D3A8F38D4D4A</string>
+		</dict>
+		<key>EAC789FC-D041-4478-9FBB-EA1871D2F92E</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>EAC789FC-D041-4478-9FBB-EA1871D2F92E.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>E</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>testCamera project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>testCamera</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>573663360.47412205</real>
+			<key>timeStoppedRecording</key>
+			<real>573663361.485847</real>
+			<key>title</key>
+			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>EAC789FC-D041-4478-9FBB-EA1871D2F92E</string>
 		</dict>
 	</dict>
 </dict>

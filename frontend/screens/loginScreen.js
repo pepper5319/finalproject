@@ -14,7 +14,7 @@ export default class LoginScreen extends React.Component {
       }
     loginUser = _ => {
       var xhr = new XMLHttpRequest();
-      var url = "http://localhost:8000/api/rest-auth/login/";
+      var url = "https://pantryplatter.herokuapp.com/api/rest-auth/login/";
       xhr.open("POST", url, true);
       xhr.setRequestHeader("Content-Type", "application/json");
       xhr.onreadystatechange = function () {
@@ -39,7 +39,7 @@ export default class LoginScreen extends React.Component {
                     />
                 </View>
                 <View style={{padding: 16}}>
-                    
+
                     <TextInput
                         theme={{ colors: { primary: 'red' } }}
                         style={[styles.textboxC, {marginBottom: 16}]}

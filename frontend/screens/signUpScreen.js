@@ -15,7 +15,7 @@ export default class SignUpScreen extends React.Component {
 
         if (this.state.textpass === this.state.textpassC && this.state.textemail != '' && this.state.textuser != '' && this.state.textpass != '' && this.state.textpassC != '') {
             var xhr = new XMLHttpRequest();
-            var url = "http://localhost:8000/api/rest-auth/registration/";
+            var url = "https://pantryplatter.herokuapp.com/api/rest-auth/registration/";
             xhr.open("POST", url, true);
             xhr.setRequestHeader("Content-Type", "application/json");
             xhr.onreadystatechange = function () {
@@ -48,7 +48,7 @@ export default class SignUpScreen extends React.Component {
                         value={this.state.textfirst}
                         onChangeText={textfirst => this.setState({ textfirst })}
                     />
-                
+
                     <TextInput
                         theme={{ colors: { primary: 'black' } }}
                         style={[styles.textboxC, {marginBottom: 16}]}
