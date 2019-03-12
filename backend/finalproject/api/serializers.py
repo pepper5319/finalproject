@@ -18,3 +18,7 @@ class ReceiptSerializer(serializers.ModelSerializer):
     class Meta:
         model = Receipt
         fields = ('static_id', 'file', 'date_added', 'user')
+
+class UPCSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = ('upc','name')

@@ -12,11 +12,11 @@ export default class DrawerStyle extends React.Component {
       active: '',
     };
 
-    
+
     render() {
       const windowHeight = Dimensions.get("window").height
       const { active } = this.state;
-  
+
       return (
         <Drawer.Section title="MENU"
         style={{backgroundColor:'white', height: windowHeight}}>
@@ -57,9 +57,15 @@ export default class DrawerStyle extends React.Component {
             this.props.changeTag('signup')
           }}
           />
+          <Drawer.Item
+            label="Logout"
+            active={active === 'logout'}
+            onPress={() => { this.setState({ active: 'logout' });
+            this.props.changeTag('logout')
+          }}
+          />
 
        </Drawer.Section>
       );
     }
 }
-
