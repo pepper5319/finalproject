@@ -65,9 +65,7 @@ class InstructionScreen extends React.Component {
         );
     }
 }
-const ingredient = ['chicken breast', 'salt', 'egg', 'bread crumb', 'parmesan cheese', 'flour', 'olive oil', 'tomato', 'mozzarella', 'basil', 'provolone cheese', 'chicken breast', 'salt', 'egg', 'bread crumb', 'parmesan cheese', 'flour', 'olive oil', 'tomato', 'mozzarella', 'basil', 'provolone cheese'];
-const ingredient2 = ['pneumonoultramicroscopicsilicovolcanoconiosis','pneumonoultramicroscopicsilicovolcanoconiosis','pneumonoultramicroscopicsilicovolcanoconiosis','pneumonoultramicroscopicsilicovolcanoconiosis','pneumonoultramicroscopicsilicovolcanoconiosis','pneumonoultramicroscopicsilicovolcanoconiosis','pneumonoultramicroscopicsilicovolcanoconiosis','pneumonoultramicroscopicsilicovolcanoconiosis','pneumonoultramicroscopicsilicovolcanoconiosis','pneumonoultramicroscopicsilicovolcanoconiosis','pneumonoultramicroscopicsilicovolcanoconiosis','pneumonoultramicroscopicsilicovolcanoconiosis','pneumonoultramicroscopicsilicovolcanoconiosis',];
-const ingredient3 = ['Rosted White Chicken Things','Soft Baked Chiken Help','Man we are testing this','Dont have any new ideas','What is this thing','I have no idea what im doing','I cant believe you are doing this','The man the myth the legend'];
+const ingredient = ['chicken breast', 'salt', 'egg', 'bread crumb', 'parmesan cheese', 'flour', 'olive oil', 'tomato', 'mozzarella', 'basil', 'provolone cheese', 'chicken breast', 'salt', 'egg', 'bread crumb', 'parmesan cheese', 'flour', 'olive oil', 'tomato', 'mozzarella', 'basil', 'provolone cheese', 'chicken breast', 'salt', 'egg', 'bread crumb', 'parmesan cheese', 'flour', 'olive oil', 'tomato', 'NO THIS NO', 'chicken breast', 'salt', 'egg', 'bread crumb', 'parmesan cheese', 'flour', 'olive oil', 'tomato', 'Mano', 'chicken breast', 'salt', 'egg', 'bread crumb', 'parmesan cheese', 'flour', 'olive oil', 'tomato', 'Manowtf is this'];
 
 
 const styles = StyleSheet.create({
@@ -77,10 +75,10 @@ const styles = StyleSheet.create({
        marginTop:30,
         paddingTop:10,
         paddingBottom:10,
-        backgroundColor:'#000000',
+        backgroundColor:'#cc0000',
         borderRadius:10,
         borderWidth: 1,
-        borderColor: '#fff'
+        borderColor: '#cc0000'
       },
       webBtnText:{
           color:'#fff',
