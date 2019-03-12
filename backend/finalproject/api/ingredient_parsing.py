@@ -1,7 +1,8 @@
 def search_dict(input_dict, search_term):
     '''Searches for ingredient from search_term in dictionary'''
     dont_include_list = ['and', 'whole', 'condensed', 'hot', 'cold', 'delicious', 'food',
-                         'liquid', 'italian', 'chinese', 'dried', 'potato']
+                         'liquid', 'italian', 'chinese', 'dried', 'potato', 'white', 'yellow',
+                         'black', 'green', 'sweet', 'seasoning']
     str_list = []
     build_str = ''
     search_split = search_term.split()
@@ -16,10 +17,13 @@ def search_dict(input_dict, search_term):
 
             while (str_key < str_len):
                 if str_val < str_len:
-                    if search_split[str_val] in input_dict[search_split[str_key]]:
-                        build_str += ' ' + search_split[str_val]
-                        str_key += 1
-                        str_val += 1
+                    if search_split[str_key] in input_dict.keys():
+                        if search_split[str_val] in input_dict[search_split[str_key]]:
+                            build_str += ' ' + search_split[str_val]
+                            str_key += 1
+                            str_val += 1
+                        else:
+                            break
                     else:
                         break
                 else:
