@@ -14,7 +14,8 @@ def scraper(str_in):
     id_image_url = scrape_recipes(str_in=str_in)
     for recipe_list in id_image_url:
         recipe_list = scrape_ingredients(recipe_list)
-        final_recipe_list.append(recipe_list)
+        if len(recipe_list[-1]) is not 0:
+            final_recipe_list.append(recipe_list)
     return final_recipe_list
 
 def scrape_recipes(str_in):
