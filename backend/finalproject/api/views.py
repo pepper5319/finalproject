@@ -5,12 +5,13 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import *
 from .permissions import *
-from .serializers import PItemSerializer, RecipeSerializer, ReceiptSerializer
+from .serializers import PItemSerializer, RecipeSerializer, ReceiptSerializer,UPCSerializer
 import math, random, string
 from .user_updates import updateMatches
 from .scraping import *
 from datetime import date
 from django.http import HttpResponse
+from .OCR import UPCCodes
 # Create your views here.
 
 
@@ -130,5 +131,13 @@ class ReceiptsView(generics.ListCreateAPIView):
         pitems = PItem.objects.filter(user=self.request.user)
 
         updateMatches(self.request.user, recipes, 0.75, pitems)
-
+        UPCCodes(reciept.static_id)
         return Response('Created Receipt {}'.format(reciept.static_id))
+
+class UPCView(generics.ListCreateAPIView):
+    serializer_class = UPCSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def get_queryset(self):
+        recipes = Recipe.objects.all()
+        return recipes

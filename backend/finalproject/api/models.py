@@ -39,3 +39,7 @@ class Receipt(models.Model):
         upload_to=recieptsFile,
         max_length=254, blank=True, null=True
     )
+
+class UPCDatabase(models.Model):
+    upc = models.CharField(max_length = 12)
+    name = models.CharField(max_length = 30)

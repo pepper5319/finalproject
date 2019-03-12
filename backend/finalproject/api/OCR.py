@@ -9,11 +9,12 @@ import re
 import json
 import os.path
 BASE = os.path.dirname(os.path.abspath(__file__))
-from .models import PItem
+from .models import PItem,UPCDatabase
 
 def UPCCodes(recieptID):
     count = 0
     list = []
+    exist = []
     temp = '{'
     url = '../reciepts/' + recieptID + '_image.jpg'
     url = os.path.join(BASE, url)
@@ -24,26 +25,31 @@ def UPCCodes(recieptID):
     num = re.findall('\d+', text)
     for value in num:
         if len(value) == 12:
+            #list.append(value)
+            if(UPCDatabase.objects.filter(upc=value).exists()):
+                exist.append(value)
             #r = requests.get("https://www.walmart.com/search/?query=" + value)
             #data = r.json()
             temp += '\'upc\': \'' + value +'\','
     temp += '}'
-    print(temp)
+    #print(list)
+    print(exist)
 
 
-    url = 'https://api.upcitemdb.com/prod/trial/lookup'
-    payload = {'upc': '004000049847','upc': '004000049847','upc': '004000049847','upc': '004000049847'}
-    r = requests.post("https://api.upcitemdb.com/prod/trial/lookup", data=json.dumps(temp))
-    data = r.json()
-    print(data)
-    for x in data['items']:
-        if data["code"] == "OK":
-            pitem = PItem.objects.create(
-                static_id=id,
-                name=x['title'],
-                qty=1,
-                exp_date=date.today(),
-                user=self.request.user
-            )
-            pitem.save()
-            return
+
+    # url = 'https://api.upcitemdb.com/prod/trial/lookup'
+    # payload = {'upc': '004000049847','upc': '004000049847','upc': '004000049847','upc': '004000049847'}
+    # r = requests.post("https://api.upcitemdb.com/prod/trial/lookup", data=json.dumps(temp))
+    # data = r.json()
+    # print(data)
+    # for x in data['items']:
+    #     if data["code"] == "OK":
+    #         pitem = PItem.objects.create(
+    #             static_id=id,
+    #             name=x['title'],
+    #             qty=1,
+    #             exp_date=date.today(),
+    #             user=self.request.user
+    #         )
+    #         pitem.save()
+    #         return

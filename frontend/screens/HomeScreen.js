@@ -1,7 +1,6 @@
 import React from 'react';
-import { StyleSheet, View, ScrollView } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
-import { Button, Card, Title, Appbar } from 'react-native-paper';
 import { Drawer } from 'native-base';
 import DrawerStyle from '../navigation/drawerStyle.js';
 import { picFound } from '../actions/picActions.js';
@@ -18,6 +17,21 @@ class HomeScreen extends React.Component {
     };
     ImagePicker.showImagePicker(options, response => {
       if (response.uri) {
+        let photo = { uri: response.uri}
+        let formdata = new FormData();
+        formdata.append("file", {uri: photo.uri, name: 'image.jpg', type: 'multipart/form-data'})
+        var xhr = new XMLHttpRequest();
+        var url = "http://localhost:8000/api/receipts/";
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader("Content-Type", "multipart/form-data");
+        xhr.setRequestHeader('Authorization', 'Token ' + 	"39f3fa646bf550befee5852f088676282356e32c")
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+              var json = JSON.parse(xhr.responseText);
+              console.log(json);
+            }
+          };
+        xhr.send(formdata);
         this.props.picFound(response.uri);
         console.log("response", this.props.url);
       }
@@ -31,7 +45,7 @@ class HomeScreen extends React.Component {
       .then(response => this.setState({ students: response.data }))
       .catch(err => console.error(err))
   };
-  
+
   onChangeTag = (tag) => {
     this.setState({ active: tag })
     console.log('tag change')
@@ -60,12 +74,13 @@ class HomeScreen extends React.Component {
           <NavbarComp  button1={this.openDrawer} button2={this.PhotoPic} titleTxt={'Home'}/>
       </View>
       <ScrollView>
+      <CardCompRecepie imgUri={'https://images.media-allrecipes.com/userphotos/300x300/4572704.jpg'} titleTxt={'Quick Shrimp Scampi Pasta'} viewClick={this.props.changeTag}/>
         <CardComp imgUri={'https://images.media-allrecipes.com/userphotos/560x315/430299.jpg'} titleTxt={'Quick Shrimp Scampi Pasta'} />
         <CardComp imgUri={'https://images.media-allrecipes.com/userphotos/560x315/430299.jpg'} titleTxt={'Quick Shrimp Scampi Pasta'} />
         <CardComp imgUri={'https://images.media-allrecipes.com/userphotos/560x315/430299.jpg'} titleTxt={'Quick Shrimp Scampi Pasta'} />
 
       </ScrollView>
-          
+
       </Drawer>
 
     );
