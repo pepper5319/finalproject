@@ -1,6 +1,4 @@
 from django.contrib import admin
-
-# Register your models here.
 from .models import PItem, Receipt, PUser, Recipe
 
 class PItemAdmin(admin.ModelAdmin):
