@@ -6,8 +6,7 @@ export default class WebViewComp extends React.Component {
         return(
             <View style={styles.webView}>
             <WebView
-    source={{uri: 'https://www.allrecipes.com/recipe/223042/chicken-parmesan/'}}
-    style={{marginTop: 20}} />
+            source={{uri: this.props.recipeUrl}}/>
             </View>
         )
     }
