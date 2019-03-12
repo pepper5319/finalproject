@@ -53,7 +53,7 @@ class WebScreen extends React.Component {
                 <View>
                     <BasicBackNav button1={this.props.changeTag8} backTo={'instruction'} titleTxt={'Web'} />
                 </View>
-                <WebViewComp/>
+                <WebViewComp recipeUrl={'https://www.allrecipes.com/recipe/223042/chicken-parmesan/'}/>
 
               
             </Drawer>

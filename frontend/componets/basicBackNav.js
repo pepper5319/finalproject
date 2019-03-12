@@ -15,7 +15,7 @@ export default class BasicBackNav extends React.Component {
 
 const styles = StyleSheet.create({
     barcontainer: {
-      backgroundColor: '#000',
+      backgroundColor: '#cc0000',
     },
   
   });
