@@ -5,10 +5,12 @@ import { Drawer } from 'native-base';
 import DrawerStyle from '../navigation/drawerStyle.js';
 import { picFound } from '../actions/picActions.js';
 import { navAction } from '../actions/navigationAction.js';
+import { getRecipes, setRecipe } from '../actions/recipeAction.js';
 import { connect } from 'react-redux';
 import NavbarComp from '../componets/navbarComp.js'
 import CardComp from '../componets/cardComp.js'
 import CardCompRecepie from '../componets/cardCompRecepie.js';
+import { ADMIN_KEY } from '../apiUrls.js';
 import { backtohomeAction } from '../actions/backtohomeAction.js';
 
 class HomeScreen extends React.Component {
@@ -51,9 +53,19 @@ class HomeScreen extends React.Component {
       .then(response => this.setState({ students: response.data }))
       .catch(err => console.error(err))
   };
-  onChangeTag = (tag) => {
+  componentDidMount(){
+    this.props.getRecipes(ADMIN_KEY);
+  }
+
+  componentDidUpdate(){
+    console.log(this.props.recipes);
+  }
+
+  onChangeTag = (tag, data) => {
+    this.props.setRecipe(data);
     this.setState({ active: tag })
-    this.props.changeTag(tag)
+    console.log('tag change');
+    this.props.changeTag(tag);
   }
   closeDrawer = () => {
     this.drawer._root.close()
@@ -63,6 +75,9 @@ class HomeScreen extends React.Component {
   };
 
   render() {
+    const recipes = this.props.recipes.map((recipe) => (
+      <CardCompRecepie imgUri={recipe.image_url} titleTxt={recipe.name} viewClick={(tag) => this.onChangeTag(tag, recipe)}/>
+    ));
     return (
       <Drawer
         ref={(ref) => { this.drawer = ref; }}
@@ -75,13 +90,10 @@ class HomeScreen extends React.Component {
         openDrawerOffset={0.3}
         panCloseMask={0.3}>
       <View>
-          <NavbarComp  button1={this.openDrawer} button2={this.PhotoPic} titleTxt={'Home'}/>
+          <NavbarComp button1={this.openDrawer} button2={this.PhotoPic} titleTxt={'Home'}/>
       </View>
       <ScrollView>
-      <CardCompRecepie imgUri={'https://images.media-allrecipes.com/userphotos/300x300/4572704.jpg'} titleTxt={'Quick Shrimp Scampi Pasta'} viewClick={this.props.changeTag}/>
-        <CardComp imgUri={'https://images.media-allrecipes.com/userphotos/560x315/430299.jpg'} titleTxt={'Quick Shrimp Scampi Pasta'} />
-        <CardComp imgUri={'https://images.media-allrecipes.com/userphotos/560x315/430299.jpg'} titleTxt={'Quick Shrimp Scampi Pasta'} />
-        <CardComp imgUri={'https://images.media-allrecipes.com/userphotos/560x315/430299.jpg'} titleTxt={'Quick Shrimp Scampi Pasta'} />
+        {recipes}
 
       </ScrollView>
 
@@ -95,8 +107,9 @@ class HomeScreen extends React.Component {
 const mapStateToProps = state => ({
   url: state.pics.picURL,
   tag: state.tags.activeTag,
+  recipes: state.recipes.recipes,
   tagHome: state.tohome.homeTag,
-
 });
 
-export default connect(mapStateToProps, {picFound, navAction, backtohomeAction})(HomeScreen);
+export default connect(mapStateToProps, { picFound, navAction, getRecipes, setRecipe, backtohomeAction })(HomeScreen);
+

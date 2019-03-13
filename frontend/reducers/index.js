@@ -3,11 +3,13 @@ import picReducer from "./picReducer.js";
 import navigationReducer from "./navigationReducer.js";
 import backtohomeReducer from "./backtohomeReducer.js";
 import userReducer from './userReducer.js';
+import recipeReducer from './recipeReducer.js';
 
 
 export default combineReducers({
-  pics: picReducer, 
+  pics: picReducer,
   tags: navigationReducer,
+  recipes: recipeReducer,
   tohome: backtohomeReducer,
   users: userReducer
 });
