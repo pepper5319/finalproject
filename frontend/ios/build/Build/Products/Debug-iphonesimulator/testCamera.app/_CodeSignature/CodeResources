@@ -10,7 +10,7 @@
 		</data>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		yVq5T8WYTvdxim5xNROmGe83wCU=
+		vt5jG72mXa7fMjPCvNXflNTqAuo=
 		</data>
 		<key>Entypo.ttf</key>
 		<data>
@@ -75,7 +75,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		5+KvVNaLlmilIMerau5OA0Wk0oo=
+		CFbOVg7BBz4S9HhwQeFB2LeP/Vs=
 		</data>
 		<key>Ionicons.ttf</key>
 		<data>
@@ -103,7 +103,7 @@
 		</data>
 		<key>PlugIns/testCameraTests.xctest.dSYM/Contents/Resources/DWARF/testCameraTests</key>
 		<data>
-		+kMpkVxaFKXYQebwefJZXaBGnvk=
+		RfOilm6cCvmA2mWnZe5M74XC5AY=
 		</data>
 		<key>PlugIns/testCameraTests.xctest/Info.plist</key>
 		<data>
@@ -111,11 +111,11 @@
 		</data>
 		<key>PlugIns/testCameraTests.xctest/_CodeSignature/CodeResources</key>
 		<data>
-		g++4TxX+z/vgTZAdon50qcfbFo4=
+		jRpIOqQLeLUsaNv777d9OI1YR7M=
 		</data>
 		<key>PlugIns/testCameraTests.xctest/testCameraTests</key>
 		<data>
-		WmQDKorYfOZUt83aSx8DplOfkuk=
+		QQxuc2/WMk9L+5dgVNJS0SGAwfA=
 		</data>
 		<key>Roboto.ttf</key>
 		<data>
@@ -155,11 +155,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			yVq5T8WYTvdxim5xNROmGe83wCU=
+			vt5jG72mXa7fMjPCvNXflNTqAuo=
 			</data>
 			<key>hash2</key>
 			<data>
-			63/nxlLDhvNL4oLuwB5HHODCPCchQ08IeMt2iFSY8v8=
+			jdDAj1Qoly88n0MmLo8qoSSffpkCELDG5vdrMty9Uuc=
 			</data>
 		</dict>
 		<key>Entypo.ttf</key>
@@ -377,11 +377,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+kMpkVxaFKXYQebwefJZXaBGnvk=
+			RfOilm6cCvmA2mWnZe5M74XC5AY=
 			</data>
 			<key>hash2</key>
 			<data>
-			hMi0DEvbFeAMvkqDcMkTdZp6LfiZRN94zAiWu1ifRyE=
+			BrdvrytMCbPqMJyZLMNlgTMNfwP8y/9efRJAwRAKGEc=
 			</data>
 		</dict>
 		<key>PlugIns/testCameraTests.xctest/Info.plist</key>
@@ -399,22 +399,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			g++4TxX+z/vgTZAdon50qcfbFo4=
+			jRpIOqQLeLUsaNv777d9OI1YR7M=
 			</data>
 			<key>hash2</key>
 			<data>
-			WClW53Zk6MLflpFBgSiHbwPoeoBvNhlS+IFYMM3vddw=
+			GMN16UXpbOKUl1EAogiI0yFtT3cCeO+20SulHTXrKyQ=
 			</data>
 		</dict>
 		<key>PlugIns/testCameraTests.xctest/testCameraTests</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			WmQDKorYfOZUt83aSx8DplOfkuk=
+			QQxuc2/WMk9L+5dgVNJS0SGAwfA=
 			</data>
 			<key>hash2</key>
 			<data>
-			Sg5W/ffInxtpMA2N/lL7oQG8dOaY956QtBZwpLn6UNk=
+			plLxKeBN9esd8vtmtV2m/CLpFQG5/q6nd68F8Iyj6FA=
 			</data>
 		</dict>
 		<key>Roboto.ttf</key>
