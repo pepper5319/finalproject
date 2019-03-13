@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/third-party/double-conversion-1.1.6/src/bignum.cc \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/third-party/double-conversion-1.1.6/src/bignum.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/third-party/double-conversion-1.1.6/src/utils.h
+  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/third-party/double-conversion-1.1.6/src/bignum.cc \
+  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/third-party/double-conversion-1.1.6/src/bignum.h \
+  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/third-party/double-conversion-1.1.6/src/utils.h
