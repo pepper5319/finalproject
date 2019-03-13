@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, Title } from 'react-native-paper';
-import { Text } from 'native-base';
 import { Button } from 'react-native';
 
 export default class CardCompRecepie extends React.Component {

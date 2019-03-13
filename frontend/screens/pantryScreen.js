@@ -39,14 +39,12 @@ class PantryScreen extends React.Component {
     ImagePicker.showImagePicker(options, response => {
       if (response.uri) {
         this.props.picFound(response.uri);
-        console.log("response", this.props.url);
       }
     });
   };
 
   onChangeTag = (tag) => {
     this.setState({ active: tag })
-    console.log('tag change')
     this.props.changeTag3(tag)
   }
   closeDrawer = () => {

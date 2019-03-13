@@ -1,12 +1,6 @@
 import React from 'react';
-import { View, ScrollView, Image, StyleSheet, Text, ListView, Button, FlatList, Dimensions, TouchableOpacity} from 'react-native';
-import ImagePicker from 'react-native-image-picker';
-import { Drawer, Row } from 'native-base';
-import SideBar from '../navigation/drawerStyle';
-import { picFound } from '../actions/picActions.js';
-import { navAction } from '../actions/navigationAction.js';
-import { connect } from 'react-redux';
-import BasicBackNav from '../componets/basicBackNav';
+import { View, ScrollView, Image, StyleSheet, Text} from 'react-native';
+
 
 export default class InstructionComp extends React.Component {
     render() {
@@ -35,11 +29,6 @@ export default class InstructionComp extends React.Component {
         )
     }
 }
-const win = Dimensions.get('window').width;
-
-
-
-let i = 0;
 const styles = StyleSheet.create({
     contain: {
         alignItems: 'center',

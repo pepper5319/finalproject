@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {StyleSheet, View, Text,ImageBackground} from 'react-native';
-import { TextInput,Button} from 'react-native-paper';
+import {Button} from 'react-native-paper';
 import UserAction from '../actions/userAction'
 
 class LogoutScreen extends React.Component {

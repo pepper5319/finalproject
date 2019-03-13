@@ -9,8 +9,15 @@ import { connect } from 'react-redux';
 import NavbarComp from '../componets/navbarComp.js'
 import CardComp from '../componets/cardComp.js'
 import CardCompRecepie from '../componets/cardCompRecepie.js';
+import { backtohomeAction } from '../actions/backtohomeAction.js';
 
 class HomeScreen extends React.Component {
+
+  componentDidMount(){
+
+    this.props.backtohomeAction('home')
+  }
+
   PhotoPic = () => {
     const options = {
       noData: true
@@ -33,7 +40,6 @@ class HomeScreen extends React.Component {
           };
         xhr.send(formdata);
         this.props.picFound(response.uri);
-        console.log("response", this.props.url);
       }
     });
   };
@@ -45,10 +51,8 @@ class HomeScreen extends React.Component {
       .then(response => this.setState({ students: response.data }))
       .catch(err => console.error(err))
   };
-
   onChangeTag = (tag) => {
     this.setState({ active: tag })
-    console.log('tag change')
     this.props.changeTag(tag)
   }
   closeDrawer = () => {
@@ -90,7 +94,9 @@ class HomeScreen extends React.Component {
 
 const mapStateToProps = state => ({
   url: state.pics.picURL,
-  tag: state.tags.activeTag
+  tag: state.tags.activeTag,
+  tagHome: state.tohome.homeTag,
+
 });
 
-export default connect(mapStateToProps, { picFound, navAction })(HomeScreen);
+export default connect(mapStateToProps, {picFound, navAction, backtohomeAction})(HomeScreen);

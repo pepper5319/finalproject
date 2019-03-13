@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ScrollView, Image, StyleSheet, Text, ListView, Button, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import { Drawer } from 'native-base';
 import SideBar from '../navigation/drawerStyle';
@@ -8,6 +8,8 @@ import { navAction } from '../actions/navigationAction.js';
 import { connect } from 'react-redux';
 import BasicBackNav from '../componets/basicBackNav.js';
 import InstructionComp from '../componets/instructionComp.js'
+import { backtohomeAction } from '../actions/backtohomeAction.js';
+
 class InstructionScreen extends React.Component {
 
 
@@ -19,14 +21,12 @@ class InstructionScreen extends React.Component {
         ImagePicker.showImagePicker(options, response => {
             if (response.uri) {
                 this.props.picFound(response.uri);
-                console.log("response", this.props.url);
             }
         });
     };
 
     onChangeTag = (tag) => {
         this.setState({ active: tag })
-        console.log('tag change')
         this.props.changeTag6(tag)
     }
     closeDrawer = () => {
@@ -50,7 +50,7 @@ class InstructionScreen extends React.Component {
                 openDrawerOffset={0.3}
                 panCloseMask={0.3}>
                 <View>
-                    <BasicBackNav button1={this.props.changeTag6} backTo={'recipe'} titleTxt={'Instruction'} />
+                    <BasicBackNav button1={this.props.changeTag6} backTo={this.props.tagHome} titleTxt={'Instruction'} />
                 </View>
 
               <InstructionComp ingredients={ingredient} webUrl={'https://images.media-allrecipes.com/userphotos/300x300/4572704.jpg'}/>
@@ -91,7 +91,8 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = state => ({
     url: state.pics.picURL,
-    tag: state.tags.activeTag
+    tag: state.tags.activeTag,
+    tagHome: state.tohome.homeTag,
 });
 
-export default connect(mapStateToProps, { picFound, navAction })(InstructionScreen);
+export default connect(mapStateToProps, { picFound, navAction, backtohomeAction })(InstructionScreen);

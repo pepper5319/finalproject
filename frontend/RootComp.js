@@ -1,10 +1,19 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 import {Provider} from 'react-redux';
 import  App  from './App';
-import { Provider as PaperProvider } from 'react-native-paper';
+import { Provider as PaperProvider, DefaultTheme } from 'react-native-paper';
 import store from './store';
 import StatusBar from './statusBar';
+
+const theme = {
+  ...DefaultTheme,
+  roundness: 2,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: '#cc0000',
+    accent: '#cc0000',
+  }
+};
 
 export default class RootComp extends React.Component {
   constructor() {
@@ -13,7 +22,7 @@ export default class RootComp extends React.Component {
   render() {
     return (
       <Provider store={store}>
-      <PaperProvider>
+      <PaperProvider theme={theme}>
       <StatusBar backgroundColor="gray" />
         <App />
       </PaperProvider>

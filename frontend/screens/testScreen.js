@@ -1,6 +1,6 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
-import { TextInput,Button } from 'react-native-paper';
+import {StyleSheet, View} from 'react-native';
+import { Button } from 'react-native-paper';
 
 export default class SignUpScreen extends React.Component {
     state = {

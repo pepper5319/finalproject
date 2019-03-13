@@ -20,7 +20,6 @@ export default class MainNavigation extends Component {
 
     onChangeTag = (tag) => {
         this.setState({ active: tag })
-        console.log('tag change')
       }
 
     render() {

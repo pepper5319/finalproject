@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {StyleSheet, View, Text,ImageBackground,Image,Alert} from 'react-native';
-import { TextInput,Button, HelperText } from 'react-native-paper';
+import {StyleSheet, View, ImageBackground,Image,Alert} from 'react-native';
+import { TextInput,Button} from 'react-native-paper';
 import UserAction from '../actions/userAction'
 
 class LoginScreen extends React.Component {
@@ -27,7 +27,6 @@ class LoginScreen extends React.Component {
     
     onChangeTag = (tag) => {
         this.setState({ active: tag })
-        console.log('tag change')
         this.props.changeTag7(tag)
     }
     loginUser = _ => {
