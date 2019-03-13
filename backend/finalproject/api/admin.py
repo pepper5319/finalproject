@@ -1,5 +1,7 @@
 from django.contrib import admin
-from .models import PItem, Receipt, PUser, Recipe
+
+# Register your models here.
+from .models import PItem, Receipt, PUser, Recipe,UPCDatabase
 
 class PItemAdmin(admin.ModelAdmin):
     pass
@@ -16,3 +18,7 @@ admin.site.register(Receipt, ReceiptAdmin)
 class RecipeAdmin(admin.ModelAdmin):
     pass
 admin.site.register(Recipe, RecipeAdmin)
+
+class UPCDatabaseAdmin(admin.ModelAdmin):
+    pass
+admin.site.register(UPCDatabase, UPCDatabaseAdmin)

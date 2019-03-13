@@ -1,7 +1,6 @@
 import React from 'react';
-import { StyleSheet, View, ScrollView } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
-import { Button, Card, Title, Appbar } from 'react-native-paper';
 import { Drawer } from 'native-base';
 import DrawerStyle from '../navigation/drawerStyle.js';
 import { picFound } from '../actions/picActions.js';
@@ -75,6 +74,7 @@ class HomeScreen extends React.Component {
           <NavbarComp  button1={this.openDrawer} button2={this.PhotoPic} titleTxt={'Home'}/>
       </View>
       <ScrollView>
+      <CardCompRecepie imgUri={'https://images.media-allrecipes.com/userphotos/300x300/4572704.jpg'} titleTxt={'Quick Shrimp Scampi Pasta'} viewClick={this.props.changeTag}/>
         <CardComp imgUri={'https://images.media-allrecipes.com/userphotos/560x315/430299.jpg'} titleTxt={'Quick Shrimp Scampi Pasta'} />
         <CardComp imgUri={'https://images.media-allrecipes.com/userphotos/560x315/430299.jpg'} titleTxt={'Quick Shrimp Scampi Pasta'} />
         <CardComp imgUri={'https://images.media-allrecipes.com/userphotos/560x315/430299.jpg'} titleTxt={'Quick Shrimp Scampi Pasta'} />

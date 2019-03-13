@@ -17,6 +17,35 @@
 			<key>fileName</key>
 			<string>1BB1CEF1-33E0-4CD0-B79B-13C4C0B332FA.xcactivitylog</string>
 			<key>highLevelStatus</key>
+			<string>S</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>testCamera project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>testCamera</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>573674869.28496003</real>
+			<key>timeStoppedRecording</key>
+			<real>573674870.04744697</real>
+			<key>title</key>
+			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>3701453F-057F-4DE1-974A-3FB5438DF293</string>
+		</dict>
+		<key>ABE56145-017B-4663-B12B-CDCAA9C5CC7D</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>ABE56145-017B-4663-B12B-CDCAA9C5CC7D.xcactivitylog</string>
+			<key>highLevelStatus</key>
 			<string>E</string>
 			<key>schemeIdentifier-containerName</key>
 			<string>testCamera project</string>
@@ -27,13 +56,13 @@
 			<key>signature</key>
 			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>574177954.39444005</real>
+			<real>574089795.08874798</real>
 			<key>timeStoppedRecording</key>
-			<real>574177957.91479599</real>
+			<real>574089795.83697605</real>
 			<key>title</key>
 			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>1BB1CEF1-33E0-4CD0-B79B-13C4C0B332FA</string>
+			<string>ABE56145-017B-4663-B12B-CDCAA9C5CC7D</string>
 		</dict>
 	</dict>
 </dict>

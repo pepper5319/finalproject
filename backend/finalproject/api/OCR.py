@@ -9,11 +9,12 @@ import re
 import json
 import os.path
 BASE = os.path.dirname(os.path.abspath(__file__))
-from .models import PItem
+from .models import PItem,UPCDatabase
 
 def UPCCodes(recieptID):
     count = 0
     list = []
+    exist = []
     temp = '{'
     url = '../reciepts/' + recieptID + '_image.jpg'
     url = os.path.join(BASE, url)
@@ -24,12 +25,16 @@ def UPCCodes(recieptID):
     num = re.findall('\d+', text)
     for value in num:
         if len(value) == 12:
-            list.append(value)
+            #list.append(value)
+            if(UPCDatabase.objects.filter(upc=value).exists()):
+                exist.append(value)
             #r = requests.get("https://www.walmart.com/search/?query=" + value)
             #data = r.json()
             temp += '\'upc\': \'' + value +'\','
     temp += '}'
-    print(list)
+    #print(list)
+    print(exist)
+
 
 
     # url = 'https://api.upcitemdb.com/prod/trial/lookup'

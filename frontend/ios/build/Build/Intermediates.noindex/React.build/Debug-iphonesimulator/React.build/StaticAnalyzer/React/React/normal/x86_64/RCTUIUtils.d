@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/UIUtils/RCTUIUtils.m \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/UIUtils/RCTUIUtils.h
+  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/UIUtils/RCTUIUtils.m \
+  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/UIUtils/RCTUIUtils.h
