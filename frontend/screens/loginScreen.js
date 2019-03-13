@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View, Text,ImageBackground,Image} from 'react-native';
+import {StyleSheet, View, ImageBackground,Image} from 'react-native';
 import { TextInput,Button } from 'react-native-paper';
 
 export default class LoginScreen extends React.Component {
@@ -9,7 +9,6 @@ export default class LoginScreen extends React.Component {
     };
     onChangeTag = (tag) => {
         this.setState({ active: tag })
-        console.log('tag change')
         this.props.changeTag7(tag)
       }
     loginUser = _ => {

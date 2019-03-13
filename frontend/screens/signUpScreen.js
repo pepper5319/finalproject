@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, ImageBackground } from 'react-native';
+import { StyleSheet, View, ImageBackground } from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
 
 export default class SignUpScreen extends React.Component {

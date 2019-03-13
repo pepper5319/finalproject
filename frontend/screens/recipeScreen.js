@@ -6,11 +6,18 @@ import SideBar from '../navigation/drawerStyle';
 import { picFound } from '../actions/picActions.js';
 import { navAction } from '../actions/navigationAction.js';
 import { connect } from 'react-redux';
-import PantryList from '../componets/pantryList.js';
 import NavbarComp from '../componets/navbarComp.js';
 import CardCompRecepie from '../componets/cardCompRecepie.js';
+import { backtohomeAction } from '../actions/backtohomeAction.js';
+
 
 class RecipeScreen extends React.Component {
+
+
+
+    componentDidMount() {
+        this.props.backtohomeAction('recipe')
+    }
 
     PhotoPic = () => {
         const options = {
@@ -19,14 +26,12 @@ class RecipeScreen extends React.Component {
         ImagePicker.showImagePicker(options, response => {
             if (response.uri) {
                 this.props.picFound(response.uri);
-                console.log("response", this.props.url);
             }
         });
     };
 
     onChangeTag = (tag) => {
         this.setState({ active: tag })
-        console.log('tag change')
         this.props.changeTag4(tag)
     }
     closeDrawer = () => {
@@ -52,10 +57,10 @@ class RecipeScreen extends React.Component {
                     <NavbarComp button1={this.openDrawer} button2={this.PhotoPic} titleTxt={'Recipe'} />
                 </View>
                 <ScrollView>
-                <CardCompRecepie imgUri={'https://images.media-allrecipes.com/userphotos/300x300/4572704.jpg'} titleTxt={'Quick Shrimp Scampi Pasta'} viewClick={this.props.changeTag5}/>
-                <CardCompRecepie imgUri={'https://images.media-allrecipes.com/userphotos/560x315/1035686.jpg'} titleTxt={'Surf and Turf for Two'} viewClick={this.props.changeTag5}/>
-                <CardCompRecepie imgUri={'https://images.media-allrecipes.com/userphotos/560x315/1001596.jpg'} titleTxt={'Best Buttermilk Biscuits'} viewClick={this.props.changeTag5}/>
-                <CardCompRecepie imgUri={'https://images.media-allrecipes.com/userphotos/600x600/397070.jpg'} titleTxt={'Meatball Nirvana'} viewClick={this.props.changeTag5}/>
+                    <CardCompRecepie imgUri={'https://images.media-allrecipes.com/userphotos/300x300/4572704.jpg'} titleTxt={'Quick Shrimp Scampi Pasta'} viewClick={this.props.changeTag5} />
+                    <CardCompRecepie imgUri={'https://images.media-allrecipes.com/userphotos/560x315/1035686.jpg'} titleTxt={'Surf and Turf for Two'} viewClick={this.props.changeTag5} />
+                    <CardCompRecepie imgUri={'https://images.media-allrecipes.com/userphotos/560x315/1001596.jpg'} titleTxt={'Best Buttermilk Biscuits'} viewClick={this.props.changeTag5} />
+                    <CardCompRecepie imgUri={'https://images.media-allrecipes.com/userphotos/600x600/397070.jpg'} titleTxt={'Meatball Nirvana'} viewClick={this.props.changeTag5} />
                 </ScrollView>
             </Drawer>
         );
@@ -64,7 +69,9 @@ class RecipeScreen extends React.Component {
 
 const mapStateToProps = state => ({
     url: state.pics.picURL,
-    tag: state.tags.activeTag
+    tag: state.tags.activeTag,
+    tagHome: state.tohome.homeTag,
+
 });
 
-export default connect(mapStateToProps, { picFound, navAction })(RecipeScreen);
+export default connect(mapStateToProps, { picFound, navAction, backtohomeAction })(RecipeScreen);

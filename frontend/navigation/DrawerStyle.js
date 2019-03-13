@@ -1,10 +1,7 @@
 import React from 'react';
-import { Plataform, Dimensions } from 'react-native'
+import { Dimensions } from 'react-native'
 
 import { Drawer } from 'react-native-paper';
-import PantryScreen from '../screens/pantryScreen'
-import SettingScreen from '../screens/settingScreen'
-import { navAction } from '../actions/navigationAction';
 
 
 export default class DrawerStyle extends React.Component {

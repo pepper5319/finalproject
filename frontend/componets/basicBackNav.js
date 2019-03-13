@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet} from 'react-native';
 import { Appbar } from 'react-native-paper';
 
 export default class BasicBackNav extends React.Component {
