@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>9</integer>
+	<key>logs</key>
+	<dict>
+		<key>4BD48EB6-DFFB-4B58-88FA-64F056CF9119</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>4BD48EB6-DFFB-4B58-88FA-64F056CF9119.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>E</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>testCamera project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>testCamera</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>573582451.34625304</real>
+			<key>timeStoppedRecording</key>
+			<real>573582452.06586599</real>
+			<key>title</key>
+			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>4BD48EB6-DFFB-4B58-88FA-64F056CF9119</string>
+		</dict>
+		<key>5DF1C509-5645-4D4F-97A8-873B0C13C7A8</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>5DF1C509-5645-4D4F-97A8-873B0C13C7A8.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>E</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>testCamera project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>testCamera</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>573577326.44564402</real>
+			<key>timeStoppedRecording</key>
+			<real>573577327.51548803</real>
+			<key>title</key>
+			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>5DF1C509-5645-4D4F-97A8-873B0C13C7A8</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

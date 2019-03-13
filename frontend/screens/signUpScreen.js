@@ -1,8 +1,10 @@
 import React from 'react';
 import { StyleSheet, View, ImageBackground } from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
+import UserAction from '../actions/userAction'
+import { connect } from 'react-redux';
 
-export default class SignUpScreen extends React.Component {
+class SignUpScreen extends React.Component {
     state = {
         textfirst: '',
         textlast: '',
@@ -34,6 +36,25 @@ export default class SignUpScreen extends React.Component {
             xhr.send(data);
         }
     }
+    onChangeTag = (tag) => {
+        this.setState({ active: tag })
+        console.log('tag change')
+        this.props.changeTag2(tag)
+    }
+    closeDrawer = () => {
+        this.drawer._root.close()
+    };
+    openDrawer = () => {
+        this.drawer._root.open()
+    };
+    testfunction(){
+        this.registerUser
+        this.props.changeTag2('home')
+    }
+    userTag = (user) => {
+        this.state.textuser(user);
+    }
+
     render() {
         return (
             <ImageBackground source={require('../backgroundImages/food.jpg')} style={{ width: '100%', height: '100%' }}>
@@ -43,8 +64,6 @@ export default class SignUpScreen extends React.Component {
                         style={[styles.textboxC, {marginBottom: 16}]}
                         mode='flat'
                         label='First Name'
-                        placeholder='name'
-                        placeholderTextColor='black'
                         value={this.state.textfirst}
                         onChangeText={textfirst => this.setState({ textfirst })}
                     />
@@ -89,8 +108,11 @@ export default class SignUpScreen extends React.Component {
                         value={this.state.textpassC}
                         onChangeText={textpassC => this.setState({ textpassC })}
                     />
-                    <Button style={styles.Buttontest} mode="contained" onPress={this.registerUser}>
+                    <Button style={[styles.Buttontest,{marginBottom:16}]} mode="contained" onPress={this.testfunction.bind(this)}>
                         Create Account
+                    </Button>
+                    <Button style={styles.Buttontest} mode="contained" onPress={() => {this.props.changeTag2('login')}}>
+                        My Bad Bro
                     </Button>
                 </View>
             </ImageBackground>
@@ -114,3 +136,9 @@ const styles = StyleSheet.create({
         padding: 10
     }
 });
+
+const mapStateToProps = state => ({
+    user: state.users.userName
+});
+
+export default connect(mapStateToProps, {UserAction})(SignUpScreen);

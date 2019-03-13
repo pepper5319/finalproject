@@ -5,11 +5,13 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import *
 from .permissions import *
-from .serializers import PItemSerializer, RecipeSerializer, ReceiptSerializer
+from .serializers import PItemSerializer, RecipeSerializer, ReceiptSerializer,UPCSerializer
 import math, random, string
 from .user_updates import updateMatches
 from .scraping import *
+from datetime import date
 from django.http import HttpResponse
+from .OCR import UPCCodes
 # Create your views here.
 
 
@@ -87,6 +89,28 @@ class PItemDetailView(generics.RetrieveUpdateDestroyAPIView):
         pItems = PItem.objects.filter(user = curUser)
         return pItems
 
+class AddPItemsView(generics.CreateAPIView):
+    serializer_class = PItemSerializer
+    permission_classes = (permissions.IsAuthenticated, )
+
+    def post(self, request):
+        try:
+            new_pitems = self.request.data['items']
+        except KeyError:
+            raise KeyError('Request has no \'items\' field attached. Must be an array')
+
+        for item in new_pitems:
+            id = ''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(10))
+            pitem = PItem.objects.create(
+                static_id=id,
+                name=item['name'],
+                qty=1,
+                exp_date=date.today(),
+                user=self.request.user
+            )
+            pitem.save()
+        return Response(f"Added {len(new_pitems)} new items")
+
 class ReceiptsView(generics.ListCreateAPIView):
     serializer_class = ReceiptSerializer
     permission_classes = (permissions.IsAuthenticated,)
@@ -107,5 +131,13 @@ class ReceiptsView(generics.ListCreateAPIView):
         pitems = PItem.objects.filter(user=self.request.user)
 
         updateMatches(self.request.user, recipes, 0.75, pitems)
-
+        UPCCodes(reciept.static_id)
         return Response('Created Receipt {}'.format(reciept.static_id))
+
+class UPCView(generics.ListCreateAPIView):
+    serializer_class = UPCSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def get_queryset(self):
+        recipes = Recipe.objects.all()
+        return recipes
