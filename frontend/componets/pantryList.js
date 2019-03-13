@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Content, List, ListItem, Thumbnail, Text, Left, Body, Right, Button } from 'native-base';
+import {List, ListItem, Thumbnail, Text, Left, Body, Right, Button } from 'native-base';
 
 export default class PantryList extends React.Component {
     render() {

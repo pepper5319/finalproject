@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ScrollView, Image, StyleSheet, Text, ListView, WebView } from 'react-native';
+import { View } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import { Drawer } from 'native-base';
 import SideBar from '../navigation/drawerStyle';
@@ -20,14 +20,12 @@ class WebScreen extends React.Component {
         ImagePicker.showImagePicker(options, response => {
             if (response.uri) {
                 this.props.picFound(response.uri);
-                console.log("response", this.props.url);
             }
         });
     };
 
     onChangeTag = (tag) => {
         this.setState({ active: tag })
-        console.log('tag change')
         this.props.changeTag8(tag)
     }
     closeDrawer = () => {

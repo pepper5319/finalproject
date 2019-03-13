@@ -1,6 +1,4 @@
 import React from 'react';
-import { StyleSheet, Text } from 'react-native';
-import { styles } from '../styles/defaultStyle';
 
 export class MenuButton extends React.Component {
     render() {

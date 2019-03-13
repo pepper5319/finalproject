@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {StyleSheet, View, Text,ImageBackground,Image,Alert} from 'react-native';
-import { TextInput,Button, HelperText } from 'react-native-paper';
+import {StyleSheet, View, ImageBackground,Image,Alert} from 'react-native';
+import { TextInput,Button} from 'react-native-paper';
 import UserAction from '../actions/userAction'
 
 class LoginScreen extends React.Component {
@@ -27,7 +27,6 @@ class LoginScreen extends React.Component {
     
     onChangeTag = (tag) => {
         this.setState({ active: tag })
-        console.log('tag change')
         this.props.changeTag7(tag)
     }
     loginUser = _ => {
@@ -76,7 +75,7 @@ class LoginScreen extends React.Component {
                         value={this.state.textpass}
                         onChangeText={textpass => this.setState({textpass})}
                     />
-                    <Button style={[styles.Buttontest,{marginBottom:16}]} mode="contained" onPress={this.checkTextIsEmpty}>
+                    <Button style={[styles.Buttontest,{marginBottom:16}]} mode="contained" onPress={this.checkTextIsEmpty.bind(this)}>
                         Login
                     </Button>
                     <Button style={styles.Buttontest2} mode="contained" onPress={() => {this.props.changeTag7('signup')}}>
@@ -102,7 +101,7 @@ const styles = StyleSheet.create({
     Buttontest: {
         width: '60%',
         alignSelf: 'center',
-        backgroundColor: 'red'
+        backgroundColor: '#cc0000'
     },
     Buttontest2: {
         width: '60%',
