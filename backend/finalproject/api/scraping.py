@@ -1,6 +1,6 @@
 import requests
 import json
-from .ingredient_parsing import search_dict, plural_to_singular
+from .ingredient_parsing import search_dict, plural_to_singular, handle_special_characters
 from bs4 import BeautifulSoup
 import os.path
 BASE = os.path.dirname(os.path.abspath(__file__))
@@ -14,7 +14,8 @@ def scraper(str_in):
     id_image_url = scrape_recipes(str_in=str_in)
     for recipe_list in id_image_url:
         recipe_list = scrape_ingredients(recipe_list)
-        final_recipe_list.append(recipe_list)
+        if len(recipe_list[-1]) is not 0:
+            final_recipe_list.append(recipe_list)
     return final_recipe_list
 
 def scrape_recipes(str_in):
@@ -58,11 +59,12 @@ def scrape_ingredients(recipe_list_obj):
     cooking_keywords = ['teaspoon', 'teaspoons', 'tablespoon', 'tablespoons', 'cup',
                         'cups', 'pint', 'pints', 'ounce', 'ounces', 'pound',
                         'pounds', 'dash', 'pinch', 'quart', 'quarts',
-                        'gallon', 'gallons', 'fresh']
+                        'gallon', 'gallons', 'fresh', 'freshly', 'ground', 'delicious',
+                        'crushed']
 
     cooking_keyword_abbrv = ['t', 'tsp', 'T', 'Tsbp', 'c', 'oz', 'pt', 'qt', 'gal',
                              'lb', '#']
-    dont_include_list = ['and', 'whole', 'condensed', 'hot', 'cold']
+    # dont_include_list = ['and', 'whole', 'condensed', 'hot', 'cold', 'delicious', 'food', 'liquid', 'italian']
     ingredient_list = []
     ingredient_dict = {}
     data = requests.get(recipe_list_obj[-1])
@@ -70,26 +72,24 @@ def scrape_ingredients(recipe_list_obj):
     soup2 = soup
     results = soup.body.findAll(attrs={'itemprop' : 'recipeIngredient'})
     recipe_name = str(soup2.head.title.string).replace('Recipe - Allrecipes.com', '').replace('\\', '').strip()
-    recipe_list_obj.append(recipe_name)
+    recipe_list_obj.append(handle_special_characters(recipe_name))
     with open(os.path.join(BASE, 'ingredients.json')) as file:
         ingredient_dict = json.load(file)
 
     for ingredient in results:
         str_ingredient = str(ingredient.string)
-        str_ingredient = str_ingredient.replace(',', '')
+        str_ingredient = handle_special_characters(str_ingredient.replace(',', '').replace('-', ' '))
         arr = []
         arr = str_ingredient.split()
         final_ingredient = ''
         for val in arr:
             if val.isalpha() == True:
-                if val == 'or':
-                    break
                 if str(val) not in cooking_keywords and str(val) not in cooking_keyword_abbrv:
                     final_ingredient += plural_to_singular(val) + ' '
         final_ingredient = search_dict(input_dict=ingredient_dict, search_term=final_ingredient.strip().lower())
         if final_ingredient is not None:
-            if final_ingredient not in dont_include_list:
-                if final_ingredient not in ingredient_list:
-                    ingredient_list.append(final_ingredient.strip())
+            # if final_ingredient not in dont_include_list:
+            if final_ingredient not in ingredient_list:
+                ingredient_list.append(final_ingredient.strip())
     recipe_list_obj.append(ingredient_list)
     return recipe_list_obj

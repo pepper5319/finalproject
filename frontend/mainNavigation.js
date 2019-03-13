@@ -7,7 +7,9 @@ import RecipeScreen from './screens/recipeScreen.js';
 import InstructionScreen from './screens/instructionScreen.js'
 import LoginScreen from './screens/loginScreen.js';
 import WebScreen from './screens/webScreen.js';
+import AddPantryScreen from './screens/addPantryScreen.js';
 import LogoutScreen from './screens/logoutScreen.js';
+
 export default class MainNavigation extends Component {
     state = {
         active: 'home'
@@ -15,11 +17,11 @@ export default class MainNavigation extends Component {
     constructor() {
         super();
     };
-   
+
     onChangeTag = (tag) => {
         this.setState({ active: tag })
       }
-   
+
     render() {
         return (
             <Drawer>
@@ -33,6 +35,8 @@ export default class MainNavigation extends Component {
                      <RecipeScreen changeTag4={this.onChangeTag.bind(this)} changeTag5={this.onChangeTag.bind(this)}/>
                      || this.state.active == 'instruction' &&
                      <InstructionScreen changeTag6={this.onChangeTag.bind(this)}/>
+                     || this.state.active == 'addPantry' &&
+                     <AddPantryScreen changeTag5={this.onChangeTag.bind(this)}/>
                      || this.state.active == 'login' &&
                     <LoginScreen changeTag7={this.onChangeTag.bind(this)}/>
                      || this.state.active == 'web' &&
@@ -46,6 +50,3 @@ export default class MainNavigation extends Component {
         );
     }
 }
-
-
-

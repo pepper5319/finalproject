@@ -6,7 +6,7 @@
 	<integer>9</integer>
 	<key>logs</key>
 	<dict>
-		<key>5DF1C509-5645-4D4F-97A8-873B0C13C7A8</key>
+		<key>1BB1CEF1-33E0-4CD0-B79B-13C4C0B332FA</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>5DF1C509-5645-4D4F-97A8-873B0C13C7A8.xcactivitylog</string>
+			<string>1BB1CEF1-33E0-4CD0-B79B-13C4C0B332FA.xcactivitylog</string>
 			<key>highLevelStatus</key>
 			<string>S</string>
 			<key>schemeIdentifier-containerName</key>
