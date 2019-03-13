@@ -79,7 +79,7 @@ class InstructionScreen extends React.Component {
                     <BasicBackNav button1={this.props.changeTag6} backTo={this.props.tagHome} titleTxt={'Instruction'} />
                 </View>
 
-              <InstructionComp ingredients={this.state.ingredients} webUrl={'https://images.media-allrecipes.com/userphotos/300x300/4572704.jpg'}/>
+              <InstructionComp ingredients={this.state.ingredients} webUrl={this.props.recipe.image_url}/>
 
               <TouchableOpacity
           style={styles.webButton}
@@ -122,4 +122,3 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, { picFound, navAction, setRecipe, backtohomeAction })(InstructionScreen);
-

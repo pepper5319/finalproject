@@ -55,6 +55,7 @@ class HomeScreen extends React.Component {
   };
   componentDidMount(){
     this.props.getRecipes(ADMIN_KEY);
+    this.props.backtohomeAction('home');
   }
 
   componentDidUpdate(){
@@ -112,4 +113,3 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, { picFound, navAction, getRecipes, setRecipe, backtohomeAction })(HomeScreen);
-
