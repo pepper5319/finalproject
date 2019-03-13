@@ -5,7 +5,7 @@ import { Drawer } from 'native-base';
 import DrawerStyle from '../navigation/drawerStyle.js';
 import { picFound } from '../actions/picActions.js';
 import { navAction } from '../actions/navigationAction.js';
-import { getRecipes } from '../actions/recipeAction.js';
+import { getRecipes, setRecipe } from '../actions/recipeAction.js';
 import { connect } from 'react-redux';
 import NavbarComp from '../componets/navbarComp.js'
 import CardComp from '../componets/cardComp.js'
@@ -56,9 +56,10 @@ class HomeScreen extends React.Component {
     console.log(this.props.recipes);
   }
 
-  onChangeTag = (tag) => {
+  onChangeTag = (tag, data) => {
+    this.props.setRecipe(data);
     this.setState({ active: tag })
-    console.log('tag change')
+    console.log('tag change'),
     this.props.changeTag(tag)
   }
   closeDrawer = () => {
@@ -70,7 +71,7 @@ class HomeScreen extends React.Component {
 
   render() {
     const recipes = this.props.recipes.map((recipe) => (
-      <CardCompRecepie imgUri={recipe.image_url} titleTxt={recipe.name} viewClick={this.props.changeTag}/>
+      <CardCompRecepie imgUri={recipe.image_url} titleTxt={recipe.name} viewClick={(tag) => this.onChangeTag(tag, recipe)}/>
     ));
     return (
       <Drawer
@@ -84,7 +85,7 @@ class HomeScreen extends React.Component {
         openDrawerOffset={0.3}
         panCloseMask={0.3}>
       <View>
-          <NavbarComp  button1={this.openDrawer} button2={this.PhotoPic} titleTxt={'Home'}/>
+          <NavbarComp button1={this.openDrawer} button2={this.PhotoPic} titleTxt={'Home'}/>
       </View>
       <ScrollView>
         {recipes}
@@ -104,4 +105,4 @@ const mapStateToProps = state => ({
   recipes: state.recipes.recipes
 });
 
-export default connect(mapStateToProps, { picFound, navAction, getRecipes })(HomeScreen);
+export default connect(mapStateToProps, { picFound, navAction, getRecipes, setRecipe })(HomeScreen);

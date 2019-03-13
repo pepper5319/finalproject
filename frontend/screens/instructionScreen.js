@@ -5,6 +5,7 @@ import { Drawer } from 'native-base';
 import SideBar from '../navigation/drawerStyle';
 import { picFound } from '../actions/picActions.js';
 import { navAction } from '../actions/navigationAction.js';
+import { setRecipe } from '../actions/recipeAction.js';
 import { connect } from 'react-redux';
 import BasicBackNav from '../componets/basicBackNav.js';
 import InstructionComp from '../componets/instructionComp.js'
@@ -24,6 +25,13 @@ class InstructionScreen extends React.Component {
         });
     };
 
+    constructor(){
+      super();
+      this.state = {
+        ingredients: null
+      }
+    }
+
     onChangeTag = (tag) => {
         this.setState({ active: tag })
         console.log('tag change')
@@ -35,6 +43,24 @@ class InstructionScreen extends React.Component {
     openDrawer = () => {
         this.drawer._root.open()
     };
+
+    componentWillMount(){
+      console.log("MOUNTED");
+      var ing = this.props.recipe.ingredients.replace(/[\[\]&]+/g, '');
+      ing = ing.replace(/[\']+/g, '');
+      ing = ing.replace(/[\']+/g, '');
+      this.setState({ingredients: ing.split(', ')});
+    }
+    componentWillReceiveProps(props){
+      console.log("UPDATING");
+      var ing = props.recipe.ingredients.replace(/[\[\]&]+/g, '');
+      ing = ing.replace(/[\']+/g, '');
+      ing = ing.replace(/[\']+/g, '');
+      this.setState({ingredients: ing.split(', ')});
+    }
+    componentWillUnmount(){
+      console.log("Unmount");
+    }
 
     render() {
 
@@ -53,7 +79,7 @@ class InstructionScreen extends React.Component {
                     <BasicBackNav button1={this.props.changeTag6} backTo={'recipe'} titleTxt={'Instruction'} />
                 </View>
 
-              <InstructionComp ingredients={ingredient} webUrl={'https://images.media-allrecipes.com/userphotos/300x300/4572704.jpg'}/>
+              <InstructionComp ingredients={this.state.ingredients} webUrl={'https://images.media-allrecipes.com/userphotos/300x300/4572704.jpg'}/>
 
               <TouchableOpacity
           style={styles.webButton}
@@ -65,7 +91,6 @@ class InstructionScreen extends React.Component {
         );
     }
 }
-const ingredient = ['chicken breast', 'salt', 'egg', 'bread crumb', 'parmesan cheese', 'flour', 'olive oil', 'tomato', 'mozzarella', 'basil', 'provolone cheese', 'chicken breast', 'salt', 'egg', 'bread crumb', 'parmesan cheese', 'flour', 'olive oil', 'tomato', 'mozzarella', 'basil', 'provolone cheese', 'chicken breast', 'salt', 'egg', 'bread crumb', 'parmesan cheese', 'flour', 'olive oil', 'tomato', 'NO THIS NO', 'chicken breast', 'salt', 'egg', 'bread crumb', 'parmesan cheese', 'flour', 'olive oil', 'tomato', 'Mano', 'chicken breast', 'salt', 'egg', 'bread crumb', 'parmesan cheese', 'flour', 'olive oil', 'tomato', 'Manowtf is this'];
 
 
 const styles = StyleSheet.create({
@@ -91,7 +116,8 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = state => ({
     url: state.pics.picURL,
-    tag: state.tags.activeTag
+    tag: state.tags.activeTag,
+    recipe: state.recipes.recipe
 });
 
-export default connect(mapStateToProps, { picFound, navAction })(InstructionScreen);
+export default connect(mapStateToProps, { picFound, navAction, setRecipe })(InstructionScreen);

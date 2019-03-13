@@ -20,6 +20,14 @@ export const getRecipes = (token) => dispatch => {
     }));
 }
 
+export const setRecipe = (recipeData) => dispatch => {
+  console.log(recipeData);
+  dispatch({
+    type: 'RECIPES_SET_SUCCESS',
+    payload: recipeData
+  })
+}
+
 export const getSingleRecipe = (token, id) => dispatch => {
   fetch(RECIPES_URL + id + '/', {
       method: 'GET',
