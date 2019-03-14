@@ -51,9 +51,9 @@ class WebScreen extends React.Component {
                 <View>
                     <BasicBackNav button1={this.props.changeTag8} backTo={'instruction'} titleTxt={'Web'} />
                 </View>
-                <WebViewComp recipeUrl={'https://www.allrecipes.com/recipe/223042/chicken-parmesan/'}/>
+                <WebViewComp recipeUrl={this.props.recipe.recipe_url}/>
 
-              
+
             </Drawer>
         );
     }
@@ -62,7 +62,8 @@ class WebScreen extends React.Component {
 
 const mapStateToProps = state => ({
     url: state.pics.picURL,
-    tag: state.tags.activeTag
+    tag: state.tags.activeTag,
+    recipe: state.recipes.recipe
 });
 
 export default connect(mapStateToProps, { picFound, navAction })(WebScreen);

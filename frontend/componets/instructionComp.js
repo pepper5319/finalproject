@@ -4,7 +4,7 @@ import { View, ScrollView, Image, StyleSheet, Text} from 'react-native';
 
 export default class InstructionComp extends React.Component {
     render() {
-
+        const ingredients = this.props.ingredients.map((ingredients) => <Text style={styles.textStyle}>{ingredients}</Text>)
         return (
             <View style={styles.contain}>
                 <Image
@@ -14,9 +14,7 @@ export default class InstructionComp extends React.Component {
                 <View style={styles.constainer }>
                     <ScrollView>
                     <View style={{marginRight: 30}}>
-                        {this.props.ingredients.map((ingredients) =>
-                            <Text style={styles.textStyle}>{ingredients}</Text>
-                        )}
+                        {ingredients}
                     </View>
                 </ScrollView>
                 </View>
@@ -37,7 +35,7 @@ const styles = StyleSheet.create({
     textStyle: {
         fontSize: 18,
         fontWeight: '400',
-        flex: 1, 
+        flex: 1,
 
     },
     stretch: {
@@ -53,6 +51,6 @@ const styles = StyleSheet.create({
         width: 350,
         paddingHorizontal: 10,
         backgroundColor: '#f6f6f6',
-        
+
     }
 });
