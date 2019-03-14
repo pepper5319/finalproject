@@ -69,6 +69,28 @@ class RecipeDetailView(generics.RetrieveUpdateDestroyAPIView):
         recipes = Recipe.objects.all()
         return recipes
 
+    def retrieve(self, request, pk=None):
+        user = self.request.user
+        recipe = Recipe.objects.get(pk=pk)
+        # recipe = Recipe.object.get_object(pk=pk)
+        serializer = RecipeSerializer(recipe)
+        dict = {}
+        dict['recipe'] = serializer.data
+        ingredients_str = serializer.data['ingredients']
+        recipe_ingredients = ingredients_str.replace('[', '').replace(']', '').replace("'", '').replace(',', '').split()
+
+        pItems = PItem.objects.filter(user=user)
+        itemSerializer = PItemSerializer(pItems, many=True)
+        print(itemSerializer.data)
+        pItems_list = []
+
+        for ingredient in recipe_ingredients:
+            if ingredient in itemSerializer.data:
+                pItems_list.append(ingredient)
+
+        dict['matches'] = pItems_list
+
+        return Response(dict)
 
 # Url name == 'pItem-list'
 class GetPItemsView(generics.ListCreateAPIView):
