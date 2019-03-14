@@ -1,12 +1,22 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
-import { TextInput,Button } from 'react-native-paper';
+import { connect } from 'react-redux';
+import {StyleSheet, View, Text,ImageBackground} from 'react-native';
+import {Button} from 'react-native-paper';
+import UserAction from '../actions/userAction'
 
-export default class LogoutScreen extends React.Component {
-    state = {
-        textuser:'',
-        textpass:''
+class LogoutScreen extends React.Component {
+    onChangeTag = (tag) => {
+        this.setState({ active: tag })
+        console.log('tag change')
+        this.props.changeTag(tag)
+    }
+    closeDrawer = () => {
+        this.drawer._root.close()
     };
+    openDrawer = () => {
+        this.drawer._root.open()
+    };
+
     logoutUser = _ => {
       var xhr = new XMLHttpRequest();
       var url = "https://pantryplatter.herokuapp.com/api/rest-auth/logout/";
@@ -14,13 +24,25 @@ export default class LogoutScreen extends React.Component {
       xhr.setRequestHeader("Content-Type", "application/json");
       xhr.send();
     }
+    userTag = (user) => {
+        this.state.textuser(user);
+    }
+    testfunction(){
+        this.logoutUser
+        this.props.changeTag9('login')
+    }
     render(){
         return(
-            <View style={styles.Contain}>
-                <Button style={styles.Buttontest} mode="contained" onPress={this.logoutUser}>
-                    Logout
-                </Button>
-            </View>
+            <ImageBackground source={require('../backgroundImages/logoutback.jpg')} style={{ width: '100%', height: '100%' }}>
+                <Text
+                    user
+                />
+                <View style={styles.bottom}>
+                    <Button style={styles.Buttontest} mode="contained" onPress={this.testfunction.bind(this)}>
+                        Logout
+                    </Button>
+                </View>
+            </ImageBackground>
         );
     }
 }
@@ -30,23 +52,19 @@ const styles = StyleSheet.create({
         justifyContent:'space-between',
     },
     Buttontest: {
-        width: '50%',
-        alignSelf: 'center',
+        position:'relative',
+        bottom:0,
+        
     },
-    DOBrow: {
-        flexDirection: 'row',
-    },
-    dayandmonthCon: {
-        justifyContent:'space-between',
-        width: '25%',
-        height: '10%',
-    },
-    yearCon: {
-        justifyContent:'space-between',
-        width: '25%',
-        height: '10%',
-    },
-    textboxC:{
-        borderColor:'black'
+    bottom:{
+        flex: 1,
+        justifyContent: 'flex-end',
+        marginBottom: 36
     }
   });
+
+  const mapStateToProps = state => ({
+    user: state.users.userName
+  });
+  
+  export default connect(mapStateToProps, {UserAction})(LogoutScreen);

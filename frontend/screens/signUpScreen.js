@@ -1,16 +1,40 @@
 import React from 'react';
-import { StyleSheet, View, Text, ImageBackground } from 'react-native';
+import { StyleSheet, View, Text, ImageBackground,Alert, TouchableOpacity} from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
+import UserAction from '../actions/userAction'
+import { connect } from 'react-redux';
 
-export default class SignUpScreen extends React.Component {
-    state = {
-        textfirst: '',
-        textlast: '',
-        textemail: '',
-        textuser: '',
-        textpass: '',
-        textpassC: '',
-    };
+class SignUpScreen extends React.Component {
+    constructor(props){
+        super(props)
+        this.state ={
+            textfirst: '',
+            textlast: '',
+            textemail: '',
+            textuser: '',
+            textpass: '',
+            textpassC: '',
+        }
+    }
+    checkTextIsEmpty = () =>{
+        const{textfirst} = this.state;
+        const{textlast} = this.state;
+        const{textemail} = this.state;
+        const{textuser} = this.state;
+        const{textpass} = this.state;
+        const{textpassC} = this.state;
+
+        const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ ;
+
+
+        if(textfirst == '' || textlast=='' || textemail == '' || textuser=='' || textpass == '' || textpassC==''){
+            Alert.alert('My bad bro')
+        }
+        else{
+            this.registerUser;
+            this.props.changeTag2('home');
+        }
+    }
     registerUser = () => {
 
         if (this.state.textpass === this.state.textpassC && this.state.textemail != '' && this.state.textuser != '' && this.state.textpass != '' && this.state.textpassC != '') {
@@ -34,6 +58,25 @@ export default class SignUpScreen extends React.Component {
             xhr.send(data);
         }
     }
+    onChangeTag = (tag) => {
+        this.setState({ active: tag })
+        console.log('tag change')
+        this.props.changeTag2(tag)
+    }
+    closeDrawer = () => {
+        this.drawer._root.close()
+    };
+    openDrawer = () => {
+        this.drawer._root.open()
+    };
+    testfunction(){
+        this.registerUser
+        this.props.changeTag2('home')
+    }
+    userTag = (user) => {
+        this.state.textuser(user);
+    }
+
     render() {
         return (
             <ImageBackground source={require('../backgroundImages/food.jpg')} style={{ width: '100%', height: '100%' }}>
@@ -43,8 +86,6 @@ export default class SignUpScreen extends React.Component {
                         style={[styles.textboxC, {marginBottom: 16}]}
                         mode='flat'
                         label='First Name'
-                        placeholder='name'
-                        placeholderTextColor='black'
                         value={this.state.textfirst}
                         onChangeText={textfirst => this.setState({ textfirst })}
                     />
@@ -89,9 +130,14 @@ export default class SignUpScreen extends React.Component {
                         value={this.state.textpassC}
                         onChangeText={textpassC => this.setState({ textpassC })}
                     />
-                    <Button style={styles.Buttontest} mode="contained" onPress={this.registerUser}>
+                    <Button style={[styles.Buttontest,{marginBottom:16}]} mode="contained" onPress={this.checkTextIsEmpty.bind(this)}>
                         Create Account
                     </Button>
+                    <TouchableOpacity  mode="contained" onPress={() => {this.props.changeTag2('login')}}>
+                        <Text style={styles.backtext}>
+                            My Bad Bro
+                        </Text>
+                    </TouchableOpacity>
                 </View>
             </ImageBackground>
         );
@@ -105,7 +151,12 @@ const styles = StyleSheet.create({
     Buttontest: {
         width: '60%',
         alignSelf: 'center',
-        backgroundColor: 'red'
+        backgroundColor: '#cc0000'
+    },
+    backtext:{
+        alignSelf: 'center',
+        color: '#cc0000',
+        fontSize: 20
     },
     textboxC: {
         backgroundColor: 'rgba(255,255,255,0.5)',
@@ -114,3 +165,9 @@ const styles = StyleSheet.create({
         padding: 10
     }
 });
+
+const mapStateToProps = state => ({
+    user: state.users.userName
+});
+
+export default connect(mapStateToProps, {UserAction})(SignUpScreen);

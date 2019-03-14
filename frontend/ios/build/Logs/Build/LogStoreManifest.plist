@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>6CAE15C5-80DA-49D6-A846-D3A8F38D4D4A.xcactivitylog</string>
+			<string>1BB1CEF1-33E0-4CD0-B79B-13C4C0B332FA.xcactivitylog</string>
 			<key>highLevelStatus</key>
 			<string>E</string>
 			<key>schemeIdentifier-containerName</key>
@@ -27,15 +27,15 @@
 			<key>signature</key>
 			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>574089758.06461</real>
+			<real>574180328.92091501</real>
 			<key>timeStoppedRecording</key>
-			<real>574089761.10862398</real>
+			<real>574180334.71855998</real>
 			<key>title</key>
 			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>6CAE15C5-80DA-49D6-A846-D3A8F38D4D4A</string>
+			<string>08901001-2740-412B-986C-0B5C9410C28D</string>
 		</dict>
-		<key>EAC789FC-D041-4478-9FBB-EA1871D2F92E</key>
+		<key>7ADA0AF1-F52F-4E03-89D9-946822BF063A</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -44,9 +44,9 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>EAC789FC-D041-4478-9FBB-EA1871D2F92E.xcactivitylog</string>
+			<string>7ADA0AF1-F52F-4E03-89D9-946822BF063A.xcactivitylog</string>
 			<key>highLevelStatus</key>
-			<string>E</string>
+			<string>S</string>
 			<key>schemeIdentifier-containerName</key>
 			<string>testCamera project</string>
 			<key>schemeIdentifier-schemeName</key>
@@ -56,13 +56,13 @@
 			<key>signature</key>
 			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>573663360.47412205</real>
+			<real>574183173.26027501</real>
 			<key>timeStoppedRecording</key>
-			<real>573663361.485847</real>
+			<real>574183174.45339203</real>
 			<key>title</key>
 			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>EAC789FC-D041-4478-9FBB-EA1871D2F92E</string>
+			<string>7ADA0AF1-F52F-4E03-89D9-946822BF063A</string>
 		</dict>
 	</dict>
 </dict>

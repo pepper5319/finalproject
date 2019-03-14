@@ -10,7 +10,7 @@
 		</data>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		bV9l1IuTFXsFj89mINbtYG45bgs=
+		vt5jG72mXa7fMjPCvNXflNTqAuo=
 		</data>
 		<key>Entypo.ttf</key>
 		<data>
@@ -75,7 +75,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		xl9EpLrk12QFBydjIMj5XYGhfAg=
+		CFbOVg7BBz4S9HhwQeFB2LeP/Vs=
 		</data>
 		<key>Ionicons.ttf</key>
 		<data>
@@ -103,7 +103,7 @@
 		</data>
 		<key>PlugIns/testCameraTests.xctest.dSYM/Contents/Resources/DWARF/testCameraTests</key>
 		<data>
-		sPl3N7lur8lBlieyL2enryIhTwQ=
+		RfOilm6cCvmA2mWnZe5M74XC5AY=
 		</data>
 		<key>PlugIns/testCameraTests.xctest/Info.plist</key>
 		<data>
@@ -111,11 +111,19 @@
 		</data>
 		<key>PlugIns/testCameraTests.xctest/_CodeSignature/CodeResources</key>
 		<data>
-		g++4TxX+z/vgTZAdon50qcfbFo4=
+		jRpIOqQLeLUsaNv777d9OI1YR7M=
 		</data>
 		<key>PlugIns/testCameraTests.xctest/testCameraTests</key>
 		<data>
-		NmfkbTUtF7s70cDbvW9cxnG9ErA=
+		QQxuc2/WMk9L+5dgVNJS0SGAwfA=
+		</data>
+		<key>Roboto.ttf</key>
+		<data>
+		HR1B/K3Fcd7LZEQhG3mTuZzpJuI=
+		</data>
+		<key>Roboto_medium.ttf</key>
+		<data>
+		rbw73kJLz328OPFIAFyDGYJYkfI=
 		</data>
 		<key>SimpleLineIcons.ttf</key>
 		<data>
@@ -124,6 +132,10 @@
 		<key>Zocial.ttf</key>
 		<data>
 		C9pZx7zT05J94EfgkYdaRCi/0as=
+		</data>
+		<key>rubicon-icon-font.ttf</key>
+		<data>
+		wWjJGa/hGKWVqUjSz9izW6v2ekU=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -143,11 +155,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			bV9l1IuTFXsFj89mINbtYG45bgs=
+			vt5jG72mXa7fMjPCvNXflNTqAuo=
 			</data>
 			<key>hash2</key>
 			<data>
-			98LFCM/6GJKkU3eMAjMvVm0SsO3l5ZZrjjnj56s9kB8=
+			jdDAj1Qoly88n0MmLo8qoSSffpkCELDG5vdrMty9Uuc=
 			</data>
 		</dict>
 		<key>Entypo.ttf</key>
@@ -365,11 +377,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			sPl3N7lur8lBlieyL2enryIhTwQ=
+			RfOilm6cCvmA2mWnZe5M74XC5AY=
 			</data>
 			<key>hash2</key>
 			<data>
-			Vp4YMCnxnvcGkHOp6IKZw0l9kTyLLNa2wew6ti56USk=
+			BrdvrytMCbPqMJyZLMNlgTMNfwP8y/9efRJAwRAKGEc=
 			</data>
 		</dict>
 		<key>PlugIns/testCameraTests.xctest/Info.plist</key>
@@ -387,22 +399,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			g++4TxX+z/vgTZAdon50qcfbFo4=
+			jRpIOqQLeLUsaNv777d9OI1YR7M=
 			</data>
 			<key>hash2</key>
 			<data>
-			WClW53Zk6MLflpFBgSiHbwPoeoBvNhlS+IFYMM3vddw=
+			GMN16UXpbOKUl1EAogiI0yFtT3cCeO+20SulHTXrKyQ=
 			</data>
 		</dict>
 		<key>PlugIns/testCameraTests.xctest/testCameraTests</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			NmfkbTUtF7s70cDbvW9cxnG9ErA=
+			QQxuc2/WMk9L+5dgVNJS0SGAwfA=
 			</data>
 			<key>hash2</key>
 			<data>
-			a7VcWaf2yJCnleFURN7D4LESVfiubiQIptZOn0p1sNo=
+			plLxKeBN9esd8vtmtV2m/CLpFQG5/q6nd68F8Iyj6FA=
+			</data>
+		</dict>
+		<key>Roboto.ttf</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			HR1B/K3Fcd7LZEQhG3mTuZzpJuI=
+			</data>
+			<key>hash2</key>
+			<data>
+			su+ryl6kvFbuqClxNwa1zQeIuCrKFTvUrd6bFXOTO08=
+			</data>
+		</dict>
+		<key>Roboto_medium.ttf</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			rbw73kJLz328OPFIAFyDGYJYkfI=
+			</data>
+			<key>hash2</key>
+			<data>
+			0Mj0SndLhJDO7imInNq8cjgfo1+2IWGaeP0oIR2QJBw=
 			</data>
 		</dict>
 		<key>SimpleLineIcons.ttf</key>
@@ -425,6 +459,17 @@
 			<key>hash2</key>
 			<data>
 			17EKHr4YMOWi8I9JA7moDiwZEsDdL3O5P88r+DIhZgI=
+			</data>
+		</dict>
+		<key>rubicon-icon-font.ttf</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			wWjJGa/hGKWVqUjSz9izW6v2ekU=
+			</data>
+			<key>hash2</key>
+			<data>
+			QidT7Dg0ix8cbNL7jAOGB1UJ8qZuZ1+mfLlrbeEAZhM=
 			</data>
 		</dict>
 	</dict>

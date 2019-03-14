@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-/Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/JSBigString.o
-/Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/JSIndexedRAMBundle.o
-/Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/ModuleRegistry.o
-/Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/RAMBundleRegistry.o
-/Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/CxxNativeModule.o
-/Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/JSCExecutor.o
-/Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/JSCLegacyTracing.o
-/Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/ReactMarker.o
-/Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/JSCPerfStats.o
-/Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/JSBundleType.o
-/Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/JSCUtils.o
-/Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/JSCSamplingProfiler.o
-/Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/JSCMemory.o
-/Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/MethodCall.o
-/Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/Platform.o
-/Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/Instance.o
-/Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/NativeToJsBridge.o
-/Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/JSCNativeModules.o
-/Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/SampleCxxModule.o
-=======
 /Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/JSBigString.o
 /Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/JSIndexedRAMBundle.o
 /Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/ModuleRegistry.o
@@ -39,25 +17,3 @@
 /Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/NativeToJsBridge.o
 /Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/JSCNativeModules.o
 /Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/SampleCxxModule.o
->>>>>>> origin/cardclean
-=======
-/Users/jmarsh15/Desktop/Final-Project/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/JSBigString.o
-/Users/jmarsh15/Desktop/Final-Project/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/JSIndexedRAMBundle.o
-/Users/jmarsh15/Desktop/Final-Project/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/ModuleRegistry.o
-/Users/jmarsh15/Desktop/Final-Project/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/RAMBundleRegistry.o
-/Users/jmarsh15/Desktop/Final-Project/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/CxxNativeModule.o
-/Users/jmarsh15/Desktop/Final-Project/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/JSCExecutor.o
-/Users/jmarsh15/Desktop/Final-Project/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/JSCLegacyTracing.o
-/Users/jmarsh15/Desktop/Final-Project/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/ReactMarker.o
-/Users/jmarsh15/Desktop/Final-Project/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/JSCPerfStats.o
-/Users/jmarsh15/Desktop/Final-Project/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/JSBundleType.o
-/Users/jmarsh15/Desktop/Final-Project/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/JSCUtils.o
-/Users/jmarsh15/Desktop/Final-Project/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/JSCSamplingProfiler.o
-/Users/jmarsh15/Desktop/Final-Project/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/JSCMemory.o
-/Users/jmarsh15/Desktop/Final-Project/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/MethodCall.o
-/Users/jmarsh15/Desktop/Final-Project/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/Platform.o
-/Users/jmarsh15/Desktop/Final-Project/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/Instance.o
-/Users/jmarsh15/Desktop/Final-Project/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/NativeToJsBridge.o
-/Users/jmarsh15/Desktop/Final-Project/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/JSCNativeModules.o
-/Users/jmarsh15/Desktop/Final-Project/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/cxxreact.build/Objects-normal/x86_64/SampleCxxModule.o
->>>>>>> fapi

@@ -39,14 +39,12 @@ class PantryScreen extends React.Component {
     ImagePicker.showImagePicker(options, response => {
       if (response.uri) {
         this.props.picFound(response.uri);
-        console.log("response", this.props.url);
       }
     });
   };
 
   onChangeTag = (tag) => {
     this.setState({ active: tag })
-    console.log('tag change')
     this.props.changeTag3(tag)
   }
   closeDrawer = () => {
@@ -73,7 +71,7 @@ class PantryScreen extends React.Component {
         openDrawerOffset={0.3}
         panCloseMask={0.3}>
       <View>
-      <NavbarComp  button1={this.openDrawer} button2={this.PhotoPic} titleTxt={'Pantry'}/>
+      <NavbarComp button1={this.openDrawer} button2={() => this.onChangeTag('addPantry')} titleTxt={'Pantry'}/>
       </View>
       <Text>{}</Text>
         <PantryList titleTxt={'Frosted Flakes'} descripTxt={'They are great!!!'} imgUri={'https://target.scene7.com/is/image/Target/GUEST_b9491cf3-7323-43b3-ae9a-8edfa5dcae0d?wid=488&hei=488&fmt=pjpeg'}/>
