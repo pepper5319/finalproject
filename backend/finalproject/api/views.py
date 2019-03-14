@@ -47,17 +47,17 @@ class GetNewRecipesView(generics.ListCreateAPIView):
             raise KeyError('Request has no recipe query attached')
         scrape_results = scraper(recipe)
 
+        recipes = []
+
         for r in scrape_results:
             try:
                 new_recipe = Recipe.objects.get(static_id=r[0])
-                recipes.append(new_recipe)
             except Recipe.DoesNotExist:
                 new_recipe = Recipe.objects.create(static_id=r[0], image_url=r[1], recipe_url=r[2], name=r[3], ingredients=r[4])
                 new_recipe.save()
                 recipes.append(new_recipe)
 
-        serialized_recipes = RecipeSerializer(recipes, many=true)
-        return serialized_recipes
+        return recipes
 
 # Url name == 'recipe-detail'
 class RecipeDetailView(generics.RetrieveUpdateDestroyAPIView):
