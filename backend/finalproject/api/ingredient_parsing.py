@@ -17,13 +17,10 @@ def search_dict(input_dict, search_term):
 
             while (str_key < str_len):
                 if str_val < str_len:
-                    if search_split[str_key] in input_dict.keys():
-                        if search_split[str_val] in input_dict[search_split[str_key]]:
-                            build_str += ' ' + search_split[str_val]
-                            str_key += 1
-                            str_val += 1
-                        else:
-                            break
+                    if search_split[str_val] in input_dict[search_split[str_key]]:
+                        build_str += ' ' + search_split[str_val]
+                        str_key += 1
+                        str_val += 1
                     else:
                         break
                 else:
