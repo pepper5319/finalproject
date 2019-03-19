@@ -21,7 +21,6 @@ export const getRecipes = (token) => dispatch => {
 }
 
 export const setRecipe = (recipeData) => dispatch => {
-  console.log(recipeData);
   dispatch({
     type: 'RECIPES_SET_SUCCESS',
     payload: recipeData
@@ -29,19 +28,19 @@ export const setRecipe = (recipeData) => dispatch => {
 }
 
 export const getSingleRecipe = (token, id) => dispatch => {
-  fetch(RECIPES_URL + id + '/', {
+  fetch(RECIPES_URL + id, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
         'Authorization': 'Token ' + token
       },
     })
-    .then(res => res.json())
     .then(res => {
+      console.log(res);
       if(res.status === 200){
         return res.json()
       }else{
-        alert(res.statusText);
+        alert(res.status);
       }
     })
     .then(data => dispatch({

@@ -5,6 +5,7 @@
 	<key>logFormatVersion</key>
 	<integer>9</integer>
 	<key>logs</key>
+<<<<<<< HEAD
 	<dict>
 		<key>3D36F6D8-EAE3-4DAA-A6BE-BBB7AF56C38D</key>
 		<dict>
@@ -36,5 +37,8 @@
 			<string>3D36F6D8-EAE3-4DAA-A6BE-BBB7AF56C38D</string>
 		</dict>
 	</dict>
+=======
+	<dict/>
+>>>>>>> 17965e1261775d2fa32fe525ec7d2da10f301f8f
 </dict>
 </plist>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/yoga.build/Objects-normal/x86_64/YGFloatOptional.o
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/yoga.build/Objects-normal/x86_64/Yoga.o
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/yoga.build/Objects-normal/x86_64/YGStyle.o
@@ -6,3 +7,13 @@
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/yoga.build/Objects-normal/x86_64/Utils.o
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/yoga.build/Objects-normal/x86_64/YGLayout.o
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/yoga.build/Objects-normal/x86_64/YGNodePrint.o
+=======
+/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/yoga.build/Objects-normal/x86_64/YGFloatOptional.o
+/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/yoga.build/Objects-normal/x86_64/Yoga.o
+/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/yoga.build/Objects-normal/x86_64/YGStyle.o
+/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/yoga.build/Objects-normal/x86_64/YGNode.o
+/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/yoga.build/Objects-normal/x86_64/YGEnums.o
+/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/yoga.build/Objects-normal/x86_64/Utils.o
+/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/yoga.build/Objects-normal/x86_64/YGLayout.o
+/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/yoga.build/Objects-normal/x86_64/YGNodePrint.o
+>>>>>>> 17965e1261775d2fa32fe525ec7d2da10f301f8f

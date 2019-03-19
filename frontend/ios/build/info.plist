@@ -3,8 +3,12 @@
 <plist version="1.0">
 <dict>
 	<key>LastAccessedDate</key>
+<<<<<<< HEAD
 	<date>2019-03-19T13:37:52Z</date>
+=======
+	<date>2019-03-19T14:06:17Z</date>
+>>>>>>> 17965e1261775d2fa32fe525ec7d2da10f301f8f
 	<key>WorkspacePath</key>
-	<string>/Users/jj/Desktop/Final_Proyect/frontend/ios/testCamera.xcodeproj</string>
+	<string>/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/testCamera.xcodeproj</string>
 </dict>
 </plist>

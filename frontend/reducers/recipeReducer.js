@@ -1,4 +1,4 @@
-const recipeReducer = (state = { recipes: [], recipe: null }, action) => {
+const recipeReducer = (state = { recipes: [], recipe: null, recipe_id: null }, action) => {
   switch (action.type) {
     case "RECIPES_SUCCESS":
       state = {
@@ -7,13 +7,13 @@ const recipeReducer = (state = { recipes: [], recipe: null }, action) => {
       }
       break;
     case "RECIPES_SET_SUCCESS":
-      console.log(action.payload);
       state = {
         ...state,
-        recipe: action.payload
+        recipe_id: action.payload.static_id
       }
       break;
     case "RECIPES_SINGLE_SUCCESS":
+      console.log(action.payload);
       state = {
         ...state,
         recipe: action.payload

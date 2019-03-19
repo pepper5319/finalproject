@@ -1,4 +1,5 @@
 dependencies: \
+<<<<<<< HEAD
   /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Inspector/RCTInspector.mm \
   /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Inspector/RCTInspector.h \
   /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTDefines.h \
@@ -10,3 +11,16 @@ dependencies: \
   /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTAssert.h \
   /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTUtils.h \
   /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/Libraries/WebSocket/RCTSRWebSocket.h
+=======
+  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Inspector/RCTInspector.mm \
+  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Inspector/RCTInspector.h \
+  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JavaScriptCore.h \
+  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCWrapper.h \
+  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/jsinspector/InspectorInterfaces.h \
+  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Inspector/RCTInspectorPackagerConnection.h \
+  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/Libraries/WebSocket/RCTSRWebSocket.h
+>>>>>>> 17965e1261775d2fa32fe525ec7d2da10f301f8f
