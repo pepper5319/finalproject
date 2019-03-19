@@ -1,9 +1,25 @@
 import React from 'react';
-import { View, ScrollView, Image, StyleSheet, Text} from 'react-native';
+import { View, ScrollView, Image, StyleSheet, Text, Dimensions} from 'react-native';
+let screenPercent = '39%'
+containerSize = () => {
+const windowHeight = Dimensions.get("window").height
+
+if(windowHeight < 600)
+screenPercent = '39%';
+
+else
+screenPercent = '50%';
+
+}
 
 
 export default class InstructionComp extends React.Component {
+    componentDidMount(){
+        containerSize()
+    console.log(screenPercent)
+ }   
     render() {
+        console.log(windowHeight)
         const ingredients = this.props.ingredients.map((ingredients) => <Text style={styles.textStyle}>{ingredients}</Text>)
         return (
             <View style={styles.contain}>
@@ -16,7 +32,7 @@ export default class InstructionComp extends React.Component {
                     <View style={{marginRight: 30}}>
                         {ingredients}
                     </View>
-                </ScrollView>
+                </ScrollView>  
                 </View>
 
 
@@ -47,10 +63,12 @@ const styles = StyleSheet.create({
     },
     constainer: {
         flexDirection: 'row',
-        height: 350,
-        width: 350,
+        height: screenPercent,
+        width: windowWidth,
         paddingHorizontal: 10,
         backgroundColor: '#f6f6f6',
 
     }
 });
+const windowWidth = Dimensions.get("window").width
+const windowHeight = Dimensions.get("window").height

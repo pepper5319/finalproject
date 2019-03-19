@@ -8,7 +8,6 @@ import { navAction } from '../actions/navigationAction.js';
 import { getRecipes, setRecipe } from '../actions/recipeAction.js';
 import { connect } from 'react-redux';
 import NavbarComp from '../componets/navbarComp.js'
-import CardComp from '../componets/cardComp.js'
 import CardCompRecepie from '../componets/cardCompRecepie.js';
 import { ADMIN_KEY } from '../apiUrls.js';
 import { backtohomeAction } from '../actions/backtohomeAction.js';

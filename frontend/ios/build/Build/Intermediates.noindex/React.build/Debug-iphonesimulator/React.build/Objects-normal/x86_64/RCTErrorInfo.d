@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Base/RCTErrorInfo.m \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Base/RCTErrorInfo.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Base/RCTJSStackFrame.h
+  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTErrorInfo.m \
+  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTErrorInfo.h \
+  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTJSStackFrame.h

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Text, TouchableOpacity, ScrollView, Dimensions} from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import { Drawer } from 'native-base';
 import SideBar from '../navigation/drawerStyle';
@@ -63,7 +63,7 @@ class InstructionScreen extends React.Component {
     }
 
     render() {
-
+        console.log(windowHeight)
         return (
             <Drawer
                 ref={(ref) => { this.drawer = ref; }}
@@ -75,6 +75,7 @@ class InstructionScreen extends React.Component {
                 onPress={() => this.closeDrawer}
                 openDrawerOffset={0.3}
                 panCloseMask={0.3}>
+
                 <View>
                     <BasicBackNav button1={this.props.changeTag6} backTo={this.props.tagHome} titleTxt={'Instruction'} />
                 </View>
@@ -87,6 +88,7 @@ class InstructionScreen extends React.Component {
           underlayColor='#000000'>
           <Text style={styles.webBtnText}>Instruction URL</Text>
         </TouchableOpacity>
+
             </Drawer>
         );
     }
@@ -98,12 +100,16 @@ const styles = StyleSheet.create({
         marginRight:40,
         marginLeft:40,
        marginTop:30,
+       marginBottom: 10,
         paddingTop:10,
         paddingBottom:10,
         backgroundColor:'#cc0000',
         borderRadius:10,
         borderWidth: 1,
-        borderColor: '#cc0000'
+        borderColor: '#cc0000',
+        position: 'absolute',
+    bottom:0,
+    left: '16%',
       },
       webBtnText:{
           color:'#fff',
@@ -120,5 +126,8 @@ const mapStateToProps = state => ({
     recipe: state.recipes.recipe,
     tagHome: state.tohome.homeTag,
 });
+
+const windowWidth = Dimensions.get("window").width
+const windowHeight = Dimensions.get("window").height
 
 export default connect(mapStateToProps, { picFound, navAction, setRecipe, backtohomeAction })(InstructionScreen);
