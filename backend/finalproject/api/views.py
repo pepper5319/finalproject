@@ -12,6 +12,8 @@ from .scraping import *
 from datetime import date
 from django.http import HttpResponse
 from .OCR import UPCCodes
+from .user_updates import calc_similarities, updateMatches
+import collections
 # Create your views here.
 
 
@@ -20,10 +22,32 @@ class GetRecipesView(generics.ListCreateAPIView):
     serializer_class = RecipeSerializer
     permission_classes = (permissions.IsAuthenticated,)
 
+    # def get_queryset(self):
+    #     user = self.request.user
+    #     recipes = Recipe.objects.all()
+    #     return recipes
+
     def get_queryset(self):
         user = self.request.user
         recipes = Recipe.objects.all()
+        pitems = PItem.objects.filter(user=user)
+        dict = {}
+
+        for recipe in recipes:
+            similar = int(calc_similarities(recipe.ingredients, pitems) * 1000)
+            if similar not in dict.keys():
+                dict[similar] = []
+            dict[similar].append(recipe)
+
+        ordered_keys = sorted(dict.keys(), reverse=True)
+
+        recipes = []
+        for key in ordered_keys:
+            for recipe in dict[key]:
+                recipes.append(recipe)
+
         return recipes
+
 
     def get_stored_recipes(self):
         recipes = Recipe.objects.all()
