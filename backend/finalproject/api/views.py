@@ -77,15 +77,17 @@ class RecipeDetailView(generics.RetrieveUpdateDestroyAPIView):
         dict = {}
         dict['recipe'] = serializer.data
         ingredients_str = serializer.data['ingredients']
-        recipe_ingredients = ingredients_str.replace('[', '').replace(']', '').replace("'", '').replace(',', '').split()
+        recipe_ingredients = ingredients_str.replace('[', '').replace(']', '').replace("'", '').split(', ')
 
         pItems = PItem.objects.filter(user=user)
         itemSerializer = PItemSerializer(pItems, many=True)
-        print(itemSerializer.data)
         pItems_list = []
+        saved_ingredients = []
+        for val in itemSerializer.data:
+            saved_ingredients.append(str(val['name']))
 
         for ingredient in recipe_ingredients:
-            if ingredient in itemSerializer.data:
+            if ingredient in saved_ingredients:
                 pItems_list.append(ingredient)
 
         dict['matches'] = pItems_list
