@@ -1,5 +1,4 @@
 dependencies: \
-<<<<<<< HEAD
   /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native-gesture-handler/ios/Handlers/RNNativeViewHandler.m \
   /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native-gesture-handler/ios/Handlers/RNNativeViewHandler.h \
   /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native-gesture-handler/ios/RNGestureHandler.h \
@@ -31,36 +30,3 @@ dependencies: \
   /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTComponent.h \
   /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTView.h \
   /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/UIView+React.h
-=======
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native-gesture-handler/ios/Handlers/RNNativeViewHandler.m \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native-gesture-handler/ios/Handlers/RNNativeViewHandler.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native-gesture-handler/ios/RNGestureHandler.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native-gesture-handler/ios/RNGestureHandlerState.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native-gesture-handler/ios/RNGestureHandlerDirection.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native-gesture-handler/ios/RNGestureHandlerEvents.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTEventDispatcher.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTConvert.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAnimationType.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBorderStyle.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTPointerEvents.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTTextDecorationLineType.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTScrollView.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAutoInsetsProtocol.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTScrollableProtocol.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTComponent.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTView.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/UIView+React.h
->>>>>>> 17965e1261775d2fa32fe525ec7d2da10f301f8f

@@ -9,13 +9,8 @@ import { connect } from 'react-redux';
 import NavbarComp from '../componets/navbarComp.js';
 import CardCompRecepie from '../componets/cardCompRecepie.js';
 import { backtohomeAction } from '../actions/backtohomeAction.js';
-<<<<<<< HEAD
 import { getRecipes, setRecipe } from '../actions/recipeAction.js';
 import { ADMIN_KEY } from '../apiUrls';
-=======
-import { ADMIN_KEY } from '../apiUrls.js';
-import { getRecipes, setRecipe } from '../actions/recipeAction.js';
->>>>>>> 17965e1261775d2fa32fe525ec7d2da10f301f8f
 
 
 class RecipeScreen extends React.Component {
@@ -23,10 +18,6 @@ class RecipeScreen extends React.Component {
 
 
     componentDidMount() {
-<<<<<<< HEAD
-=======
-
->>>>>>> 17965e1261775d2fa32fe525ec7d2da10f301f8f
         this.props.getRecipes(ADMIN_KEY);
         this.props.backtohomeAction('recipe')
     }
@@ -65,16 +56,15 @@ class RecipeScreen extends React.Component {
           .catch(err => console.error(err))
       };
 
-    onChangeTag = (tag, data) => {
-<<<<<<< HEAD
+      toRecipe = (tag, data) => {
         this.props.setRecipe(data);
         this.setState({ active: tag })
         this.props.changeTag4(tag)
-=======
-      this.props.setRecipe(data);
-      this.setState({ active: tag })
-      this.props.changeTag4(tag);
->>>>>>> 17965e1261775d2fa32fe525ec7d2da10f301f8f
+    }
+
+    onChangeTag = (tag) => {
+        this.setState({ active: tag })
+        this.props.changeTag4(tag)
     }
     closeDrawer = () => {
         this.drawer._root.close()
@@ -85,13 +75,8 @@ class RecipeScreen extends React.Component {
 
     render() {
         const recipes = this.props.recipes.map((recipe) => (
-<<<<<<< HEAD
-            <CardCompRecepie imgUri={recipe.image_url} titleTxt={recipe.name} viewClick={(tag) => this.onChangeTag(tag, recipe)}/>
+            <CardCompRecepie imgUri={recipe.image_url} titleTxt={recipe.name} viewClick={(tag) => this.toRecipe(tag, recipe)}/>
           ));
-=======
-          <CardCompRecepie imgUri={recipe.image_url} titleTxt={recipe.name} viewClick={(tag) => this.onChangeTag(tag, recipe)}/>
-        ));
->>>>>>> 17965e1261775d2fa32fe525ec7d2da10f301f8f
         return (
             <Drawer
                 ref={(ref) => { this.drawer = ref; }}
@@ -107,11 +92,7 @@ class RecipeScreen extends React.Component {
                     <NavbarComp button1={this.openDrawer} button2={this.PhotoPic} titleTxt={'Recipe'} />
                 </View>
                 <ScrollView>
-<<<<<<< HEAD
                 {recipes}
-=======
-                  {recipes}
->>>>>>> 17965e1261775d2fa32fe525ec7d2da10f301f8f
                 </ScrollView>
             </Drawer>
         );
@@ -122,16 +103,9 @@ const mapStateToProps = state => ({
     url: state.pics.picURL,
     tag: state.tags.activeTag,
     tagHome: state.tohome.homeTag,
-<<<<<<< HEAD
     recipes: state.recipes.recipes,
 
 
 });
 
 export default connect(mapStateToProps, { picFound, navAction,getRecipes, setRecipe, backtohomeAction })(RecipeScreen);
-=======
-    recipes: state.recipes.recipes
-});
-
-export default connect(mapStateToProps, { picFound, navAction, backtohomeAction, getRecipes, setRecipe })(RecipeScreen);
->>>>>>> 17965e1261775d2fa32fe525ec7d2da10f301f8f

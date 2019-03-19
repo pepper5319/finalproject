@@ -138,11 +138,7 @@ const mapStateToProps = state => ({
     tagHome: state.tohome.homeTag,
 });
 
-<<<<<<< HEAD
 const windowWidth = Dimensions.get("window").width
 const windowHeight = Dimensions.get("window").height
 
-export default connect(mapStateToProps, { picFound, navAction, setRecipe, backtohomeAction })(InstructionScreen);
-=======
 export default connect(mapStateToProps, { picFound, navAction, setRecipe, backtohomeAction, getSingleRecipe })(InstructionScreen);
->>>>>>> 17965e1261775d2fa32fe525ec7d2da10f301f8f
