@@ -1,3 +1,21 @@
+<<<<<<< HEAD
+/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/Conv.o
+/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/StringBase.o
+/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/raw_logging.o
+/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/signalhandler.o
+/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/dynamic.o
+/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/utilities.o
+/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/MallocImpl.o
+/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/Bits.o
+/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/symbolize.o
+/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/vlog_is_on.o
+/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/Unicode.o
+/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/demangle-ec60c033c076a10c7f6cdea09e8bef22c67a869564183b68ceff63bc9453d1d1.o
+/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/Demangle-ec60c033c076a10c7f6cdea09e8bef229c993bc548238add55a807ad7bf8f7b6.o
+/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/logging.o
+/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/json.o
+/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/BitsFunctexcept.o
+=======
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/Conv.o
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/StringBase.o
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/raw_logging.o
@@ -14,3 +32,4 @@
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/logging.o
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/json.o
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/React.build/Debug-iphonesimulator/third-party.build/Objects-normal/x86_64/BitsFunctexcept.o
+>>>>>>> development

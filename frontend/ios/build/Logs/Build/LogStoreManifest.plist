@@ -5,6 +5,9 @@
 	<key>logFormatVersion</key>
 	<integer>9</integer>
 	<key>logs</key>
+<<<<<<< HEAD
+	<dict/>
+=======
 	<dict>
 		<key>C5A3159F-F09A-4379-A9C0-0CA869F92246</key>
 		<dict>
@@ -36,5 +39,6 @@
 			<string>C5A3159F-F09A-4379-A9C0-0CA869F92246</string>
 		</dict>
 	</dict>
+>>>>>>> development
 </dict>
 </plist>
