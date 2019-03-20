@@ -8,6 +8,7 @@ export default class BasicBackNav extends React.Component {
             <Appbar style={styles.barcontainer}>
             <Appbar.Action icon="chevron-left" onPress={() => {this.props.button1(this.props.backTo)}} />
             <Appbar.Content title={this.props.titleTxt} />
+            {this.props.button2 !== undefined && <Appbar.Action icon="done" onPress={this.props.button2} />}
             </Appbar>
         )
     }
@@ -17,5 +18,5 @@ const styles = StyleSheet.create({
     barcontainer: {
       backgroundColor: '#cc0000',
     },
-  
+
   });

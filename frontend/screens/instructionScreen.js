@@ -1,15 +1,16 @@
 import React from 'react';
-import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Text, TouchableOpacity, ScrollView, Dimensions} from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import { Drawer } from 'native-base';
 import SideBar from '../navigation/drawerStyle';
 import { picFound } from '../actions/picActions.js';
 import { navAction } from '../actions/navigationAction.js';
-import { setRecipe } from '../actions/recipeAction.js';
+import { setRecipe, getSingleRecipe } from '../actions/recipeAction.js';
 import { connect } from 'react-redux';
 import BasicBackNav from '../componets/basicBackNav.js';
 import InstructionComp from '../componets/instructionComp.js'
 import { backtohomeAction } from '../actions/backtohomeAction.js';
+import { ADMIN_KEY } from '../apiUrls.js';
 
 class InstructionScreen extends React.Component {
 
@@ -46,25 +47,34 @@ class InstructionScreen extends React.Component {
 
     componentWillMount(){
       console.log("MOUNTED");
-      var ing = this.props.recipe.ingredients.replace(/[\[\]&]+/g, '');
-      ing = ing.replace(/[\']+/g, '');
-      ing = ing.replace(/[\']+/g, '');
-      this.setState({ingredients: ing.split(', ')});
+
     }
     componentWillReceiveProps(props){
       console.log("UPDATING");
-      var ing = props.recipe.ingredients.replace(/[\[\]&]+/g, '');
-      ing = ing.replace(/[\']+/g, '');
-      ing = ing.replace(/[\']+/g, '');
-      this.setState({ingredients: ing.split(', ')});
+
+
+    }
+    componentDidMount(){
+      console.log(this.props.recipe_id);
+      this.props.getSingleRecipe(ADMIN_KEY, this.props.recipe_id);
+    }
+    componentDidUpdate(){
+      console.log(this.props.recipe);
+      if(this.state.ingredients === null && this.props.recipe !== null && this.props.recipe !== undefined){
+        var ing = this.props.recipe.recipe.ingredients.replace(/[\[\]&]+/g, '');
+        ing = ing.replace(/[\']+/g, '');
+        ing = ing.replace(/[\']+/g, '');
+        this.setState({ingredients: ing.split(', ')});
+      }
     }
     componentWillUnmount(){
       console.log("Unmount");
     }
 
     render() {
-
+        console.log(windowHeight)
         return (
+
             <Drawer
                 ref={(ref) => { this.drawer = ref; }}
                 content={<SideBar
@@ -75,18 +85,20 @@ class InstructionScreen extends React.Component {
                 onPress={() => this.closeDrawer}
                 openDrawerOffset={0.3}
                 panCloseMask={0.3}>
+
                 <View>
                     <BasicBackNav button1={this.props.changeTag6} backTo={this.props.tagHome} titleTxt={'Instruction'} />
                 </View>
-
-              <InstructionComp ingredients={this.state.ingredients} webUrl={this.props.recipe.image_url}/>
-
+              {this.props.recipe !== null && this.props.recipe !== undefined && this.state.ingredients !== null &&
+                <InstructionComp ingredients={this.state.ingredients} webUrl={this.props.recipe.recipe.image_url}/>
+              }
               <TouchableOpacity
           style={styles.webButton}
           onPress={() => {this.props.changeTag6('web')}}
           underlayColor='#000000'>
           <Text style={styles.webBtnText}>Instruction URL</Text>
         </TouchableOpacity>
+
             </Drawer>
         );
     }
@@ -98,12 +110,16 @@ const styles = StyleSheet.create({
         marginRight:40,
         marginLeft:40,
        marginTop:30,
+       marginBottom: 10,
         paddingTop:10,
         paddingBottom:10,
         backgroundColor:'#cc0000',
         borderRadius:10,
         borderWidth: 1,
-        borderColor: '#cc0000'
+        borderColor: '#cc0000',
+        position: 'absolute',
+    bottom:0,
+    left: '16%',
       },
       webBtnText:{
           color:'#fff',
@@ -118,7 +134,11 @@ const mapStateToProps = state => ({
     url: state.pics.picURL,
     tag: state.tags.activeTag,
     recipe: state.recipes.recipe,
+    recipe_id: state.recipes.recipe_id,
     tagHome: state.tohome.homeTag,
 });
 
-export default connect(mapStateToProps, { picFound, navAction, setRecipe, backtohomeAction })(InstructionScreen);
+const windowWidth = Dimensions.get("window").width
+const windowHeight = Dimensions.get("window").height
+
+export default connect(mapStateToProps, { picFound, navAction, setRecipe, backtohomeAction, getSingleRecipe })(InstructionScreen);

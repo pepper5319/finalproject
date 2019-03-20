@@ -6,17 +6,14 @@ export default class PantryList extends React.Component {
         return(
           <List>
             <ListItem thumbnail>
-              <Left>
-                <Thumbnail square source={{ uri: this.props.imgUri }} />
-              </Left>
-              <Body>
+              <Body style={{position: "relative", right: 20}}>
                 <Text>{this.props.titleTxt}</Text>
                 <Text note numberOfLines={1}>{this.props.descripTxt}</Text>
               </Body>
               <Right>
-                <Button transparent>
-                  <Text>View</Text>
-                </Button>
+                <Text  style={{fontSize: 10,fontWeight: '400'}}>EXP. Date</Text>
+
+                  <Text style={{alignContent: 'center'}}>{this.props.expDate}</Text>
               </Right>
             </ListItem>
           </List>

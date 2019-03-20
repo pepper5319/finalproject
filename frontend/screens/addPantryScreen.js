@@ -6,14 +6,15 @@ import { TextInput, Card, IconButton, Title, Paragraph, Button } from 'react-nat
 import SideBar from '../navigation/drawerStyle';
 import { navAction } from '../actions/navigationAction.js';
 import { connect } from 'react-redux';
-import NavbarComp from '../componets/navbarComp';
+import BackNav from '../componets/basicBackNav.js';
 import WebViewComp from '../componets/webViewComp'
+
+import { ADMIN_KEY, PANTRY_URL } from '../apiUrls.js';
 
 class AddPantryScreen extends React.Component {
 
     onChangeTag = (tag) => {
         this.setState({ active: tag })
-        console.log('tag change')
         this.props.changeTag5(tag)
     }
     closeDrawer = () => {
@@ -48,21 +49,54 @@ class AddPantryScreen extends React.Component {
       console.log(this.state.newItems);
     }
 
-    removeItem = (id) => {
-      
+    deleteItem = (key) => {
+      var filteredItems = this.state.newItems;
+      var ind = filteredItems.indexOf(key);
+      if(ind > -1){
+        filteredItems.splice(ind, 1);
+        this.setState({
+          newItems:filteredItems
+        });
+      }
+    }
+
+    uploadItems = () => {
+      const pitems = [];
+      this.state.newItems.map((item) => {
+        const itemData = {
+          static_id: item.itemID,
+          name: item.itemName,
+          qty: item.itemQty,
+          exp_data: item.itemExp
+        }
+        pitems.push(itemData);
+      });
+      const pbody = {
+        items: pitems
+      }
+      fetch(PANTRY_URL+'add-items/', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json',
+            'Authorization': 'Token ' + ADMIN_KEY
+          },
+          body: JSON.stringify(pbody)
+        })
+        .then(res => {
+          if(res.status === 200){
+            this.setState({itemName: '', itemExp: '', itemQty: ''})
+            this.onChangeTag('pantry');
+          }else{
+            console.log(res);
+          }
+        });
     }
 
     render() {
 
-        const items = this.state.newItems.map((item) => (
-          <Card style={{marginBottom: 10}}>
-              <Card.Content>
-                <Title>{item.itemName}</Title>
-                {item.itemQty !== undefined && <Paragraph>{item.itemQty} - Exp: {item.itemExp}</Paragraph> }
-              </Card.Content>
-              <Card.Actions style={{justifyContent:'flex-end'}}>
-                <IconButton icon='remove-circle' onPress={() => {}}/>
-              </Card.Actions>
+        var items = this.state.newItems.map((item) => (
+          <Card key={item.itemName} style={{marginBottom: 10}}>
+              <Card.Title title={item.itemName} subtitle={item.itemQty !== undefined && <Paragraph>{item.itemQty} - Exp: {item.itemExp}</Paragraph> } right={(props) => <IconButton icon='remove-circle' onPress={() => this.deleteItem(item)}/>}/>
             </Card>
         ));
 
@@ -78,7 +112,7 @@ class AddPantryScreen extends React.Component {
                 openDrawerOffset={0.3}
                 panCloseMask={0.3}>
                 <View>
-                  <NavbarComp button1={this.openDrawer} button2={this.openDrawer} titleTxt={'Add To Pantry'}/>
+                  <BackNav button1={this.onChangeTag} button2={() => this.uploadItems()} backTo={'pantry'} titleTxt={'Add To Pantry'}/>
                 </View>
                 <View style={{padding: 16}}>
                   <TextInput
