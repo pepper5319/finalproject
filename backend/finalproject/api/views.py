@@ -13,7 +13,7 @@ from datetime import date
 from django.http import HttpResponse
 from .OCR import UPCCodes
 from .user_updates import calc_similarities, updateMatches
-from .ingredient_parsing import search_dict
+from .ingredient_parsing import search_dict, plural_to_singular
 import collections
 import json
 # Create your views here.
@@ -157,7 +157,12 @@ class AddPItemsView(generics.CreateAPIView):
 
         for item in new_pitems:
             id = ''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(10))
-            item['name'] = search_dict(input_dict=ingredient_dict, search_term=item['name'].lower())
+            name_list = item['name'].split()
+            build_str = ''
+            for name in name_list:
+                build_str += plural_to_singular(name) + ' '
+
+            item['name'] = search_dict(input_dict=ingredient_dict, search_term=build_str.strip().lower())
             if item['name'] is not None:
                 pitem = PItem.objects.create(
                     static_id=id,
