@@ -2,7 +2,7 @@ import React from 'react';
 import { View, ScrollView, Image, StyleSheet, Text, ListView } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import { Drawer } from 'native-base';
-import { TextInput, Card, IconButton, Title, Paragraph, Button } from 'react-native-paper';
+import { TextInput, Card, IconButton, Title, Paragraph, Button, Subheading } from 'react-native-paper';
 import SideBar from '../navigation/drawerStyle';
 import { navAction } from '../actions/navigationAction.js';
 import { connect } from 'react-redux';
@@ -96,7 +96,15 @@ class AddPantryScreen extends React.Component {
 
         var items = this.state.newItems.map((item) => (
           <Card key={item.itemName} style={{marginBottom: 10}}>
-              <Card.Title title={item.itemName} subtitle={item.itemQty !== undefined && <Paragraph>{item.itemQty} - Exp: {item.itemExp}</Paragraph> } right={(props) => <IconButton icon='remove-circle' onPress={() => this.deleteItem(item)}/>}/>
+              <Card.Content>
+                <Title>
+                  {item.itemName}
+                </Title>
+                <Subheading>
+                  {item.itemQty !== undefined && item.itemQty}
+                </Subheading>
+                <IconButton icon='remove-circle' onPress={() => this.deleteItem(item)}/>
+              </ Card.Content>
             </Card>
         ));
 
