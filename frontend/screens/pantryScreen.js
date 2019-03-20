@@ -8,6 +8,7 @@ import { navAction } from '../actions/navigationAction.js';
 import { connect } from 'react-redux';
 import PantryList from '../componets/pantryList.js';
 import NavbarComp from '../componets/navbarComp.js';
+import { getPItems, setPItems } from '../actions/recipeAction';
 
 class PantryScreen extends React.Component {
   state = {
@@ -43,7 +44,8 @@ class PantryScreen extends React.Component {
     });
   };
 
-  onChangeTag = (tag) => {
+  onChangeTag = (tag,data) => {
+    this.setPItems(data)
     this.setState({ active: tag })
     this.props.changeTag3(tag)
   }
@@ -59,6 +61,10 @@ class PantryScreen extends React.Component {
   }
 
   render() {
+    const pItems = this.props.pItems.map((PItems) => (
+      <PantryList titleTxt={'name'} descripTxt={'They are great!!!'} />
+    ));
+
     return (
       <Drawer
       ref={(ref) => { this.drawer = ref; }}
@@ -84,7 +90,8 @@ class PantryScreen extends React.Component {
 
 const mapStateToProps = state => ({
   url: state.pics.picURL,
-  tag: state.tags.activeTag
+  tag: state.tags.activeTag,
+  pItems: state.pItems.pItems
 });
 
-export default connect(mapStateToProps, { picFound, navAction })(PantryScreen);
+export default connect(mapStateToProps, { picFound, navAction, getPItems, setPItems })(PantryScreen);

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/RNGestureHandler.build/Debug-iphonesimulator/RNGestureHandler.build/Objects-normal/x86_64/RNGestureHandlerButton.o
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/RNGestureHandler.build/Debug-iphonesimulator/RNGestureHandler.build/Objects-normal/x86_64/RNForceTouchHandler.o
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/RNGestureHandler.build/Debug-iphonesimulator/RNGestureHandler.build/Objects-normal/x86_64/RNGestureHandlerManager.o
@@ -14,20 +13,3 @@
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/RNGestureHandler.build/Debug-iphonesimulator/RNGestureHandler.build/Objects-normal/x86_64/RNRootViewGestureRecognizer.o
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/RNGestureHandler.build/Debug-iphonesimulator/RNGestureHandler.build/Objects-normal/x86_64/RNFlingHandler.o
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/RNGestureHandler.build/Debug-iphonesimulator/RNGestureHandler.build/Objects-normal/x86_64/RNPinchHandler.o
-=======
-/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/RNGestureHandler.build/Debug-iphonesimulator/RNGestureHandler.build/Objects-normal/x86_64/RNGestureHandlerButton.o
-/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/RNGestureHandler.build/Debug-iphonesimulator/RNGestureHandler.build/Objects-normal/x86_64/RNForceTouchHandler.o
-/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/RNGestureHandler.build/Debug-iphonesimulator/RNGestureHandler.build/Objects-normal/x86_64/RNGestureHandlerManager.o
-/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/RNGestureHandler.build/Debug-iphonesimulator/RNGestureHandler.build/Objects-normal/x86_64/RNLongPressHandler.o
-/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/RNGestureHandler.build/Debug-iphonesimulator/RNGestureHandler.build/Objects-normal/x86_64/RNGestureHandlerEvents.o
-/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/RNGestureHandler.build/Debug-iphonesimulator/RNGestureHandler.build/Objects-normal/x86_64/RNPanHandler.o
-/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/RNGestureHandler.build/Debug-iphonesimulator/RNGestureHandler.build/Objects-normal/x86_64/RNGestureHandlerRegistry.o
-/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/RNGestureHandler.build/Debug-iphonesimulator/RNGestureHandler.build/Objects-normal/x86_64/RNGestureHandler.o
-/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/RNGestureHandler.build/Debug-iphonesimulator/RNGestureHandler.build/Objects-normal/x86_64/RNTapHandler.o
-/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/RNGestureHandler.build/Debug-iphonesimulator/RNGestureHandler.build/Objects-normal/x86_64/RNGestureHandlerModule.o
-/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/RNGestureHandler.build/Debug-iphonesimulator/RNGestureHandler.build/Objects-normal/x86_64/RNRotationHandler.o
-/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/RNGestureHandler.build/Debug-iphonesimulator/RNGestureHandler.build/Objects-normal/x86_64/RNNativeViewHandler.o
-/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/RNGestureHandler.build/Debug-iphonesimulator/RNGestureHandler.build/Objects-normal/x86_64/RNRootViewGestureRecognizer.o
-/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/RNGestureHandler.build/Debug-iphonesimulator/RNGestureHandler.build/Objects-normal/x86_64/RNFlingHandler.o
-/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/RNGestureHandler.build/Debug-iphonesimulator/RNGestureHandler.build/Objects-normal/x86_64/RNPinchHandler.o
->>>>>>> 17965e1261775d2fa32fe525ec7d2da10f301f8f

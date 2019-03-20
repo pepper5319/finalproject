@@ -1,5 +1,4 @@
 dependencies: \
-<<<<<<< HEAD
   /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/DevSupport/RCTDevMenu.m \
   /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/DevSupport/RCTDevMenu.h \
   /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTBridge.h \
@@ -17,22 +16,3 @@ dependencies: \
   /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTUtils.h \
   /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/DevSupport/RCTInspectorDevServerHelper.h \
   /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Inspector/RCTInspectorPackagerConnection.h
-=======
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/DevSupport/RCTDevMenu.m \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/DevSupport/RCTDevMenu.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTBridge.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTDefines.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTBridgeModule.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTFrameUpdate.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTInvalidating.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTBridge+Private.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Modules/RCTDevSettings.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTKeyCommands.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTLog.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTAssert.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTUtils.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/DevSupport/RCTInspectorDevServerHelper.h \
-  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Inspector/RCTInspectorPackagerConnection.h
->>>>>>> 17965e1261775d2fa32fe525ec7d2da10f301f8f
