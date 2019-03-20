@@ -8,6 +8,7 @@ import { navAction } from '../actions/navigationAction.js';
 import { connect } from 'react-redux';
 import PantryList from '../componets/pantryList.js';
 import NavbarComp from '../componets/navbarComp.js';
+import { getPItems, setPItems } from '../actions/recipeAction';
 
 class PantryScreen extends React.Component {
   state = {
@@ -43,7 +44,8 @@ class PantryScreen extends React.Component {
     });
   };
 
-  onChangeTag = (tag) => {
+  onChangeTag = (tag,data) => {
+    this.setPItems(data)
     this.setState({ active: tag })
     this.props.changeTag3(tag)
   }
@@ -59,6 +61,10 @@ class PantryScreen extends React.Component {
   }
 
   render() {
+    const pItems = this.props.pItems.map((PItems) => (
+      <PantryList titleTxt={'name'} descripTxt={'They are great!!!'} />
+    ));
+
     return (
       <Drawer
       ref={(ref) => { this.drawer = ref; }}
@@ -74,9 +80,7 @@ class PantryScreen extends React.Component {
       <NavbarComp button1={this.openDrawer} button2={() => this.onChangeTag('addPantry')} titleTxt={'Pantry'}/>
       </View>
       <Text>{}</Text>
-        <PantryList titleTxt={'Frosted Flakes'} descripTxt={'They are great!!!'} imgUri={'https://target.scene7.com/is/image/Target/GUEST_b9491cf3-7323-43b3-ae9a-8edfa5dcae0d?wid=488&hei=488&fmt=pjpeg'}/>
-        <PantryList titleTxt={'BootyO\'s'} descripTxt={'Feel the power of the booty!!!'} imgUri={'https://cdn11.bigcommerce.com/s-0kvv9/images/stencil/1280x1280/products/142346/198390/api0yadvp__30948.1474917330.jpg?c=2&imbypass=on'}/>
-        <PantryList titleTxt={'Lucky Charms'} descripTxt={'Don\'t Take my charms'} imgUri={'https://target.scene7.com/is/image/Target/GUEST_cafaa775-b2de-40f4-b24d-210b5ae54379?wid=488&hei=488&fmt=pjpeg'}/>
+        {pItems}
       </Drawer>
     );
   }
@@ -95,7 +99,8 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = state => ({
   url: state.pics.picURL,
-  tag: state.tags.activeTag
+  tag: state.tags.activeTag,
+  pItems: state.pItems.pItems
 });
 
-export default connect(mapStateToProps, { picFound, navAction })(PantryScreen);
+export default connect(mapStateToProps, { picFound, navAction, getPItems, setPItems })(PantryScreen);
