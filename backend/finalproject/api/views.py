@@ -13,7 +13,9 @@ from datetime import date
 from django.http import HttpResponse
 from .OCR import UPCCodes
 from .user_updates import calc_similarities, updateMatches
+from .ingredient_parsing import search_dict
 import collections
+import json
 # Create your views here.
 
 
@@ -149,16 +151,22 @@ class AddPItemsView(generics.CreateAPIView):
         except KeyError:
             raise KeyError('Request has no \'items\' field attached. Must be an array')
 
+        ingredient_dict = {}
+        with open(os.path.join(BASE, 'ingredients.json')) as file:
+            ingredient_dict = json.load(file)
+
         for item in new_pitems:
             id = ''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(10))
-            pitem = PItem.objects.create(
-                static_id=id,
-                name=item['name'],
-                qty=1,
-                exp_date=date.today(),
-                user=self.request.user
-            )
-            pitem.save()
+            item['name'] = search_dict(input_dict=ingredient_dict, search_term=item['name'].lower())
+            if item['name'] is not None:
+                pitem = PItem.objects.create(
+                    static_id=id,
+                    name=item['name'],
+                    qty=1,
+                    exp_date=date.today(),
+                    user=self.request.user
+                )
+                pitem.save()
         return Response(f"Added {len(new_pitems)} new items")
 
 class ReceiptsView(generics.ListCreateAPIView):
