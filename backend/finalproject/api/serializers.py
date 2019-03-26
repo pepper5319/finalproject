@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from api.models import PItem, Recipe, Receipt
+from api.models import PUser, PItem, Recipe, Receipt
 
 
 class RecipeSerializer(serializers.ModelSerializer):
@@ -7,7 +7,6 @@ class RecipeSerializer(serializers.ModelSerializer):
         model = Recipe
         fields = ('static_id', 'name', 'recipe_url', 'image_url',
                   'ingredients')
-
 
 class PItemSerializer(serializers.ModelSerializer):
     class Meta:
@@ -22,3 +21,8 @@ class ReceiptSerializer(serializers.ModelSerializer):
 class UPCSerializer(serializers.ModelSerializer):
     class Meta:
         fields = ('upc','name')
+
+class PUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PUser
+        fields = ('username', 'liked_recipes')

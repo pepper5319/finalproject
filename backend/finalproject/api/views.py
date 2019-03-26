@@ -5,7 +5,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import *
 from .permissions import *
-from .serializers import PItemSerializer, RecipeSerializer, ReceiptSerializer,UPCSerializer
+from .serializers import PItemSerializer, RecipeSerializer, ReceiptSerializer, UPCSerializer, PUserSerializer
 import math, random, string
 from .user_updates import updateMatches
 from .scraping import *
@@ -216,3 +216,25 @@ class UPCView(generics.ListCreateAPIView):
     def get_queryset(self):
         recipes = Recipe.objects.all()
         return recipes
+
+# name is user-update
+class PUserView(generics.RetrieveDestroyAPIView):
+    serializer_class = PUserSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def get_queryset(self):
+        return self.request.user
+
+    def put(self, request, pk=None):
+        user = PUserSerializer(self.request.user)
+        print(user)
+        return Response(user.data)
+
+        # try:
+        #     liked_recipes = self.request.data['recipe']
+        # except KeyError:
+        #     raise KeyError('Request has no \'recipe\' field attached.')
+        #
+        # for recipe in liked_recipes:
+        #     if recipe not in user['liked_recipes']:
+        #         user['']

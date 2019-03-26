@@ -4,18 +4,18 @@ from django.contrib.auth.models import AbstractUser
 def recieptsFile(instance, filename):
     return '/'.join( ['reciepts', str(instance.static_id + "_" + filename)])
 
-class PUser(AbstractUser):
-    matching_dict = models.TextField()
-    def __str__(self):
-        return "{}".format(self.username)
-
-
 class Recipe(models.Model):
     static_id = models.CharField(max_length=10, primary_key=True)
     name = models.CharField(max_length=200)
     recipe_url = models.CharField(max_length=200)
     image_url = models.CharField(max_length=200)
     ingredients = models.TextField()
+
+class PUser(AbstractUser):
+    liked_recipes = models.ManyToManyField(Recipe)
+    matching_dict = models.TextField()
+    def __str__(self):
+        return "{}".format(self.username + ' | id = ' +  str(self.pk))
 
 class PItem(models.Model):
     static_id = models.CharField(max_length=10, primary_key=True)
