@@ -61,7 +61,6 @@ class HomeScreen extends React.Component {
     console.log(this.props.recipes);
   }
 
-<<<<<<< HEAD
   onChangeTag = (tag) => {
     this.setState({ active: tag })
     console.log('tag change');
@@ -70,24 +69,12 @@ class HomeScreen extends React.Component {
 
 
   toRecipe = (tag, data) => {
-=======
-  toRecipe= (tag, data) => {
->>>>>>> development
     this.props.setRecipe(data);
     this.setState({ active: tag })
     console.log('tag change');
     this.props.changeTag(tag);
   }
 
-<<<<<<< HEAD
-=======
-  onChangeTag = (tag) => {
-    this.setState({ active: tag })
-    console.log('tag change');
-    this.props.changeTag(tag);
-  }
-
->>>>>>> development
   closeDrawer = () => {
     this.drawer._root.close()
   };

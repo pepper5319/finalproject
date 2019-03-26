@@ -8,12 +8,13 @@ import { navAction } from '../actions/navigationAction.js';
 import { connect } from 'react-redux';
 import PantryList from '../componets/pantryList.js';
 import NavbarComp from '../componets/navbarComp.js';
+import { ADMIN_KEY } from '../apiUrls.js';
 import { getPItems, setPItems } from '../actions/recipeAction';
 
 class PantryScreen extends React.Component {
   state = {
       userToken:"39f3fa646bf550befee5852f088676282356e32c",
-      pantry: null
+      pantry: []
   };
 
   getPItems = _ => {
@@ -21,11 +22,12 @@ class PantryScreen extends React.Component {
     var url = "https://pantryplatter.herokuapp.com/api/pItems/";
     xhr.open("GET", url, true);
     xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.setRequestHeader('Authorization', 'Token ' + this.state.userToken)
+    xhr.setRequestHeader('Authorization', 'Token ' + ADMIN_KEY)
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4 && xhr.status === 200) {
           var json = JSON.parse(xhr.responseText);
           this.setState({ pantry: json })
+          console.log(json);
           console.log(this.state.pantry);
         }
       }.bind(this);
@@ -55,16 +57,24 @@ class PantryScreen extends React.Component {
   openDrawer = () => {
     this.drawer._root.open()
   };
-  componentDidMount()
-  {
+  componentDidMount(){
+    console.log("MOUNTED");
     this.getPItems()
   }
 
-  render() {
-    const pItems = this.props.pItems.map((PItems) => (
-      <PantryList titleTxt={'name'} descripTxt={'They are great!!!'} />
-    ));
+  postReceipt = _ => {
+    fetch('http://pantryplatter.herokuapp.com/api/pItems')
+      .then(console.log('button pressed!'))
+      .then(response => response.json())
+      .then(response => this.setState({ students: response.data }))
+      .catch(err => console.error(err))
+  };
 
+  render() {
+    const Pitems = this.state.pantry.map((pitem) => (
+        <PantryList titleTxt={pitem.name} descripTxt={pitem.qty} expDate={pitem.exp_date}/>
+    ));
+    
     return (
       <Drawer
       ref={(ref) => { this.drawer = ref; }}
@@ -80,9 +90,7 @@ class PantryScreen extends React.Component {
       <NavbarComp button1={this.openDrawer} button2={() => this.onChangeTag('addPantry')} titleTxt={'Pantry'}/>
       </View>
       <Text>{}</Text>
-        <PantryList titleTxt={'Frosted Flakes'} descripTxt={'They are great!!!'} expDate={'10/12/2019'} />
-        <PantryList titleTxt={'BootyO\'s'} descripTxt={'Feel the power of the booty!!!'} expDate={'10/12/2019'} />
-        <PantryList titleTxt={'Lucky Charms'} descripTxt={'Don\'t Take my charms'} expDate={'10/12/2019'} />
+        {Pitems}
       </Drawer>
     );
   }
@@ -91,7 +99,6 @@ class PantryScreen extends React.Component {
 const mapStateToProps = state => ({
   url: state.pics.picURL,
   tag: state.tags.activeTag,
-  pItems: state.pItems.pItems
 });
 
-export default connect(mapStateToProps, { picFound, navAction, getPItems, setPItems })(PantryScreen);
+export default connect(mapStateToProps, { picFound, navAction})(PantryScreen);
