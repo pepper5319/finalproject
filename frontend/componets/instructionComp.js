@@ -1,26 +1,33 @@
 import React from 'react';
 import { View, ScrollView, Image, StyleSheet, Text, Dimensions} from 'react-native';
 let screenPercent = '39%'
-containerSize = () => {
-const windowHeight = Dimensions.get("window").height
 
-if(windowHeight < 600)
-screenPercent = '39%';
-
-else
-screenPercent = '50%';
-
-}
 
 
 export default class InstructionComp extends React.Component {
+
+    constructor(){
+        super();
+        this.state = {
+            UpperIngredients: []
+        }
+      }
+
     componentDidMount(){
-        containerSize()
-    console.log(screenPercent)
+    let uperCaseIng = [];
+
+    for (let i = 0; i < this.props.ingredients.length; ++i)
+    uperCaseIng.push(this.props.ingredients[i].charAt(0).toUpperCase() + this.props.ingredients[i].slice(1))
+
+
+    this.setState({
+        UpperIngredients: uperCaseIng
+      });
+
+
  }   
     render() {
-        console.log(windowHeight)
-        const ingredients = this.props.ingredients.map((ingredients) => <Text style={styles.textStyle}>{ingredients}</Text>)
+        const ingredients = this.state.UpperIngredients.map((ingredients) => <Text style={styles.textStyle}>{ingredients}</Text>)
         return (
             <View style={styles.contain}>
                 <Image
@@ -70,5 +77,5 @@ const styles = StyleSheet.create({
 
     }
 });
-const windowWidth = Dimensions.get("window").width
+const windowWidth = Dimensions.get("window").width 
 const windowHeight = Dimensions.get("window").height
