@@ -20,6 +20,11 @@ import json
 # Create your views here.
 
 
+# class RecipeResultsSetPagination(PageNumberPagination):
+#     page_size = 5
+#     page_size_query_param = 'page_size'
+#     max_page_size = 5
+
 # Url name == 'recipe-list'
 class GetRecipesView(generics.ListCreateAPIView):
     serializer_class = RecipeSerializer
@@ -50,6 +55,8 @@ class GetRecipesView(generics.ListCreateAPIView):
                 recipes.append(recipe)
 
         return recipes
+
+        # pagination_class = RecipeResultsSetPagination
         # paginator = Paginator(recipes, 5)
         # page = request.GET.get('page')
         # final_recipes = paginator.get_page(page)
