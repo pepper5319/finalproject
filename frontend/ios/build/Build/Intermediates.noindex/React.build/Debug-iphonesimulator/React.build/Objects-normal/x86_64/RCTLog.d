@@ -1,4 +1,20 @@
 dependencies: \
+<<<<<<< HEAD
+  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTLog.mm \
+  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTBridge+Private.h \
+  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Modules/RCTRedBox.h \
+  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTErrorCustomizer.h
+=======
   /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTLog.mm \
   /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTLog.h \
   /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTAssert.h \
@@ -13,3 +29,4 @@ dependencies: \
   /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTInvalidating.h \
   /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Modules/RCTRedBox.h \
   /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTErrorCustomizer.h
+>>>>>>> development
