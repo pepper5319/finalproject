@@ -14,6 +14,7 @@ from django.http import HttpResponse
 from .OCR import UPCCodes
 from .user_updates import calc_similarities, updateMatches
 from .ingredient_parsing import search_dict, plural_to_singular
+from django.core.paginator import Paginator
 import collections
 import json
 # Create your views here.
@@ -49,6 +50,10 @@ class GetRecipesView(generics.ListCreateAPIView):
                 recipes.append(recipe)
 
         return recipes
+        # paginator = Paginator(recipes, 5)
+        # page = request.GET.get('page')
+        # final_recipes = paginator.get_page(page)
+        # return final_recipes
 
 
     def get_stored_recipes(self):
