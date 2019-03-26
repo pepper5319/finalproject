@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text, TouchableOpacity, ScrollView, Dimensions} from 'react-native';
+import { View, StyleSheet, Text, TouchableOpacity, Dimensions} from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import { Drawer } from 'native-base';
 import SideBar from '../navigation/drawerStyle';
@@ -13,9 +13,7 @@ import { backtohomeAction } from '../actions/backtohomeAction.js';
 import { ADMIN_KEY } from '../apiUrls.js';
 
 class InstructionScreen extends React.Component {
-
-
-
+    
     PhotoPic = () => {
         const options = {
             noData: true
@@ -26,12 +24,12 @@ class InstructionScreen extends React.Component {
             }
         });
     };
-
+    
     constructor(){
-      super();
-      this.state = {
-        ingredients: null
-      }
+        super();
+        this.state = {
+            ingredients: null
+        }
     }
 
     onChangeTag = (tag) => {
@@ -118,7 +116,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#cc0000',
         position: 'absolute',
-    bottom:0,
+    bottom: 10,
     left: '16%',
       },
       webBtnText:{
@@ -138,7 +136,6 @@ const mapStateToProps = state => ({
     tagHome: state.tohome.homeTag,
 });
 
-const windowWidth = Dimensions.get("window").width
 const windowHeight = Dimensions.get("window").height
 
 export default connect(mapStateToProps, { picFound, navAction, setRecipe, backtohomeAction, getSingleRecipe })(InstructionScreen);
