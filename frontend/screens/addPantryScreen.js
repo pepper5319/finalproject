@@ -1,13 +1,11 @@
 import React from 'react';
-import { View, ScrollView, Image, StyleSheet, Text, ListView } from 'react-native';
-import ImagePicker from 'react-native-image-picker';
+import { View, ScrollView, StyleSheet} from 'react-native';
 import { Drawer } from 'native-base';
-import { TextInput, Card, IconButton, Title, Paragraph, Button, Subheading } from 'react-native-paper';
+import { TextInput, Card, IconButton, Title, Button, Subheading } from 'react-native-paper';
 import SideBar from '../navigation/drawerStyle';
 import { navAction } from '../actions/navigationAction.js';
 import { connect } from 'react-redux';
 import BackNav from '../componets/basicBackNav.js';
-import WebViewComp from '../componets/webViewComp'
 
 import { ADMIN_KEY, PANTRY_URL } from '../apiUrls.js';
 
@@ -46,7 +44,7 @@ class AddPantryScreen extends React.Component {
           itemExp: ''
         });
       }
-      console.log(this.state.newItems);
+      //console.log(this.state.newItems);
     }
 
     deleteItem = (key) => {
