@@ -101,6 +101,7 @@ class HomeScreen extends React.Component {
           <NavbarComp button1={this.openDrawer} button2={this.PhotoPic} titleTxt={'Home'}/>
       </View>
       <ScrollView>
+        
         {recipes}
 
       </ScrollView>
