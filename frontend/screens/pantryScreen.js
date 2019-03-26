@@ -8,7 +8,7 @@ import { navAction } from '../actions/navigationAction.js';
 import { connect } from 'react-redux';
 import PantryList from '../componets/pantryList.js';
 import NavbarComp from '../componets/navbarComp.js';
-import { ADMIN_KEY } from '../apiUrls.js';
+import { ADMIN_KEY, PANTRY_URL } from '../apiUrls.js';
 import { getPItems, setPItems } from '../actions/recipeAction';
 
 class PantryScreen extends React.Component {
@@ -19,11 +19,12 @@ class PantryScreen extends React.Component {
 
   getPItems = _ => {
     var xhr = new XMLHttpRequest();
-    var url = "https://pantryplatter.herokuapp.com/api/pItems/";
+    var url = PANTRY_URL;
     xhr.open("GET", url, true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.setRequestHeader('Authorization', 'Token ' + ADMIN_KEY)
     xhr.onreadystatechange = function () {
+      console.log(xhr.status);
       if (xhr.readyState === 4 && xhr.status === 200) {
           var json = JSON.parse(xhr.responseText);
           this.setState({ pantry: json })
@@ -47,7 +48,6 @@ class PantryScreen extends React.Component {
   };
 
   onChangeTag = (tag,data) => {
-    this.setPItems(data)
     this.setState({ active: tag })
     this.props.changeTag3(tag)
   }
@@ -74,7 +74,7 @@ class PantryScreen extends React.Component {
     const Pitems = this.state.pantry.map((pitem) => (
         <PantryList titleTxt={pitem.name} descripTxt={pitem.qty} expDate={pitem.exp_date}/>
     ));
-    
+
     return (
       <Drawer
       ref={(ref) => { this.drawer = ref; }}

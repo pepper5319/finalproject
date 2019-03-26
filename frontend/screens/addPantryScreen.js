@@ -65,13 +65,14 @@ class AddPantryScreen extends React.Component {
           static_id: item.itemID,
           name: item.itemName,
           qty: item.itemQty,
-          exp_data: item.itemExp
+          exp_date: item.itemExp
         }
         pitems.push(itemData);
       });
       const pbody = {
         items: pitems
       }
+      console.log(pbody);
       fetch(PANTRY_URL+'add-items/', {
           method: 'POST',
           headers: {
@@ -85,7 +86,7 @@ class AddPantryScreen extends React.Component {
             this.setState({itemName: '', itemExp: '', itemQty: ''})
             this.onChangeTag('pantry');
           }else{
-            console.log(res);
+            console.log(res._bodyInit);
           }
         });
     }
@@ -138,8 +139,7 @@ class AddPantryScreen extends React.Component {
                       onChangeText={itemQty => this.setState({ itemQty })}
                     />
                     <TextInput
-                      keyboardType='numeric'
-                      placeholder='MM.DD.YYYY'
+                      placeholder='YYYY-MM-DD'
                       style={{flex: 1, marginLeft: 5}}
                       label='Experation Date'
                       value={this.state.itemExp}
