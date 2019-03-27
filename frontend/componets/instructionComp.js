@@ -25,9 +25,15 @@ export default class InstructionComp extends React.Component {
       });
 
 
- }   
+ }
     render() {
-        const ingredients = this.state.UpperIngredients.map((ingredients) => <Text style={styles.textStyle}>{ingredients}</Text>)
+        const ingredients = this.state.UpperIngredients.map((ingredients) => {
+          if(this.props.matches.indexOf(ingredients.toLowerCase()) !== -1){
+            return <Text style={[styles.textStyle, {color: 'green'}]}>{ingredients}</Text>
+          }else{
+            return <Text style={styles.textStyle}>{ingredients}</Text>
+          }
+        })
         return (
             <View style={styles.contain}>
                 <Image
@@ -39,7 +45,7 @@ export default class InstructionComp extends React.Component {
                     <View style={{marginRight: 30}}>
                         {ingredients}
                     </View>
-                </ScrollView>  
+                </ScrollView>
                 </View>
 
 
@@ -77,5 +83,5 @@ const styles = StyleSheet.create({
 
     }
 });
-const windowWidth = Dimensions.get("window").width 
+const windowWidth = Dimensions.get("window").width
 const windowHeight = Dimensions.get("window").height
