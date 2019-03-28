@@ -227,14 +227,22 @@ class PUserView(generics.RetrieveDestroyAPIView):
 
     def put(self, request, pk=None):
         user = PUserSerializer(self.request.user)
-        print(user)
-        return Response(user.data)
 
-        # try:
-        #     liked_recipes = self.request.data['recipe']
-        # except KeyError:
-        #     raise KeyError('Request has no \'recipe\' field attached.')
-        #
-        # for recipe in liked_recipes:
-        #     if recipe not in user['liked_recipes']:
-        #         user['']
+        try:
+            recipe_id = self.request.data['liked_recipes']
+        except KeyError:
+            raise KeyError('Request has no \'liked_recipes\' field attached.')
+
+        try:
+            recipe = Recipe.objects.get(static_id=recipe_id)
+        except Recipe.DoesNotExist:
+            return Response(user.data)
+
+        serialized_recipe = RecipeSerializer(recipe)
+
+        if serialized_recipe.data['static_id'] not in user.data['liked_recipes']:
+            self.request.user.liked_recipes.add(serialized_recipe.data['static_id'])
+            self.request.user.save()
+            user = PUserSerializer(self.request.user)
+
+        return Response(user.data)
