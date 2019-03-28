@@ -1,5 +1,5 @@
 import React from 'react';
-import { View,Text,ScrollView } from 'react-native';
+import { View,Text,ScrollView,ImageBackground } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import { Drawer } from 'native-base';
 import DrawerStyle from '../navigation/drawerStyle';

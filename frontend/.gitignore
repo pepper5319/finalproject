@@ -8,3 +8,4 @@ npm-debug.*
 *.d
 *.o
 *.dia
+ios/build/
