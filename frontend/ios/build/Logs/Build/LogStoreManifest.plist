@@ -5,6 +5,12 @@
 	<key>logFormatVersion</key>
 	<integer>9</integer>
 	<key>logs</key>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> development
 	<dict/>
 	<dict>
 		<key>81C46247-FDAD-4784-B4EC-E4926B3630A5</key>
@@ -66,5 +72,12 @@
 			<string>C79F7E11-5E05-4261-877C-178253F1B71A</string>
 		</dict>
 	</dict>
+<<<<<<< HEAD
+>>>>>>> d0e5d76e5da1753cd3fb2f15bf5fecfb395d2fee
+=======
+	<dict/>
+>>>>>>> 8618530a05b11fcc5e4d63046a1a19845fd4dc84
+=======
+>>>>>>> development
 </dict>
 </plist>

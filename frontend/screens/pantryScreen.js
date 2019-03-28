@@ -39,6 +39,25 @@ class PantryScreen extends React.Component {
     });
     xhr.send();
   }
+
+  deletePIItem = (pID) => {
+    console.log("PRESSED");
+    var xhr = new XMLHttpRequest();
+    var url = "https://pantryplatter.herokuapp.com/api/pItems/" + pID;
+    console.log(url);
+    xhr.open("DELETE", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.setRequestHeader('Authorization', 'Token ' + ADMIN_KEY)
+    xhr.onreadystatechange = function () {
+      console.log(xhr.status);
+      if (xhr.readyState === 4 && xhr.status === 204) {
+          this.getPItems();
+        }
+      }.bind(this);
+
+    xhr.send();
+  }
+
   PhotoPic = () => {
     const options = {
       noData: true
@@ -75,7 +94,7 @@ class PantryScreen extends React.Component {
 
   render() {
     const Pitems = this.state.pantry.map((pitem) => (
-        <PantryList titleTxt={pitem.name} descripTxt={pitem.qty} expDate={pitem.exp_date}/>
+        <PantryList titleTxt={pitem.name} descripTxt={pitem.qty} expDate={pitem.exp_date} deleteButton={() => this.deletePIItem(pitem.static_id)}/>
     ));
 
     return (
