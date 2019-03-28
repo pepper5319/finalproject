@@ -12,7 +12,7 @@ import LogoutScreen from './screens/logoutScreen.js';
 
 export default class MainNavigation extends Component {
     state = {
-        active: 'home'
+        active: 'login'
     };
     constructor() {
         super();
@@ -36,7 +36,7 @@ export default class MainNavigation extends Component {
                      || this.state.active == 'instruction' &&
                      <InstructionScreen changeTag6={this.onChangeTag.bind(this)}/>
                      || this.state.active == 'addPantry' &&
-                     <AddPantryScreen changeTag5={this.onChangeTag.bind(this)}/>
+                     <AddPantrty9yScreen changeTag5={this.onChangeTag.bind(this)}/>
                      || this.state.active == 'login' &&
                     <LoginScreen changeTag7={this.onChangeTag.bind(this)}/>
                      || this.state.active == 'web' &&

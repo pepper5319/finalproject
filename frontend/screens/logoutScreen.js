@@ -19,10 +19,18 @@ class LogoutScreen extends React.Component {
 
     logoutUser = _ => {
       var xhr = new XMLHttpRequest();
-      var url = "http://localhost:8000/api/rest-auth/logout/";
+      var url = "https://pantryplatter.herokuapp.com/api/rest-auth/logout/";
       xhr.open("GET", url, true);
       xhr.setRequestHeader("Content-Type", "application/json");
       xhr.send();
+      const deleteUserId = async () => {
+  try {
+    await AsyncStorage.removeItem('token');
+  } catch (error) {
+    // Error retrieving data
+    console.log(error.message);
+  }
+}
     }
     userTag = (user) => {
         this.state.textuser(user);
@@ -64,7 +72,7 @@ const styles = StyleSheet.create({
     Buttontest: {
         position:'relative',
         bottom:0,
-        
+
     },
     bottom:{
         flex: 1,
@@ -76,5 +84,5 @@ const styles = StyleSheet.create({
   const mapStateToProps = state => ({
     user: state.users.userName
   });
-  
+
   export default connect(mapStateToProps, {UserAction})(LogoutScreen);

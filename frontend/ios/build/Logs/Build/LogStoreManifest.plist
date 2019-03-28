@@ -7,9 +7,13 @@
 	<key>logs</key>
 	<dict/>
 	<dict>
+<<<<<<< HEAD
+		<key>81C46247-FDAD-4784-B4EC-E4926B3630A5</key>
+=======
 		<key>D74F3094-2A41-48C2-9A24-137AE30CC50F</key>
 	<dict>
 		<key>C5FA4425-08E6-4BC2-B332-1EE7113D5FB3</key>
+>>>>>>> development
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -18,7 +22,11 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
+<<<<<<< HEAD
+			<string>81C46247-FDAD-4784-B4EC-E4926B3630A5.xcactivitylog</string>
+=======
 			<string>D74F3094-2A41-48C2-9A24-137AE30CC50F.xcactivitylog</string>
+>>>>>>> development
 			<key>highLevelStatus</key>
 			<string>E</string>
 			<key>schemeIdentifier-containerName</key>
@@ -30,6 +38,44 @@
 			<key>signature</key>
 			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
 			<key>timeStartedRecording</key>
+<<<<<<< HEAD
+			<real>575474661.90585899</real>
+			<key>timeStoppedRecording</key>
+			<real>575474662.70348096</real>
+			<key>title</key>
+			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>81C46247-FDAD-4784-B4EC-E4926B3630A5</string>
+		</dict>
+		<key>C79F7E11-5E05-4261-877C-178253F1B71A</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>C79F7E11-5E05-4261-877C-178253F1B71A.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>E</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>testCamera project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>testCamera</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>575300613.12386799</real>
+			<key>timeStoppedRecording</key>
+			<real>575300613.85841894</real>
+			<key>title</key>
+			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>C79F7E11-5E05-4261-877C-178253F1B71A</string>
+=======
 			<real>575301342.73970497</real>
 			<key>timeStoppedRecording</key>
 			<real>575301365.35574102</real>
@@ -37,6 +83,7 @@
 			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
 			<key>uniqueIdentifier</key>
 			<string>D74F3094-2A41-48C2-9A24-137AE30CC50F</string>
+>>>>>>> development
 		</dict>
 	</dict>
 </dict>

@@ -1,16 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {StyleSheet, View, Text,ImageBackground,Image,Alert} from 'react-native';
-import { TextInput,Button, HelperText } from 'react-native-paper';
-import { UserAction } from '../actions/userAction.js'
+import {StyleSheet, View, ImageBackground,Image,Alert,AsyncStorage} from 'react-native';
+import { TextInput,Button} from 'react-native-paper';
+import UserAction from '../actions/userAction'
+import { setUserToken } from '../actions/tokenAction.js';
 
 class LoginScreen extends React.Component {
+
     constructor(props){
         super(props)
         this.state = {
             textuser:'',
             textpass:'',
         }
+        this.loginUser =this.loginUser.bind(this)
     }
 
     checkTextIsEmpty = () =>{
@@ -29,17 +32,25 @@ class LoginScreen extends React.Component {
         console.log('tag change')
         this.props.changeTag7(tag)
     }
-    loginUser = _ => {
+    loginUser = () => {
+      console.log(this.props)
       var xhr = new XMLHttpRequest();
       var url = "https://pantryplatter.herokuapp.com/api/rest-auth/login/";
       xhr.open("POST", url, true);
       xhr.setRequestHeader("Content-Type", "application/json");
-      xhr.onreadystatechange = function () {
-        console.log(xhr.status);
+      xhr.onreadystatechange = () => {
         if (xhr.readyState === 4 && xhr.status === 200) {
             var json = JSON.parse(xhr.responseText);
-            console.log(json);
+            this.props.setUserToken(json.key);
             this.props.changeTag7('home');
+            const saveUserToken = async userId => {
+              try {
+                await AsyncStorage.setItem('token', json);
+              } catch (error) {
+                // Error retrieving data
+                console.log(error.message);
+              }
+            };
           }
         };
       var data = JSON.stringify({
@@ -62,6 +73,7 @@ class LoginScreen extends React.Component {
                 </View>
                 <View style={{padding: 16}}>
                     <TextInput
+                        autoCapitalize={false}
                         theme={{ colors: { primary: 'red' } }}
                         style={[styles.textboxC, {marginBottom: 16}]}
                         mode='flat'
@@ -70,6 +82,8 @@ class LoginScreen extends React.Component {
                         onChangeText={textuser => this.setState({textuser})}
                     />
                     <TextInput
+                        autoCapitalize={false}
+                        secureTextEntry
                         theme={{ colors: { primary: 'red' } }}
                         style={[styles.textboxC, {marginBottom: 16}]}
                         mode='flat'
@@ -113,7 +127,8 @@ const styles = StyleSheet.create({
   });
 
   const mapStateToProps = state => ({
-    user: state.users.userName
+    user: state.users.userName,
+    token: state.token.token
   });
 
-  export default connect(mapStateToProps, {UserAction})(LoginScreen);
+  export default connect(mapStateToProps, {setUserToken})(LoginScreen);

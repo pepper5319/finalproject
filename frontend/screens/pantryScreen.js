@@ -20,8 +20,9 @@ class PantryScreen extends React.Component {
   };
 
   getPItems = _ => {
+    console.log(this.props.userToken);
     var xhr = new XMLHttpRequest();
-    var url = PANTRY_URL;
+    var url = "https://pantryplatter.herokuapp.com/api/pItems/";
     xhr.open("GET", url, true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.setRequestHeader('Authorization', 'Token ' + ADMIN_KEY)

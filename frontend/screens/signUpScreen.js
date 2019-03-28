@@ -31,7 +31,7 @@ class SignUpScreen extends React.Component {
             Alert.alert('Some input may be missing')
         }
         else{
-            this.registerUser;
+            this.registerUser();
             this.props.changeTag2('home');
         }
     }
@@ -39,13 +39,21 @@ class SignUpScreen extends React.Component {
 
         if (this.state.textpass === this.state.textpassC && this.state.textemail != '' && this.state.textuser != '' && this.state.textpass != '' && this.state.textpassC != '') {
             var xhr = new XMLHttpRequest();
-            var url = "http://localhost:8000/api/rest-auth/registration/";
+            var url = "https://pantryplatter.herokuapp.com/api/rest-auth/registration/";
             xhr.open("POST", url, true);
             xhr.setRequestHeader("Content-Type", "application/json");
             xhr.onreadystatechange = function () {
+              console.log(xhr.status)
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     var json = JSON.parse(xhr.responseText);
-                    console.log(json)
+                    const saveUserToken = async userId => {
+                      try {
+                        await AsyncStorage.setItem('token', json);
+                      } catch (error) {
+                        // Error retrieving data
+                        console.log(error.message);
+                      }
+                    };
                     console.log(json.email + ", " + json.password);
                 }
             };
@@ -69,10 +77,6 @@ class SignUpScreen extends React.Component {
     openDrawer = () => {
         this.drawer._root.open()
     };
-    testfunction(){
-        this.registerUser
-        this.props.changeTag2('home')
-    }
     userTag = (user) => {
         this.state.textuser(user);
     }
@@ -89,7 +93,7 @@ class SignUpScreen extends React.Component {
                         value={this.state.textfirst}
                         onChangeText={textfirst => this.setState({ textfirst })}
                     />
-                
+
                     <TextInput
                         theme={{ colors: { primary: 'black' } }}
                         style={[styles.textboxC, {marginBottom: 16}]}
@@ -167,7 +171,8 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = state => ({
-    user: state.users.userName
+    user: state.users.userName,
+    token: state.users.userToken
 });
 
 export default connect(mapStateToProps, {UserAction})(SignUpScreen);
