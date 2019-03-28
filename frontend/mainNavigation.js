@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Drawer } from 'native-base';
+import { AsyncStorage } from 'react-native';
 import SignUpScreen from './screens/signUpScreen.js';
 import HomeScreen from './screens/HomeScreen.js';
 import PantryScreen from './screens/pantryScreen.js';
@@ -9,8 +10,10 @@ import LoginScreen from './screens/loginScreen.js';
 import WebScreen from './screens/webScreen.js';
 import AddPantryScreen from './screens/addPantryScreen.js';
 import LogoutScreen from './screens/logoutScreen.js';
+import { connect } from 'react-redux';
+import { setUserToken }  from './actions/tokenAction.js';
 
-export default class MainNavigation extends Component {
+class MainNavigation extends Component {
     state = {
         active: 'login'
     };
@@ -21,6 +24,23 @@ export default class MainNavigation extends Component {
     onChangeTag = (tag) => {
         this.setState({ active: tag })
       }
+
+    componentWillMount(){
+      this._retrieveData()
+    }
+
+    _retrieveData = async () => {
+      try {
+        const value = await AsyncStorage.getItem('token');
+        if (value !== null && value !== undefined && value !== '') {
+          console.log(value);
+          this.props.setUserToken(value);
+          this.onChangeTag('home');
+        }
+      } catch (error) {
+        // Error retrieving data
+      }
+    };
 
     render() {
         return (
@@ -36,7 +56,7 @@ export default class MainNavigation extends Component {
                      || this.state.active == 'instruction' &&
                      <InstructionScreen changeTag6={this.onChangeTag.bind(this)}/>
                      || this.state.active == 'addPantry' &&
-                     <AddPantrty9yScreen changeTag5={this.onChangeTag.bind(this)}/>
+                     <AddPantryScreen changeTag5={this.onChangeTag.bind(this)}/>
                      || this.state.active == 'login' &&
                     <LoginScreen changeTag7={this.onChangeTag.bind(this)}/>
                      || this.state.active == 'web' &&
@@ -49,3 +69,8 @@ export default class MainNavigation extends Component {
         );
     }
 }
+const mapStateToProps = state => ({
+
+});
+
+export default connect(mapStateToProps, { setUserToken })(MainNavigation);

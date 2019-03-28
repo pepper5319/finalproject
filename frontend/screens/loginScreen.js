@@ -27,6 +27,15 @@ class LoginScreen extends React.Component {
         }
     }
 
+    saveUserToken = async userId => {
+      try {
+        await AsyncStorage.setItem('token', userId);
+      } catch (error) {
+        // Error retrieving data
+        console.log(error.message);
+      }
+    }
+
     onChangeTag = (tag) => {
         this.setState({ active: tag })
         console.log('tag change')
@@ -41,16 +50,10 @@ class LoginScreen extends React.Component {
       xhr.onreadystatechange = () => {
         if (xhr.readyState === 4 && xhr.status === 200) {
             var json = JSON.parse(xhr.responseText);
+            this.saveUserToken(json.key);
             this.props.setUserToken(json.key);
             this.props.changeTag7('home');
-            const saveUserToken = async userId => {
-              try {
-                await AsyncStorage.setItem('token', json);
-              } catch (error) {
-                // Error retrieving data
-                console.log(error.message);
-              }
-            };
+
           }
         };
       var data = JSON.stringify({

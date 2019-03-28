@@ -18,7 +18,7 @@ class RecipeScreen extends React.Component {
 
 
     componentDidMount() {
-        this.props.getRecipes(ADMIN_KEY);
+        this.props.getRecipes(this.props.token);
         this.props.backtohomeAction('recipe')
     }
 
@@ -104,6 +104,7 @@ const mapStateToProps = state => ({
     tag: state.tags.activeTag,
     tagHome: state.tohome.homeTag,
     recipes: state.recipes.recipes,
+    token: state.token.token
 });
 
 export default connect(mapStateToProps, { picFound, navAction, backtohomeAction, getRecipes, setRecipe })(RecipeScreen);

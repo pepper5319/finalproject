@@ -77,7 +77,7 @@ class AddPantryScreen extends React.Component {
           method: 'POST',
           headers: {
             'content-type': 'application/json',
-            'Authorization': 'Token ' + ADMIN_KEY
+            'Authorization': 'Token ' + this.props.token
           },
           body: JSON.stringify(pbody)
         })
@@ -182,7 +182,8 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = state => ({
     url: state.pics.picURL,
-    tag: state.tags.activeTag
+    tag: state.tags.activeTag,
+    token: state.token.token
 });
 
 export default connect(mapStateToProps, { navAction })(AddPantryScreen);

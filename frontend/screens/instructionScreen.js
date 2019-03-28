@@ -54,7 +54,7 @@ class InstructionScreen extends React.Component {
     }
     componentDidMount(){
       console.log(this.props.recipe_id);
-      this.props.getSingleRecipe(ADMIN_KEY, this.props.recipe_id);
+      this.props.getSingleRecipe(this.props.token, this.props.recipe_id);
     }
     componentDidUpdate(){
       console.log(this.props.recipe);
@@ -133,6 +133,7 @@ const mapStateToProps = state => ({
     recipe: state.recipes.recipe,
     recipe_id: state.recipes.recipe_id,
     tagHome: state.tohome.homeTag,
+    token: state.token.token
 });
 
 const windowHeight = Dimensions.get("window").height

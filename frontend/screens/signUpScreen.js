@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, ImageBackground,Alert, TouchableOpacity} from '
 import { TextInput, Button } from 'react-native-paper';
 import UserAction from '../actions/userAction'
 import { connect } from 'react-redux';
+import { setUserToken } from '../actions/tokenAction.js'
 
 class SignUpScreen extends React.Component {
     constructor(props){
@@ -32,9 +33,18 @@ class SignUpScreen extends React.Component {
         }
         else{
             this.registerUser();
-            this.props.changeTag2('home');
         }
     }
+
+    saveUserToken = async userId => {
+      try {
+        await AsyncStorage.setItem('token', userId);
+      } catch (error) {
+        // Error retrieving data
+        console.log(error.message);
+      }
+    }
+
     registerUser = () => {
 
         if (this.state.textpass === this.state.textpassC && this.state.textemail != '' && this.state.textuser != '' && this.state.textpass != '' && this.state.textpassC != '') {
@@ -42,18 +52,13 @@ class SignUpScreen extends React.Component {
             var url = "https://pantryplatter.herokuapp.com/api/rest-auth/registration/";
             xhr.open("POST", url, true);
             xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.onreadystatechange = function () {
-              console.log(xhr.status)
+            xhr.onreadystatechange = () => {
+                console.log(xhr.status)
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     var json = JSON.parse(xhr.responseText);
-                    const saveUserToken = async userId => {
-                      try {
-                        await AsyncStorage.setItem('token', json);
-                      } catch (error) {
-                        // Error retrieving data
-                        console.log(error.message);
-                      }
-                    };
+                    this.saveUserToken(json.key);
+                    this.props.setUserToken(json.key);
+                    this.props.changeTag2('home');
                     console.log(json.email + ", " + json.password);
                 }
             };
@@ -103,6 +108,7 @@ class SignUpScreen extends React.Component {
                         onChangeText={textlast => this.setState({ textlast })}
                     />
                     <TextInput
+                        autoCapitalize={false}
                         theme={{ colors: { primary: 'black' } }}
                         style={[styles.textboxC, {marginBottom: 16}]}
                         mode='flat'
@@ -111,6 +117,7 @@ class SignUpScreen extends React.Component {
                         onChangeText={textemail => this.setState({ textemail })}
                     />
                     <TextInput
+                        autoCapitalize={false}
                         theme={{ colors: { primary: 'black' } }}
                         style={[styles.textboxC, {marginBottom: 16}]}
                         mode='flat'
@@ -119,6 +126,8 @@ class SignUpScreen extends React.Component {
                         onChangeText={textuser => this.setState({ textuser })}
                     />
                     <TextInput
+                        autoCapitalize={false}
+                        secureTextEntry
                         theme={{ colors: { primary: 'black' } }}
                         style={[styles.textboxC, {marginBottom: 16}]}
                         mode='flat'
@@ -127,6 +136,8 @@ class SignUpScreen extends React.Component {
                         onChangeText={textpass => this.setState({ textpass })}
                     />
                     <TextInput
+                        autoCapitalize={false}
+                        secureTextEntry
                         theme={{ colors: { primary: 'black' } }}
                         style={[styles.textboxC, {marginBottom: 16}]}
                         mode='flat'
@@ -172,7 +183,7 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = state => ({
     user: state.users.userName,
-    token: state.users.userToken
+    token: state.token.token
 });
 
-export default connect(mapStateToProps, {UserAction})(SignUpScreen);
+export default connect(mapStateToProps, {UserAction, setUserToken})(SignUpScreen);
