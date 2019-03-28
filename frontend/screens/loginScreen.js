@@ -1,16 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {StyleSheet, View, ImageBackground,Image,Alert} from 'react-native';
+import {StyleSheet, View, ImageBackground,Image,Alert,AsyncStorage} from 'react-native';
 import { TextInput,Button} from 'react-native-paper';
 import UserAction from '../actions/userAction'
+import { setUserToken } from '../actions/tokenAction.js';
 
 class LoginScreen extends React.Component {
+
     constructor(props){
         super(props)
         this.state = {
             textuser:'',
             textpass:'',
         }
+        this.loginUser =this.loginUser.bind(this)
     }
 
     checkTextIsEmpty = () =>{
@@ -20,8 +23,7 @@ class LoginScreen extends React.Component {
         if(textuser == '' || textpass==''){
             Alert.alert('Some input may be missing')
         }else{
-            this.loginUser;
-            this.props.changeTag7('home');
+            this.loginUser();
         }
     }
 
@@ -30,6 +32,7 @@ class LoginScreen extends React.Component {
         this.props.changeTag7(tag)
     }
     loginUser = _ => {
+      console.log(this.props)
       var xhr = new XMLHttpRequest();
       var url = "https://pantryplatter.herokuapp.com/api/rest-auth/login/";
       xhr.open("POST", url, true);
@@ -37,7 +40,17 @@ class LoginScreen extends React.Component {
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             var json = JSON.parse(xhr.responseText);
-            console.log(json);
+            //console.log(json.key)
+            this.props.setUserToken(json.key)
+            //this.props.changeTag7('home');
+            const saveUserToken = async userId => {
+              try {
+                await AsyncStorage.setItem('token', json);
+              } catch (error) {
+                // Error retrieving data
+                console.log(error.message);
+              }
+            };
           }
         };
       var data = JSON.stringify({
@@ -111,7 +124,8 @@ const styles = StyleSheet.create({
   });
 
   const mapStateToProps = state => ({
-    user: state.users.userName
+    user: state.users.userName,
+    token: state.token.userToken
   });
 
-  export default connect(mapStateToProps, {UserAction})(LoginScreen);
+  export default connect(mapStateToProps, {setUserToken})(LoginScreen);

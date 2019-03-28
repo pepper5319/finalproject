@@ -31,7 +31,7 @@ class SignUpScreen extends React.Component {
             Alert.alert('My bad bro')
         }
         else{
-            this.registerUser;
+            this.registerUser();
             this.props.changeTag2('home');
         }
     }
@@ -43,9 +43,17 @@ class SignUpScreen extends React.Component {
             xhr.open("POST", url, true);
             xhr.setRequestHeader("Content-Type", "application/json");
             xhr.onreadystatechange = function () {
+              console.log(xhr.status)
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     var json = JSON.parse(xhr.responseText);
-                    console.log(json)
+                    const saveUserToken = async userId => {
+                      try {
+                        await AsyncStorage.setItem('token', json);
+                      } catch (error) {
+                        // Error retrieving data
+                        console.log(error.message);
+                      }
+                    };
                     console.log(json.email + ", " + json.password);
                 }
             };
@@ -69,10 +77,6 @@ class SignUpScreen extends React.Component {
     openDrawer = () => {
         this.drawer._root.open()
     };
-    testfunction(){
-        this.registerUser
-        this.props.changeTag2('home')
-    }
     userTag = (user) => {
         this.state.textuser(user);
     }
@@ -167,7 +171,8 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = state => ({
-    user: state.users.userName
+    user: state.users.userName,
+    token: state.users.userToken
 });
 
 export default connect(mapStateToProps, {UserAction})(SignUpScreen);

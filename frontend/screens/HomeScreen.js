@@ -12,11 +12,13 @@ import CardComp from '../componets/cardComp.js'
 import CardCompRecepie from '../componets/cardCompRecepie.js';
 import { ADMIN_KEY } from '../apiUrls.js';
 import { backtohomeAction } from '../actions/backtohomeAction.js';
+import { userToken } from '../actions/tokenAction.js';
 
 class HomeScreen extends React.Component {
 
   componentDidMount(){
-
+    console.log(this.props.userToken)
+    //this.props.getRecipes(this.props.userToken)
     this.props.backtohomeAction('home')
   }
 
@@ -34,7 +36,7 @@ class HomeScreen extends React.Component {
         var url = "https://pantryplatter.herokuapp.com/api/receipts/";
         xhr.open("POST", url, true);
         xhr.setRequestHeader("Content-Type", "multipart/form-data");
-        xhr.setRequestHeader('Authorization', 'Token ' + 	"39f3fa646bf550befee5852f088676282356e32c")
+        xhr.setRequestHeader('Authorization', 'Token ' + 	this.props.token)
         xhr.onreadystatechange = function () {
           if (xhr.readyState === 4 && xhr.status === 200) {
               var json = JSON.parse(xhr.responseText);
@@ -94,6 +96,7 @@ const mapStateToProps = state => ({
   tag: state.tags.activeTag,
   recipes: state.recipes.recipes,
   tagHome: state.tohome.homeTag,
+  token: state.token.userToken
 });
 
 export default connect(mapStateToProps, { picFound, navAction, getRecipes, setRecipe, backtohomeAction })(HomeScreen);
