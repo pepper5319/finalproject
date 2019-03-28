@@ -100,7 +100,7 @@ class HomeScreen extends React.Component {
       <View>
           <NavbarComp button1={this.openDrawer} button2={this.PhotoPic} titleTxt={'Home'}/>
       </View>
-      <ScrollView>
+      <ScrollView style={{backgroundColor: '#f2f2f2', padding: 10}}>
         
         {recipes}
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {StyleSheet, View, Text,ImageBackground} from 'react-native';
+import {StyleSheet, View, Text,ImageBackground,Alert} from 'react-native';
 import {Button} from 'react-native-paper';
 import UserAction from '../actions/userAction'
 
@@ -31,6 +31,16 @@ class LogoutScreen extends React.Component {
         this.logoutUser
         this.props.changeTag9('login')
     }
+    alertfun(){
+        Alert.alert(
+            'Logout',
+            'Do you wish to logout',
+            [
+                {text: 'Cancel', onPress: () => console.log('Cancel Pressed')},
+                {text: 'Accept', onPress: this.testfunction.bind(this)}
+            ]
+        )
+    }
     render(){
         return(
             <ImageBackground source={require('../backgroundImages/logoutback.jpg')} style={{ width: '100%', height: '100%' }}>
@@ -38,7 +48,7 @@ class LogoutScreen extends React.Component {
                     user
                 />
                 <View style={styles.bottom}>
-                    <Button style={styles.Buttontest} mode="contained" onPress={this.testfunction.bind(this)}>
+                    <Button style={styles.Buttontest} mode="contained" onPress={this.alertfun.bind(this)}>
                         Logout
                     </Button>
                 </View>

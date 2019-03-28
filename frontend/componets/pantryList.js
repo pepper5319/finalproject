@@ -7,7 +7,7 @@ export default class PantryList extends React.Component {
           <List>
             <ListItem thumbnail>
               <Body style={{position: "relative", right: 20}}>
-                <Text>{this.props.titleTxt}</Text>
+                <Text style={{textTransform: 'capitalize'}}>{this.props.titleTxt}</Text>
                 <Text note numberOfLines={1}>{this.props.descripTxt}</Text>
               </Body>
               <Right>

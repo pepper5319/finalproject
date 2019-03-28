@@ -1,5 +1,5 @@
 import React from 'react';
-import { View,Text } from 'react-native';
+import { View,Text,ScrollView,ImageBackground } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import { Drawer } from 'native-base';
 import DrawerStyle from '../navigation/drawerStyle';
@@ -7,9 +7,11 @@ import { picFound } from '../actions/picActions.js';
 import { navAction } from '../actions/navigationAction.js';
 import { connect } from 'react-redux';
 import PantryList from '../componets/pantryList.js';
-import NavbarComp from '../componets/navbarComp.js';
+
+import PantryComp from '../componets/pantryNav.js';
 import { ADMIN_KEY, PANTRY_URL } from '../apiUrls.js';
 import { getPItems, setPItems } from '../actions/recipeAction';
+
 
 class PantryScreen extends React.Component {
   state = {
@@ -87,10 +89,12 @@ class PantryScreen extends React.Component {
         openDrawerOffset={0.3}
         panCloseMask={0.3}>
       <View>
-      <NavbarComp button1={this.openDrawer} button2={() => this.onChangeTag('addPantry')} titleTxt={'Pantry'}/>
+      <PantryComp button1={this.openDrawer} button2={() => this.onChangeTag('addPantry')} titleTxt={'Pantry'}/>
       </View>
       <Text>{}</Text>
-        {Pitems}
+        <ScrollView style={{backgroundColor: '#ffffff'}}>
+          {Pitems}
+        </ScrollView>
       </Drawer>
     );
   }
