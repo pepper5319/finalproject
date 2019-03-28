@@ -47,7 +47,7 @@ class PantryScreen extends React.Component {
     console.log(url);
     xhr.open("DELETE", url, true);
     xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.setRequestHeader('Authorization', 'Token ' + ADMIN_KEY)
+    xhr.setRequestHeader('Authorization', 'Token ' + this.props.token)
     xhr.onreadystatechange = function () {
       console.log(xhr.status);
       if (xhr.readyState === 4 && xhr.status === 204) {

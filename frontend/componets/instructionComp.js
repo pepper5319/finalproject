@@ -1,18 +1,8 @@
 import React from 'react';
 import { View, ScrollView, Image, StyleSheet, Text, Dimensions } from 'react-native';
-let screenPercent = '39%'
 
-containerSize = () => {
-    const windowHeight = Dimensions.get("window").height
-
-    if (windowHeight < 600)
-        screenPercent = '39%';
-
-    else
-        screenPercent = '50%';
 
 export default class InstructionComp extends React.Component {
-
     constructor(){
         super();
         this.state = {
@@ -83,7 +73,7 @@ const styles = StyleSheet.create({
     },
     constainer: {
         flexDirection: 'row',
-        height: screenPercent,
+        height: '39%',
         width: windowWidth,
         paddingHorizontal: 10,
         backgroundColor: '#f6f6f6',
