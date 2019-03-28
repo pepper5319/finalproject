@@ -8,14 +8,12 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> development
 	<dict/>
-=======
 	<dict>
-		<key>D74F3094-2A41-48C2-9A24-137AE30CC50F</key>
-=======
-	<dict>
-		<key>C5FA4425-08E6-4BC2-B332-1EE7113D5FB3</key>
->>>>>>> d0e5d76e5da1753cd3fb2f15bf5fecfb395d2fee
+		<key>81C46247-FDAD-4784-B4EC-E4926B3630A5</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -24,15 +22,9 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-<<<<<<< HEAD
-			<string>D74F3094-2A41-48C2-9A24-137AE30CC50F.xcactivitylog</string>
+			<string>81C46247-FDAD-4784-B4EC-E4926B3630A5.xcactivitylog</string>
 			<key>highLevelStatus</key>
 			<string>E</string>
-=======
-			<string>C5FA4425-08E6-4BC2-B332-1EE7113D5FB3.xcactivitylog</string>
-			<key>highLevelStatus</key>
-			<string>S</string>
->>>>>>> d0e5d76e5da1753cd3fb2f15bf5fecfb395d2fee
 			<key>schemeIdentifier-containerName</key>
 			<string>testCamera project</string>
 			<key>schemeIdentifier-schemeName</key>
@@ -42,27 +34,15 @@
 			<key>signature</key>
 			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
 			<key>timeStartedRecording</key>
-<<<<<<< HEAD
-			<real>575301342.73970497</real>
+			<real>575474661.90585899</real>
 			<key>timeStoppedRecording</key>
-			<real>575301365.35574102</real>
+			<real>575474662.70348096</real>
 			<key>title</key>
 			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>D74F3094-2A41-48C2-9A24-137AE30CC50F</string>
+			<string>81C46247-FDAD-4784-B4EC-E4926B3630A5</string>
 		</dict>
-	</dict>
->>>>>>> development
-=======
-			<real>575381208.63147497</real>
-			<key>timeStoppedRecording</key>
-			<real>575381210.11375594</real>
-			<key>title</key>
-			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
-			<key>uniqueIdentifier</key>
-			<string>C5FA4425-08E6-4BC2-B332-1EE7113D5FB3</string>
-		</dict>
-		<key>DA8273C6-523A-4998-8449-24A485D31D68</key>
+		<key>C79F7E11-5E05-4261-877C-178253F1B71A</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -71,9 +51,9 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>DA8273C6-523A-4998-8449-24A485D31D68.xcactivitylog</string>
+			<string>C79F7E11-5E05-4261-877C-178253F1B71A.xcactivitylog</string>
 			<key>highLevelStatus</key>
-			<string>S</string>
+			<string>E</string>
 			<key>schemeIdentifier-containerName</key>
 			<string>testCamera project</string>
 			<key>schemeIdentifier-schemeName</key>
@@ -83,18 +63,21 @@
 			<key>signature</key>
 			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>575470207.89286804</real>
+			<real>575300613.12386799</real>
 			<key>timeStoppedRecording</key>
-			<real>575470208.77144802</real>
+			<real>575300613.85841894</real>
 			<key>title</key>
 			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>DA8273C6-523A-4998-8449-24A485D31D68</string>
+			<string>C79F7E11-5E05-4261-877C-178253F1B71A</string>
 		</dict>
 	</dict>
+<<<<<<< HEAD
 >>>>>>> d0e5d76e5da1753cd3fb2f15bf5fecfb395d2fee
 =======
 	<dict/>
 >>>>>>> 8618530a05b11fcc5e4d63046a1a19845fd4dc84
+=======
+>>>>>>> development
 </dict>
 </plist>

@@ -1,16 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {StyleSheet, View, ImageBackground,Image,Alert} from 'react-native';
+import {StyleSheet, View, ImageBackground,Image,Alert,AsyncStorage} from 'react-native';
 import { TextInput,Button} from 'react-native-paper';
 import UserAction from '../actions/userAction'
+import { setUserToken } from '../actions/tokenAction.js';
 
 class LoginScreen extends React.Component {
+
     constructor(props){
         super(props)
         this.state = {
             textuser:'',
             textpass:'',
         }
+        this.loginUser =this.loginUser.bind(this)
     }
 
     checkTextIsEmpty = () =>{
@@ -20,24 +23,37 @@ class LoginScreen extends React.Component {
         if(textuser == '' || textpass==''){
             Alert.alert('Some input may be missing')
         }else{
-            this.loginUser;
-            this.props.changeTag7('home');
+            this.loginUser();
         }
     }
-    
+
+    saveUserToken = async userId => {
+      try {
+        await AsyncStorage.setItem('token', userId);
+      } catch (error) {
+        // Error retrieving data
+        console.log(error.message);
+      }
+    }
+
     onChangeTag = (tag) => {
         this.setState({ active: tag })
+        console.log('tag change')
         this.props.changeTag7(tag)
     }
-    loginUser = _ => {
+    loginUser = () => {
+      console.log(this.props)
       var xhr = new XMLHttpRequest();
-      var url = "http://localhost:8000/api/rest-auth/login/";
+      var url = "https://pantryplatter.herokuapp.com/api/rest-auth/login/";
       xhr.open("POST", url, true);
       xhr.setRequestHeader("Content-Type", "application/json");
-      xhr.onreadystatechange = function () {
+      xhr.onreadystatechange = () => {
         if (xhr.readyState === 4 && xhr.status === 200) {
             var json = JSON.parse(xhr.responseText);
-            console.log(json);
+            this.saveUserToken(json.key);
+            this.props.setUserToken(json.key);
+            this.props.changeTag7('home');
+
           }
         };
       var data = JSON.stringify({
@@ -60,6 +76,7 @@ class LoginScreen extends React.Component {
                 </View>
                 <View style={{padding: 16}}>
                     <TextInput
+                        autoCapitalize={false}
                         theme={{ colors: { primary: 'red' } }}
                         style={[styles.textboxC, {marginBottom: 16}]}
                         mode='flat'
@@ -68,6 +85,8 @@ class LoginScreen extends React.Component {
                         onChangeText={textuser => this.setState({textuser})}
                     />
                     <TextInput
+                        autoCapitalize={false}
+                        secureTextEntry
                         theme={{ colors: { primary: 'red' } }}
                         style={[styles.textboxC, {marginBottom: 16}]}
                         mode='flat'
@@ -75,7 +94,7 @@ class LoginScreen extends React.Component {
                         value={this.state.textpass}
                         onChangeText={textpass => this.setState({textpass})}
                     />
-                    <Button style={[styles.Buttontest,{marginBottom:16}]} mode="contained" onPress={this.checkTextIsEmpty.bind(this)}>
+                    <Button style={[styles.Buttontest,{marginBottom:16}]} mode="contained" onPress={this.checkTextIsEmpty}>
                         Login
                     </Button>
                     <Button style={styles.Buttontest2} mode="contained" onPress={() => {this.props.changeTag7('signup')}}>
@@ -101,7 +120,7 @@ const styles = StyleSheet.create({
     Buttontest: {
         width: '60%',
         alignSelf: 'center',
-        backgroundColor: '#cc0000'
+        backgroundColor: 'red'
     },
     Buttontest2: {
         width: '60%',
@@ -111,7 +130,8 @@ const styles = StyleSheet.create({
   });
 
   const mapStateToProps = state => ({
-    user: state.users.userName
+    user: state.users.userName,
+    token: state.token.token
   });
-  
-  export default connect(mapStateToProps, {UserAction})(LoginScreen);
+
+  export default connect(mapStateToProps, {setUserToken})(LoginScreen);

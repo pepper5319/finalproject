@@ -34,8 +34,13 @@ export default class InstructionComp extends React.Component {
 
  }
     render() {
-        const ingredients = this.state.UpperIngredients.map((ingredients) => <Text style={styles.textStyle}>{ingredients}</Text>)
-
+        const ingredients = this.state.UpperIngredients.map((ingredients) => {
+          if(this.props.matches.indexOf(ingredients.toLowerCase()) !== -1){
+            return <Text style={[styles.textStyle, {color: 'green'}]}>{ingredients}</Text>
+          }else{
+            return <Text style={styles.textStyle}>{ingredients}</Text>
+          }
+        })
         return (
             <View style={styles.contain}>
                 <Image
@@ -44,10 +49,10 @@ export default class InstructionComp extends React.Component {
                 <Text style={{ fontWeight: 'bold', fontSize: 28 }}>Ingredients</Text>
                 <View style={styles.constainer}>
                     <ScrollView>
-                        <View style={{ marginRight: 30 }}>
-                            {ingredients}
-                        </View>
-                    </ScrollView>
+                    <View style={{marginRight: 30}}>
+                        {ingredients}
+                    </View>
+                </ScrollView>
                 </View>
 
 

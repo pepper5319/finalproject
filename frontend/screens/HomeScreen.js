@@ -11,28 +11,25 @@ import NavbarComp from '../componets/navbarComp.js'
 import CardCompRecepie from '../componets/cardCompRecepie.js';
 import { ADMIN_KEY } from '../apiUrls.js';
 import { backtohomeAction } from '../actions/backtohomeAction.js';
+import { userToken } from '../actions/tokenAction.js';
 
 class HomeScreen extends React.Component {
-
-  componentDidMount(){
-
-    this.props.backtohomeAction('home')
-  }
 
   PhotoPic = () => {
     const options = {
       noData: true
     };
     ImagePicker.showImagePicker(options, response => {
+      console.log(process.env.API_URL)
       if (response.uri) {
         let photo = { uri: response.uri}
         let formdata = new FormData();
         formdata.append("file", {uri: photo.uri, name: 'image.jpg', type: 'multipart/form-data'})
         var xhr = new XMLHttpRequest();
-        var url = "http://localhost:8000/api/receipts/";
+        var url = "https://pantryplatter.herokuapp.com/api/receipts/";
         xhr.open("POST", url, true);
         xhr.setRequestHeader("Content-Type", "multipart/form-data");
-        xhr.setRequestHeader('Authorization', 'Token ' + 	"39f3fa646bf550befee5852f088676282356e32c")
+        xhr.setRequestHeader('Authorization', 'Token ' + 	this.props.token)
         xhr.onreadystatechange = function () {
           if (xhr.readyState === 4 && xhr.status === 200) {
               var json = JSON.parse(xhr.responseText);
@@ -53,7 +50,7 @@ class HomeScreen extends React.Component {
       .catch(err => console.error(err))
   };
   componentDidMount(){
-    this.props.getRecipes(ADMIN_KEY);
+    this.props.getRecipes(this.props.token);
     this.props.backtohomeAction('home');
   }
 
@@ -101,7 +98,7 @@ class HomeScreen extends React.Component {
           <NavbarComp button1={this.openDrawer} button2={this.PhotoPic} titleTxt={'Home'}/>
       </View>
       <ScrollView style={{backgroundColor: '#f2f2f2', padding: 10}}>
-        
+
         {recipes}
 
       </ScrollView>
@@ -118,6 +115,7 @@ const mapStateToProps = state => ({
   tag: state.tags.activeTag,
   recipes: state.recipes.recipes,
   tagHome: state.tohome.homeTag,
+  token: state.token.token
 });
 
 export default connect(mapStateToProps, { picFound, navAction, getRecipes, setRecipe, backtohomeAction })(HomeScreen);

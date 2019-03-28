@@ -1,11 +1,12 @@
-const uReducer = (state = { userName: '' }, action) => {
+const uReducer = (state = { userName: '', }, action) => {
     switch (action.type) {
       case "USER":
         state = {
           ...state,
-          userName: action.payload
+          userName: action.payload,
         }
         break;
+
       default:
         break;
     }

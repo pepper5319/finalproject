@@ -20,11 +20,12 @@ class PantryScreen extends React.Component {
   };
 
   getPItems = _ => {
+    console.log(this.props.userToken);
     var xhr = new XMLHttpRequest();
-    var url = PANTRY_URL;
+    var url = "https://pantryplatter.herokuapp.com/api/pItems/";
     xhr.open("GET", url, true);
     xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.setRequestHeader('Authorization', 'Token ' + ADMIN_KEY)
+    xhr.setRequestHeader('Authorization', 'Token ' + this.props.token)
     xhr.onreadystatechange = function () {
       console.log(xhr.status);
       if (xhr.readyState === 4 && xhr.status === 200) {
@@ -122,6 +123,7 @@ class PantryScreen extends React.Component {
 const mapStateToProps = state => ({
   url: state.pics.picURL,
   tag: state.tags.activeTag,
+  token: state.token.token
 });
 
 export default connect(mapStateToProps, { picFound, navAction})(PantryScreen);
