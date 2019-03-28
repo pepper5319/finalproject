@@ -9,13 +9,8 @@ import { connect } from 'react-redux';
 import NavbarComp from '../componets/navbarComp.js';
 import CardCompRecepie from '../componets/cardCompRecepie.js';
 import { backtohomeAction } from '../actions/backtohomeAction.js';
-<<<<<<< HEAD
-import { getRecipes, setRecipe } from '../actions/recipeAction.js';
-import { ADMIN_KEY } from '../apiUrls';
-=======
 import { ADMIN_KEY } from '../apiUrls.js';
 import { getRecipes, setRecipe } from '../actions/recipeAction.js';
->>>>>>> development
 
 
 class RecipeScreen extends React.Component {
@@ -61,22 +56,13 @@ class RecipeScreen extends React.Component {
           .catch(err => console.error(err))
       };
 
-<<<<<<< HEAD
-      toRecipe = (tag, data) => {
-        this.props.setRecipe(data);
-=======
     onChangeTag = (tag) => {
->>>>>>> development
         this.setState({ active: tag })
         this.props.changeTag4(tag)
     }
 
-<<<<<<< HEAD
-    onChangeTag = (tag) => {
-=======
     toRecipe = (tag, data) => {
         this.props.setRecipe(data);
->>>>>>> development
         this.setState({ active: tag })
         this.props.changeTag4(tag)
     }
@@ -89,13 +75,8 @@ class RecipeScreen extends React.Component {
 
     render() {
         const recipes = this.props.recipes.map((recipe) => (
-<<<<<<< HEAD
-            <CardCompRecepie imgUri={recipe.image_url} titleTxt={recipe.name} viewClick={(tag) => this.toRecipe(tag, recipe)}/>
-          ));
-=======
           <CardCompRecepie imgUri={recipe.image_url} titleTxt={recipe.name} viewClick={(tag) => this.toRecipe(tag, recipe)}/>
         ));
->>>>>>> development
         return (
             <Drawer
                 ref={(ref) => { this.drawer = ref; }}
@@ -110,16 +91,8 @@ class RecipeScreen extends React.Component {
                 <View>
                     <NavbarComp button1={this.openDrawer} button2={this.PhotoPic} titleTxt={'Recipe'} />
                 </View>
-<<<<<<< HEAD
-                <ScrollView>
-<<<<<<< HEAD
-=======
                 <ScrollView style={{padding:10, backgroundColor: '#f2f2f2'}}>
->>>>>>> d0e5d76e5da1753cd3fb2f15bf5fecfb395d2fee
-                {recipes}
-=======
                   {recipes}
->>>>>>> development
                 </ScrollView>
             </Drawer>
         );
@@ -131,14 +104,6 @@ const mapStateToProps = state => ({
     tag: state.tags.activeTag,
     tagHome: state.tohome.homeTag,
     recipes: state.recipes.recipes,
-<<<<<<< HEAD
-
-
-});
-
-export default connect(mapStateToProps, { picFound, navAction,getRecipes, setRecipe, backtohomeAction })(RecipeScreen);
-=======
 });
 
 export default connect(mapStateToProps, { picFound, navAction, backtohomeAction, getRecipes, setRecipe })(RecipeScreen);
->>>>>>> development
