@@ -17,7 +17,7 @@ import { userToken } from '../actions/tokenAction.js';
 class HomeScreen extends React.Component {
 
   componentDidMount(){
-    console.log(this.props.userToken)
+    console.log(this.props.token)
     //this.props.getRecipes(this.props.userToken)
     this.props.backtohomeAction('home')
   }
@@ -96,7 +96,7 @@ const mapStateToProps = state => ({
   tag: state.tags.activeTag,
   recipes: state.recipes.recipes,
   tagHome: state.tohome.homeTag,
-  token: state.token.userToken
+  token: state.token.token
 });
 
 export default connect(mapStateToProps, { picFound, navAction, getRecipes, setRecipe, backtohomeAction })(HomeScreen);

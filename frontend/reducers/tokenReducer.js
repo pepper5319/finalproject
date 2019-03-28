@@ -1,7 +1,6 @@
 const tReducer = (state = { token: '', }, action) => {
     switch (action.type) {
       case "TOKEN":
-      console.log("Testing")
         state = {
           ...state,
           token: action.payload,

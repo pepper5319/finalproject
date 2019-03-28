@@ -31,18 +31,17 @@ class LoginScreen extends React.Component {
         this.setState({ active: tag })
         this.props.changeTag7(tag)
     }
-    loginUser = _ => {
+    loginUser = () => {
       console.log(this.props)
       var xhr = new XMLHttpRequest();
       var url = "https://pantryplatter.herokuapp.com/api/rest-auth/login/";
       xhr.open("POST", url, true);
       xhr.setRequestHeader("Content-Type", "application/json");
-      xhr.onreadystatechange = function () {
+      xhr.onreadystatechange = () => {
         if (xhr.readyState === 4 && xhr.status === 200) {
             var json = JSON.parse(xhr.responseText);
-            //console.log(json.key)
-            this.props.setUserToken(json.key)
-            //this.props.changeTag7('home');
+            this.props.setUserToken(json.key);
+            this.props.changeTag7('home');
             const saveUserToken = async userId => {
               try {
                 await AsyncStorage.setItem('token', json);
@@ -73,6 +72,7 @@ class LoginScreen extends React.Component {
                 </View>
                 <View style={{padding: 16}}>
                     <TextInput
+                        autoCapitalize={false}
                         theme={{ colors: { primary: 'red' } }}
                         style={[styles.textboxC, {marginBottom: 16}]}
                         mode='flat'
@@ -81,6 +81,8 @@ class LoginScreen extends React.Component {
                         onChangeText={textuser => this.setState({textuser})}
                     />
                     <TextInput
+                        autoCapitalize={false}
+                        secureTextEntry
                         theme={{ colors: { primary: 'red' } }}
                         style={[styles.textboxC, {marginBottom: 16}]}
                         mode='flat'
@@ -125,7 +127,7 @@ const styles = StyleSheet.create({
 
   const mapStateToProps = state => ({
     user: state.users.userName,
-    token: state.token.userToken
+    token: state.token.token
   });
 
   export default connect(mapStateToProps, {setUserToken})(LoginScreen);
