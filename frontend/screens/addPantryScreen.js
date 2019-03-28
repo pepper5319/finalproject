@@ -1,19 +1,18 @@
 import React from 'react';
-import { View, ScrollView, Image, StyleSheet, Text, ListView } from 'react-native';
-import ImagePicker from 'react-native-image-picker';
+import { View, ScrollView, StyleSheet} from 'react-native';
 import { Drawer } from 'native-base';
-import { TextInput, Card, IconButton, Title, Paragraph, Button } from 'react-native-paper';
+import { TextInput, Card, IconButton, Title, Button, Subheading } from 'react-native-paper';
 import SideBar from '../navigation/drawerStyle';
 import { navAction } from '../actions/navigationAction.js';
 import { connect } from 'react-redux';
-import NavbarComp from '../componets/navbarComp';
-import WebViewComp from '../componets/webViewComp'
+import BackNav from '../componets/basicBackNav.js';
+
+import { ADMIN_KEY, PANTRY_URL } from '../apiUrls.js';
 
 class AddPantryScreen extends React.Component {
 
     onChangeTag = (tag) => {
         this.setState({ active: tag })
-        console.log('tag change')
         this.props.changeTag5(tag)
     }
     closeDrawer = () => {
@@ -45,24 +44,66 @@ class AddPantryScreen extends React.Component {
           itemExp: ''
         });
       }
-      console.log(this.state.newItems);
+      //console.log(this.state.newItems);
     }
 
-    removeItem = (id) => {
-      
+    deleteItem = (key) => {
+      var filteredItems = this.state.newItems;
+      var ind = filteredItems.indexOf(key);
+      if(ind > -1){
+        filteredItems.splice(ind, 1);
+        this.setState({
+          newItems:filteredItems
+        });
+      }
+    }
+
+    uploadItems = () => {
+      const pitems = [];
+      this.state.newItems.map((item) => {
+        const itemData = {
+          static_id: item.itemID,
+          name: item.itemName,
+          qty: item.itemQty,
+          exp_date: item.itemExp
+        }
+        pitems.push(itemData);
+      });
+      const pbody = {
+        items: pitems
+      }
+      console.log(pbody);
+      fetch(PANTRY_URL+'add-items/', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json',
+            'Authorization': 'Token ' + ADMIN_KEY
+          },
+          body: JSON.stringify(pbody)
+        })
+        .then(res => {
+          if(res.status === 200){
+            this.setState({itemName: '', itemExp: '', itemQty: ''})
+            this.onChangeTag('pantry');
+          }else{
+            console.log(res._bodyInit);
+          }
+        });
     }
 
     render() {
 
-        const items = this.state.newItems.map((item) => (
-          <Card style={{marginBottom: 10}}>
+        var items = this.state.newItems.map((item) => (
+          <Card key={item.itemName} style={{marginBottom: 10}}>
               <Card.Content>
-                <Title>{item.itemName}</Title>
-                {item.itemQty !== undefined && <Paragraph>{item.itemQty} - Exp: {item.itemExp}</Paragraph> }
-              </Card.Content>
-              <Card.Actions style={{justifyContent:'flex-end'}}>
-                <IconButton icon='remove-circle' onPress={() => {}}/>
-              </Card.Actions>
+                <Title>
+                  {item.itemName}
+                </Title>
+                <Subheading>
+                  {item.itemQty !== undefined && item.itemQty}
+                </Subheading>
+                <IconButton icon='remove-circle' onPress={() => this.deleteItem(item)}/>
+              </ Card.Content>
             </Card>
         ));
 
@@ -78,7 +119,7 @@ class AddPantryScreen extends React.Component {
                 openDrawerOffset={0.3}
                 panCloseMask={0.3}>
                 <View>
-                  <NavbarComp button1={this.openDrawer} button2={this.openDrawer} titleTxt={'Add To Pantry'}/>
+                  <BackNav button1={this.onChangeTag} button2={() => this.uploadItems()} backTo={'pantry'} titleTxt={'Add To Pantry'}/>
                 </View>
                 <View style={{padding: 16}}>
                   <TextInput
@@ -98,8 +139,7 @@ class AddPantryScreen extends React.Component {
                       onChangeText={itemQty => this.setState({ itemQty })}
                     />
                     <TextInput
-                      keyboardType='numeric'
-                      placeholder='MM.DD.YYYY'
+                      placeholder='YYYY-MM-DD'
                       style={{flex: 1, marginLeft: 5}}
                       label='Experation Date'
                       value={this.state.itemExp}

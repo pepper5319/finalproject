@@ -8,19 +8,12 @@ import { navAction } from '../actions/navigationAction.js';
 import { getRecipes, setRecipe } from '../actions/recipeAction.js';
 import { connect } from 'react-redux';
 import NavbarComp from '../componets/navbarComp.js'
-import CardComp from '../componets/cardComp.js'
 import CardCompRecepie from '../componets/cardCompRecepie.js';
 import { ADMIN_KEY } from '../apiUrls.js';
 import { backtohomeAction } from '../actions/backtohomeAction.js';
 import { userToken } from '../actions/tokenAction.js';
 
 class HomeScreen extends React.Component {
-
-  componentDidMount(){
-    console.log(this.props.token)
-    //this.props.getRecipes(this.props.userToken)
-    this.props.backtohomeAction('home')
-  }
 
   PhotoPic = () => {
     const options = {
@@ -49,11 +42,36 @@ class HomeScreen extends React.Component {
     });
   };
 
+  postReceipt = _ => {
+    fetch('http://localhost:8000/api/Recipes')
+      .then(console.log('button pressed!'))
+      .then(response => response.json())
+      .then(response => this.setState({ students: response.data }))
+      .catch(err => console.error(err))
+  };
+  componentDidMount(){
+    this.props.getRecipes(this.props.token);
+    this.props.backtohomeAction('home');
+  }
+
+  componentDidUpdate(){
+    console.log(this.props.recipes);
+  }
+
   onChangeTag = (tag) => {
     this.setState({ active: tag })
     console.log('tag change');
     this.props.changeTag(tag);
   }
+
+
+  toRecipe = (tag, data) => {
+    this.props.setRecipe(data);
+    this.setState({ active: tag })
+    console.log('tag change');
+    this.props.changeTag(tag);
+  }
+
   closeDrawer = () => {
     this.drawer._root.close()
   };
@@ -63,7 +81,7 @@ class HomeScreen extends React.Component {
 
   render() {
     const recipes = this.props.recipes.map((recipe) => (
-      <CardCompRecepie imgUri={recipe.image_url} titleTxt={recipe.name} viewClick={(tag) => this.onChangeTag(tag, recipe)}/>
+      <CardCompRecepie imgUri={recipe.image_url} titleTxt={recipe.name} viewClick={(tag) => this.toRecipe(tag, recipe)}/>
     ));
     return (
       <Drawer
@@ -79,7 +97,8 @@ class HomeScreen extends React.Component {
       <View>
           <NavbarComp button1={this.openDrawer} button2={this.PhotoPic} titleTxt={'Home'}/>
       </View>
-      <ScrollView>
+      <ScrollView style={{backgroundColor: '#f2f2f2', padding: 10}}>
+
         {recipes}
 
       </ScrollView>

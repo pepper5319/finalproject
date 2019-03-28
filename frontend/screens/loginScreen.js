@@ -29,6 +29,7 @@ class LoginScreen extends React.Component {
 
     onChangeTag = (tag) => {
         this.setState({ active: tag })
+        console.log('tag change')
         this.props.changeTag7(tag)
     }
     loginUser = () => {
@@ -90,7 +91,7 @@ class LoginScreen extends React.Component {
                         value={this.state.textpass}
                         onChangeText={textpass => this.setState({textpass})}
                     />
-                    <Button style={[styles.Buttontest,{marginBottom:16}]} mode="contained" onPress={this.checkTextIsEmpty.bind(this)}>
+                    <Button style={[styles.Buttontest,{marginBottom:16}]} mode="contained" onPress={this.checkTextIsEmpty}>
                         Login
                     </Button>
                     <Button style={styles.Buttontest2} mode="contained" onPress={() => {this.props.changeTag7('signup')}}>
@@ -116,7 +117,7 @@ const styles = StyleSheet.create({
     Buttontest: {
         width: '60%',
         alignSelf: 'center',
-        backgroundColor: '#cc0000'
+        backgroundColor: 'red'
     },
     Buttontest2: {
         width: '60%',

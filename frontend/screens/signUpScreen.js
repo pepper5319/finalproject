@@ -28,7 +28,7 @@ class SignUpScreen extends React.Component {
 
 
         if(textfirst == '' || textlast=='' || textemail == '' || textuser=='' || textpass == '' || textpassC==''){
-            Alert.alert('My bad bro')
+            Alert.alert('Some input may be missing')
         }
         else{
             this.registerUser();

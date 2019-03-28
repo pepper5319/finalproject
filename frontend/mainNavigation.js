@@ -43,7 +43,6 @@ export default class MainNavigation extends Component {
                     <WebScreen changeTag8={this.onChangeTag.bind(this)}/>
                      || this.state.active == 'logout' &&
                     <LogoutScreen changeTag9={this.onChangeTag.bind(this)}/>
-
                 }
             </Drawer>
 
