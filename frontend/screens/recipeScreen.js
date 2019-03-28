@@ -110,8 +110,12 @@ class RecipeScreen extends React.Component {
                 <View>
                     <NavbarComp button1={this.openDrawer} button2={this.PhotoPic} titleTxt={'Recipe'} />
                 </View>
+<<<<<<< HEAD
                 <ScrollView>
 <<<<<<< HEAD
+=======
+                <ScrollView style={{padding:10, backgroundColor: '#f2f2f2'}}>
+>>>>>>> d0e5d76e5da1753cd3fb2f15bf5fecfb395d2fee
                 {recipes}
 =======
                   {recipes}
