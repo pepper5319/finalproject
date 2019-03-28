@@ -1,38 +1,53 @@
 import React from 'react';
-import { View, ScrollView, Image, StyleSheet, Text, Dimensions} from 'react-native';
+import { View, ScrollView, Image, StyleSheet, Text, Dimensions } from 'react-native';
 let screenPercent = '39%'
 containerSize = () => {
-const windowHeight = Dimensions.get("window").height
+    const windowHeight = Dimensions.get("window").height
 
-if(windowHeight < 600)
-screenPercent = '39%';
+    if (windowHeight < 600)
+        screenPercent = '39%';
 
-else
-screenPercent = '50%';
+    else
+        screenPercent = '50%';
 
 }
 
 
 export default class InstructionComp extends React.Component {
-    componentDidMount(){
-        containerSize()
-    console.log(screenPercent)
- }   
+
+    matchIndex = () => {
+        temp = this.props.ingredients.map((ingredients) => {return ingredients})
+        for (let i = 0; i < this.props.ingredients.length; i++) {
+            for (let k = 0; k < this.props.match.length; k++) {
+                if(this.props.ingredients[i] == this.props.match[k])
+                {
+                    temp.splice(i, 0, 0);                 
+                }
+                
+            }
+
+        }
+        return temp;
+    }
+
     render() {
-        console.log(windowHeight)
-        const ingredients = this.props.ingredients.map((ingredients) => <Text style={styles.textStyle}>{ingredients}</Text>)
+        
+        const ingredients = this.props.ingredients.map((ingredients, index) =>
+            <Text style={(this.matchIndex()[index] == 0) ? styles.green : styles.black}>
+            {ingredients}
+            </Text>)
         return (
             <View style={styles.contain}>
                 <Image
                     style={styles.stretch}
                     source={{ uri: this.props.webUrl }} />
                 <Text style={{ fontWeight: 'bold', fontSize: 28 }}>Ingredients</Text>
-                <View style={styles.constainer }>
+                <View style={styles.constainer}>
                     <ScrollView>
-                    <View style={{marginRight: 30}}>
-                        {ingredients}
-                    </View>
-                </ScrollView>  
+                        <View style={{ marginRight: 30 }}>
+                            {ingredients}
+                        </View>
+                    </ScrollView>
                 </View>
 
 
@@ -67,8 +82,19 @@ const styles = StyleSheet.create({
         width: windowWidth,
         paddingHorizontal: 10,
         backgroundColor: '#f6f6f6',
-
-    }
+    },
+    green: {
+        color: '#25ba3b',
+        fontSize: 18,
+        fontWeight: '400',
+        flex: 1,
+    },
+    black: {
+        color: '#000000',
+        fontSize: 18,
+        fontWeight: '400',
+        flex: 1,
+    },
 });
 const windowWidth = Dimensions.get("window").width
 const windowHeight = Dimensions.get("window").height

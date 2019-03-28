@@ -16,7 +16,6 @@ import { ADMIN_KEY } from '../apiUrls';
 class RecipeScreen extends React.Component {
 
 
-
     componentDidMount() {
         this.props.getRecipes(ADMIN_KEY);
         this.props.backtohomeAction('recipe')
