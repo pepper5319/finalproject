@@ -33,8 +33,13 @@ export default class PantryList extends React.Component {
               </Left>
 
               <Body style={{position: "relative", right: 20}}>
+<<<<<<< HEAD
               <Text>{this.props.titleTxt + '\n' + this.props.descripTxt}</Text>
 
+=======
+                <Text style={{textTransform: 'capitalize'}}>{this.props.titleTxt}</Text>
+                <Text note numberOfLines={1}>{this.props.descripTxt}</Text>
+>>>>>>> d0e5d76e5da1753cd3fb2f15bf5fecfb395d2fee
               </Body>
               <Right>
                 <Text  style={{fontSize: 10,fontWeight: '400'}}>EXP. Date</Text>
