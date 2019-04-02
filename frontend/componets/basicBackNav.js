@@ -18,7 +18,8 @@ const styles = StyleSheet.create({
     barcontainer: {
       backgroundColor: '#cc0000',
       borderBottomLeftRadius: 12,
-      borderBottomRightRadius: 12
+      borderBottomRightRadius: 12,
+      paddingTop: 16
     },
 
   });
