@@ -31,20 +31,13 @@ def scrape_recipes(str_in):
         soup2 = BeautifulSoup(''.join(str(results)), features="html.parser")
         for tag in soup2.findAll('ar-save-item')[:5]:
             if('/userphotos/' in tag['data-imageurl']):
-                # temp = [tag['data-id']]
-                # temp.append(str(tag['data-imageurl']).replace('\\','').replace("'",''))
                 id_image_url.append([tag['data-id'], str(tag['data-imageurl']).replace('\\','').replace("'",''),])
-                # id_image_url.append({tag['data-id'] : [str(tag['data-imageurl']).replace('\\','').replace("'",''),]})
         for tag in soup2.findAll('a'):
             if('/recipe/' in tag['href'] and tag['href'] not in url_duplicate_check):
                 url_duplicate_check.append(tag['href'])
                 for val in id_image_url:
                     if val[0] in tag['href']:
                         val.append(tag['href'])
-                    # the inner loop should only run once
-                    # for key, value in val.items():
-                    #     if key in tag['href']:
-                    #         val[key].append(tag['href'])
     return id_image_url
 
 def scrape_ingredients(recipe_list_obj):
@@ -64,7 +57,6 @@ def scrape_ingredients(recipe_list_obj):
 
     cooking_keyword_abbrv = ['t', 'tsp', 'T', 'Tsbp', 'c', 'oz', 'pt', 'qt', 'gal',
                              'lb', '#']
-    # dont_include_list = ['and', 'whole', 'condensed', 'hot', 'cold', 'delicious', 'food', 'liquid', 'italian']
     ingredient_list = []
     ingredient_dict = {}
     data = requests.get(recipe_list_obj[-1])
@@ -88,7 +80,6 @@ def scrape_ingredients(recipe_list_obj):
                     final_ingredient += plural_to_singular(val) + ' '
         final_ingredient = search_dict(input_dict=ingredient_dict, search_term=final_ingredient.strip().lower())
         if final_ingredient is not None:
-            # if final_ingredient not in dont_include_list:
             if final_ingredient not in ingredient_list:
                 ingredient_list.append(final_ingredient.strip())
     recipe_list_obj.append(ingredient_list)
