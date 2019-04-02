@@ -54,9 +54,10 @@ class InstructionScreen extends React.Component {
     componentDidMount(){
       console.log(this.props.recipe_id);
       this.props.getSingleRecipe(this.props.token, this.props.recipe_id);
+
     }
     componentDidUpdate(){
-      console.log(this.props.recipe);
+      console.log(this.props.recipe.recipe.name);
       if(this.state.ingredients === null && this.props.recipe !== null && this.props.recipe !== undefined){
         var ing = this.props.recipe.recipe.ingredients.replace(/[\[\]&]+/g, '');
         ing = ing.replace(/[\']+/g, '');
@@ -85,7 +86,7 @@ class InstructionScreen extends React.Component {
                 <View>
                     <BasicBackNav button1={this.props.changeTag6} backTo={this.props.tagHome} titleTxt={'Instruction'} />
                 </View>
-              {this.props.recipe !== null && this.props.recipe !== undefined && this.state.ingredients !== null &&<InstructionComp ingredients={this.state.ingredients} matches={this.props.recipe.matches} webUrl={this.props.recipe.recipe.image_url}/>
+              {this.props.recipe !== null && this.props.recipe !== undefined && this.state.ingredients !== null && <InstructionComp ingredients={this.state.ingredients} recipeName={this.props.recipe.recipe.name} matches={this.props.recipe.matches} webUrl={this.props.recipe.recipe.image_url}/>
               }
               <TouchableOpacity
           style={styles.webButton}

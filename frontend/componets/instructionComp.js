@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ScrollView, Image, StyleSheet, Text, Dimensions } from 'react-native';
+import { View, ScrollView, Image, StyleSheet, Text, Dimensions, FlatList } from 'react-native';
 
 
 export default class InstructionComp extends React.Component {
@@ -36,7 +36,7 @@ export default class InstructionComp extends React.Component {
                 <Image
                     style={styles.stretch}
                     source={{ uri: this.props.webUrl }} />
-                <Text style={{ fontWeight: 'bold', fontSize: 28 }}>Ingredients</Text>
+                <Text style={{ fontWeight: '500', fontSize: 20,  paddingRight: 10, paddingLeft: 10, marginVertical: 5, textAlign: 'center'}}>{this.props.recipeName}</Text>
                 <View style={styles.constainer}>
                     <ScrollView>
                     <View style={{marginRight: 30}}>
@@ -56,7 +56,8 @@ export default class InstructionComp extends React.Component {
 const styles = StyleSheet.create({
     contain: {
         alignItems: 'center',
-        top: 12
+        top: 12,
+        
     },
     textStyle: {
         fontSize: 18,
@@ -70,6 +71,7 @@ const styles = StyleSheet.create({
         borderRadius: 1,
         borderWidth: 0.8,
         borderColor: 'black',
+        borderRadius: 8
     },
     constainer: {
         flexDirection: 'row',
@@ -90,6 +92,14 @@ const styles = StyleSheet.create({
         fontWeight: '400',
         flex: 1,
     },
+    listTest: {
+        flex: 1,
+        marginVertical: 20,
+    },
+    contain2: {
+        flexDirection: 'row',
+        flex: 1,
+    }
 });
 const windowWidth = Dimensions.get("window").width
 const windowHeight = Dimensions.get("window").height
