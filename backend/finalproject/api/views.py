@@ -218,14 +218,14 @@ class UPCView(generics.ListCreateAPIView):
         return recipes
 
 # name is user-update
-class PUserView(generics.RetrieveDestroyAPIView):
+class PUserView(APIView):
     serializer_class = PUserSerializer
     permission_classes = (permissions.IsAuthenticated,)
 
-    def get_queryset(self):
-        return self.request.user
+    def get(self, request):
+        return Response(PUserSerializer(request.user).data)
 
-    def put(self, request, pk=None):
+    def put(self, request):
         user = PUserSerializer(self.request.user)
 
         try:
@@ -242,6 +242,10 @@ class PUserView(generics.RetrieveDestroyAPIView):
 
         if serialized_recipe.data['static_id'] not in user.data['liked_recipes']:
             self.request.user.liked_recipes.add(serialized_recipe.data['static_id'])
+            self.request.user.save()
+            user = PUserSerializer(self.request.user)
+        else:
+            self.request.user.liked_recipes.remove(serialized_recipe.data['static_id'])
             self.request.user.save()
             user = PUserSerializer(self.request.user)
 
