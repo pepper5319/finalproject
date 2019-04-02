@@ -16,7 +16,7 @@ export default class DrawerStyle extends React.Component {
 
       return (
         <Drawer.Section title="MENU"
-        style={{backgroundColor:'white', height: windowHeight}}>
+        style={{backgroundColor:'white', height: windowHeight, marginTop: 15}}>
 
           <Drawer.Item
             label="Menu"
@@ -59,6 +59,13 @@ export default class DrawerStyle extends React.Component {
             active={active === 'logout'}
             onPress={() => { this.setState({ active: 'logout' });
             this.props.changeTag('logout')
+          }}
+          />
+          <Drawer.Item
+            label="Loding"
+            active={active === 'loding'}
+            onPress={() => { this.setState({ active: 'loding' });
+            this.props.changeTag('loding')
           }}
           />
 
