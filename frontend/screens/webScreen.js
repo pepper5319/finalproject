@@ -36,7 +36,6 @@ class WebScreen extends React.Component {
     };
 
     render() {
-
         return (
             <Drawer
                 ref={(ref) => { this.drawer = ref; }}
@@ -51,7 +50,7 @@ class WebScreen extends React.Component {
                 <View>
                     <BasicBackNav button1={this.props.changeTag8} backTo={'instruction'} titleTxt={'Web'} />
                 </View>
-                <WebViewComp recipeUrl={this.props.recipe.recipe_url}/>
+                <WebViewComp recipeUrl={this.props.recipe.recipe.recipe_url}/>
 
 
             </Drawer>

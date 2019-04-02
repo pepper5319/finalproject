@@ -16,7 +16,7 @@ export default class DrawerStyle extends React.Component {
 
       return (
         <Drawer.Section title="MENU"
-        style={{backgroundColor:'white', height: windowHeight}}>
+        style={{backgroundColor:'white', height: windowHeight, marginTop: 15}}>
 
           <Drawer.Item
             label="Menu"

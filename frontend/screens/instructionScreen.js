@@ -13,7 +13,6 @@ import { backtohomeAction } from '../actions/backtohomeAction.js';
 import { ADMIN_KEY } from '../apiUrls.js';
 
 class InstructionScreen extends React.Component {
-
     PhotoPic = () => {
         const options = {
             noData: true
@@ -86,8 +85,7 @@ class InstructionScreen extends React.Component {
                 <View>
                     <BasicBackNav button1={this.props.changeTag6} backTo={this.props.tagHome} titleTxt={'Instruction'} />
                 </View>
-              {this.props.recipe !== null && this.props.recipe !== undefined && this.state.ingredients !== null &&
-                <InstructionComp ingredients={this.state.ingredients} matches={this.props.recipe.matches} webUrl={this.props.recipe.recipe.image_url}/>
+              {this.props.recipe !== null && this.props.recipe !== undefined && this.state.ingredients !== null &&<InstructionComp ingredients={this.state.ingredients} matches={this.props.recipe.matches} webUrl={this.props.recipe.recipe.image_url}/>
               }
               <TouchableOpacity
           style={styles.webButton}
@@ -115,8 +113,8 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#cc0000',
         position: 'absolute',
-    bottom: 10,
-    left: '16%',
+        bottom:10,
+        left: '16%',
       },
       webBtnText:{
           color:'#fff',
