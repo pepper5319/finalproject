@@ -61,6 +61,13 @@ export default class DrawerStyle extends React.Component {
             this.props.changeTag('logout')
           }}
           />
+          <Drawer.Item
+            label="Loding"
+            active={active === 'loding'}
+            onPress={() => { this.setState({ active: 'loding' });
+            this.props.changeTag('loding')
+          }}
+          />
 
        </Drawer.Section>
       );
