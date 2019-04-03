@@ -7,6 +7,7 @@ import SideBar from '../navigation/drawerStyle';
 import { picFound } from '../actions/picActions.js';
 import { navAction } from '../actions/navigationAction.js';
 import { setRecipe, getSingleRecipe } from '../actions/recipeAction.js';
+import { userDataFound } from '../actions/userAction.js';
 import { connect } from 'react-redux';
 import BasicBackNav from '../componets/basicBackNav.js';
 import InstructionComp from '../componets/instructionComp.js'
@@ -29,7 +30,8 @@ class InstructionScreen extends React.Component {
         super();
         this.state = {
             ingredients: null,
-            snackBarVisible: false
+            snackBarVisible: false,
+            snackBarText: 'Liked This Recipe'
         }
     }
 
@@ -54,7 +56,23 @@ class InstructionScreen extends React.Component {
     }
     componentDidMount(){
       console.log(this.props.recipe);
-      this.props.getSingleRecipe(this.props.token, this.props.recipe_id);
+      fetch(USER_URL, {
+          method: 'GET',
+          headers: {
+            'content-type': 'application/json',
+            'Authorization': 'Token ' + this.props.token
+          },
+        })
+        .then(res => {
+          if(res.status === 200){
+            return res.json()
+          }else{
+            alert(res.status);
+          }
+        }).then(data => {
+          this.props.userDataFound(data);
+          this.props.getSingleRecipe(this.props.token, this.props.recipe_id);
+        })
     }
     componentDidUpdate(){
       console.log(this.props.recipe);
@@ -71,6 +89,9 @@ class InstructionScreen extends React.Component {
 
     likeRecipe = () => {
       console.log("Liked Recipe: " + this.props.recipe_id);
+      if(this.props.userData.liked_recipes.indexOf(this.props.recipe_id) !== -1){
+        this.setState({snackBarText: 'Unliked This Recipe'});
+      }
       recipeData = {liked_recipes: this.props.recipe_id}
       fetch(USER_URL, {
           method: 'PUT',
@@ -121,7 +142,7 @@ class InstructionScreen extends React.Component {
               visible={this.state.snackBarVisible}
               onDismiss={() => this.setState({ snackBarVisible: false })}
             >
-              Liked This Recipe
+              {this.state.snackBarText}
             </Snackbar>
             </Drawer>
         );
@@ -161,8 +182,9 @@ const mapStateToProps = state => ({
     recipe_id: state.recipes.recipe_id,
     tagHome: state.tohome.homeTag,
     token: state.token.token,
+    userData: state.users.userData
 });
 
 const windowHeight = Dimensions.get("window").height
 
-export default connect(mapStateToProps, { picFound, navAction, setRecipe, backtohomeAction, getSingleRecipe })(InstructionScreen);
+export default connect(mapStateToProps, { picFound, navAction, setRecipe, backtohomeAction, getSingleRecipe, userDataFound })(InstructionScreen);

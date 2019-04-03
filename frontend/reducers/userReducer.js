@@ -1,4 +1,4 @@
-const uReducer = (state = { userName: '', }, action) => {
+const uReducer = (state = { userName: '', userData: {}}, action) => {
     switch (action.type) {
       case "USER":
         state = {
@@ -6,7 +6,12 @@ const uReducer = (state = { userName: '', }, action) => {
           userName: action.payload,
         }
         break;
-
+      case "USER_DATA":
+        state = {
+          ...state,
+          userData: action.payload,
+        }
+        break;
       default:
         break;
     }
