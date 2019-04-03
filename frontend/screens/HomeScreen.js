@@ -5,7 +5,7 @@ import { Drawer } from 'native-base';
 import DrawerStyle from '../navigation/drawerStyle.js';
 import { picFound } from '../actions/picActions.js';
 import { navAction } from '../actions/navigationAction.js';
-import { getRecipes, setRecipe } from '../actions/recipeAction.js';
+import { getRecipes, setRecipe, nullRecipe } from '../actions/recipeAction.js';
 import { connect } from 'react-redux';
 import NavbarComp from '../componets/navbarComp.js'
 import CardCompRecepie from '../componets/cardCompRecepie.js';
@@ -55,7 +55,8 @@ class HomeScreen extends React.Component {
   }
 
   componentDidUpdate(){
-    console.log(this.props.recipes);
+    this.props.nullRecipe();
+    console.log(this.props.recipe);
   }
 
   onChangeTag = (tag) => {
@@ -78,7 +79,6 @@ class HomeScreen extends React.Component {
   };
 
   render() {
-  console.log(this.props.recipes[0]);
     const recipes = this.props.recipes.map((recipe) => (
       <CardCompRecepie imgUri={recipe.image_url} titleTxt={recipe.name} viewClick={(tag) => this.toRecipe(tag, recipe)}/>
     ));
@@ -113,8 +113,9 @@ const mapStateToProps = state => ({
   url: state.pics.picURL,
   tag: state.tags.activeTag,
   recipes: state.recipes.recipes,
+  recipe: state.recipes.recipe,
   tagHome: state.tohome.homeTag,
   token: state.token.token
 });
 
-export default connect(mapStateToProps, { picFound, navAction, getRecipes, setRecipe, backtohomeAction })(HomeScreen);
+export default connect(mapStateToProps, { picFound, navAction, getRecipes, setRecipe, backtohomeAction, nullRecipe })(HomeScreen);

@@ -20,6 +20,12 @@ export const getRecipes = (token) => dispatch => {
     }));
 }
 
+export const nullRecipe = () => dispatch => {
+  dispatch({
+    type: 'NULL_RECIPE'
+  })
+}
+
 export const setRecipe = (recipeData) => dispatch => {
   dispatch({
     type: 'RECIPES_SET_SUCCESS',

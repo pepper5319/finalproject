@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, StyleSheet, Text, TouchableOpacity, Dimensions} from 'react-native';
+import { View, StyleSheet, Text, TouchableOpacity, Dimensions, Animated} from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import { Drawer } from 'native-base';
-import { Snackbar } from 'react-native-paper';
+import { Snackbar, Button } from 'react-native-paper';
 import SideBar from '../navigation/drawerStyle';
 import { picFound } from '../actions/picActions.js';
 import { navAction } from '../actions/navigationAction.js';
-import { setRecipe, getSingleRecipe } from '../actions/recipeAction.js';
+import { setRecipe, getSingleRecipe, nullRecipe } from '../actions/recipeAction.js';
 import { userDataFound } from '../actions/userAction.js';
 import { connect } from 'react-redux';
 import BasicBackNav from '../componets/basicBackNav.js';
@@ -33,10 +33,10 @@ class InstructionScreen extends React.Component {
             snackBarVisible: false,
             snackBarText: 'Liked This Recipe'
         }
+        this._visibility = new Animated.Value(0);
     }
 
     onChangeTag = (tag) => {
-        this.setState({ active: tag })
         this.props.changeTag6(tag)
     }
     closeDrawer = () => {
@@ -51,8 +51,6 @@ class InstructionScreen extends React.Component {
     }
     componentWillReceiveProps(props){
       console.log("UPDATING");
-
-
     }
     componentDidMount(){
       console.log(this.props.recipe);
@@ -81,6 +79,13 @@ class InstructionScreen extends React.Component {
         ing = ing.replace(/[\']+/g, '');
         ing = ing.replace(/[\']+/g, '');
         this.setState({ingredients: ing.split(', ')});
+        Animated.timing(
+         this._visibility,
+         {
+           toValue: 1,
+           duration: 300,
+         }
+       ).start();
       }
     }
     componentWillUnmount(){
@@ -113,6 +118,14 @@ class InstructionScreen extends React.Component {
 
 
     render() {
+
+        const viewOpacity = {
+          opacity: this._visibility.interpolate({
+            inputRange: [0, 1],
+            outputRange: [0, 1]
+          })
+        }
+
         return (
 
             <Drawer
@@ -129,15 +142,15 @@ class InstructionScreen extends React.Component {
                 <View>
                     <BasicBackNav button1={this.props.changeTag6} button2={this.likeRecipe} backTo={this.props.tagHome} titleTxt={'Instruction'} />
                 </View>
-              {this.props.recipe !== null && this.props.recipe !== undefined && this.state.ingredients !== null && <InstructionComp ingredients={this.state.ingredients} recipeName={this.props.recipe.recipe.name} matches={this.props.recipe.matches} webUrl={this.props.recipe.recipe.image_url}/>
-              }
+                <Animated.View style={[viewOpacity]}>
+                  {this.props.recipe !== null && this.props.recipe !== undefined && this.state.ingredients !== null &&
+                    <InstructionComp ingredients={this.state.ingredients} recipeName={this.props.recipe.recipe.name} matches={this.props.recipe.matches} webUrl={this.props.recipe.recipe.image_url}/>
+                  }
+                  <Button color="#cc0000" style={{maxWidth: 150, alignSelf: 'center'}} onPress={() => {this.props.changeTag6('web')}} mode="contained">
+                    View Recipe
+                  </Button>
 
-              <TouchableOpacity
-                style={styles.webButton}
-                onPress={() => {this.props.changeTag6('web')}}
-                underlayColor='#000000'>
-                <Text style={styles.webBtnText}>Instruction URL</Text>
-              </TouchableOpacity>
+              </Animated.View>
             <Snackbar
               visible={this.state.snackBarVisible}
               onDismiss={() => this.setState({ snackBarVisible: false })}
@@ -187,4 +200,4 @@ const mapStateToProps = state => ({
 
 const windowHeight = Dimensions.get("window").height
 
-export default connect(mapStateToProps, { picFound, navAction, setRecipe, backtohomeAction, getSingleRecipe, userDataFound })(InstructionScreen);
+export default connect(mapStateToProps, { picFound, navAction, setRecipe, backtohomeAction, getSingleRecipe, userDataFound, nullRecipe })(InstructionScreen);

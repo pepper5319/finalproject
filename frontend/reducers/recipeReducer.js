@@ -19,6 +19,13 @@ const recipeReducer = (state = { recipes: [], recipe: null, recipe_id: null }, a
         recipe: action.payload
       }
       break;
+    case "NULL_RECIPE":
+      state = {
+        ...state,
+        recipe: null,
+        recipe_id: null
+      }
+      break;
     default:
       break;
   }
