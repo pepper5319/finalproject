@@ -40,6 +40,13 @@ export default class DrawerStyle extends React.Component {
           }}
           />
           <Drawer.Item
+            label="Liked Recipes"
+            active={active === 'likedRecipe'}
+            onPress={() => { this.setState({ active: 'likedRecipe' });
+            this.props.changeTag('likedRecipe')
+          }}
+          />
+          <Drawer.Item
 
             label="Login"
             active={active === 'login'}

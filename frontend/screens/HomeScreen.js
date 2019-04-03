@@ -60,7 +60,6 @@ class HomeScreen extends React.Component {
 
   onChangeTag = (tag) => {
     this.setState({ active: tag })
-    console.log('tag change');
     this.props.changeTag(tag);
   }
 
@@ -68,7 +67,6 @@ class HomeScreen extends React.Component {
   toRecipe = (tag, data) => {
     this.props.setRecipe(data);
     this.setState({ active: tag })
-    console.log('tag change');
     this.props.changeTag(tag);
   }
 
@@ -80,6 +78,7 @@ class HomeScreen extends React.Component {
   };
 
   render() {
+  console.log(this.props.recipes[0]);
     const recipes = this.props.recipes.map((recipe) => (
       <CardCompRecepie imgUri={recipe.image_url} titleTxt={recipe.name} viewClick={(tag) => this.toRecipe(tag, recipe)}/>
     ));

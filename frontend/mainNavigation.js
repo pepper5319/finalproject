@@ -10,12 +10,13 @@ import LoginScreen from './screens/loginScreen.js';
 import WebScreen from './screens/webScreen.js';
 import AddPantryScreen from './screens/addPantryScreen.js';
 import LogoutScreen from './screens/logoutScreen.js';
+import LikedRecipeScreen from './screens/likedRecipesScreen.js';
 import { connect } from 'react-redux';
 import { setUserToken }  from './actions/tokenAction.js';
 
 class MainNavigation extends Component {
     state = {
-        active: 'login'
+        active: 'loging'
     };
     constructor() {
         super();
@@ -35,7 +36,7 @@ class MainNavigation extends Component {
         if (value !== null && value !== undefined && value !== '') {
           console.log(value);
           this.props.setUserToken(value);
-          this.onChangeTag('home');
+          this.onChangeTag('likedRecipe');
         }
       } catch (error) {
         // Error retrieving data
@@ -63,6 +64,8 @@ class MainNavigation extends Component {
                     <WebScreen changeTag8={this.onChangeTag.bind(this)}/>
                      || this.state.active == 'logout' &&
                     <LogoutScreen changeTag9={this.onChangeTag.bind(this)}/>
+                    || this.state.active == 'likedRecipe' &&
+                   <LikedRecipeScreen changeTag11={this.onChangeTag.bind(this)}/>
                 }
             </Drawer>
 
