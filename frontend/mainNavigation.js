@@ -16,7 +16,7 @@ import { setUserToken }  from './actions/tokenAction.js';
 
 class MainNavigation extends Component {
     state = {
-        active: 'loging'
+        active: 'login'
     };
     constructor() {
         super();
@@ -36,7 +36,7 @@ class MainNavigation extends Component {
         if (value !== null && value !== undefined && value !== '') {
           console.log(value);
           this.props.setUserToken(value);
-          this.onChangeTag('likedRecipe');
+          this.onChangeTag('home');
         }
       } catch (error) {
         // Error retrieving data

@@ -43,7 +43,6 @@ class InstructionScreen extends React.Component {
     };
 
     componentWillMount(){
-      console.log("MOUNTED");
 
     }
     componentWillReceiveProps(props){
@@ -52,7 +51,7 @@ class InstructionScreen extends React.Component {
 
     }
     componentDidMount(){
-      console.log(this.props.recipe_id);
+      console.log(this.props.recipe);
       this.props.getSingleRecipe(this.props.token, this.props.recipe_id);
     }
     componentDidUpdate(){

@@ -8,6 +8,7 @@ import { navAction } from '../actions/navigationAction.js';
 import { connect } from 'react-redux';
 import PantryList from '../componets/pantryList.js';
 import CardCompRecepie from '../componets/cardCompRecepie.js';
+import { backtohomeAction } from '../actions/backtohomeAction.js';
 
 import NavbarComp from '../componets/navbarComp.js'
 import { ADMIN_KEY, PANTRY_URL, RECIPES_URL } from '../apiUrls.js';
@@ -82,6 +83,7 @@ class LikedRecipeScreen extends React.Component {
   componentDidMount(){
     console.log("MOUNTED");
     this.getLikedRecipes()
+    this.props.backtohomeAction('likedRecipe');
   }
   componentWillMount(){
     console.log("MOUNTING");
@@ -92,7 +94,7 @@ class LikedRecipeScreen extends React.Component {
     if(this.state.recipes !== null){
       console.log(this.state.recipes)
       renderRecipes = this.state.recipes.map((r) => (
-        <CardCompRecepie imgUri={r.recipe.image_url} titleTxt={r.recipe.name} viewClick={(tag) => this.toRecipe(tag, r)}/>
+        <CardCompRecepie imgUri={r.recipe.image_url} titleTxt={r.recipe.name} viewClick={(tag) => this.toRecipe(tag, r.recipe)}/>
       ));
     }
     return (
@@ -123,4 +125,4 @@ const mapStateToProps = state => ({
   token: state.token.token
 });
 
-export default connect(mapStateToProps, { picFound, navAction, setRecipe})(LikedRecipeScreen);
+export default connect(mapStateToProps, { picFound, navAction, setRecipe, backtohomeAction})(LikedRecipeScreen);
