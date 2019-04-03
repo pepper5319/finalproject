@@ -75,7 +75,7 @@ class InstructionScreen extends React.Component {
         })
     }
     componentDidUpdate(){
-      console.log(this.props.recipe.recipe.name);
+      console.log(this.props.recipe);
       if(this.state.ingredients === null && this.props.recipe !== null && this.props.recipe !== undefined){
         var ing = this.props.recipe.recipe.ingredients.replace(/[\[\]&]+/g, '');
         ing = ing.replace(/[\']+/g, '');
