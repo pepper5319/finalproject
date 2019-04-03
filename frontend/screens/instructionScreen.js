@@ -2,6 +2,7 @@ import React from 'react';
 import { View, StyleSheet, Text, TouchableOpacity, Dimensions} from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import { Drawer } from 'native-base';
+import { Snackbar } from 'react-native-paper';
 import SideBar from '../navigation/drawerStyle';
 import { picFound } from '../actions/picActions.js';
 import { navAction } from '../actions/navigationAction.js';
@@ -10,7 +11,7 @@ import { connect } from 'react-redux';
 import BasicBackNav from '../componets/basicBackNav.js';
 import InstructionComp from '../componets/instructionComp.js'
 import { backtohomeAction } from '../actions/backtohomeAction.js';
-import { ADMIN_KEY } from '../apiUrls.js';
+import { ADMIN_KEY, USER_URL } from '../apiUrls.js';
 
 class InstructionScreen extends React.Component {
     PhotoPic = () => {
@@ -27,7 +28,8 @@ class InstructionScreen extends React.Component {
     constructor(){
         super();
         this.state = {
-            ingredients: null
+            ingredients: null,
+            snackBarVisible: false
         }
     }
 
@@ -67,6 +69,28 @@ class InstructionScreen extends React.Component {
       console.log("Unmount");
     }
 
+    likeRecipe = () => {
+      console.log("Liked Recipe: " + this.props.recipe_id);
+      recipeData = {liked_recipes: this.props.recipe_id}
+      fetch(USER_URL, {
+          method: 'PUT',
+          headers: {
+            'content-type': 'application/json',
+            'Authorization': 'Token ' + this.props.token
+          },
+          body: JSON.stringify(recipeData)
+        })
+        .then(res => {
+          if(res.status === 200){
+            this.setState({snackBarVisible: true});
+            return res.json()
+          }else{
+            alert(res.status);
+          }
+        })
+    }
+
+
     render() {
         return (
 
@@ -82,17 +106,23 @@ class InstructionScreen extends React.Component {
                 panCloseMask={0.3}>
 
                 <View>
-                    <BasicBackNav button1={this.props.changeTag6} backTo={this.props.tagHome} titleTxt={'Instruction'} />
+                    <BasicBackNav button1={this.props.changeTag6} button2={this.likeRecipe} backTo={this.props.tagHome} titleTxt={'Instruction'} />
                 </View>
               {this.props.recipe !== null && this.props.recipe !== undefined && this.state.ingredients !== null &&<InstructionComp ingredients={this.state.ingredients} matches={this.props.recipe.matches} webUrl={this.props.recipe.recipe.image_url}/>
               }
-              <TouchableOpacity
-          style={styles.webButton}
-          onPress={() => {this.props.changeTag6('web')}}
-          underlayColor='#000000'>
-          <Text style={styles.webBtnText}>Instruction URL</Text>
-        </TouchableOpacity>
 
+              <TouchableOpacity
+                style={styles.webButton}
+                onPress={() => {this.props.changeTag6('web')}}
+                underlayColor='#000000'>
+                <Text style={styles.webBtnText}>Instruction URL</Text>
+              </TouchableOpacity>
+            <Snackbar
+              visible={this.state.snackBarVisible}
+              onDismiss={() => this.setState({ snackBarVisible: false })}
+            >
+              Liked This Recipe
+            </Snackbar>
             </Drawer>
         );
     }
@@ -130,7 +160,7 @@ const mapStateToProps = state => ({
     recipe: state.recipes.recipe,
     recipe_id: state.recipes.recipe_id,
     tagHome: state.tohome.homeTag,
-    token: state.token.token
+    token: state.token.token,
 });
 
 const windowHeight = Dimensions.get("window").height
