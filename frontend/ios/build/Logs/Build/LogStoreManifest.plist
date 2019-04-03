@@ -6,7 +6,11 @@
 	<integer>9</integer>
 	<key>logs</key>
 	<dict>
+<<<<<<< HEAD
 		<key>C7A6DBA2-8448-48F8-ADB7-3397E037F069</key>
+=======
+		<key>CDBEF33D-53ED-4D29-9E1D-278DACAD37C0</key>
+>>>>>>> likedRecipes
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -15,9 +19,13 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
+<<<<<<< HEAD
 			<string>C7A6DBA2-8448-48F8-ADB7-3397E037F069.xcactivitylog</string>
+=======
+			<string>CDBEF33D-53ED-4D29-9E1D-278DACAD37C0.xcactivitylog</string>
+>>>>>>> likedRecipes
 			<key>highLevelStatus</key>
-			<string>E</string>
+			<string>S</string>
 			<key>schemeIdentifier-containerName</key>
 			<string>testCamera project</string>
 			<key>schemeIdentifier-schemeName</key>
@@ -27,6 +35,7 @@
 			<key>signature</key>
 			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
 			<key>timeStartedRecording</key>
+<<<<<<< HEAD
 			<real>575902772.19647002</real>
 			<key>timeStoppedRecording</key>
 			<real>575902772.74231195</real>
@@ -34,6 +43,15 @@
 			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
 			<key>uniqueIdentifier</key>
 			<string>C7A6DBA2-8448-48F8-ADB7-3397E037F069</string>
+=======
+			<real>575994773.46912801</real>
+			<key>timeStoppedRecording</key>
+			<real>575994775.65400898</real>
+			<key>title</key>
+			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>CDBEF33D-53ED-4D29-9E1D-278DACAD37C0</string>
+>>>>>>> likedRecipes
 		</dict>
 	</dict>
 </dict>

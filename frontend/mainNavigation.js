@@ -11,6 +11,7 @@ import WebScreen from './screens/webScreen.js';
 import AddPantryScreen from './screens/addPantryScreen.js';
 import LogoutScreen from './screens/logoutScreen.js';
 import LodingScreen from './screens/lodingScreen.js';
+import LikedRecipeScreen from './screens/likedRecipesScreen.js';
 import { connect } from 'react-redux';
 import { setUserToken }  from './actions/tokenAction.js';
 
@@ -66,6 +67,9 @@ class MainNavigation extends Component {
                     <LogoutScreen changeTag9={this.onChangeTag.bind(this)}/>
                      || this.state.active == 'loding' &&
                     <LodingScreen changeTag10={this.onChangeTag.bind(this)}/>
+                    || this.state.active == 'likedRecipe' &&
+                   <LikedRecipeScreen changeTag11={this.onChangeTag.bind(this)}/>
+
                 }
             </Drawer>
 
