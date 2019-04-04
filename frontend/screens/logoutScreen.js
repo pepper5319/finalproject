@@ -26,6 +26,7 @@ class LogoutScreen extends React.Component {
       }
     }
     logoutUser = () => {
+      this.props.changeTag9('loding');
       this._removeToken();
       var xhr = new XMLHttpRequest();
       var url = "https://pantryplatter.herokuapp.com/api/rest-auth/logout/";

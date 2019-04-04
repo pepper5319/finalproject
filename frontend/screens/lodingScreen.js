@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { View,AppRegistry, StyleSheet, Text, Animated,Image,Easing } from 'react-native';
+import { View,AppRegistry, StyleSheet, Text, Animated,Image,Easing} from 'react-native';
 import { picFound } from '../actions/picActions.js';
 import { navAction } from '../actions/navigationAction.js';
 
@@ -22,18 +22,19 @@ class LodingScreen extends React.Component {
     }
    componentDidMount() {
        this.spin()
-   }
+    }
    spin(){
        this.spinValue.setValue(0)
        Animated.timing(
            this.spinValue,
            {
                toValue: 1,
-               duration: 4000,
+               duration: 1000,
                easing: Easing.linear
            }
        ).start(() => this.spin())
    }
+
     render(){
         const spin = this.spinValue.interpolate({
             inputRange: [0,1],
@@ -43,11 +44,12 @@ class LodingScreen extends React.Component {
             <View style={styles.Contain}>
                 <Animated.Image
                     style={{
-                        width: 277,
-                        height: 200,
+                        width: 50, 
+                        height: 50,
+                        resizeMode: 'contain',
                         transform: [{rotate: spin}] 
                     }}
-                    source={require('../backgroundImages/logo.png')}
+                    source={require('../backgroundImages/spindrum.png')}
                 />
             </View>
         );
@@ -65,6 +67,6 @@ const mapStateToProps = state => ({
     url: state.pics.picURL,
     tag: state.tags.activeTag,
     token: state.token.token
-  });
+});
   
-  export default connect(mapStateToProps, {picFound, navAction})(LodingScreen);
+export default connect(mapStateToProps, {picFound, navAction})(LodingScreen);
