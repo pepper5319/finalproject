@@ -4,3 +4,9 @@ export const userFound = (user) => dispatch => {
       payload: user
     });
   }
+export const userDataFound = (user) => dispatch => {
+    dispatch({
+      type: 'USER_DATA',
+      payload: user
+    });
+  }

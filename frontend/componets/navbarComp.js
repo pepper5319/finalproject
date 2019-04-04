@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Appbar } from 'react-native-paper';
+import { ifIphoneX } from 'react-native-iphone-x-helper';
 
 export default class NavbarComp extends React.Component {
     render() {
@@ -18,7 +19,9 @@ const styles = StyleSheet.create({
     barcontainer: {
       backgroundColor: '#cc0000',
       borderBottomLeftRadius: 12,
-      borderBottomRightRadius: 12
+      borderBottomRightRadius: 12,
+      paddingTop: 16,
+      paddingBottom: 8
     },
-  
+
   });
