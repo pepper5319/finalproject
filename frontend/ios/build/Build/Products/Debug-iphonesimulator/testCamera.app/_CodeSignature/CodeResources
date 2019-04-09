@@ -18,11 +18,11 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		vPxWMuDtT9PzvFAhSjYPLvCY7gk=
+		stUUVmEma7Kh6U5rCCaWBnigLjs=
 		</data>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		mJw614zBZZneu7mV4y99vGhK33w=
+		8G3Lgv3Az9EvkI7iebs4yVgXLZY=
 		</data>
 		<key>Entypo.ttf</key>
 		<data>
@@ -115,7 +115,7 @@
 		</data>
 		<key>PlugIns/testCameraTests.xctest.dSYM/Contents/Resources/DWARF/testCameraTests</key>
 		<data>
-		qAy6XTcTo56Ac2Gt3ogo6zQKylg=
+		At8vV8PIDQ6j9XYIJfVOZeotAy0=
 		</data>
 		<key>PlugIns/testCameraTests.xctest/Info.plist</key>
 		<data>
@@ -127,7 +127,7 @@
 		</data>
 		<key>PlugIns/testCameraTests.xctest/testCameraTests</key>
 		<data>
-		p165nz8kALO6uqPJHwDsWROMzVs=
+		pBxGwPsjS4VdVU/pupMJT8K5H4U=
 		</data>
 		<key>Roboto.ttf</key>
 		<data>
@@ -189,22 +189,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			vPxWMuDtT9PzvFAhSjYPLvCY7gk=
+			stUUVmEma7Kh6U5rCCaWBnigLjs=
 			</data>
 			<key>hash2</key>
 			<data>
-			SDKfWqkJmgy1W9Raz5QG+KhegKqSZ+uaqR+Ae7usnNQ=
+			G6g9VIzZUZ2xC3aAWsPHK+yCBBEmjdDRVJ2rjXrbk6Y=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			mJw614zBZZneu7mV4y99vGhK33w=
+			8G3Lgv3Az9EvkI7iebs4yVgXLZY=
 			</data>
 			<key>hash2</key>
 			<data>
-			4hfWrYreTcrfCKdL5eGBcZT5+xMo5PT30715Ut3NwKM=
+			EK8AY7/9ljMOMtDIKb54cDQSpx8MjQSvskqGPs0O2Ms=
 			</data>
 		</dict>
 		<key>Entypo.ttf</key>
@@ -422,11 +422,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			qAy6XTcTo56Ac2Gt3ogo6zQKylg=
+			At8vV8PIDQ6j9XYIJfVOZeotAy0=
 			</data>
 			<key>hash2</key>
 			<data>
-			vRdwkG1P8BMrcJRWsiSWDbItwZZDra0K1k8vhoykE3M=
+			Z1+w6pcN1i3SrJisOubwas7VShmkLxFmMw5JiKO4jGg=
 			</data>
 		</dict>
 		<key>PlugIns/testCameraTests.xctest/Info.plist</key>
@@ -455,11 +455,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			p165nz8kALO6uqPJHwDsWROMzVs=
+			pBxGwPsjS4VdVU/pupMJT8K5H4U=
 			</data>
 			<key>hash2</key>
 			<data>
-			Kth0P0OhFbLz8QS/mD3/h9LHjIvIBTTViG2ksokM0Gk=
+			h3gKVmM+TGmF+xhXlFyAf+BhF/FSo+o77wdMa5PdBZU=
 			</data>
 		</dict>
 		<key>Roboto.ttf</key>
