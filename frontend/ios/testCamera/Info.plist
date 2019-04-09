@@ -40,7 +40,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>For taking pantry information</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>For saving pantry information</string>
 	<key>NSPhotoLibraryUsageDescription</key>

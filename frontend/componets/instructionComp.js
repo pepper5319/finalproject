@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, ScrollView, Image, StyleSheet, Text, Dimensions, FlatList } from 'react-native';
+import { View, ScrollView, Image, StyleSheet, Text, Dimensions, FlatList} from 'react-native';
+import Icon from 'react-native-vector-icons/EvilIcons';
+import { Left, Right } from 'native-base';
 
 
 export default class InstructionComp extends React.Component {
@@ -24,23 +26,42 @@ export default class InstructionComp extends React.Component {
 
  }
     render() {
-        const ingredients = this.state.UpperIngredients.map((ingredients) => {
+        let temp = [];
+        const ingredients = this.state.UpperIngredients.map((ingredients) => {         
           if(this.props.matches.indexOf(ingredients.toLowerCase()) !== -1){
-            return <Text style={[styles.textStyle, {color: 'green'}]}>{ingredients}</Text>
+            temp.unshift(<Text style={[styles.textStyle, {color: 'green'}]}>{<Icon
+                name='check'
+                color='green'
+                size={14}
+              />}{ingredients}</Text>)
           }else{
-            return <Text style={styles.textStyle}>{ingredients}</Text>
+             temp.push(<Text style={styles.textStyle}>{<Icon
+                name='close'
+                color='#000'
+                size={14}
+              />}{ingredients}</Text>)
           }
         })
+
+        console.log(temp)
         return (
             <View style={styles.contain}>
                 <Image
                     style={styles.stretch}
                     source={{ uri: this.props.webUrl }} />
                 <Text style={{ fontWeight: '500', fontSize: 20,  paddingRight: 10, paddingLeft: 10, marginVertical: 5, textAlign: 'center'}}>{this.props.recipeName}</Text>
-                <View style={styles.constainer}>
+                <View>
                     <ScrollView>
-                    <View style={{marginRight: 30}}>
-                        {ingredients}
+                    <View style={{marginTop: 10}}>
+                        <FlatList
+                        data={temp}
+                        renderItem={({item}) => (
+                            <View style={{flexBasis: '44%', paddingBottom: 10, marginLeft: 20}}>
+                            <Text style={{flexWrap: 'nowrap'}}>{item}</Text>
+                            </View>
+                        )}
+                        numColumns={2}/>
+
                     </View>
                 </ScrollView>
                 </View>
@@ -79,18 +100,6 @@ const styles = StyleSheet.create({
         width: windowWidth,
         paddingHorizontal: 10,
         backgroundColor: '#f6f6f6',
-    },
-    green: {
-        color: '#25ba3b',
-        fontSize: 18,
-        fontWeight: '400',
-        flex: 1,
-    },
-    black: {
-        color: '#000000',
-        fontSize: 18,
-        fontWeight: '400',
-        flex: 1,
     },
     listTest: {
         flex: 1,

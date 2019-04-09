@@ -59,8 +59,13 @@ class InstructionScreen extends React.Component {
     componentDidUpdate(){
       console.log(this.props.recipe.recipe.name);
       if(this.state.ingredients === null && this.props.recipe !== null && this.props.recipe !== undefined){
+        console.log(this.props.recipe.recipe.ingredients);
         var ing = this.props.recipe.recipe.ingredients.replace(/[\[\]&]+/g, '');
+        console.log(ing);
+
         ing = ing.replace(/[\']+/g, '');
+        console.log(ing);
+
         ing = ing.replace(/[\']+/g, '');
         this.setState({ingredients: ing.split(', ')});
       }
@@ -86,8 +91,7 @@ class InstructionScreen extends React.Component {
                 <View>
                     <BasicBackNav button1={this.props.changeTag6} backTo={this.props.tagHome} titleTxt={'Instruction'} />
                 </View>
-              {this.props.recipe !== null && this.props.recipe !== undefined && this.state.ingredients !== null && <InstructionComp ingredients={this.state.ingredients} recipeName={this.props.recipe.recipe.name} matches={this.props.recipe.matches} webUrl={this.props.recipe.recipe.image_url}/>
-              }
+              {this.props.recipe !== null && this.props.recipe !== undefined && this.state.ingredients !== null && <InstructionComp ingredients={this.state.ingredients} recipeName={this.props.recipe.recipe.name} matches={this.props.recipe.matches} webUrl={this.props.recipe.recipe.image_url}/>}
               <TouchableOpacity
           style={styles.webButton}
           onPress={() => {this.props.changeTag6('web')}}
