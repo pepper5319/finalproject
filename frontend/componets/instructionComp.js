@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, ScrollView, Image, StyleSheet, Text, Dimensions, FlatList } from 'react-native';
+import { View, ScrollView, Image, StyleSheet, Text, Dimensions, FlatList, TouchableOpacity} from 'react-native';
+import Icon from 'react-native-vector-icons/EvilIcons';
+import { Left, Right } from 'native-base';
 
 
 export default class InstructionComp extends React.Component {
@@ -24,27 +26,35 @@ export default class InstructionComp extends React.Component {
 
  }
     render() {
-        const ingredients = this.state.UpperIngredients.map((ingredients) => {
+        let temp = [];
+        const ingredients = this.state.UpperIngredients.map((ingredients) => {         
           if(this.props.matches.indexOf(ingredients.toLowerCase()) !== -1){
-            return <Text style={[styles.textStyle, {color: 'green'}]}>{ingredients}</Text>
+            temp.unshift('      '+ingredients)
           }else{
-            return <Text style={styles.textStyle}>{ingredients}</Text>
+             temp.push('X   '+ingredients)
           }
         })
+
+        console.log(temp)
         return (
             <View style={styles.contain}>
                 <Image
                     style={styles.stretch}
                     source={{ uri: this.props.webUrl }} />
                 <Text style={{ fontWeight: '500', fontSize: 20,  paddingRight: 10, paddingLeft: 10, marginVertical: 5, textAlign: 'center'}}>{this.props.recipeName}</Text>
-                <View style={styles.constainer}>
+
+                <View>
                     <ScrollView>
-                    <View style={{marginRight: 30}}>
-                        {ingredients}
-                    </View>
+                        <FlatList
+                        data={temp}
+                        renderItem={({item}) => (
+                            <View style={{flexBasis: '44%', paddingBottom: 10, marginLeft: 20}}>
+                            <Text style={{flexWrap: 'nowrap'}}>{item}</Text>
+                            </View>
+                        )}
+                        numColumns={2}/>
                 </ScrollView>
                 </View>
-
 
             </View>
 
@@ -80,18 +90,6 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         backgroundColor: '#f6f6f6',
     },
-    green: {
-        color: '#25ba3b',
-        fontSize: 18,
-        fontWeight: '400',
-        flex: 1,
-    },
-    black: {
-        color: '#000000',
-        fontSize: 18,
-        fontWeight: '400',
-        flex: 1,
-    },
     listTest: {
         flex: 1,
         marginVertical: 20,
@@ -99,7 +97,28 @@ const styles = StyleSheet.create({
     contain2: {
         flexDirection: 'row',
         flex: 1,
-    }
+    },
+    webButton:{
+        marginRight:40,
+        marginLeft:40,
+       marginTop:30,
+       marginBottom: 10,
+        paddingTop:10,
+        paddingBottom:10,
+        backgroundColor:'#cc0000',
+        borderRadius:10,
+        borderWidth: 1,
+        borderColor: '#cc0000',
+
+      },
+      webBtnText:{
+          color:'#fff',
+          textAlign:'center',
+          paddingLeft : 10,
+          paddingRight : 10,
+          fontSize: 22,
+      }
+
 });
 const windowWidth = Dimensions.get("window").width
 const windowHeight = Dimensions.get("window").height

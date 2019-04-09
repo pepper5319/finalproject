@@ -75,8 +75,12 @@ class InstructionScreen extends React.Component {
     componentDidUpdate(){
       console.log(this.props.recipe);
       if(this.state.ingredients === null && this.props.recipe !== null && this.props.recipe !== undefined){
+        console.log(this.props.recipe.recipe.ingredients);
         var ing = this.props.recipe.recipe.ingredients.replace(/[\[\]&]+/g, '');
+        console.log(ing);
+
         ing = ing.replace(/[\']+/g, '');
+
         ing = ing.replace(/[\']+/g, '');
         this.setState({ingredients: ing.split(', ')});
         Animated.timing(

@@ -33,7 +33,7 @@ export default class PantryList extends React.Component {
               </Left>
 
               <Body style={{position: "relative", right: 20}}>
-                <Text style={{textTransform: 'capitalize'}}>{this.props.titleTxt}</Text>
+                <Text >{this.props.titleTxt}</Text>
                 <Text note numberOfLines={1}>{this.props.descripTxt}</Text>
               </Body>
               <Right>

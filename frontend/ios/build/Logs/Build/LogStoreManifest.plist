@@ -5,6 +5,40 @@
 	<key>logFormatVersion</key>
 	<integer>9</integer>
 	<key>logs</key>
+<<<<<<< HEAD
+	<dict>
+		<key>79CA4E86-665A-4CC2-BA41-F956A2A9C788</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>79CA4E86-665A-4CC2-BA41-F956A2A9C788.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>E</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>testCamera project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>testCamera</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>576516860.43081999</real>
+			<key>timeStoppedRecording</key>
+			<real>576516862.82353306</real>
+			<key>title</key>
+			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>79CA4E86-665A-4CC2-BA41-F956A2A9C788</string>
+		</dict>
+	</dict>
+=======
 	<dict/>
+>>>>>>> development
 </dict>
 </plist>
