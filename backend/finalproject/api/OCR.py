@@ -10,8 +10,9 @@ import json
 import os.path
 BASE = os.path.dirname(os.path.abspath(__file__))
 from .models import PItem,UPCDatabase
+from datatime import date
 
-def UPCCodes(recieptID):
+def UPCCodes(recieptID,user):
     count = 0
     list = []
     exist = []
@@ -26,14 +27,17 @@ def UPCCodes(recieptID):
     for value in num:
         if len(value) == 12:
             #list.append(value)
-            if(UPCDatabase.objects.filter(upc=value).exists()):
-                exist.append(value)
+            if(UPCDatabase.objects.get(upc=value).exists()):
+                code = UPCDatabase.objects.get(upc=value)
+                x = ''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(10))
+                newItem = PItem.object.create(name=code.name,user = user,static_id=x,qty=1,exp_date=date.today())
+                newItem.save()
+                
             #r = requests.get("https://www.walmart.com/search/?query=" + value)
             #data = r.json()
             temp += '\'upc\': \'' + value +'\','
     temp += '}'
     #print(list)
-    print(exist)
 
 
 
