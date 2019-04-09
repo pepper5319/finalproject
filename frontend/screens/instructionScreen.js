@@ -64,8 +64,7 @@ class InstructionScreen extends React.Component {
         console.log(ing);
 
         ing = ing.replace(/[\']+/g, '');
-        console.log(ing);
-
+        
         ing = ing.replace(/[\']+/g, '');
         this.setState({ingredients: ing.split(', ')});
       }

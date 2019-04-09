@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ScrollView, Image, StyleSheet, Text, Dimensions, FlatList} from 'react-native';
+import { View, ScrollView, Image, StyleSheet, Text, Dimensions, FlatList, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/EvilIcons';
 import { Left, Right } from 'native-base';
 
@@ -29,17 +29,9 @@ export default class InstructionComp extends React.Component {
         let temp = [];
         const ingredients = this.state.UpperIngredients.map((ingredients) => {         
           if(this.props.matches.indexOf(ingredients.toLowerCase()) !== -1){
-            temp.unshift(<Text style={[styles.textStyle, {color: 'green'}]}>{<Icon
-                name='check'
-                color='green'
-                size={14}
-              />}{ingredients}</Text>)
+            temp.unshift('      '+ingredients)
           }else{
-             temp.push(<Text style={styles.textStyle}>{<Icon
-                name='close'
-                color='#000'
-                size={14}
-              />}{ingredients}</Text>)
+             temp.push('X   '+ingredients)
           }
         })
 
@@ -50,9 +42,9 @@ export default class InstructionComp extends React.Component {
                     style={styles.stretch}
                     source={{ uri: this.props.webUrl }} />
                 <Text style={{ fontWeight: '500', fontSize: 20,  paddingRight: 10, paddingLeft: 10, marginVertical: 5, textAlign: 'center'}}>{this.props.recipeName}</Text>
+
                 <View>
                     <ScrollView>
-                    <View style={{marginTop: 10}}>
                         <FlatList
                         data={temp}
                         renderItem={({item}) => (
@@ -61,11 +53,8 @@ export default class InstructionComp extends React.Component {
                             </View>
                         )}
                         numColumns={2}/>
-
-                    </View>
                 </ScrollView>
                 </View>
-
 
             </View>
 
@@ -108,7 +97,28 @@ const styles = StyleSheet.create({
     contain2: {
         flexDirection: 'row',
         flex: 1,
-    }
+    },
+    webButton:{
+        marginRight:40,
+        marginLeft:40,
+       marginTop:30,
+       marginBottom: 10,
+        paddingTop:10,
+        paddingBottom:10,
+        backgroundColor:'#cc0000',
+        borderRadius:10,
+        borderWidth: 1,
+        borderColor: '#cc0000',
+
+      },
+      webBtnText:{
+          color:'#fff',
+          textAlign:'center',
+          paddingLeft : 10,
+          paddingRight : 10,
+          fontSize: 22,
+      }
+
 });
 const windowWidth = Dimensions.get("window").width
 const windowHeight = Dimensions.get("window").height
