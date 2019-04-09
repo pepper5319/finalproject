@@ -2,8 +2,15 @@ import requests
 import json
 from .ingredient_parsing import search_dict, plural_to_singular, handle_special_characters
 from bs4 import BeautifulSoup
+import threading
+import time
 import os.path
 BASE = os.path.dirname(os.path.abspath(__file__))
+
+def worker(recipe_list, final_recipe_list):
+    recipe_list = scrape_ingredients(recipe_list)
+    if len(recipe_list[-1]) is not 0:
+        final_recipe_list.append(recipe_list)
 
 def scraper(str_in):
     '''
@@ -12,10 +19,25 @@ def scraper(str_in):
     '''
     final_recipe_list = []
     id_image_url = scrape_recipes(str_in=str_in)
+
+    # Multi-Threaded
+    start_time = time.time()
+    threads = []
     for recipe_list in id_image_url:
-        recipe_list = scrape_ingredients(recipe_list)
-        if len(recipe_list[-1]) is not 0:
-            final_recipe_list.append(recipe_list)
+        thread = threading.Thread(target=worker, args=(recipe_list, final_recipe_list,))
+        threads.append(thread)
+        thread.start()
+
+    for thread in threads:
+        thread.join()
+
+    # Single Threaded
+    # for recipe_list in id_image_url:
+    #     recipe_list = scrape_ingredients(recipe_list)
+    #     if len(recipe_list[-1]) is not 0:
+    #         final_recipe_list.append(recipe_list)
+
+    # print(f'finished: {time.time() - start_time} seconds')
     return final_recipe_list
 
 def scrape_recipes(str_in):
