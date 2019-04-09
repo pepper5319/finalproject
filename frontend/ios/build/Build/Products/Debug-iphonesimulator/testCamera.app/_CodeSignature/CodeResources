@@ -18,27 +18,11 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-<<<<<<< HEAD
-		rbIOb0kA+/y/hGL28S8NZ8aUyzg=
+		stUUVmEma7Kh6U5rCCaWBnigLjs=
 		</data>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		OkXpdHJJXFKSvcDsbDvqjkyp/hw=
-=======
-<<<<<<< HEAD
-		JcQeaMq6LGAAmUHssBChDLzcIUs=
-		</data>
-		<key>Base.lproj/LaunchScreen.nib</key>
-		<data>
-		zNNqoWh4m463lR9FK83Er+18b4I=
-=======
-		pgnPSI/yncCq6NMMul4rfYhjH8Y=
-		</data>
-		<key>Base.lproj/LaunchScreen.nib</key>
-		<data>
-		z3K2y58qGFzrsTiP5fs3rvxDAyc=
->>>>>>> development
->>>>>>> development
+		8G3Lgv3Az9EvkI7iebs4yVgXLZY=
 		</data>
 		<key>Entypo.ttf</key>
 		<data>
@@ -131,7 +115,7 @@
 		</data>
 		<key>PlugIns/testCameraTests.xctest.dSYM/Contents/Resources/DWARF/testCameraTests</key>
 		<data>
-		KAW+yNECp9+euvoaXuzVSoliTsU=
+		At8vV8PIDQ6j9XYIJfVOZeotAy0=
 		</data>
 		<key>PlugIns/testCameraTests.xctest/Info.plist</key>
 		<data>
@@ -143,7 +127,7 @@
 		</data>
 		<key>PlugIns/testCameraTests.xctest/testCameraTests</key>
 		<data>
-		xVOpCdeb1uUrqmV7rsAivSy1Moc=
+		pBxGwPsjS4VdVU/pupMJT8K5H4U=
 		</data>
 		<key>Roboto.ttf</key>
 		<data>
@@ -205,54 +189,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-<<<<<<< HEAD
-			rbIOb0kA+/y/hGL28S8NZ8aUyzg=
+			stUUVmEma7Kh6U5rCCaWBnigLjs=
 			</data>
 			<key>hash2</key>
 			<data>
-			mqkqkWLbp2zRbIRYkiK1eNIulfRkdN6S1cGqlbZOFis=
-=======
-<<<<<<< HEAD
-			JcQeaMq6LGAAmUHssBChDLzcIUs=
-			</data>
-			<key>hash2</key>
-			<data>
-			S+W5pgApJffpmZNpDp9JiXUTS4R2Anbvhn/Mod89nU8=
-=======
-			pgnPSI/yncCq6NMMul4rfYhjH8Y=
-			</data>
-			<key>hash2</key>
-			<data>
-			m4vYZU2YmT9Miew3YpE+KlCI8R8rID3RJ/+ZA9D1Ghk=
->>>>>>> development
->>>>>>> development
+			G6g9VIzZUZ2xC3aAWsPHK+yCBBEmjdDRVJ2rjXrbk6Y=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-<<<<<<< HEAD
-			OkXpdHJJXFKSvcDsbDvqjkyp/hw=
+			8G3Lgv3Az9EvkI7iebs4yVgXLZY=
 			</data>
 			<key>hash2</key>
 			<data>
-			a6gmY5sVDhW49fmiBIe5qkmMu5tY5GcuN/2Ct0+nijQ=
-=======
-<<<<<<< HEAD
-			zNNqoWh4m463lR9FK83Er+18b4I=
-			</data>
-			<key>hash2</key>
-			<data>
-			jO2cLljLAQsFO7d5ujnYmWQ5CF1pEqJWaLip5YXwjbo=
-=======
-			z3K2y58qGFzrsTiP5fs3rvxDAyc=
-			</data>
-			<key>hash2</key>
-			<data>
-			FjE4bkejG7Bg5qHuI5M3V/XUQF6CkIEiAQjWlZ/Eqao=
->>>>>>> development
->>>>>>> development
+			EK8AY7/9ljMOMtDIKb54cDQSpx8MjQSvskqGPs0O2Ms=
 			</data>
 		</dict>
 		<key>Entypo.ttf</key>
@@ -470,11 +422,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			KAW+yNECp9+euvoaXuzVSoliTsU=
+			At8vV8PIDQ6j9XYIJfVOZeotAy0=
 			</data>
 			<key>hash2</key>
 			<data>
-			GKpAVgA3xTviv25rHRMVvbXlHoJRsPmmBAO7NYEADyg=
+			Z1+w6pcN1i3SrJisOubwas7VShmkLxFmMw5JiKO4jGg=
 			</data>
 		</dict>
 		<key>PlugIns/testCameraTests.xctest/Info.plist</key>
@@ -503,11 +455,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xVOpCdeb1uUrqmV7rsAivSy1Moc=
+			pBxGwPsjS4VdVU/pupMJT8K5H4U=
 			</data>
 			<key>hash2</key>
 			<data>
-			PAxrpVIjEndUQCGDUwL6toepedoec0MlRt2NODC+lS0=
+			h3gKVmM+TGmF+xhXlFyAf+BhF/FSo+o77wdMa5PdBZU=
 			</data>
 		</dict>
 		<key>Roboto.ttf</key>

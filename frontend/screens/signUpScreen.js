@@ -16,6 +16,7 @@ class SignUpScreen extends React.Component {
             textpass: '',
             textpassC: '',
         }
+        this.loginUser =this.loginUser.bind(this)
     }
     checkTextIsEmpty = () =>{
         const{textfirst} = this.state;
@@ -44,7 +45,28 @@ class SignUpScreen extends React.Component {
         console.log(error.message);
       }
     }
+    loginUser = () => {
+      var xhr = new XMLHttpRequest();
+      var url = "https://pantryplatter.herokuapp.com/api/rest-auth/login/";
+      xhr.open("POST", url, true);
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            console.log('testing')
+            var json = JSON.parse(xhr.responseText);
+            this.saveUserToken(json.key);
+            this.props.setUserToken(json.key);
+            this.props.changeTag2('home');
+            console.log(this.props)
 
+          }
+        };
+      var data = JSON.stringify({
+        "username": this.state.textuser,
+        "password": this.state.textpass,
+      });
+      xhr.send(data);
+    }
     registerUser = () => {
 
         if (this.state.textpass === this.state.textpassC && this.state.textemail != '' && this.state.textuser != '' && this.state.textpass != '' && this.state.textpassC != '') {
@@ -53,14 +75,9 @@ class SignUpScreen extends React.Component {
             xhr.open("POST", url, true);
             xhr.setRequestHeader("Content-Type", "application/json");
             xhr.onreadystatechange = () => {
-                console.log(xhr.status)
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    var json = JSON.parse(xhr.responseText);
-                    this.saveUserToken(json.key);
-                    this.props.setUserToken(json.key);
-                    this.props.changeTag2('home');
-                    console.log(json.email + ", " + json.password);
-                }
+                 if (xhr.readyState === 4 && xhr.status === 200 || xhr.status === 400) {
+                      this.loginUser()
+                 }
             };
             var data = JSON.stringify({
                 "username": this.state.textuser,

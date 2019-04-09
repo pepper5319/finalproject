@@ -131,7 +131,7 @@ class ReceiptsView(generics.ListCreateAPIView):
         pitems = PItem.objects.filter(user=self.request.user)
 
         updateMatches(self.request.user, recipes, 0.75, pitems)
-        UPCCodes(reciept.static_id)
+        UPCCodes(reciept.static_id,self.request.user)
         return Response('Created Receipt {}'.format(reciept.static_id))
 
 class UPCView(generics.ListCreateAPIView):
