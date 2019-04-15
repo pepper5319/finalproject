@@ -1,4 +1,4 @@
-#Mon Apr 08 20:53:08 EDT 2019
+#Sun Apr 14 19:03:38 EDT 2019
 base.0=/Users/jj/Desktop/Final_Proyect/frontend/android/app/build/intermediates/transforms/dexMerger/release/0
 path.0=classes.dex
 renamed.0=classes.dex

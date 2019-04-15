@@ -11,6 +11,7 @@ import BasicBackNav from '../componets/basicBackNav.js';
 import InstructionComp from '../componets/instructionComp.js'
 import { backtohomeAction } from '../actions/backtohomeAction.js';
 import { ADMIN_KEY } from '../apiUrls.js';
+import { ScrollView } from 'react-native-gesture-handler';
 
 class InstructionScreen extends React.Component {
     PhotoPic = () => {
@@ -69,9 +70,6 @@ class InstructionScreen extends React.Component {
         this.setState({ingredients: ing.split(', ')});
       }
     }
-    componentWillUnmount(){
-      console.log("Unmount");
-    }
 
     render() {
         return (
@@ -90,13 +88,10 @@ class InstructionScreen extends React.Component {
                 <View>
                     <BasicBackNav button1={this.props.changeTag6} backTo={this.props.tagHome} titleTxt={'Instruction'} />
                 </View>
-              {this.props.recipe !== null && this.props.recipe !== undefined && this.state.ingredients !== null && <InstructionComp ingredients={this.state.ingredients} recipeName={this.props.recipe.recipe.name} matches={this.props.recipe.matches} webUrl={this.props.recipe.recipe.image_url}/>}
-              <TouchableOpacity
-          style={styles.webButton}
-          onPress={() => {this.props.changeTag6('web')}}
-          underlayColor='#000000'>
-          <Text style={styles.webBtnText}>Instruction URL</Text>
-        </TouchableOpacity>
+                
+              {this.props.recipe !== null && this.props.recipe !== undefined && this.state.ingredients !== null && 
+              <InstructionComp ingredients={this.state.ingredients} recipeName={this.props.recipe.recipe.name} matches={this.props.recipe.matches} 
+              webButton={this.props.changeTag6} webUrl={this.props.recipe.recipe.image_url}/>}
 
             </Drawer>
         );
