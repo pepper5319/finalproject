@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>application-identifier</key>
-	<string>G955B38U9L.deploy.ios.testcam</string>
+	<string>G955B38U9L.org.reactjs.native.example.testCamera</string>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>G955B38U9L.deploy.ios.testcam</string>
+		<string>G955B38U9L.org.reactjs.native.example.testCamera</string>
 	</array>
 </dict>
 </plist>

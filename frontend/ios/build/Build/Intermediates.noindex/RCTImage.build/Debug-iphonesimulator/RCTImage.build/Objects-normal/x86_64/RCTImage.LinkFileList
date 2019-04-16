@@ -1,31 +1,3 @@
-<<<<<<< HEAD
-/Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/Objects-normal/x86_64/RCTImageStoreManager.o
-/Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/Objects-normal/x86_64/RCTImageViewManager.o
-/Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/Objects-normal/x86_64/RCTGIFImageDecoder.o
-/Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/Objects-normal/x86_64/RCTImageLoader.o
-/Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/Objects-normal/x86_64/RCTImageEditingManager.o
-/Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/Objects-normal/x86_64/RCTResizeMode.o
-/Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/Objects-normal/x86_64/RCTImageView.o
-/Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/Objects-normal/x86_64/RCTImageBlurUtils.o
-/Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/Objects-normal/x86_64/RCTImageShadowView.o
-/Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/Objects-normal/x86_64/RCTLocalAssetImageLoader.o
-/Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/Objects-normal/x86_64/RCTImageUtils.o
-/Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/Objects-normal/x86_64/RCTImageCache.o
-=======
-<<<<<<< HEAD
-/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/Objects-normal/x86_64/RCTImageStoreManager.o
-/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/Objects-normal/x86_64/RCTImageViewManager.o
-/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/Objects-normal/x86_64/RCTGIFImageDecoder.o
-/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/Objects-normal/x86_64/RCTImageLoader.o
-/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/Objects-normal/x86_64/RCTImageEditingManager.o
-/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/Objects-normal/x86_64/RCTResizeMode.o
-/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/Objects-normal/x86_64/RCTImageView.o
-/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/Objects-normal/x86_64/RCTImageBlurUtils.o
-/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/Objects-normal/x86_64/RCTImageShadowView.o
-/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/Objects-normal/x86_64/RCTLocalAssetImageLoader.o
-/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/Objects-normal/x86_64/RCTImageUtils.o
-/Users/pepper5319/Desktop/Final Project/finalproject/frontend/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/Objects-normal/x86_64/RCTImageCache.o
-=======
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/Objects-normal/x86_64/RCTImageStoreManager.o
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/Objects-normal/x86_64/RCTImageViewManager.o
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/Objects-normal/x86_64/RCTGIFImageDecoder.o
@@ -38,5 +10,3 @@
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/Objects-normal/x86_64/RCTLocalAssetImageLoader.o
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/Objects-normal/x86_64/RCTImageUtils.o
 /Users/jj/Desktop/Final_Proyect/frontend/ios/build/Build/Intermediates.noindex/RCTImage.build/Debug-iphonesimulator/RCTImage.build/Objects-normal/x86_64/RCTImageCache.o
->>>>>>> development
->>>>>>> development
