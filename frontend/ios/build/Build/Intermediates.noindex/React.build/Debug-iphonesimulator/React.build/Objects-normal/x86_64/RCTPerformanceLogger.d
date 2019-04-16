@@ -1,5 +1,4 @@
 dependencies: \
-<<<<<<< HEAD
   /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTPerformanceLogger.m \
   /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTPerformanceLogger.h \
   /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTRootView.h \
@@ -7,6 +6,8 @@ dependencies: \
   /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
   /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
   /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/DevSupport/RCTInspectorDevServerHelper.h \
+  /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/DevSupport/RCTPackagerConnection.h \
   /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTBridgeModule.h \
   /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTFrameUpdate.h \
   /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTInvalidating.h \
@@ -14,19 +15,3 @@ dependencies: \
   /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTAssert.h \
   /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTUtils.h \
   /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Profiler/RCTProfile.h
-=======
-  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTPerformanceLogger.m \
-  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTPerformanceLogger.h \
-  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTRootView.h \
-  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTBridge.h \
-  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
-  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
-  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTDefines.h \
-  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTBridgeModule.h \
-  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTFrameUpdate.h \
-  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTInvalidating.h \
-  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTLog.h \
-  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTAssert.h \
-  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Base/RCTUtils.h \
-  /Users/jj/Desktop/Final_Proyect/frontend/node_modules/react-native/React/Profiler/RCTProfile.h
->>>>>>> 47f00bb57a6e935c9b7588cd7f915caaaba84c09

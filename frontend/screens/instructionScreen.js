@@ -144,15 +144,12 @@ class InstructionScreen extends React.Component {
                 <View>
                     <BasicBackNav button1={this.props.changeTag6} button2={this.likeRecipe} backTo={this.props.tagHome} titleTxt={'Instruction'} />
                 </View>
-                <Animated.View style={[viewOpacity]}>
+
+                <Animated.View style={[viewOpacity], {flex: 1}}>
                   {this.props.recipe !== null && this.props.recipe !== undefined && this.state.ingredients !== null &&
                   <InstructionComp ingredients={this.state.ingredients} recipeName={this.props.recipe.recipe.name} matches={this.props.recipe.matches}
                   webButton={this.props.changeTag6} webUrl={this.props.recipe.recipe.image_url}/>}
-                  <Button color="#cc0000" style={{maxWidth: 150, alignSelf: 'center'}} onPress={() => {this.props.changeTag6('web')}} mode="contained">
-                    View Recipe
-                  </Button>
-
-              </Animated.View>
+                </Animated.View>
             <Snackbar
               visible={this.state.snackBarVisible}
               onDismiss={() => this.setState({ snackBarVisible: false })}

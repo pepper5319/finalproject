@@ -29,9 +29,9 @@ export default class InstructionComp extends React.Component {
         let temp = [];
         const ingredients = this.state.UpperIngredients.map((ingredients) => {
           if(this.props.matches.indexOf(ingredients.toLowerCase()) !== -1){
-            temp.unshift('     '+ingredients)
+            temp.unshift({val: '     '+ingredients, color: 'green'})
           }else{
-             temp.push('x   '+ingredients)
+             temp.push({val: 'x   '+ingredients, color: 'black'})
           }
         })
 
@@ -43,12 +43,11 @@ export default class InstructionComp extends React.Component {
                     source={{ uri: this.props.webUrl }} />
                 <Text style={{ fontWeight: '500', fontSize: 20,  paddingRight: 10, paddingLeft: 10, marginVertical: 5, textAlign: 'center'}}>{this.props.recipeName}</Text>
                     <ScrollView>
-
                         <FlatList
                         data={temp}
                         renderItem={({item}) => (
                             <View style={{flexBasis: '44%', paddingBottom: 10, marginLeft: 20}}>
-                            <Text style={{flexWrap: 'nowrap'}}>{item}</Text>
+                            <Text style={{flexWrap: 'nowrap', color: item.color}}>{item.val}</Text>
                             </View>
                         )}
                         numColumns={2}/>

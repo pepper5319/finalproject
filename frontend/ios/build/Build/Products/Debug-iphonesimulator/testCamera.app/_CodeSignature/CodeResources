@@ -18,19 +18,11 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-<<<<<<< HEAD
-		stUUVmEma7Kh6U5rCCaWBnigLjs=
+		jbBjWO2bjETrFPigIy2tdHKk5W0=
 		</data>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		8G3Lgv3Az9EvkI7iebs4yVgXLZY=
-=======
-		PHh2puh35RLnddZV3QjuDwGc7ks=
-		</data>
-		<key>Base.lproj/LaunchScreen.nib</key>
-		<data>
-		6bJmrg18NgeFR3oZh13gPwrFBsU=
->>>>>>> 47f00bb57a6e935c9b7588cd7f915caaaba84c09
+		OfUS8kTYleUP1SKZWXWo2zQuG+Q=
 		</data>
 		<key>Entypo.ttf</key>
 		<data>
@@ -95,7 +87,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		cpGuC5LYLGhRMuIinQpmu2ubOCE=
+		0hLJGBQ6aThgoUxEtAGTnCBZGcI=
 		</data>
 		<key>Ionicons.ttf</key>
 		<data>
@@ -123,11 +115,7 @@
 		</data>
 		<key>PlugIns/testCameraTests.xctest.dSYM/Contents/Resources/DWARF/testCameraTests</key>
 		<data>
-<<<<<<< HEAD
-		At8vV8PIDQ6j9XYIJfVOZeotAy0=
-=======
-		E8aLX9hQggNGRaV1jvVVD98vRV0=
->>>>>>> 47f00bb57a6e935c9b7588cd7f915caaaba84c09
+		zBFIAKwnGkepZeRfdFyKdNBltLs=
 		</data>
 		<key>PlugIns/testCameraTests.xctest/Info.plist</key>
 		<data>
@@ -135,15 +123,11 @@
 		</data>
 		<key>PlugIns/testCameraTests.xctest/_CodeSignature/CodeResources</key>
 		<data>
-		jRpIOqQLeLUsaNv777d9OI1YR7M=
+		g++4TxX+z/vgTZAdon50qcfbFo4=
 		</data>
 		<key>PlugIns/testCameraTests.xctest/testCameraTests</key>
 		<data>
-<<<<<<< HEAD
-		pBxGwPsjS4VdVU/pupMJT8K5H4U=
-=======
-		bmbY6Gibw/GAZREMPmYhfmaRJDk=
->>>>>>> 47f00bb57a6e935c9b7588cd7f915caaaba84c09
+		uAi7FVhcXDlfRBAkH/gZDRpXnzM=
 		</data>
 		<key>Roboto.ttf</key>
 		<data>
@@ -205,38 +189,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-<<<<<<< HEAD
-			stUUVmEma7Kh6U5rCCaWBnigLjs=
+			jbBjWO2bjETrFPigIy2tdHKk5W0=
 			</data>
 			<key>hash2</key>
 			<data>
-			G6g9VIzZUZ2xC3aAWsPHK+yCBBEmjdDRVJ2rjXrbk6Y=
-=======
-			PHh2puh35RLnddZV3QjuDwGc7ks=
-			</data>
-			<key>hash2</key>
-			<data>
-			5u35W3SYdOThhdgo1k5PTQHpq+ZkFaZV6dxdCYwFGhQ=
->>>>>>> 47f00bb57a6e935c9b7588cd7f915caaaba84c09
+			vQH9YDiz5+ofl7ilG9i7ZzSek90OBBUG0+fVUipHk9Y=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-<<<<<<< HEAD
-			8G3Lgv3Az9EvkI7iebs4yVgXLZY=
+			OfUS8kTYleUP1SKZWXWo2zQuG+Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			EK8AY7/9ljMOMtDIKb54cDQSpx8MjQSvskqGPs0O2Ms=
-=======
-			6bJmrg18NgeFR3oZh13gPwrFBsU=
-			</data>
-			<key>hash2</key>
-			<data>
-			aaOV3Vl6hP2vhxRBwJOWK8BSHYF9mT+h741WrggrVu8=
->>>>>>> 47f00bb57a6e935c9b7588cd7f915caaaba84c09
+			daeh4ovNjJu51qylThgWWd1btdR/FjE4P48IQiMWlnU=
 			</data>
 		</dict>
 		<key>Entypo.ttf</key>
@@ -454,19 +422,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-<<<<<<< HEAD
-			At8vV8PIDQ6j9XYIJfVOZeotAy0=
+			zBFIAKwnGkepZeRfdFyKdNBltLs=
 			</data>
 			<key>hash2</key>
 			<data>
-			Z1+w6pcN1i3SrJisOubwas7VShmkLxFmMw5JiKO4jGg=
-=======
-			E8aLX9hQggNGRaV1jvVVD98vRV0=
-			</data>
-			<key>hash2</key>
-			<data>
-			nFB25npgQUn5/fCQ1LHnJZ35G1MDKdLkiiMpa1EbCU8=
->>>>>>> 47f00bb57a6e935c9b7588cd7f915caaaba84c09
+			dX3rihdFHzxG8q/+nejYu7BZTQJQyJ+GVhk6ijLAwKQ=
 			</data>
 		</dict>
 		<key>PlugIns/testCameraTests.xctest/Info.plist</key>
@@ -484,30 +444,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			jRpIOqQLeLUsaNv777d9OI1YR7M=
+			g++4TxX+z/vgTZAdon50qcfbFo4=
 			</data>
 			<key>hash2</key>
 			<data>
-			GMN16UXpbOKUl1EAogiI0yFtT3cCeO+20SulHTXrKyQ=
+			WClW53Zk6MLflpFBgSiHbwPoeoBvNhlS+IFYMM3vddw=
 			</data>
 		</dict>
 		<key>PlugIns/testCameraTests.xctest/testCameraTests</key>
 		<dict>
 			<key>hash</key>
 			<data>
-<<<<<<< HEAD
-			pBxGwPsjS4VdVU/pupMJT8K5H4U=
+			uAi7FVhcXDlfRBAkH/gZDRpXnzM=
 			</data>
 			<key>hash2</key>
 			<data>
-			h3gKVmM+TGmF+xhXlFyAf+BhF/FSo+o77wdMa5PdBZU=
-=======
-			bmbY6Gibw/GAZREMPmYhfmaRJDk=
-			</data>
-			<key>hash2</key>
-			<data>
-			dvaqbAVjo1Zyr/9uVYfFbcHZSuQzvi43vU7JFc9Mgso=
->>>>>>> 47f00bb57a6e935c9b7588cd7f915caaaba84c09
+			VuIEM9BORfkCa93J2slX7OXM13SBQQKsATZSm1obVQU=
 			</data>
 		</dict>
 		<key>Roboto.ttf</key>
