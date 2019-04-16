@@ -27,7 +27,7 @@ export default class InstructionComp extends React.Component {
  }
     render() {
         let temp = [];
-        const ingredients = this.state.UpperIngredients.map((ingredients) => {         
+        const ingredients = this.state.UpperIngredients.map((ingredients) => {
           if(this.props.matches.indexOf(ingredients.toLowerCase()) !== -1){
             temp.unshift('     '+ingredients)
           }else{
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flex: 1,
         top: 12,
-        
+
     },
     textStyle: {
         fontSize: 18,

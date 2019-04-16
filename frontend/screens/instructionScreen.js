@@ -12,12 +12,8 @@ import { connect } from 'react-redux';
 import BasicBackNav from '../componets/basicBackNav.js';
 import InstructionComp from '../componets/instructionComp.js'
 import { backtohomeAction } from '../actions/backtohomeAction.js';
-<<<<<<< HEAD
 import { ADMIN_KEY, USER_URL } from '../apiUrls.js';
-=======
-import { ADMIN_KEY } from '../apiUrls.js';
 import { ScrollView } from 'react-native-gesture-handler';
->>>>>>> 47f00bb57a6e935c9b7588cd7f915caaaba84c09
 
 class InstructionScreen extends React.Component {
     PhotoPic = () => {
@@ -148,11 +144,10 @@ class InstructionScreen extends React.Component {
                 <View>
                     <BasicBackNav button1={this.props.changeTag6} button2={this.likeRecipe} backTo={this.props.tagHome} titleTxt={'Instruction'} />
                 </View>
-<<<<<<< HEAD
                 <Animated.View style={[viewOpacity]}>
                   {this.props.recipe !== null && this.props.recipe !== undefined && this.state.ingredients !== null &&
-                    <InstructionComp ingredients={this.state.ingredients} recipeName={this.props.recipe.recipe.name} matches={this.props.recipe.matches} webUrl={this.props.recipe.recipe.image_url}/>
-                  }
+                  <InstructionComp ingredients={this.state.ingredients} recipeName={this.props.recipe.recipe.name} matches={this.props.recipe.matches}
+                  webButton={this.props.changeTag6} webUrl={this.props.recipe.recipe.image_url}/>}
                   <Button color="#cc0000" style={{maxWidth: 150, alignSelf: 'center'}} onPress={() => {this.props.changeTag6('web')}} mode="contained">
                     View Recipe
                   </Button>
@@ -164,13 +159,6 @@ class InstructionScreen extends React.Component {
             >
               {this.state.snackBarText}
             </Snackbar>
-=======
-                
-              {this.props.recipe !== null && this.props.recipe !== undefined && this.state.ingredients !== null && 
-              <InstructionComp ingredients={this.state.ingredients} recipeName={this.props.recipe.recipe.name} matches={this.props.recipe.matches} 
-              webButton={this.props.changeTag6} webUrl={this.props.recipe.recipe.image_url}/>}
-
->>>>>>> 47f00bb57a6e935c9b7588cd7f915caaaba84c09
             </Drawer>
         );
     }
