@@ -6,6 +6,7 @@
 	<integer>9</integer>
 	<key>logs</key>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<dict>
 		<key>79CA4E86-665A-4CC2-BA41-F956A2A9C788</key>
 		<dict>
@@ -40,5 +41,8 @@
 =======
 	<dict/>
 >>>>>>> development
+=======
+	<dict/>
+>>>>>>> 47f00bb57a6e935c9b7588cd7f915caaaba84c09
 </dict>
 </plist>
