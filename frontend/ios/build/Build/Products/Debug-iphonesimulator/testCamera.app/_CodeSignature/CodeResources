@@ -8,9 +8,9 @@
 		<data>
 		TneGhDkoD7Q01Gl8e5EScUBsgfM=
 		</data>
-		<key>AppIcon20x20@2x.png</key>
+		<key>AppIcon40x40@3x.png</key>
 		<data>
-		vljxcFFDpHOv+l9gWNC3Msa2bJc=
+		ekNdikwpeEfosUOZw/XbCzialAU=
 		</data>
 		<key>AppIcon60x60@2x.png</key>
 		<data>
@@ -18,11 +18,19 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
+<<<<<<< HEAD
 		stUUVmEma7Kh6U5rCCaWBnigLjs=
 		</data>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
 		8G3Lgv3Az9EvkI7iebs4yVgXLZY=
+=======
+		PHh2puh35RLnddZV3QjuDwGc7ks=
+		</data>
+		<key>Base.lproj/LaunchScreen.nib</key>
+		<data>
+		6bJmrg18NgeFR3oZh13gPwrFBsU=
+>>>>>>> 47f00bb57a6e935c9b7588cd7f915caaaba84c09
 		</data>
 		<key>Entypo.ttf</key>
 		<data>
@@ -30,11 +38,11 @@
 		</data>
 		<key>EvilIcons.ttf</key>
 		<data>
-		kdN36jz0dJCyVsLtCBcEp9q9rgw=
+		QZrcvnS7qREj2zspB3XjYvIS8+U=
 		</data>
 		<key>Feather.ttf</key>
 		<data>
-		N8tVG0ETiQxSP0aeapsrKcTEm+Q=
+		AiHzjp4t0CEzVCcxbr7QXuznQyM=
 		</data>
 		<key>FontAwesome.ttf</key>
 		<data>
@@ -42,15 +50,15 @@
 		</data>
 		<key>FontAwesome5_Brands.ttf</key>
 		<data>
-		iEsI7+XnsQKPF409zIfiWgb31Io=
+		5qUMbo09q4lTNYYzUqKacUeCiYg=
 		</data>
 		<key>FontAwesome5_Regular.ttf</key>
 		<data>
-		gdCYZLU2ITrwzYMpPsaZnC4Sl68=
+		tlwJkB7NQUF8fvt0c3Lf73Y7ovE=
 		</data>
 		<key>FontAwesome5_Solid.ttf</key>
 		<data>
-		ViLxgb3KIDB+TcwNCji5qMyvfz8=
+		VbYNJIPcR/jz6kYN2NDviISJPFs=
 		</data>
 		<key>Foundation.ttf</key>
 		<data>
@@ -87,15 +95,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		qPBvEi5cr6iR2gVoVP64AhHYP1A=
+		cpGuC5LYLGhRMuIinQpmu2ubOCE=
 		</data>
 		<key>Ionicons.ttf</key>
 		<data>
-		mRu3+slwnNWNo3kBdw79RwPFQu0=
+		D3lWcE/mG0nEHqGiIFEkD3AKK0Q=
 		</data>
 		<key>MaterialCommunityIcons.ttf</key>
 		<data>
-		PmK9EV4HWGvLGebzfI+xJbJhwQU=
+		LlRFFQPKQ8n7uDUD5LZhbhx4DRE=
 		</data>
 		<key>MaterialIcons.ttf</key>
 		<data>
@@ -103,7 +111,7 @@
 		</data>
 		<key>Octicons.ttf</key>
 		<data>
-		o/QP7s8JqAqYbxLVfGRtK0Wa+so=
+		+YreAPYbFuBieFv6gKSQafXjk7M=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -115,19 +123,27 @@
 		</data>
 		<key>PlugIns/testCameraTests.xctest.dSYM/Contents/Resources/DWARF/testCameraTests</key>
 		<data>
+<<<<<<< HEAD
 		At8vV8PIDQ6j9XYIJfVOZeotAy0=
+=======
+		E8aLX9hQggNGRaV1jvVVD98vRV0=
+>>>>>>> 47f00bb57a6e935c9b7588cd7f915caaaba84c09
 		</data>
 		<key>PlugIns/testCameraTests.xctest/Info.plist</key>
 		<data>
-		hKqVP+HyfoO6qgPkWSJ5/gcRcOo=
+		53EJabRQL8aPos18ryh6ST1iKRc=
 		</data>
 		<key>PlugIns/testCameraTests.xctest/_CodeSignature/CodeResources</key>
 		<data>
-		g++4TxX+z/vgTZAdon50qcfbFo4=
+		jRpIOqQLeLUsaNv777d9OI1YR7M=
 		</data>
 		<key>PlugIns/testCameraTests.xctest/testCameraTests</key>
 		<data>
+<<<<<<< HEAD
 		pBxGwPsjS4VdVU/pupMJT8K5H4U=
+=======
+		bmbY6Gibw/GAZREMPmYhfmaRJDk=
+>>>>>>> 47f00bb57a6e935c9b7588cd7f915caaaba84c09
 		</data>
 		<key>Roboto.ttf</key>
 		<data>
@@ -163,15 +179,15 @@
 			eVXKFBJ7MEEsEU6xPP1wK12rJl/rGIDRaV1zyqgkzeE=
 			</data>
 		</dict>
-		<key>AppIcon20x20@2x.png</key>
+		<key>AppIcon40x40@3x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			vljxcFFDpHOv+l9gWNC3Msa2bJc=
+			ekNdikwpeEfosUOZw/XbCzialAU=
 			</data>
 			<key>hash2</key>
 			<data>
-			/VNSfnz002tCHl7+oHslKK8AnHny/g/kDTdakeqQy3g=
+			HUvpiiL6ugfaXKh9a89PLVgEYqDsFabzz/dIFdkjFd8=
 			</data>
 		</dict>
 		<key>AppIcon60x60@2x.png</key>
@@ -189,22 +205,38 @@
 		<dict>
 			<key>hash</key>
 			<data>
+<<<<<<< HEAD
 			stUUVmEma7Kh6U5rCCaWBnigLjs=
 			</data>
 			<key>hash2</key>
 			<data>
 			G6g9VIzZUZ2xC3aAWsPHK+yCBBEmjdDRVJ2rjXrbk6Y=
+=======
+			PHh2puh35RLnddZV3QjuDwGc7ks=
+			</data>
+			<key>hash2</key>
+			<data>
+			5u35W3SYdOThhdgo1k5PTQHpq+ZkFaZV6dxdCYwFGhQ=
+>>>>>>> 47f00bb57a6e935c9b7588cd7f915caaaba84c09
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
+<<<<<<< HEAD
 			8G3Lgv3Az9EvkI7iebs4yVgXLZY=
 			</data>
 			<key>hash2</key>
 			<data>
 			EK8AY7/9ljMOMtDIKb54cDQSpx8MjQSvskqGPs0O2Ms=
+=======
+			6bJmrg18NgeFR3oZh13gPwrFBsU=
+			</data>
+			<key>hash2</key>
+			<data>
+			aaOV3Vl6hP2vhxRBwJOWK8BSHYF9mT+h741WrggrVu8=
+>>>>>>> 47f00bb57a6e935c9b7588cd7f915caaaba84c09
 			</data>
 		</dict>
 		<key>Entypo.ttf</key>
@@ -222,22 +254,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			kdN36jz0dJCyVsLtCBcEp9q9rgw=
+			QZrcvnS7qREj2zspB3XjYvIS8+U=
 			</data>
 			<key>hash2</key>
 			<data>
-			pcrrTTlcXjLx1aMKyzgq68Zk8brf0UkxmQfyIV5OPiY=
+			J9GohnZmGjoiaVdpUtb3ANoFZEvAMFUR3iO3D3HKVDY=
 			</data>
 		</dict>
 		<key>Feather.ttf</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			N8tVG0ETiQxSP0aeapsrKcTEm+Q=
+			AiHzjp4t0CEzVCcxbr7QXuznQyM=
 			</data>
 			<key>hash2</key>
 			<data>
-			vJZj1K7YcJfMyjc62U/QjeJKxKNRAOPfO30oFCyQCUo=
+			sse5lKY8HPl6gBWzGq4njD9mmOqvSOduEWdc+dNdrHY=
 			</data>
 		</dict>
 		<key>FontAwesome.ttf</key>
@@ -255,33 +287,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			iEsI7+XnsQKPF409zIfiWgb31Io=
+			5qUMbo09q4lTNYYzUqKacUeCiYg=
 			</data>
 			<key>hash2</key>
 			<data>
-			sa4YKrggnhIXVUkoueQJVlQtsXOajuQ8ZrLtgrx7Haw=
+			29CNAlYCt5znGRCypoV3lZy/LvAvxmTiQ79QJ3dU/fw=
 			</data>
 		</dict>
 		<key>FontAwesome5_Regular.ttf</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			gdCYZLU2ITrwzYMpPsaZnC4Sl68=
+			tlwJkB7NQUF8fvt0c3Lf73Y7ovE=
 			</data>
 			<key>hash2</key>
 			<data>
-			y3K7V8tv3mYDLICQ1wXm/En7fX+0sR6ZzRgbpAOC9e4=
+			7LVxnrZAg1nZH9JTBkYGSj8lGu1pH9SCdyicyNbVPfo=
 			</data>
 		</dict>
 		<key>FontAwesome5_Solid.ttf</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ViLxgb3KIDB+TcwNCji5qMyvfz8=
+			VbYNJIPcR/jz6kYN2NDviISJPFs=
 			</data>
 			<key>hash2</key>
 			<data>
-			uwrnRkuHJ7kkj1oYHwfq27U9GonRUq4D17i0+dmiJ5g=
+			uXra1+zpeSr0EirogQPK2Pq1RVilKcS6ebUiTCsC6+k=
 			</data>
 		</dict>
 		<key>Foundation.ttf</key>
@@ -367,22 +399,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			mRu3+slwnNWNo3kBdw79RwPFQu0=
+			D3lWcE/mG0nEHqGiIFEkD3AKK0Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			INFzvLYFHQlzvgymqi+08npbKQ2AEGyyxWfI/cdyxxE=
+			u0dnmwuuuEgbf1HGitM65aUmc2y1CxcXzGD/a2X5CKM=
 			</data>
 		</dict>
 		<key>MaterialCommunityIcons.ttf</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PmK9EV4HWGvLGebzfI+xJbJhwQU=
+			LlRFFQPKQ8n7uDUD5LZhbhx4DRE=
 			</data>
 			<key>hash2</key>
 			<data>
-			qZwu36A5UVfTI1RNRiYHlZev6tjZiaFR6Ph0lGvHbeU=
+			hvzI5Ll2LOfABnIPjqOG8YBKGtVVv2xJ+8XfCHVI35c=
 			</data>
 		</dict>
 		<key>MaterialIcons.ttf</key>
@@ -400,11 +432,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			o/QP7s8JqAqYbxLVfGRtK0Wa+so=
+			+YreAPYbFuBieFv6gKSQafXjk7M=
 			</data>
 			<key>hash2</key>
 			<data>
-			8KI41G1nSeYBwS8g+PwDIB8Ze5/jR75MLJRP/FxLYDU=
+			NC9CWcIUkNdDyFv9XLIgM5voHcU7RU+sU2mnqmpBMI4=
 			</data>
 		</dict>
 		<key>PlugIns/testCameraTests.xctest.dSYM/Contents/Info.plist</key>
@@ -422,44 +454,60 @@
 		<dict>
 			<key>hash</key>
 			<data>
+<<<<<<< HEAD
 			At8vV8PIDQ6j9XYIJfVOZeotAy0=
 			</data>
 			<key>hash2</key>
 			<data>
 			Z1+w6pcN1i3SrJisOubwas7VShmkLxFmMw5JiKO4jGg=
+=======
+			E8aLX9hQggNGRaV1jvVVD98vRV0=
+			</data>
+			<key>hash2</key>
+			<data>
+			nFB25npgQUn5/fCQ1LHnJZ35G1MDKdLkiiMpa1EbCU8=
+>>>>>>> 47f00bb57a6e935c9b7588cd7f915caaaba84c09
 			</data>
 		</dict>
 		<key>PlugIns/testCameraTests.xctest/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			hKqVP+HyfoO6qgPkWSJ5/gcRcOo=
+			53EJabRQL8aPos18ryh6ST1iKRc=
 			</data>
 			<key>hash2</key>
 			<data>
-			idFZVD1V2oMQiXPTxbJqr6imv3yEXlrBJ5XkmT02IGE=
+			47zHtuepdmfDHKiHULa/WYpLg82NSVeWoo5fVqtKOzk=
 			</data>
 		</dict>
 		<key>PlugIns/testCameraTests.xctest/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			g++4TxX+z/vgTZAdon50qcfbFo4=
+			jRpIOqQLeLUsaNv777d9OI1YR7M=
 			</data>
 			<key>hash2</key>
 			<data>
-			WClW53Zk6MLflpFBgSiHbwPoeoBvNhlS+IFYMM3vddw=
+			GMN16UXpbOKUl1EAogiI0yFtT3cCeO+20SulHTXrKyQ=
 			</data>
 		</dict>
 		<key>PlugIns/testCameraTests.xctest/testCameraTests</key>
 		<dict>
 			<key>hash</key>
 			<data>
+<<<<<<< HEAD
 			pBxGwPsjS4VdVU/pupMJT8K5H4U=
 			</data>
 			<key>hash2</key>
 			<data>
 			h3gKVmM+TGmF+xhXlFyAf+BhF/FSo+o77wdMa5PdBZU=
+=======
+			bmbY6Gibw/GAZREMPmYhfmaRJDk=
+			</data>
+			<key>hash2</key>
+			<data>
+			dvaqbAVjo1Zyr/9uVYfFbcHZSuQzvi43vU7JFc9Mgso=
+>>>>>>> 47f00bb57a6e935c9b7588cd7f915caaaba84c09
 			</data>
 		</dict>
 		<key>Roboto.ttf</key>

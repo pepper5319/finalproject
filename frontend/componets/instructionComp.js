@@ -29,9 +29,9 @@ export default class InstructionComp extends React.Component {
         let temp = [];
         const ingredients = this.state.UpperIngredients.map((ingredients) => {         
           if(this.props.matches.indexOf(ingredients.toLowerCase()) !== -1){
-            temp.unshift('      '+ingredients)
+            temp.unshift('     '+ingredients)
           }else{
-             temp.push('X   '+ingredients)
+             temp.push('x   '+ingredients)
           }
         })
 
@@ -42,9 +42,8 @@ export default class InstructionComp extends React.Component {
                     style={styles.stretch}
                     source={{ uri: this.props.webUrl }} />
                 <Text style={{ fontWeight: '500', fontSize: 20,  paddingRight: 10, paddingLeft: 10, marginVertical: 5, textAlign: 'center'}}>{this.props.recipeName}</Text>
-
-                <View>
                     <ScrollView>
+
                         <FlatList
                         data={temp}
                         renderItem={({item}) => (
@@ -53,8 +52,13 @@ export default class InstructionComp extends React.Component {
                             </View>
                         )}
                         numColumns={2}/>
-                </ScrollView>
-                </View>
+                        <TouchableOpacity
+          style={styles.webButton}
+          onPress={() => {this.props.webButton('web')}}
+          underlayColor='#000000'>
+          <Text style={styles.webBtnText}>Instruction URL</Text>
+        </TouchableOpacity>
+          </ScrollView>
 
             </View>
 
@@ -66,6 +70,7 @@ export default class InstructionComp extends React.Component {
 const styles = StyleSheet.create({
     contain: {
         alignItems: 'center',
+        flex: 1,
         top: 12,
         
     },
@@ -108,6 +113,7 @@ const styles = StyleSheet.create({
         backgroundColor:'#cc0000',
         borderRadius:10,
         borderWidth: 1,
+        marginBottom: 20,
         borderColor: '#cc0000',
 
       },
@@ -121,4 +127,3 @@ const styles = StyleSheet.create({
 
 });
 const windowWidth = Dimensions.get("window").width
-const windowHeight = Dimensions.get("window").height
