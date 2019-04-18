@@ -91,7 +91,7 @@ class InstructionScreen extends React.Component {
           style={styles.webButton}
           onPress={() => {this.props.changeTag6('web')}}
           underlayColor='#000000'>
-          <Text style={styles.webBtnText}>Instruction URL</Text>
+          <Text style={styles.webBtnText}>View Recipe</Text>
         </TouchableOpacity>
 
             </Drawer>
@@ -112,9 +112,9 @@ const styles = StyleSheet.create({
         borderRadius:10,
         borderWidth: 1,
         borderColor: '#cc0000',
-        position: 'absolute',
         bottom:10,
-        left: '16%',
+        alignItems: 'center',
+        justifyContent: 'center',
       },
       webBtnText:{
           color:'#fff',

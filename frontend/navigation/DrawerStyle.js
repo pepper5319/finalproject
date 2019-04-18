@@ -19,7 +19,7 @@ export default class DrawerStyle extends React.Component {
         style={{backgroundColor:'white', height: windowHeight, paddingTop: 15}}>
 
           <Drawer.Item
-            label="Menu"
+            label="Home"
             active={active === 'home'}
             onPress={() => { this.setState({ active: 'home' });
             this.props.changeTag('home')
@@ -39,14 +39,7 @@ export default class DrawerStyle extends React.Component {
             this.props.changeTag('recipe')
           }}
           />
-          <Drawer.Item
-
-            label="Login"
-            active={active === 'login'}
-            onPress={() => { this.setState({ active: 'login' });
-            this.props.changeTag('login')
-          }}
-          />
+          
           <Drawer.Item
             label="Register"
             active={active === 'signup'}
@@ -61,13 +54,7 @@ export default class DrawerStyle extends React.Component {
             this.props.changeTag('logout')
           }}
           />
-          <Drawer.Item
-            label="Loding"
-            active={active === 'loding'}
-            onPress={() => { this.setState({ active: 'loding' });
-            this.props.changeTag('loding')
-          }}
-          />
+          
 
        </Drawer.Section>
       );
