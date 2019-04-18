@@ -55,7 +55,7 @@ export default class InstructionComp extends React.Component {
           style={styles.webButton}
           onPress={() => {this.props.webButton('web')}}
           underlayColor='#000000'>
-          <Text style={styles.webBtnText}>Instruction URL</Text>
+          <Text style={styles.webBtnText}>View Recipe</Text>
         </TouchableOpacity>
           </ScrollView>
 

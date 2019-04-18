@@ -5,6 +5,39 @@
 	<key>logFormatVersion</key>
 	<integer>10</integer>
 	<key>logs</key>
-	<dict/>
+	<dict>
+		<key>BD781217-DCDA-481B-B2FB-85EC670CB786</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>BD781217-DCDA-481B-B2FB-85EC670CB786.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>testCamera project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>testCamera</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>577292979.71780598</real>
+			<key>timeStoppedRecording</key>
+			<real>577292989.99634194</real>
+			<key>title</key>
+			<string>Building project testCamera with scheme testCamera and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>BD781217-DCDA-481B-B2FB-85EC670CB786</string>
+		</dict>
+	</dict>
 </dict>
 </plist>

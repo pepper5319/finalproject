@@ -60,7 +60,7 @@ export default class DrawerStyle extends React.Component {
             this.props.changeTag('logout')
           }}
           />
-          
+
 
        </Drawer.Section>
       );

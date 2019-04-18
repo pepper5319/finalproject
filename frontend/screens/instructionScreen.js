@@ -38,6 +38,7 @@ class InstructionScreen extends React.Component {
     }
 
     onChangeTag = (tag) => {
+        this.props.nullRecipe()
         this.props.changeTag6(tag)
     }
     closeDrawer = () => {
@@ -144,14 +145,6 @@ class InstructionScreen extends React.Component {
                 <View>
                     <BasicBackNav button1={this.props.changeTag6} button2={this.likeRecipe} backTo={this.props.tagHome} titleTxt={'Instruction'} />
                 </View>
-              {this.props.recipe !== null && this.props.recipe !== undefined && this.state.ingredients !== null &&<InstructionComp ingredients={this.state.ingredients} matches={this.props.recipe.matches} webUrl={this.props.recipe.recipe.image_url}/>
-              }
-              <TouchableOpacity
-          style={styles.webButton}
-          onPress={() => {this.props.changeTag6('web')}}
-          underlayColor='#000000'>
-          <Text style={styles.webBtnText}>View Recipe</Text>
-        </TouchableOpacity>
 
                 <Animated.View style={[viewOpacity], {flex: 1}}>
                   {this.props.recipe !== null && this.props.recipe !== undefined && this.state.ingredients !== null &&
