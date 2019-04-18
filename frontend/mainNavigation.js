@@ -17,15 +17,15 @@ import { setUserToken }  from './actions/tokenAction.js';
 
 class MainNavigation extends Component {
     state = {
-        active: 'login'
+      active: 'login'
     };
     constructor() {
-        super();
+      super();
     };
 
     onChangeTag = (tag) => {
-        this.setState({ active: tag })
-      }
+      this.setState({ active: tag })
+    }
 
     componentWillMount(){
       this._retrieveData()
@@ -72,7 +72,6 @@ class MainNavigation extends Component {
 
                 }
             </Drawer>
-
         );
     }
 }

@@ -17,7 +17,9 @@ class RecipeScreen extends React.Component {
 
 
     componentDidMount() {
+        this.props.changeTag4('loding');
         this.props.getRecipes(this.props.token);
+        this.props.changeTag4('recipe')
         this.props.backtohomeAction('recipe')
     }
 

@@ -42,6 +42,7 @@ class LoginScreen extends React.Component {
         this.props.changeTag7(tag)
     }
     loginUser = () => {
+      this.props.changeTag7('loding');
       console.log(this.props)
       var xhr = new XMLHttpRequest();
       var url = "https://pantryplatter.herokuapp.com/api/rest-auth/login/";
@@ -53,7 +54,6 @@ class LoginScreen extends React.Component {
             this.saveUserToken(json.key);
             this.props.setUserToken(json.key);
             this.props.changeTag7('home');
-
           }
         };
       var data = JSON.stringify({

@@ -18,11 +18,19 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
+<<<<<<< HEAD
 		jbBjWO2bjETrFPigIy2tdHKk5W0=
 		</data>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
 		OfUS8kTYleUP1SKZWXWo2zQuG+Q=
+=======
+		aSM9r8jzKptc4TxrlCBS8EPJn78=
+		</data>
+		<key>Base.lproj/LaunchScreen.nib</key>
+		<data>
+		v/EeB8dqoksmmjiyJJV+e7zVOQA=
+>>>>>>> chicospin
 		</data>
 		<key>Entypo.ttf</key>
 		<data>
@@ -155,7 +163,11 @@
 		</data>
 		<key>PlugIns/testCameraTests.xctest/_CodeSignature/CodeResources</key>
 		<data>
+<<<<<<< HEAD
 		oTIOs6dzQVOcdDKu5r6/Qy3kIs8=
+=======
+		jRpIOqQLeLUsaNv777d9OI1YR7M=
+>>>>>>> chicospin
 		</data>
 		<key>PlugIns/testCameraTests.xctest/testCameraTests</key>
 		<data>
@@ -221,22 +233,38 @@
 		<dict>
 			<key>hash</key>
 			<data>
+<<<<<<< HEAD
 			jbBjWO2bjETrFPigIy2tdHKk5W0=
 			</data>
 			<key>hash2</key>
 			<data>
 			vQH9YDiz5+ofl7ilG9i7ZzSek90OBBUG0+fVUipHk9Y=
+=======
+			aSM9r8jzKptc4TxrlCBS8EPJn78=
+			</data>
+			<key>hash2</key>
+			<data>
+			8JpzD23aoWvKYNAKvbPJXx/PN+MSUoTXBVkucDgHaP8=
+>>>>>>> chicospin
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
+<<<<<<< HEAD
 			OfUS8kTYleUP1SKZWXWo2zQuG+Q=
 			</data>
 			<key>hash2</key>
 			<data>
 			daeh4ovNjJu51qylThgWWd1btdR/FjE4P48IQiMWlnU=
+=======
+			v/EeB8dqoksmmjiyJJV+e7zVOQA=
+			</data>
+			<key>hash2</key>
+			<data>
+			C17wxpYsoV7mYOqV5o4yLa7rjaqTVq+4hcr8WD/CKc4=
+>>>>>>> chicospin
 			</data>
 		</dict>
 		<key>Entypo.ttf</key>
@@ -564,11 +592,19 @@
 		<dict>
 			<key>hash</key>
 			<data>
+<<<<<<< HEAD
 			oTIOs6dzQVOcdDKu5r6/Qy3kIs8=
 			</data>
 			<key>hash2</key>
 			<data>
 			fJRdTcC/bbpoYAA0NMilmTwW2GBAHHBwBfnRghgpTOo=
+=======
+			jRpIOqQLeLUsaNv777d9OI1YR7M=
+			</data>
+			<key>hash2</key>
+			<data>
+			GMN16UXpbOKUl1EAogiI0yFtT3cCeO+20SulHTXrKyQ=
+>>>>>>> chicospin
 			</data>
 		</dict>
 		<key>PlugIns/testCameraTests.xctest/testCameraTests</key>

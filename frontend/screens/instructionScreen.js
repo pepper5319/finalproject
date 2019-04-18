@@ -144,6 +144,14 @@ class InstructionScreen extends React.Component {
                 <View>
                     <BasicBackNav button1={this.props.changeTag6} button2={this.likeRecipe} backTo={this.props.tagHome} titleTxt={'Instruction'} />
                 </View>
+              {this.props.recipe !== null && this.props.recipe !== undefined && this.state.ingredients !== null &&<InstructionComp ingredients={this.state.ingredients} matches={this.props.recipe.matches} webUrl={this.props.recipe.recipe.image_url}/>
+              }
+              <TouchableOpacity
+          style={styles.webButton}
+          onPress={() => {this.props.changeTag6('web')}}
+          underlayColor='#000000'>
+          <Text style={styles.webBtnText}>View Recipe</Text>
+        </TouchableOpacity>
 
                 <Animated.View style={[viewOpacity], {flex: 1}}>
                   {this.props.recipe !== null && this.props.recipe !== undefined && this.state.ingredients !== null &&
@@ -174,9 +182,9 @@ const styles = StyleSheet.create({
         borderRadius:10,
         borderWidth: 1,
         borderColor: '#cc0000',
-        position: 'absolute',
         bottom:10,
-        left: '16%',
+        alignItems: 'center',
+        justifyContent: 'center',
       },
       webBtnText:{
           color:'#fff',
