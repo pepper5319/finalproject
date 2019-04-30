@@ -1,5 +1,4 @@
 dependencies: \
-<<<<<<< HEAD
   /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/ReactCommon/yoga/yoga/YGNodePrint.cpp \
   /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/ReactCommon/yoga/yoga/YGNodePrint.h \
   /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/ReactCommon/yoga/yoga/Yoga.h \
@@ -11,16 +10,3 @@ dependencies: \
   /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/ReactCommon/yoga/yoga/YGLayout.h \
   /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/ReactCommon/yoga/yoga/YGFloatOptional.h \
   /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/ReactCommon/yoga/yoga/YGStyle.h
-=======
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/ReactCommon/yoga/yoga/YGNodePrint.cpp \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/ReactCommon/yoga/yoga/YGNodePrint.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/ReactCommon/yoga/yoga/Yoga.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/ReactCommon/yoga/yoga/YGEnums.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/ReactCommon/yoga/yoga/YGMacros.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/ReactCommon/yoga/yoga/YGNode.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/ReactCommon/yoga/yoga/YGConfig.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/ReactCommon/yoga/yoga/Yoga-internal.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/ReactCommon/yoga/yoga/YGLayout.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/ReactCommon/yoga/yoga/YGFloatOptional.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/ReactCommon/yoga/yoga/YGStyle.h
->>>>>>> chicospin

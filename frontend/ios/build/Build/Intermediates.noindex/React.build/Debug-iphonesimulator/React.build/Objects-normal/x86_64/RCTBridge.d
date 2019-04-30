@@ -1,5 +1,4 @@
 dependencies: \
-<<<<<<< HEAD
   /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTBridge.m \
   /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTBridge.h \
   /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
@@ -28,32 +27,3 @@ dependencies: \
   /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTPerformanceLogger.h \
   /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Profiler/RCTProfile.h \
   /Users/pepper5319/Desktop/Final\ Project/finalproject/frontend/node_modules/react-native/React/Base/RCTReloadCommand.h
-=======
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Base/RCTBridge.m \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Base/RCTBridge.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Base/RCTDefines.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Base/RCTBridgeModule.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Base/RCTFrameUpdate.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Base/RCTInvalidating.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Base/RCTBridge+Private.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Base/RCTConvert.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Views/RCTAnimationType.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Views/RCTBorderStyle.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Base/RCTLog.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Base/RCTAssert.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Base/RCTUtils.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Views/RCTPointerEvents.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Views/RCTTextDecorationLineType.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Base/RCTEventDispatcher.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/DevSupport/RCTInspectorDevServerHelper.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Inspector/RCTInspectorPackagerConnection.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Base/RCTModuleData.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Base/RCTPerformanceLogger.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Profiler/RCTProfile.h \
-  /Users/grampacupcake/Desktop/finalP/frontend/node_modules/react-native/React/Base/RCTReloadCommand.h
->>>>>>> chicospin
